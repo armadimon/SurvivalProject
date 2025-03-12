@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
             CameraLook();
         }
         // 디버그 용도로 플레이어 아래에 Ray를 그림
-        //Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down * 0.5f, Color.red);
+        //Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down * 1.5f, Color.red);
     }
 
     // 카메라 회전 처리 (상하/좌우)
@@ -169,18 +169,17 @@ public class PlayerController : MonoBehaviour
         // 4방향 (전,후,좌,우)에서 아래 방향으로 Ray를 쏴서 지면 판정
         Ray[] ray = new Ray[4]
         {
-            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),   // 전방
-            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),  // 후방
-            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),    // 우측
-            new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down)   // 좌측
+            new Ray(transform.position + (transform.forward * 0.3f) + (transform.up * 0.01f), Vector3.down),   // 전방
+            new Ray(transform.position + (-transform.forward * 0.3f) + (transform.up * 0.01f), Vector3.down),  // 후방
+            new Ray(transform.position + (transform.right * 0.3f) + (transform.up * 0.01f), Vector3.down),    // 우측
+            new Ray(transform.position + (-transform.right * 0.3f) + (transform.up * 0.01f), Vector3.down)   // 좌측
         };
 
         // 각 Ray를 사용하여 0.5 단위 내에 groundLayerMask에 포함된 오브젝트가 있는지 확인
         for (int i = 0; i < ray.Length; i++)
         {
 
-            Debug.DrawRay(ray[i].origin, ray[i].direction * 1f, Color.red);
-            if (Physics.Raycast(ray[i], 1f, groundLayerMask))
+            if (Physics.Raycast(ray[i], 1.5f, groundLayerMask))
             {
                 return true;
             }
