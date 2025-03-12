@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class UICondition : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Condition health;
+    public Condition hunger;
+    public Condition thirst;
+    public Condition stamina;
+    
     void Start()
     {
-        
+        CharacterManager.Instance.Player.condition.uiCondition = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
