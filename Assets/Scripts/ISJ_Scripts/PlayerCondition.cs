@@ -1,8 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCondition : MonoBehaviour
+public interface IHydrate
+{
+    void TakeWater(int amount);
+}
+
+public class PlayerCondition : MonoBehaviour, IHydrate
 {
     public UICondition uiCondition;
 
@@ -11,7 +17,7 @@ public class PlayerCondition : MonoBehaviour
     Condition thirst { get { return uiCondition.thirst; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
-    public float lowThirstHealthDecay;
+    public float lowThirstHealthDecay;   
 
     void Update()
     {
@@ -33,5 +39,10 @@ public class PlayerCondition : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player Die!");
+    }
+
+    public void TakeWater(int amount)
+    {
+        thirst.Add(amount);
     }
 }

@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public float lookSensitivity;
     private Vector2 mouseDelta;
 
+    public bool isInHydrateLocation = false;
+    public bool isDrinking = false;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -68,5 +71,19 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         mouseDelta = context.ReadValue<Vector2>();
+    }
+
+    public void OnDrinking(InputAction.CallbackContext context)
+    {
+        if (isInHydrateLocation && context.phase == InputActionPhase.Started)
+        {
+            isDrinking = true;
+            Invoke("StopDrinking", 5f);
+        }
+    }
+
+    void StopDrinking()
+    {
+        isDrinking = false;
     }
 }
