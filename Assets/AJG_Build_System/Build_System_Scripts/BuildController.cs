@@ -1,39 +1,45 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class BuildController : MonoBehaviour
 {
-    public GameObject buildObject;
     public bool buildMode = false;
     public bool SetMode = false;
-    private GameObject _buildObject;
     
     public LayerMask placementLayer;  // 배치가 가능한 레이어
     public float maxSlopeAngle = 45f; // 최대 허용 기울기 (단위: 도)
 
+    public BuildObject buildObject;
+    private BuildObject _buildObject;
     private MeshRenderer _objectMeshRenderer;
     private Color _objectOriginalColor;
-    
+    private Collider objectCollider;
+    private Color _objectCantSetableColor;
     public float rayCastDistance = 5f;
 
 
     private void Start()
     {
         buildMode = false;
-        if (buildObject != null)
-        {
-            SetMode = true;
-            _buildObject = Instantiate(buildObject,
-                transform.position + (transform.forward * 2f)
-                , Quaternion.identity)
-                ;
-            // _buildObject.transform.parent = transform;
-            _objectMeshRenderer = _buildObject.GetComponent<MeshRenderer>();
-            _objectOriginalColor = _objectMeshRenderer.material.color;
-        }
+        // if (buildObject != null)
+        // {
+        //     SetMode = true;
+        //     _buildObject = Instantiate(buildObject,
+        //         transform.position + (transform.forward * 2f)
+        //         , Quaternion.identity)
+        //         ;
+        //     objectCollider = _buildObject.GetComponentInChildren<Collider>();
+        //     objectCollider.enabled = false;
+        //     _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
+        //     _objectOriginalColor = _objectMeshRenderer.material.color;
+        //     _objectCantSetableColor = Color.red;
+        //     _objectCantSetableColor.a = 0.5f;
+        //     _objectMeshRenderer.material.color = _objectCantSetableColor;
+        // }
     }
 
     void Update()
@@ -55,7 +61,9 @@ public class BuildController : MonoBehaviour
     private bool TrySet()
     {
         bool isSetable = false;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Transform cameraContainer = CharacterManager.Instance.Player.controller.cameraContainer;
+        Ray ray = new Ray(cameraContainer.position, cameraContainer.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, rayCastDistance, placementLayer))
         {
             Debug.DrawRay(ray.origin, ray.direction * rayCastDistance, Color.red);
@@ -63,7 +71,8 @@ public class BuildController : MonoBehaviour
             float angle = Vector3.Angle(Vector3.up, hitNormal);
 
             _buildObject.transform.position = hit.point;
-            _buildObject.transform.rotation = Quaternion.LookRotation(hitNormal);
+            Vector3 forwardDirection = Vector3.Cross(hitNormal, Vector3.right);
+            _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
             if (angle <= maxSlopeAngle)
             {
                 _objectMeshRenderer.material.color = _objectOriginalColor;
@@ -71,24 +80,27 @@ public class BuildController : MonoBehaviour
             }
             else
             {
-                _objectMeshRenderer.material.color = new Color(1,
-                    0,
-                    0,
-                    0.5f);
+                _objectMeshRenderer.material.color = Color.red;
+                Color color = _objectMeshRenderer.material.color;
+                color.a = 0.5f;
+                _objectMeshRenderer.material.color = color;
                 isSetable = false;
             }
         }
         else
         {
-            _buildObject.transform.position = transform.forward * rayCastDistance;
+            _buildObject.transform.position = cameraContainer.position + cameraContainer.forward * rayCastDistance;
+            _objectMeshRenderer.material.color = _objectCantSetableColor;
         }
 
         return (isSetable);
     }
 
+    
     private void ObjectSet()
     {   
             // _buildObject.transform.SetParent(null);
+            objectCollider.enabled = true;
             _buildObject = null;
             SetMode = false;
     }
@@ -99,11 +111,37 @@ public class BuildController : MonoBehaviour
         {
             Debug.Log("Build Mode On");
             buildMode = true;
+            BuildManager.Instance.buildMenu.SetActive(true);
+            CharacterManager.Instance.Player.controller.canLook = false;
+            Cursor.lockState = CursorLockMode.None;
         }
         else if (context.phase == InputActionPhase.Started && buildMode == true)
         {
             Debug.Log("Build Mode Off");
             buildMode = false;
+            BuildManager.Instance.buildMenu.SetActive(false);
+            CharacterManager.Instance.Player.controller.canLook = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    public void SetBuildObject(BuildObject newBuildObject)
+    {
+        SetMode = true;
+        buildObject = newBuildObject;
+        _buildObject = Instantiate(newBuildObject,
+            transform.position + (transform.forward * 2f)
+            , Quaternion.identity)
+            ;
+        objectCollider = _buildObject.GetComponentInChildren<Collider>();
+        objectCollider.enabled = false;
+        _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
+        _objectOriginalColor = _objectMeshRenderer.material.color;
+        _objectCantSetableColor = Color.red;
+        _objectCantSetableColor.a = 0.5f;
+        _objectMeshRenderer.material.color = _objectCantSetableColor;
+        BuildManager.Instance.buildMenu.SetActive(false);
+        CharacterManager.Instance.Player.controller.canLook = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
