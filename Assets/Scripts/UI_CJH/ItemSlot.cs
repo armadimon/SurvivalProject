@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu]
-public class ItemSlot : ScriptableObject
+public class ItemSlot : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
