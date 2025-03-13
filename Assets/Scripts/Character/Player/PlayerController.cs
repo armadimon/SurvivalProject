@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            Debug.Log("a");
             // ?щ━湲??쒖옉: ?ㅽ깭誘몃굹瑜??뚮え?섍퀬 ?대룞 ?띾룄瑜??믪엫
             if (playerCondition.UseStamina(runStamina))
             {
