@@ -9,13 +9,13 @@ public class PlayerInteraction : MonoBehaviour
     public float checkRate = 0.05f;
     private float lastCheckTime;
     public float maxCheckDistance;
-    public LayerMask layerMask;     // 탐색할 레이어 설정
+    public LayerMask layerMask;     // ?癒?퉳????됱뵠????쇱젟
 
-    // 현재 감지된 상호작용 가능한 오브젝트
+    // ?袁⑹삺 揶쏅Ŋ????怨뱀깈?臾믪뒠 揶쎛?館釉???삵닏??븍뱜
     public GameObject curInteractGameObject;
-    private IInteractable curInteractable; // 감지된 오브젝트의 IInteractable 인터페이스
+    private IInteractable curInteractable; // 揶쏅Ŋ?????삵닏??븍뱜??IInteractable ?紐낃숲??륁뵠??
 
-    public TextMeshProUGUI promptText; // 상호작용 안내 문구 UI
+    public TextMeshProUGUI promptText; // ?怨뱀깈?臾믪뒠 ??덇땀 ?얜㈇??UI
     private Camera cam;
 
     // Start is called before the first frame update
@@ -31,13 +31,13 @@ public class PlayerInteraction : MonoBehaviour
         {
             lastCheckTime = Time.time;
 
-            // 화면 중앙에서 레이캐스트 쏴서 탐색하기
+            // ?遺얇늺 餓λ쵐釉?癒?퐣 ??됱뵠筌?Ŋ?????곴퐣 ?癒?퉳??띾┛
             Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
             {
-                // 상호작용 오브젝트를 감지했을 경우 업데이트
+                // ?怨뱀깈?臾믪뒠 ??삵닏??븍뱜??揶쏅Ŋ???됱뱽 野껋럩????낅쑓??꾨뱜
                 if (hit.collider.gameObject != curInteractGameObject)
                 {
                     curInteractGameObject = hit.collider.gameObject;
