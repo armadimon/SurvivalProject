@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3095304456512667492}
   - component: {fileID: 6864968157690845680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PT_Generic_Rock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3948844616931478065}
   - component: {fileID: 2706974447742861080}
   - component: {fileID: 6610314435708731184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PT_Generic_Rock_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 8050572295746889615}
   - component: {fileID: 8249580994259585891}
   - component: {fileID: 6931889230514807633}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Item_Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc474f697f0502468084be81b0943ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 31b865fd59f0607468b2cae88204866e, type: 2}
 --- !u!1 &9179780630675749971
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 7502038637967105512}
   - component: {fileID: 2158718149803064241}
   - component: {fileID: 4999089368204998546}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PT_Generic_Rock_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 7516209737208429714}
   - component: {fileID: 7444171268089773512}
   - component: {fileID: 5692178928149826738}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PT_Generic_Rock_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

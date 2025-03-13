@@ -10,8 +10,8 @@ public class BuildController : MonoBehaviour
     public bool buildMode = false;
     public bool SetMode = false;
     
-    public LayerMask placementLayer;  // ?꾩룄??洹쏆쾸? ?띠럾??繞③뇡????깅턄??
-    public float maxSlopeAngle = 45f; // 嶺뚣끉裕? ???깅뮔 ?リ옇??湲몃Ь?(??關留? ??
+    public LayerMask placementLayer;  // ?袁⑸즲??域뱀룇苡? ??좊읈??濚왿몾?????源낇꼧??
+    public float maxSlopeAngle = 45f; // 癲ル슔?됭짆? ???源낅츛 ??れ삀??疫뀀챶糾?(???쒙쭕? ??
     public BuildObject _buildObject;
     private MeshRenderer _objectMeshRenderer;
     private Color _objectOriginalColor;
@@ -101,7 +101,7 @@ public class BuildController : MonoBehaviour
             objectCollider.enabled = true;
             _buildObject = null;
             SetMode = false;
-            // ??怨뺣펺 ?熬곣뫖六삣슖??怨쀫닑???븐뼔堉?
+            // ???⑤베????ш끽維뽳쭛?ｌ뒙???⑥ル땻???釉먮폇??
             buildMode = false;
     }
     

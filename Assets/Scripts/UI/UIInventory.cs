@@ -154,7 +154,7 @@ public class UIInventory : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i] != null)
+            if (slots[i].item != null)
             {
                 slots[i].Set();
             }

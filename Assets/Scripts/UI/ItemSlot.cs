@@ -30,6 +30,8 @@ public class ItemSlot : MonoBehaviour
         outline = GetComponent<Outline>();
         shadow = GetComponent<Shadow>();
         button = GetComponent<Button>();
+        icon = transform.Find("Icon").GetComponent<Image>();
+        
 
     }
 
