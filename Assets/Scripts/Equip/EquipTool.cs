@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EquipTool : Equip
 {
-    public float attackRate;        // °ø°İ ½Ã°£
-    public float attackDistance;    // °ø°İ °Å¸®
-    public float useStamina;        // ½ºÅÂ¹Ì³Ê »ç¿ë·®
+    public float attackRate;        // ê³µê²© ì‹œê°„
+    public float attackDistance;    // ê³µê²© ê±°ë¦¬
+    public float useStamina;        // ìŠ¤íƒœë¯¸ë„ˆ ì‚¬ìš©ëŸ‰
 
-    private bool attacking = false;         // °ø°İ ÁßÀÎÁö È®ÀÎ
+    private bool attacking = false;         // ê³µê²© ì¤‘ì¸ì§€ í™•ì¸
 
     [Header("Resource Gathering")]
-    public bool doesGatherResource; // ÀÚ¿øÀ» Ã¤ÁıÇÏ´ÂÁö È®ÀÎ
+    public bool doesGatherResource; // ìì›ì„ ì±„ì§‘í•˜ëŠ”ì§€ í™•ì¸
 
     [Header("Combat")]
-    public bool doseDealDamage;     // µ¥¹ÌÁö¸¦ ÁÖ´ÂÁö È®ÀÎ
-    public float damage;            // µ¥¹ÌÁö
+    public bool doseDealDamage;     // ë°ë¯¸ì§€ë¥¼ ì£¼ëŠ”ì§€ í™•ì¸
+    public float damage;            // ë°ë¯¸ì§€
 
     private Animator animator;
     private Camera cam;
@@ -32,12 +32,12 @@ public class EquipTool : Equip
     {
         if (!attacking)
         {
-            if (CharacterManager.Instance.Player.condition.UseStamina(useStamina))
-            {
-                attacking = true;
-                animator.SetTrigger("Attack");      // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç ½ÇÇà
-                Invoke("OnCanAttack", attackRate);
-            }
+            //if (CharacterManager.Instance.Player.condition.UseStamina(useStamina))
+            //{
+            //    attacking = true;
+            //    animator.SetTrigger("Attack");      // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì‹¤í–‰
+            //    Invoke("OnCanAttack", attackRate);
+            //}
 
         }
     }
@@ -49,14 +49,14 @@ public class EquipTool : Equip
 
     public void OnHit()
     {
-        // °ø°İÀ» ÇßÀ» ¶§ ·¹ÀÌÄ³½ºÆ®¸¦ ÅëÇØ Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®¸¦ È®ÀÎ
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));    // È­¸é Áß¾ÓÀ» ±âÁØÀ¸·Î ·¹ÀÌ ¹ß»ç
+        // ê³µê²©ì„ í–ˆì„ ë•Œ ë ˆì´ìºìŠ¤íŠ¸ë¥¼ í†µí•´ ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ë¥¼ í™•ì¸
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));    // í™”ë©´ ì¤‘ì•™ì„ ê¸°ì¤€ìœ¼ë¡œ ë ˆì´ ë°œì‚¬
 
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, attackDistance))
         {
-            // µ¥¹ÌÁö¸¦ ÁÖ´Â °æ¿ì
+            // ë°ë¯¸ì§€ë¥¼ ì£¼ëŠ” ê²½ìš°
             if (doesGatherResource && hit.collider.TryGetComponent(out Resource resource))
             {
                 resource.Gather(hit.point, hit.normal);
@@ -65,7 +65,7 @@ public class EquipTool : Equip
             {
                 if (!doesGatherResource && hit.collider.TryGetComponent(out IDamageable damageable))
                 {
-                    damageable.TakeDamage(damage); // µ¥¹ÌÁö ÁÖ±â
+                    damageable.TakeDamage(damage); // ë°ë¯¸ì§€ ì£¼ê¸°
                 }
             }
         }
