@@ -968,6 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: []
+  dropPosition: {fileID: 0}
   slotPanel: {fileID: 0}
   inventoryWindow: {fileID: 0}
   itemDescription: {fileID: 0}

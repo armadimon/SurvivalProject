@@ -9,6 +9,8 @@ public class UIInventory : MonoBehaviour
 {
     public ItemSlot[] slots;
 
+    public Transform dropPosition;
+
     public Transform slotPanel;
     public GameObject inventoryWindow;
     public GameObject itemDescription;
@@ -29,13 +31,20 @@ public class UIInventory : MonoBehaviour
     private PlayerController controller;
     private PlayerCondition condition;
 
+    private void Awake()
+    {
+        InventotyManager.Instance.Inventory = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         controller = CharacterManager.Instance.Player.controller;
         condition = CharacterManager.Instance.Player.condition;
+        dropPosition = CharacterManager.Instance.Player.dropPosition;
 
         controller.Inventory += Toggle;
+        CharacterManager.Instance.Player.addItem += AddItem;
 
         SelectItemSetting();
 
@@ -116,12 +125,74 @@ public class UIInventory : MonoBehaviour
     {
         ItemData data = CharacterManager.Instance.Player.item;
 
+        if (data.canStack)
+        {
+            ItemSlot slot = GetItemStack(data);
+            if (slot != null)
+            {
+                slot.quantity++;
+                UpdateUI();
+                CharacterManager.Instance.Player.item = null;
+                return;
+            }
+        }
+
+        ItemSlot emptySlot = GetEmptySlot();
+
+        if (emptySlot != null)
+        {
+            emptySlot.item = data;
+            emptySlot.quantity = 1;
+            UpdateUI();
+            CharacterManager.Instance.Player.item = null;
+            return;
+        }
         
     }
 
     void UpdateUI()
     {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] != null)
+            {
+                slots[i].Set();
+            }
+            else
+            {
+                slots[i].Clear();
+            }
+        }
+    }
 
+    ItemSlot GetItemStack(ItemData data)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == data && slots[i].quantity < data.maxStackAmount)
+            {
+                return slots[i];
+            }
+        }
+        return null;
+    }
+
+    ItemSlot GetEmptySlot()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == null)
+            {
+                return slots[i];
+            }
+        }
+
+        return null;
+    }
+
+    void ThrowItem(ItemData data)
+    {
+        Instantiate(data.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
     }
 
 }

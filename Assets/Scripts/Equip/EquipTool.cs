@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EquipTool : Equip
 {
-    public float attackRate;        // 공격 시간
-    public float attackDistance;    // 공격 거리
-    public float useStamina;        // 스태미너 사용량
+    public float attackRate;        // 怨듦꺽 ?쒓컙
+    public float attackDistance;    // 怨듦꺽 嫄곕━
+    public float useStamina;        // ?ㅽ깭誘몃꼫 ?ъ슜??
 
-    private bool attacking = false;         // 공격 중인지 확인
+    private bool attacking = false;         // 怨듦꺽 以묒씤吏 ?뺤씤
 
     [Header("Resource Gathering")]
-    public bool doesGatherResource; // 자원을 채집하는지 확인
+    public bool doesGatherResource; // ?먯썝??梨꾩쭛?섎뒗吏 ?뺤씤
 
     [Header("Combat")]
-    public bool doseDealDamage;     // 데미지를 주는지 확인
-    public float damage;            // 데미지
+    public bool doseDealDamage;     // ?곕?吏瑜?二쇰뒗吏 ?뺤씤
+    public float damage;            // ?곕?吏
 
     private Animator animator;
     private Camera cam;
@@ -35,7 +35,7 @@ public class EquipTool : Equip
             //if (CharacterManager.Instance.Player.condition.UseStamina(useStamina))
             //{
             //    attacking = true;
-            //    animator.SetTrigger("Attack");      // 공격 애니메이션 실행
+            //    animator.SetTrigger("Attack");      // 怨듦꺽 ?좊땲硫붿씠???ㅽ뻾
             //    Invoke("OnCanAttack", attackRate);
             //}
 
@@ -49,14 +49,14 @@ public class EquipTool : Equip
 
     public void OnHit()
     {
-        // 공격을 했을 때 레이캐스트를 통해 충돌한 오브젝트를 확인
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));    // 화면 중앙을 기준으로 레이 발사
+        // 怨듦꺽???덉쓣 ???덉씠罹먯뒪?몃? ?듯빐 異⑸룎???ㅻ툕?앺듃瑜??뺤씤
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));    // ?붾㈃ 以묒븰??湲곗??쇰줈 ?덉씠 諛쒖궗
 
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, attackDistance))
         {
-            // 데미지를 주는 경우
+            // ?곕?吏瑜?二쇰뒗 寃쎌슦
             if (doesGatherResource && hit.collider.TryGetComponent(out Resource resource))
             {
                 resource.Gather(hit.point, hit.normal);
@@ -65,7 +65,7 @@ public class EquipTool : Equip
             {
                 if (!doesGatherResource && hit.collider.TryGetComponent(out IDamageable damageable))
                 {
-                    damageable.TakeDamage(damage); // 데미지 주기
+                    damageable.TakeDamage(damage); // ?곕?吏 二쇨린
                 }
             }
         }
