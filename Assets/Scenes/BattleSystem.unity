@@ -2890,18 +2890,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b9f8c3c3f749a44a0b174ed04b108e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  walkSpeed: 0
-  runSpeed: 0
+  health: 100
+  walkSpeed: 1
+  runSpeed: 4
   dropOnDeath: []
-  minWanderDistance: 0
-  maxWanderDistance: 0
-  minWanderWaitTime: 0
-  maxWanderWaitTime: 0
-  damage: 0
-  attackRate: 0
-  attackDistance: 0
-  detectDistance: 0
+  minWanderDistance: 5
+  maxWanderDistance: 10
+  minWanderWaitTime: 1
+  maxWanderWaitTime: 2
+  damage: 10
+  attackRate: 1.5
+  attackDistance: 2
+  detectDistance: 5
   fieldOfView: 180
 --- !u!4 &5564203188715655206
 Transform:

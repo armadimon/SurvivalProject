@@ -114,7 +114,7 @@ public class UIInventory : MonoBehaviour
 
     void AddItem()
     {
-        ItemData data = CharacterManager.Instance.Player.i
+        //ItemData data = CharacterManager.Instance.Player.i
     }
 
 }

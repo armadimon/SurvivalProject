@@ -36,8 +36,8 @@ public class AIEntity : MonoBehaviour
     public float attackDistance;     // 공격 거리
 
     private float playerDistance;    // 플레이어와의 거리
-    public float detectDistance;   // 플레이어 감지 거리
-    public float fieldOfView = 120f; // NPC의 시야각
+    public float detectDistance;     // 플레이어 감지 거리
+    public float fieldOfView;        // NPC의 시야각
 
     private Animator animator;                // 애니메이터
     private SkinnedMeshRenderer[] meshRenderers; // 캐릭터의 스킨 메쉬 렌더러 (피격 효과용)
@@ -76,7 +76,47 @@ public class AIEntity : MonoBehaviour
 
     private void AttackingUpdate()
     {
-        throw new System.NotImplementedException();
+        if (playerDistance < attackDistance && IsPlayerInFieldOfView())
+        {
+            agent.isStopped = true;
+
+            if (Time.time - lastAttackTime > attackRate)
+            {
+                lastAttackTime = Time.time;
+                CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
+                animator.speed = 0.5f;
+                animator.SetTrigger("Attack");
+            }
+        }
+        else
+        {
+            path = new NavMeshPath();
+
+            // Layer -> BuildObject 를 제외하고 경로 계산
+            agent.areaMask = NavMesh.GetAreaFromName("BuildObject");
+            agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
+
+
+            if (path.status == NavMeshPathStatus.PathPartial)
+            {
+                SetState(AIState.Wander);
+            }
+            else
+            {
+                // 플레이어가 감지 거리 내에 있다면 따라가기
+                agent.isStopped = false;
+                agent.SetDestination(CharacterManager.Instance.Player.transform.position);
+            }
+
+
+        }
+    }
+
+    private bool IsPlayerInFieldOfView()
+    {
+        Vector3 directionToPlayer = CharacterManager.Instance.Player.transform.position - transform.position;
+        float angle = Vector3.Angle(transform.position, directionToPlayer);
+        return angle < fieldOfView * 0.5f;
     }
 
     public void SetState(AIState _aIState)
@@ -144,12 +184,14 @@ public class AIEntity : MonoBehaviour
         do
         {
             // 현재 위치에서 랜덤한 방향으로 이동할 위치 설정
+            // Random.onUnitSphere를 사용하여 랜덤한 방향을 얻고, minWanderDistance와 maxWanderDistance 사이의 거리를 곱하여 위치를 설정
             NavMesh.SamplePosition(transform.position + (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)),
-                out hit, maxWanderDistance, NavMesh.AllAreas);
+                out hit, maxWanderDistance, NavMesh.AllAreas);  // NavMesh.SamplePosition을 사용하여 NavMesh 상의 유효한 위치를 찾음
             i++;
         }
+        // 찾은 위치가 플레이어 감지 거리 내에 있지 않도록 보정, 최대 30번 시도
         while (Vector3.Distance(transform.position, hit.position) < detectDistance && i < 30);
 
-        return hit.position;
+        return hit.position; // 최종적으로 찾은 위치 반환
     }
 }
