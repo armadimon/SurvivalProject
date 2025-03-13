@@ -165,17 +165,19 @@ public class NPC : MonoBehaviour, IDamageable
     // 공격 관련 업데이트
     void AttackingUpdate()
     {
+        // 플레이어가 공격 거리 내에 있고 시야 내에 있는지 확인
         if (playerDistance < attackDistance && IsPlayerInFieldOfView())
         {
-            agent.isStopped = true;
+            agent.isStopped = true; // 공격 시 이동 정지
 
             // 공격 가능 시간인지 체크
             if (Time.time - lastAttackTime > attackRate)
             {
-                lastAttackTime = Time.time;
+                lastAttackTime = Time.time; // 마지막 공격 시간 갱신
+                // 플레이어에게 데미지 주기
                 CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
-                animator.speed = 1f;
-                animator.SetTrigger("Attack");
+                animator.speed = 0.5f; // 애니메이션 속도 설정
+                animator.SetTrigger("Attack"); // 공격 애니메이션 실행
             }
         }
         else
