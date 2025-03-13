@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public float playerHeight;
 
-    public float runSpeedMultiplier;    // ´Þ¸®±â ½Ã ÀÌµ¿ ¼Óµµ ¹è¼ö
-    public float runStamina;            // ¼Ò¸ðµÇ´Â ´Þ¸®±â ½ºÅ×¹Ì³ª
-    private float originMoveSpeed;      // ÃÊ±â ÀÌµ¿ ¼Óµµ (º¹±¸¿ë)
+    public float runSpeedMultiplier;    // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½
+    public float runStamina;            // ï¿½Ò¸ï¿½Ç´ï¿½ ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×¹Ì³ï¿½
+    private float originMoveSpeed;      // ï¿½Ê±ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -30,13 +30,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private BuildController _buildController;
 
-    // ¹° ¸¶½Ã±â
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½Ã±ï¿½
     public bool isInHydrateLocation = false;
     public bool isDrinking = false;
 
 
-    public Action Inventory;            // ÀÎº¥Åä¸® ¿­±â ÀÌº¥Æ®
-    private PlayerCondition playerCondition; // PlayerCondition ÄÄÆ÷³ÍÆ® (½ºÅÂ¹Ì³ª µî »óÅÂ °ü¸®)
+    public Action Inventory;            // ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
+    private PlayerCondition playerCondition; // PlayerCondition ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½ï¿½ï¿½Â¹Ì³ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
 
     private void Awake()
@@ -64,12 +64,12 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Ä«¸Þ¶ó È¸Àü Ã³¸®¸¦ ¼öÇà (¸¶¿ì½º ÀÔ·Â ¹Ý¿µ)
+        // Ä«ï¿½Þ¶ï¿½ È¸ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ì½º ï¿½Ô·ï¿½ ï¿½Ý¿ï¿½)
         if (canLook)
         {
             CameraLook();
         }
-        // µð¹ö±× ¿ëµµ·Î ÇÃ·¹ÀÌ¾î ¾Æ·¡¿¡ Ray¸¦ ±×¸²
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ëµµï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ Rayï¿½ï¿½ ï¿½×¸ï¿½
         //Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down * 1.5f, Color.red);
     }
 
@@ -103,12 +103,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // ´Þ¸®±â ÀÔ·Â Ã³¸® (½ºÅÂ¹Ì³ª ¼Ò¸ð ¹× ÀÌµ¿ ¼Óµµ Áõ°¡)
+    // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ Ã³ï¿½ï¿½ (ï¿½ï¿½ï¿½Â¹Ì³ï¿½ ï¿½Ò¸ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½)
     public void OnRun(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            // ´Þ¸®±â ½ÃÀÛ: ½ºÅÂ¹Ì³ª¸¦ ¼Ò¸ðÇÏ°í ÀÌµ¿ ¼Óµµ¸¦ ³ôÀÓ
+            // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½Â¹Ì³ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½Ï°ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (playerCondition.UseStamina(runStamina))
             {
                 moveSpeed *= runSpeedMultiplier;
@@ -117,19 +117,19 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            // ´Þ¸®±â ÁßÁö ½Ã ÃÊ±â ÀÌµ¿ ¼Óµµ·Î º¹±¸
+            // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             moveSpeed = originMoveSpeed;
         }
     }
 
-    // ´Þ¸®±â ½Ã Áö¼ÓÀûÀ¸·Î ½ºÅÂ¹Ì³ª ¼Ò¸ðÇÏ´Â ÄÚ·çÆ¾
+    // ï¿½Þ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¹Ì³ï¿½ ï¿½Ò¸ï¿½ï¿½Ï´ï¿½ ï¿½Ú·ï¿½Æ¾
     private IEnumerator RunStaminaDrain()
     {
         while (moveSpeed > originMoveSpeed)
         {
             if (!playerCondition.UseStamina(runStamina * Time.deltaTime))
             {
-                // ½ºÅÂ¹Ì³ª ºÎÁ· ½Ã ÀÌµ¿ ¼Óµµ¸¦ ÃÊ±âÈ­
+                // ï¿½ï¿½ï¿½Â¹Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
                 moveSpeed = originMoveSpeed;
                 break;
             }
@@ -169,8 +169,8 @@ public class PlayerController : MonoBehaviour
         };
         for (int i = 0; i < rays.Length; ++i)
         {
-            Debug.DrawRay(rays[i].origin, rays[i].direction * 0.5f, Color.red);
-            if (Physics.Raycast(rays[i], playerHeight * 0.5f + 0.2f, groundLayerMask))
+            Debug.DrawRay(rays[i].origin, rays[i].direction * playerHeight, Color.red);
+            if (Physics.Raycast(rays[i], playerHeight + 0.2f, groundLayerMask))
             {
                 return true;
             }
@@ -189,13 +189,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ÀÎº¥Åä¸® È£Ãâ ÀÔ·Â Ã³¸® (ÀÎº¥Åä¸® UI Ç¥½Ã)
+    // ï¿½Îºï¿½ï¿½ä¸® È£ï¿½ï¿½ ï¿½Ô·ï¿½ Ã³ï¿½ï¿½ (ï¿½Îºï¿½ï¿½ä¸® UI Ç¥ï¿½ï¿½)
     public void OnInventory(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
             Inventory?.Invoke();
-            ToggleCursur(); // ÀÎº¥Åä¸® ¿ÀÇÂ ½Ã Ä¿¼­¸¦ Ç¥½Ã
+            ToggleCursur(); // ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         }
     }
 
