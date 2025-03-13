@@ -33,14 +33,20 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     void Update()
     {
-        hunger.Subtract(hunger.passiveValue * Time.deltaTime);
-        thirst.Subtract(thirst.passiveValue * Time.deltaTime);
-        stamina.Add(stamina.passiveValue * Time.deltaTime);
+        // hunger 70퍼 이상 : passiveValue의 절반만큼, 70 ~ 경고량 : passiveValue만큼, 경고량 이하 : passiveValue의 1.5배만큼 감소
+        HungerWeightSubtract();
 
+        // thirst 70퍼 이상 : passiveValue의 절반만큼, 70 ~ 경고량 : passiveValue만큼, 경고량 이하 : passiveValue의 1.5배만큼 감소
+        ThirstWeightSubtract();
+
+        // hunger, thirst 경고량 이상일 때만 stamina 회복, 둘 중 하나라도 경고량 이하일 경우 회복 정지
+        HealthyStaminaAdd();
+
+        // hunger, thirst 경고량 이하로 내려갔을 때 인디케이터 깜빡임
         ThirstFlash();
-        HurtFromThirstFlash();
+        HurtFromThirstFlash(); // thirst는 위험 수준으로 떨어지면 체력도 같이 감소, Indicator에 체력 감소 깜빡임
         HungerFlash();
-        ThirstHungerFlash();
+        ThirstHungerFlash(); // thirst와 hunger 동시에 경고량 이하일 때 Indicator에 함께 표시
 
         if (health.curValue == 0f)
         {
@@ -97,6 +103,29 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         return true;
     }
 
+    // hunger 70퍼 이상 : passiveValue의 절반만큼, 70 ~ 경고량 : passiveValue만큼, 경고량 이하 : passiveValue의 1.5배만큼 감소
+    void HungerWeightSubtract()
+    {
+        if (hunger.curValue / hunger.maxValue >= 0.7f)
+            hunger.Subtract(hunger.passiveValue * 0.5f * Time.deltaTime);
+        else if (hunger.curValue / hunger.maxValue < 0.7f && hunger.curValue / hunger.maxValue > hungerWarningValue)
+            hunger.Subtract(hunger.passiveValue * Time.deltaTime);
+        else
+            hunger.Subtract(hunger.passiveValue * 1.5f * Time.deltaTime);
+    }
+
+    // thirst 70퍼 이상 : passiveValue의 절반만큼, 70 ~ 경고량 : passiveValue만큼, 경고량 이하 : passiveValue의 1.5배만큼 감소
+    void ThirstWeightSubtract()
+    {
+        if (thirst.curValue / thirst.maxValue >= 0.7f)
+            thirst.Subtract(thirst.passiveValue * 0.5f * Time.deltaTime);
+        else if (thirst.curValue / thirst.maxValue < 0.7f && thirst.curValue / thirst.maxValue > thirstWarningValue)
+            thirst.Subtract(thirst.passiveValue * Time.deltaTime);
+        else
+            thirst.Subtract(thirst.passiveValue * 1.5f * Time.deltaTime);
+    }
+
+    // thirst 경고량 이하 thirst 인디케이터 깜빡임
     void ThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue)
@@ -109,6 +138,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
+    // thirst 위험 수준 체력 감소 및 health 인디케이터 깜빡임
     void HurtFromThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= hurtFromThirstWarningValue)
@@ -122,6 +152,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
+    // hunger 경고량 이하 thirst 인디케이터 깜빡임
     void HungerFlash()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -134,6 +165,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
+    // thirst, hunger 동시에 경고량 이하 thirst와 hunger 인디케이터 번갈아가면서 깜빡임
     void ThirstHungerFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue && hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -144,5 +176,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         {
             indicatorAnimator.SetBool("OnThirstHunger", false);
         }
+    }
+
+    // hunger, thirst 경고량 이상일 때만 stamina 회복, 둘 중 하나라도 경고량 이하일 경우 회복 정지
+    void HealthyStaminaAdd()
+    {
+        if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)
+        stamina.Add(0);
+        else stamina.Add(stamina.passiveValue * Time.deltaTime);
     }
 }

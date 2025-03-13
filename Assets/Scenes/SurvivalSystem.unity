@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80%
+  m_text: 30%
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
   m_sharedMaterial: {fileID: -798222325134822351, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
@@ -4484,7 +4484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curValue: 0
-  startValue: 80
+  startValue: 30
   maxValue: 100
   passiveValue: 1
   uiBar: {fileID: 1903412977}
@@ -4648,7 +4648,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.75
+  m_FillAmount: 0.3
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
