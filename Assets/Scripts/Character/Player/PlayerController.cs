@@ -70,8 +70,8 @@ public class PlayerController : MonoBehaviour
         {
             CameraLook();
         }
-        // 디버그 용도로 플레이어 아래에 Ray를 그림
-        //Debug.DrawRay(transform.position + (transform.forward * 0.2f), Vector3.down * 1.5f, Color.red);
+        // ����� �뵵�� �÷��̾� �Ʒ��� Ray�� �׸�
+        //Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down * 1.5f, Color.red);
     }
 
     void Move()
@@ -171,8 +171,8 @@ public class PlayerController : MonoBehaviour
         };
         for (int i = 0; i < rays.Length; ++i)
         {
-            Debug.DrawRay(rays[i].origin, rays[i].direction * 1f, Color.red);
-            if (Physics.Raycast(rays[i], playerHeight * 1f + 0.2f, groundLayerMask))
+            Debug.DrawRay(rays[i].origin, rays[i].direction * playerHeight, Color.red);
+            if (Physics.Raycast(rays[i], playerHeight + 0.2f, groundLayerMask))
             {
                 return true;
             }

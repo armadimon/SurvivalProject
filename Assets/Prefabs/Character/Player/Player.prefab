@@ -319,7 +319,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8142424415016275819
@@ -545,13 +545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40107fa4fdfddc043882f09fe2a7f2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 5
   jumpPower: 5
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
-  playerHeight: 1
+  playerHeight: 0.8
   runSpeedMultiplier: 1.5
   runStamina: 1
   cameraContainer: {fileID: 2470799212687942485}
@@ -591,7 +591,7 @@ MonoBehaviour:
   SetMode: 0
   placementLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 576
   maxSlopeAngle: 45
   _buildObject: {fileID: 0}
   rayCastDistance: 5
