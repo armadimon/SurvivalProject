@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class HydrateLocation : MonoBehaviour
 {
     public int amount;
     public float addRate;
+    public TextMeshProUGUI interactionText;
 
     List<IHydrate> things = new List<IHydrate>();
 
@@ -25,6 +27,7 @@ public class HydrateLocation : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        interactionText.text = "Press [H]\nto drink water.";
         if (other.TryGetComponent(out IHydrate hydrate))
         {
             CharacterManager.Instance.Player.controller.isInHydrateLocation = true;
@@ -39,6 +42,7 @@ public class HydrateLocation : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        interactionText.text = string.Empty;
         if (other.TryGetComponent(out IHydrate hydrate))
         {
             CharacterManager.Instance.Player.controller.isInHydrateLocation = false;
