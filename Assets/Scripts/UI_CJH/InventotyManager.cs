@@ -7,7 +7,7 @@ public class InventotyManager : MonoBehaviour
     public static InventotyManager Instance { get; private set; }
 
     public List<ItemSlot> slots = new List<ItemSlot>();
-    public int maxSlots = 21;
+    public int maxSlots = 20;
 
     private void Awake()
     {
