@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7137462535556431291
+--- !u!1 &878324419934829219
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4404873358798751967}
-  - component: {fileID: 6822480396709985677}
-  - component: {fileID: 2587108461120469795}
+  - component: {fileID: 1389357802236939787}
+  - component: {fileID: 5982013701462644773}
+  - component: {fileID: 6427895100207531506}
   m_Layer: 0
-  m_Name: Sword_01
+  m_Name: Ax_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4404873358798751967
+--- !u!4 &1389357802236939787
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137462535556431291}
+  m_GameObject: {fileID: 878324419934829219}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19695164, y: -0.40486348, z: 0.08975606, w: 0.88839155}
-  m_LocalPosition: {x: 0.4, y: -0.4, z: 0.6}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: 0, y: 0.7193398, z: 0, w: 0.6946584}
+  m_LocalPosition: {x: 0.4, y: -0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1895600785112041776}
-  m_LocalEulerAnglesHint: {x: 25, y: -49, z: 0}
---- !u!33 &6822480396709985677
+  m_Father: {fileID: 5564515989943181762}
+  m_LocalEulerAnglesHint: {x: 0, y: 92, z: 0}
+--- !u!33 &5982013701462644773
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137462535556431291}
-  m_Mesh: {fileID: -2490357807671972370, guid: d00dec123be83b445adbe6c8f3f02f41, type: 3}
---- !u!23 &2587108461120469795
+  m_GameObject: {fileID: 878324419934829219}
+  m_Mesh: {fileID: -2487380500608498712, guid: 6675c6557a13efc4aacb9db75446046f, type: 3}
+--- !u!23 &6427895100207531506
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137462535556431291}
+  m_GameObject: {fileID: 878324419934829219}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8460121209151513276
+--- !u!1 &8966926405315727037
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,61 +91,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1895600785112041776}
-  - component: {fileID: 6830646136654061983}
-  - component: {fileID: 9205072875166477388}
+  - component: {fileID: 5564515989943181762}
+  - component: {fileID: 8385980277522205558}
+  - component: {fileID: 3141243169375912389}
   m_Layer: 12
-  m_Name: Eqip_Sword
+  m_Name: Eqip_Ax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1895600785112041776
+  m_IsActive: 1
+--- !u!4 &5564515989943181762
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460121209151513276}
+  m_GameObject: {fileID: 8966926405315727037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4404873358798751967}
+  - {fileID: 1389357802236939787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6830646136654061983
+--- !u!114 &8385980277522205558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460121209151513276}
+  m_GameObject: {fileID: 8966926405315727037}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f17bb6e45c5924049a4cd738df7cfed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 0.5
+  attackRate: 1
   attackDistance: 1
   useStamina: 0
   doesGatherResource: 0
   doesDealDamage: 0
-  damage: 10
---- !u!95 &9205072875166477388
+  damage: 8
+--- !u!95 &3141243169375912389
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460121209151513276}
+  m_GameObject: {fileID: 8966926405315727037}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 568326dbeb27b284ea67fb8f921642f2, type: 2}
+  m_Controller: {fileID: 9100000, guid: c075c372c85d93746859485ce28c798a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

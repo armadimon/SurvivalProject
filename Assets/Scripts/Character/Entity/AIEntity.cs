@@ -91,7 +91,10 @@ public class NPC : MonoBehaviour, IDamageable
                 break;
             case AIState.Wandering:
                 agent.speed = walkSpeed;
-                agent.isStopped = false; // 이동 시작
+                if (agent.isOnNavMesh) // NavMesh에 배치되었는지 확인
+                {
+                    agent.isStopped = false; // 이동 시작
+                }
                 break;
             case AIState.Attacking:
                 agent.speed = runSpeed;
@@ -106,6 +109,12 @@ public class NPC : MonoBehaviour, IDamageable
     // 플레이어 감지 및 배회 관련 업데이트
     void PassiveUpdate()
     {
+        // NavMeshAgent가 NavMesh에 배치되었는지 확인
+        if (!agent.isOnNavMesh)
+        {
+            return;
+        }
+
         // 현재 위치에서 경로를 미리 계산
         path = new NavMeshPath();
         agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
@@ -176,7 +185,7 @@ public class NPC : MonoBehaviour, IDamageable
                 lastAttackTime = Time.time; // 마지막 공격 시간 갱신
                 // 플레이어에게 데미지 주기
                 CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
-                animator.speed = 0.5f; // 애니메이션 속도 설정
+                animator.speed = 1f; // 애니메이션 속도 설정
                 animator.SetTrigger("Attack"); // 공격 애니메이션 실행
             }
         }

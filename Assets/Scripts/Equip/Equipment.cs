@@ -1,56 +1,56 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+ 
 public class Equipment : MonoBehaviour
 {
-    // ÇöÀç ÀåÂøµÈ Àåºñ °´Ã¼
+    // í˜„ì¬ ì¥ì°©ëœ ì¥ë¹„ ê°ì²´
     public Equip curEquip;
 
-    // Àåºñ°¡ ÀåÂøµÉ ºÎ¸ğ ¿ÀºêÁ§Æ® (¿¹: ¼Õ À§Ä¡)
+    // ì¥ë¹„ê°€ ì¥ì°©ë  ë¶€ëª¨ ì˜¤ë¸Œì íŠ¸ (ì˜ˆ: ì† ìœ„ì¹˜)
     public Transform equipParent;
 
-    // ÇÃ·¹ÀÌ¾î ÄÁÆ®·Ñ·¯ ¹× »óÅÂ °ü¸® °´Ã¼
+    // í”Œë ˆì´ì–´ ì»¨íŠ¸ë¡¤ëŸ¬ ë° ìƒíƒœ ê´€ë¦¬ ê°ì²´
     private PlayerController controller;
 
     void Start()
     {
-        // ÇÃ·¹ÀÌ¾î °ü·Ã ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        // í”Œë ˆì´ì–´ ê´€ë ¨ ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
         controller = GetComponent<PlayerController>();
     }
 
     /// <summary>
-    /// »õ·Î¿î Àåºñ¸¦ ÀåÂøÇÏ´Â ¸Ş¼­µå
-    /// ±âÁ¸ Àåºñ¸¦ ÇØÁ¦ÇÑ ÈÄ, »õ·Î¿î Àåºñ¸¦ »ı¼ºÇÏ¿© ÀåÂø
+    /// ìƒˆë¡œìš´ ì¥ë¹„ë¥¼ ì¥ì°©í•˜ëŠ” ë©”ì„œë“œ
+    /// ê¸°ì¡´ ì¥ë¹„ë¥¼ í•´ì œí•œ í›„, ìƒˆë¡œìš´ ì¥ë¹„ë¥¼ ìƒì„±í•˜ì—¬ ì¥ì°©
     /// </summary>
-    /// <param name="data">ÀåÂøÇÒ ¾ÆÀÌÅÛ µ¥ÀÌÅÍ</param>
+    /// <param name="data">ì¥ì°©í•  ì•„ì´í…œ ë°ì´í„°</param>
     public void EquipNew(ItemData data)
     {
-        UnEquip(); // ±âÁ¸ Àåºñ ÇØÁ¦
-        curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>(); // »õ·Î¿î Àåºñ »ı¼º ¹× ÀåÂø
+        UnEquip(); // ê¸°ì¡´ ì¥ë¹„ í•´ì œ
+        curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>(); // ìƒˆë¡œìš´ ì¥ë¹„ ìƒì„± ë° ì¥ì°©
     }
 
     /// <summary>
-    /// ÇöÀç Àåºñ¸¦ ÇØÁ¦ÇÏ´Â ¸Ş¼­µå
+    /// í˜„ì¬ ì¥ë¹„ë¥¼ í•´ì œí•˜ëŠ” ë©”ì„œë“œ
     /// </summary>
     public void UnEquip()
     {
         if (curEquip != null)
         {
-            Destroy(curEquip.gameObject); // ÇöÀç ÀåÂøµÈ Àåºñ ¿ÀºêÁ§Æ® »èÁ¦
+            Destroy(curEquip.gameObject); // í˜„ì¬ ì¥ì°©ëœ ì¥ë¹„ ì˜¤ë¸Œì íŠ¸ ì‚­ì œ
             curEquip = null;
         }
     }
 
     /// <summary>
-    /// °ø°İ ÀÔ·ÂÀ» Ã³¸®ÇÏ´Â ¸Ş¼­µå
+    /// ê³µê²© ì…ë ¥ì„ ì²˜ë¦¬í•˜ëŠ” ë©”ì„œë“œ
     /// </summary>
-    /// <param name="context">ÀÔ·Â ÄÁÅØ½ºÆ®</param>
+    /// <param name="context">ì…ë ¥ ì»¨í…ìŠ¤íŠ¸</param>
     public void OnAttackInput(InputAction.CallbackContext context)
     {
-        // °ø°İ ÀÔ·ÂÀÌ ¼öÇàµÇ¾úÀ¸¸ç, ÇöÀç ÀåÂøµÈ Àåºñ°¡ ÀÖ°í, ÇÃ·¹ÀÌ¾î°¡ ½ÃÁ¡À» Á¶ÀÛÇÒ ¼ö ÀÖ´Â »óÅÂ¶ó¸é
+        // ê³µê²© ì…ë ¥ì´ ìˆ˜í–‰ë˜ì—ˆìœ¼ë©°, í˜„ì¬ ì¥ì°©ëœ ì¥ë¹„ê°€ ìˆê³ , í”Œë ˆì´ì–´ê°€ ì‹œì ì„ ì¡°ì‘í•  ìˆ˜ ìˆëŠ” ìƒíƒœë¼ë©´
         if (context.phase == InputActionPhase.Performed && curEquip != null && controller.canLook)
         {
-            curEquip.OnAttackInput(); // ÀåºñÀÇ °ø°İ ¸Ş¼­µå È£Ãâ
+            curEquip.OnAttackInput(); // ì¥ë¹„ì˜ ê³µê²© ë©”ì„œë“œ í˜¸ì¶œ
         }
     }
 }
