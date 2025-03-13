@@ -4,8 +4,8 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public string GetInteractPrompt();  // UI???쒖떆???뺣낫
-    public void OnInteract();   // ?명꽣?숈뀡 ?몄텧
+    public string GetInteractPrompt();  // UI????뽯뻻???類ｋ궖
+    public void OnInteract();   // ?紐낃숲??덈??紐꾪뀱
 }
 
 public class ItemObject : MonoBehaviour, IInteractable
