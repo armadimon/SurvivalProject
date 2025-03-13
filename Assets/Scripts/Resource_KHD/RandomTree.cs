@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class RandomTree : MonoBehaviour
@@ -14,6 +15,7 @@ public class RandomTree : MonoBehaviour
         SpawnTrees();
     }
 
+    [ContextMenu("SpawnTree")] // 함수를 임의로 실행할 수 있게 해주는 기능
     void SpawnTrees()
     {
         for (int i = 0; i < treeCount; i++)
@@ -21,7 +23,7 @@ public class RandomTree : MonoBehaviour
             Vector3 position = GetRandomPosition();
             if (position != Vector3.zero)
             {
-                Instantiate(treePrefab, position, Quaternion.identity);
+                Instantiate(treePrefab, position, Quaternion.identity); 
             }
         }
     }
