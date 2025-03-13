@@ -10,8 +10,8 @@ public class BuildController : MonoBehaviour
     public bool buildMode = false;
     public bool SetMode = false;
     
-    public LayerMask placementLayer;  // 배치가 가능한 레이어
-    public float maxSlopeAngle = 45f; // 최대 허용 기울기 (단위: 도)
+    public LayerMask placementLayer;  // 獄쏄퀣?귛첎? 揶쎛?館釉???됱뵠??
+    public float maxSlopeAngle = 45f; // 筌ㅼ뮆? ??됱뒠 疫꿸퀣?길묾?(??μ맄: ??
     public BuildObject _buildObject;
     private MeshRenderer _objectMeshRenderer;
     private Color _objectOriginalColor;
@@ -101,7 +101,7 @@ public class BuildController : MonoBehaviour
             objectCollider.enabled = true;
             _buildObject = null;
             SetMode = false;
-            // 일단 임시로 꺼놓는다.
+            // ??곕뼊 ?袁⑸뻻嚥??곗눖??遺얜뼄.
             buildMode = false;
     }
     

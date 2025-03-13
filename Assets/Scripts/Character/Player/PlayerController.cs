@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public float playerHeight;
 
-    public float runSpeedMultiplier;    // 달리기 시 이동 속도 배수
-    public float runStamina;            // 소모되는 달리기 스테미나
-    private float originMoveSpeed;      // 초기 이동 속도 (복구용)
+    public float runSpeedMultiplier;    // ?щ━湲????대룞 ?띾룄 諛곗닔
+    public float runStamina;            // ?뚮え?섎뒗 ?щ━湲??ㅽ뀒誘몃굹
+    private float originMoveSpeed;      // 珥덇린 ?대룞 ?띾룄 (蹂듦뎄??
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -30,20 +30,20 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private BuildController _buildController;
 
-    // 물 마시기
+    // 臾?留덉떆湲?
     public bool isInHydrateLocation = false;
     public bool isDrinking = false;
 
 
-    public Action Inventory;            // 인벤토리 열기 이벤트
-    private PlayerCondition playerCondition; // PlayerCondition 컴포넌트 (스태미나 등 상태 관리)
+    public Action Inventory;            // ?몃깽?좊━ ?닿린 ?대깽??
+    private PlayerCondition playerCondition; // PlayerCondition 而댄룷?뚰듃 (?ㅽ깭誘몃굹 ???곹깭 愿由?
 
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         playerCondition = GetComponent<PlayerCondition>();
-        originMoveSpeed = moveSpeed;                // 초기 이동 속도 저장
+        originMoveSpeed = moveSpeed;                // 珥덇린 ?대룞 ?띾룄 ???
     }
 
     private void Start()
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // 카메라 회전 처리를 수행 (마우스 입력 반영)
+        // 移대찓???뚯쟾 泥섎━瑜??섑뻾 (留덉슦???낅젰 諛섏쁺)
         if (canLook)
         {
             CameraLook();
@@ -103,13 +103,13 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // 달리기 입력 처리 (스태미나 소모 및 이동 속도 증가)
+    // ?щ━湲??낅젰 泥섎━ (?ㅽ깭誘몃굹 ?뚮え 諛??대룞 ?띾룄 利앷?)
     public void OnRun(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
             Debug.Log("a");
-            // 달리기 시작: 스태미나를 소모하고 이동 속도를 높임
+            // ?щ━湲??쒖옉: ?ㅽ깭誘몃굹瑜??뚮え?섍퀬 ?대룞 ?띾룄瑜??믪엫
             if (playerCondition.UseStamina(runStamina))
             {
                 moveSpeed *= runSpeedMultiplier;
@@ -118,19 +118,19 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            // 달리기 중지 시 초기 이동 속도로 복구
+            // ?щ━湲?以묒? ??珥덇린 ?대룞 ?띾룄濡?蹂듦뎄
             moveSpeed = originMoveSpeed;
         }
     }
 
-    // 달리기 시 지속적으로 스태미나 소모하는 코루틴
+    // ?щ━湲???吏?띿쟻?쇰줈 ?ㅽ깭誘몃굹 ?뚮え?섎뒗 肄붾（??
     private IEnumerator RunStaminaDrain()
     {
         while (moveSpeed > originMoveSpeed)
         {
             if (!playerCondition.UseStamina(runStamina * Time.deltaTime))
             {
-                // 스태미나 부족 시 이동 속도를 초기화
+                // ?ㅽ깭誘몃굹 遺議????대룞 ?띾룄瑜?珥덇린??
                 moveSpeed = originMoveSpeed;
                 break;
             }
@@ -190,13 +190,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 인벤토리 호출 입력 처리 (인벤토리 UI 표시)
+    // ?몃깽?좊━ ?몄텧 ?낅젰 泥섎━ (?몃깽?좊━ UI ?쒖떆)
     public void OnInventory(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
             Inventory?.Invoke();
-            ToggleCursur(); // 인벤토리 오픈 시 커서를 표시
+            ToggleCursur(); // ?몃깽?좊━ ?ㅽ뵂 ??而ㅼ꽌瑜??쒖떆
         }
     }
 
