@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    public ItemData ItemData;
+    public ItemData item;
     public UIInventory Inventory;
 
     public GameObject ItemQuantityImage;

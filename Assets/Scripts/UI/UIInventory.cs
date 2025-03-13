@@ -112,4 +112,9 @@ public class UIInventory : MonoBehaviour
         return inventoryWindow.activeInHierarchy;
     }
 
+    void AddItem()
+    {
+        ItemData data = CharacterManager.Instance.Player.i
+    }
+
 }
