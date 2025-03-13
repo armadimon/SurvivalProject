@@ -12,9 +12,7 @@ public class BuildController : MonoBehaviour
     
     public LayerMask placementLayer;  // 배치가 가능한 레이어
     public float maxSlopeAngle = 45f; // 최대 허용 기울기 (단위: 도)
-
-    public BuildObject buildObject;
-    private BuildObject _buildObject;
+    public BuildObject _buildObject;
     private MeshRenderer _objectMeshRenderer;
     private Color _objectOriginalColor;
     private Collider objectCollider;
@@ -103,6 +101,8 @@ public class BuildController : MonoBehaviour
             objectCollider.enabled = true;
             _buildObject = null;
             SetMode = false;
+            // 일단 임시로 꺼놓는다.
+            buildMode = false;
     }
     
     public void OnBuildMode(InputAction.CallbackContext context)
@@ -119,6 +119,13 @@ public class BuildController : MonoBehaviour
         {
             Debug.Log("Build Mode Off");
             buildMode = false;
+            SetMode = false;
+            if (_buildObject != null)
+            {
+                Destroy(_buildObject.gameObject);
+                _buildObject = null;
+                _objectMeshRenderer = null;
+            }
             BuildManager.Instance.buildMenu.SetActive(false);
             CharacterManager.Instance.Player.controller.canLook = true;
             Cursor.lockState = CursorLockMode.Locked;
@@ -128,7 +135,6 @@ public class BuildController : MonoBehaviour
     public void SetBuildObject(BuildObject newBuildObject)
     {
         SetMode = true;
-        buildObject = newBuildObject;
         _buildObject = Instantiate(newBuildObject,
             transform.position + (transform.forward * 2f)
             , Quaternion.identity)

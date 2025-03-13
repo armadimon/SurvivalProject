@@ -16,7 +16,7 @@ public class BuildMenuItem : MonoBehaviour
     {   Debug.Log(buildObject);
         Debug.Log(icon);
         icon.sprite = buildObject.data.icon;
-        nameText.text = buildObject.data.name;
+        nameText.text = buildObject.data.displayName;
         DescriptionText.text = buildObject.data.description;
         // buildObject.data.OnClick = () => BuildManager.Instance.buildController.SetBuildObject(buildObject);
         //
