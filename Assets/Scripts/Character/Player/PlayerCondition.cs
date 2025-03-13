@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+ 
 public interface IDamageable
 {
     // 데미지를 받는 함수

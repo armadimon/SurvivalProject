@@ -995,9 +995,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 824508154460612054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4d00380023904e83d789d7ca160f1, type: 3}
+  m_Script: {fileID: 11500000, guid: c8471dbeb1bb4fa40b0051c14248cbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 7706609225203861159}
+  hunger: {fileID: 8153324104047207268}
+  thirst: {fileID: 0}
+  stamina: {fileID: 9031888344577929395}
 --- !u!224 &3113575521274837326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1712,9 +1716,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7706609225203861158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc18f31f497aa84b984df75e9d9f53b, type: 3}
+  m_Script: {fileID: 11500000, guid: 234d2027bf33d9244be5c51906d04f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curValue: 100
+  startValue: 100
+  maxValue: 100
+  passiveValue: 1
+  uiBar: {fileID: 2631371525328231536}
+  percentageText: {fileID: 1471572009775973807}
 --- !u!114 &8102808049376539576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,9 +1794,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4979848942150160070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc18f31f497aa84b984df75e9d9f53b, type: 3}
+  m_Script: {fileID: 11500000, guid: 234d2027bf33d9244be5c51906d04f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curValue: 100
+  startValue: 100
+  maxValue: 100
+  passiveValue: 1
+  uiBar: {fileID: 867824718950959684}
+  percentageText: {fileID: 1471572009775973807}
 --- !u!1 &8191871612835994062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,9 +1924,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5195906077047200194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc18f31f497aa84b984df75e9d9f53b, type: 3}
+  m_Script: {fileID: 11500000, guid: 234d2027bf33d9244be5c51906d04f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curValue: 100
+  startValue: 100
+  maxValue: 100
+  passiveValue: 1
+  uiBar: {fileID: 5662439081278591945}
+  percentageText: {fileID: 1471572009775973807}
 --- !u!1 &9126660386290556029
 GameObject:
   m_ObjectHideFlags: 0
