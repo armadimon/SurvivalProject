@@ -70,7 +70,6 @@ public class PlayerController : MonoBehaviour
         {
             CameraLook();
         }
-        // ����� �뵵�� �÷��̾� �Ʒ��� Ray�� �׸�
         //Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down * 1.5f, Color.red);
     }
 

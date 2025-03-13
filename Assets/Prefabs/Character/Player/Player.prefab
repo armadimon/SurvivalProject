@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2470799212687942485}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CameraContainter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,13 +43,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5326846619335310046}
   - component: {fileID: 8132793122001517128}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Equip Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5326846619335310046
 Transform:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 4555739867242564312}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74,7 +74,7 @@ Camera:
   m_GameObject: {fileID: 4555739867242564312}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -101,10 +101,10 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 6927208385692695739}
   - component: {fileID: 4047567564389470991}
   - component: {fileID: 5483158236285214273}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4305234730608855208}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DropPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,8 @@ GameObject:
   - component: {fileID: 7120608849839989870}
   - component: {fileID: 1053372680967664262}
   - component: {fileID: 4104430669939051222}
-  m_Layer: 6
+  - component: {fileID: 1717447813550586590}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -319,7 +320,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8142424415016275819
@@ -595,6 +596,25 @@ MonoBehaviour:
   maxSlopeAngle: 45
   _buildObject: {fileID: 0}
   rayCastDistance: 5
+--- !u!114 &1717447813550586590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830912696432523152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9e84bd63379234da00094140a85f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkRate: 0.05
+  maxCheckDistance: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  curInteractGameObject: {fileID: 0}
+  promptText: {fileID: 0}
 --- !u!1 &9043036139484792212
 GameObject:
   m_ObjectHideFlags: 0
