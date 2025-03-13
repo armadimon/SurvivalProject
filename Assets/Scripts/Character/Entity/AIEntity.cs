@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -107,8 +108,6 @@ public class AIEntity : MonoBehaviour
                 agent.isStopped = false;
                 agent.SetDestination(CharacterManager.Instance.Player.transform.position);
             }
-
-
         }
     }
 
@@ -193,5 +192,38 @@ public class AIEntity : MonoBehaviour
         while (Vector3.Distance(transform.position, hit.position) < detectDistance && i < 30);
 
         return hit.position; // 최종적으로 찾은 위치 반환
+    }
+
+
+    public void TakeDamage(float damage) {
+        health -= damage;
+        if (health <= 0) Die();
+
+        StartCoroutine(DamageFlash()); // 피격 효과
+
+    }
+
+    private void Die()
+    {
+        foreach (var item in dropOnDeath)
+        {
+            Instantiate(item.dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
+
+    IEnumerator DamageFlash()
+    {
+        // 모든 스킨 메쉬 렌더러에 대해 색상 변경
+        foreach (var renderer in meshRenderers)
+        {
+            renderer.material.color = new Color(1.0f, 0.6f, 0.6f);  // 빨갛게 변경
+        }
+        yield return new WaitForSeconds(0.1f);
+        // 원래 색상으로 변경
+        foreach (var renderer in meshRenderers)
+        {
+            renderer.material.color = Color.white;
+        }
     }
 }
