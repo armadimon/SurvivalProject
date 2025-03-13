@@ -19,25 +19,16 @@ public class BuildController : MonoBehaviour
     private Color _objectCantSetableColor;
     public float rayCastDistance = 5f;
 
-
+    public float snapRange = 2.0f;
+    public LayerMask snapLayer;
+    private Transform closestSnapPoint;
+    
+    // 테스트용
+    private RaycastHit closestHit;
+    
     private void Start()
     {
         buildMode = false;
-        // if (buildObject != null)
-        // {
-        //     SetMode = true;
-        //     _buildObject = Instantiate(buildObject,
-        //         transform.position + (transform.forward * 2f)
-        //         , Quaternion.identity)
-        //         ;
-        //     objectCollider = _buildObject.GetComponentInChildren<Collider>();
-        //     objectCollider.enabled = false;
-        //     _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
-        //     _objectOriginalColor = _objectMeshRenderer.material.color;
-        //     _objectCantSetableColor = Color.red;
-        //     _objectCantSetableColor.a = 0.5f;
-        //     _objectMeshRenderer.material.color = _objectCantSetableColor;
-        // }
     }
 
     void Update()
@@ -64,6 +55,7 @@ public class BuildController : MonoBehaviour
         Ray ray = new Ray(cameraContainer.position, cameraContainer.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, rayCastDistance, placementLayer))
         {
+            closestHit = hit;
             Debug.DrawRay(ray.origin, ray.direction * rayCastDistance, Color.red);
             Vector3 hitNormal = hit.normal;
             float angle = Vector3.Angle(Vector3.up, hitNormal);
@@ -71,7 +63,14 @@ public class BuildController : MonoBehaviour
             _buildObject.transform.position = hit.point;
             Vector3 forwardDirection = Vector3.Cross(hitNormal, Vector3.right);
             _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
-            if (angle <= maxSlopeAngle)
+            if (TrySnapToClosestPoint(hit))
+            {
+                Debug.Log("check");
+                _buildObject.transform.position = closestSnapPoint.position;
+                _buildObject.transform.rotation = closestSnapPoint.rotation;
+                isSetable =  true;
+            }
+            else if (angle <= maxSlopeAngle)
             {
                 _objectMeshRenderer.material.color = _objectOriginalColor;
                 isSetable =  true;
@@ -93,13 +92,56 @@ public class BuildController : MonoBehaviour
 
         return (isSetable);
     }
+    
 
+    
+    private bool TrySnapToClosestPoint(RaycastHit hit)
+    {
+        Collider[] colliders = Physics.OverlapSphere(hit.transform.position, snapRange, snapLayer);
+        
+        Transform bestSnapPoint = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Collider col in colliders)
+        {
+            float distance = Vector3.Distance(_buildObject.transform.position, col.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                bestSnapPoint = col.transform;
+            }
+        }
+
+        if (bestSnapPoint != null)
+        {
+            _buildObject.transform.position = bestSnapPoint.position;
+            _buildObject.transform.rotation = bestSnapPoint.rotation;
+            closestSnapPoint = bestSnapPoint;
+            return true;
+        }
+        return false;
+    }
+    private void OnDrawGizmos()
+    {
+        // OverlapSphere의 위치와 반지름을 설정
+        Collider[] colliders = new Collider[0];
+        // OverlapSphere로 감지된 오브젝트 가져오기
+        if (_buildObject != null)
+        {
+            colliders = Physics.OverlapSphere(_buildObject.transform.position, snapRange, snapLayer);
+            Gizmos.color = colliders.Length > 0 ? Color.green : Color.red;
+            Gizmos.DrawWireSphere(_buildObject.transform.position, snapRange);
+        }
+    }
+    
     
     private void ObjectSet()
     {   
             // _buildObject.transform.SetParent(null);
+            _buildObject.snapPointGroup.gameObject.SetActive(true);
             objectCollider.enabled = true;
             _buildObject = null;
+            closestSnapPoint = null;
             SetMode = false;
             // 일단 임시로 꺼놓는다.
             buildMode = false;
@@ -125,6 +167,7 @@ public class BuildController : MonoBehaviour
                 Destroy(_buildObject.gameObject);
                 _buildObject = null;
                 _objectMeshRenderer = null;
+                closestSnapPoint = null;
             }
             BuildManager.Instance.buildMenu.SetActive(false);
             CharacterManager.Instance.Player.controller.canLook = true;
@@ -141,6 +184,7 @@ public class BuildController : MonoBehaviour
             ;
         objectCollider = _buildObject.GetComponentInChildren<Collider>();
         objectCollider.enabled = false;
+        _buildObject.snapPointGroup.gameObject.SetActive(false);
         _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
         _objectOriginalColor = _objectMeshRenderer.material.color;
         _objectCantSetableColor = Color.red;
