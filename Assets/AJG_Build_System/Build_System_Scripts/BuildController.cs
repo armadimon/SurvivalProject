@@ -10,6 +10,7 @@ public class BuildController : MonoBehaviour
     public bool buildMode = false;
     public bool SetMode = false;
     
+    public Camera snapPointCamera;
     public LayerMask placementLayer;  // 배치가 가능한 레이어
     public float maxSlopeAngle = 45f; // 최대 허용 기울기 (단위: 도)
     public BuildObject _buildObject;
@@ -24,7 +25,6 @@ public class BuildController : MonoBehaviour
     private Transform closestSnapPoint;
     
     // 테스트용
-    private RaycastHit closestHit;
     
     private void Start()
     {
@@ -55,7 +55,6 @@ public class BuildController : MonoBehaviour
         Ray ray = new Ray(cameraContainer.position, cameraContainer.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, rayCastDistance, placementLayer))
         {
-            closestHit = hit;
             Debug.DrawRay(ray.origin, ray.direction * rayCastDistance, Color.red);
             Vector3 hitNormal = hit.normal;
             float angle = Vector3.Angle(Vector3.up, hitNormal);
@@ -65,7 +64,6 @@ public class BuildController : MonoBehaviour
             _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
             if (TrySnapToClosestPoint(hit))
             {
-                Debug.Log("check");
                 _buildObject.transform.position = closestSnapPoint.position;
                 _buildObject.transform.rotation = closestSnapPoint.rotation;
                 isSetable =  true;
@@ -86,6 +84,7 @@ public class BuildController : MonoBehaviour
         }
         else
         {
+            Transform _cameraContainer = CharacterManager.Instance.Player.controller.cameraContainer;
             _buildObject.transform.position = cameraContainer.position + cameraContainer.forward * rayCastDistance;
             _objectMeshRenderer.material.color = _objectCantSetableColor;
         }
@@ -93,7 +92,32 @@ public class BuildController : MonoBehaviour
         return (isSetable);
     }
     
+    private bool TrySnapToClosestPoint(Transform cameraContainer)
+    {
+        Collider[] colliders = Physics.OverlapSphere(cameraContainer.position + cameraContainer.forward * rayCastDistance, snapRange, snapLayer);
+        
+        Transform bestSnapPoint = null;
+        float closestDistance = Mathf.Infinity;
 
+        foreach (Collider col in colliders)
+        {
+            float distance = Vector3.Distance(_buildObject.transform.position, col.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                bestSnapPoint = col.transform;
+            }
+        }
+
+        if (bestSnapPoint != null)
+        {
+            _buildObject.transform.position = bestSnapPoint.position;
+            _buildObject.transform.rotation = bestSnapPoint.rotation;
+            closestSnapPoint = bestSnapPoint;
+            return true;
+        }
+        return false;
+    }
     
     private bool TrySnapToClosestPoint(RaycastHit hit)
     {
@@ -123,9 +147,7 @@ public class BuildController : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        // OverlapSphere의 위치와 반지름을 설정
         Collider[] colliders = new Collider[0];
-        // OverlapSphere로 감지된 오브젝트 가져오기
         if (_buildObject != null)
         {
             colliders = Physics.OverlapSphere(_buildObject.transform.position, snapRange, snapLayer);
@@ -151,7 +173,10 @@ public class BuildController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && buildMode == false)
         {
+            int snapPointLayer = LayerMask.NameToLayer("SnapPoint");
+            snapPointCamera.cullingMask |= (1 << snapPointLayer); 
             Debug.Log("Build Mode On");
+            
             buildMode = true;
             BuildManager.Instance.buildMenu.SetActive(true);
             CharacterManager.Instance.Player.controller.canLook = false;
@@ -160,6 +185,8 @@ public class BuildController : MonoBehaviour
         else if (context.phase == InputActionPhase.Started && buildMode == true)
         {
             Debug.Log("Build Mode Off");
+            int snapPointLayer = LayerMask.NameToLayer("SnapPoint");
+            snapPointCamera.cullingMask &= ~(1 << snapPointLayer); 
             buildMode = false;
             SetMode = false;
             if (_buildObject != null)

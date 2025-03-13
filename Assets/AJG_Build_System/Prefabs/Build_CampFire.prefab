@@ -4950,6 +4950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb5dc6558bf597469739b486aae99b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapPointGroup: {fileID: 6213235278614565869}
+  snapPoints: []
   data: {fileID: 11400000, guid: eb78f1694dfe992498c957221dc0205d, type: 2}
 --- !u!1 &7865466131360812525
 GameObject:
