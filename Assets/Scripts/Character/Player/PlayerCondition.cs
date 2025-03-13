@@ -45,6 +45,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         if (health.curValue == 0f)
         {
             Die();
+            indicatorImage.gameObject.SetActive(false);
         }
     }
 
