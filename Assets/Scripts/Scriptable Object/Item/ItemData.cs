@@ -1,10 +1,10 @@
 using UnityEngine;
 public enum ItemType
 {
-    Resouce,        // 자원
-    Equipable,      // 장비
-    Consumable,     // 소비
-    interactable,   // 상호작용
+    Resouce,        // ?먯썝
+    Equipable,      // ?λ퉬
+    Consumable,     // ?뚮퉬
+    interactable,   // ?곹샇?묒슜
 }
 
 public enum ConsumableType
@@ -25,8 +25,8 @@ public class ItemDataConsumable
 public class ItemData : ScriptableObject
 {
     [Header("Item Info")]
-    public string disPlayName;  // 보여지는 이름
-    public string description;  // 설명
+    public string disPlayName;  // 표시될 아이템 이름
+    public string description;  // 아이템 설명
     public ItemType type;
     public Sprite icon;
     public GameObject dropPrefab;
