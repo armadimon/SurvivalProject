@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d647108f1e7b17f45acbfbf206352f97, type: 3}
-  m_Name: Item_Hammer
+  m_Name: Item_Sword
   m_EditorClassIdentifier: 
-  disPlayName: "\uD574\uBA38"
-  description: "\uAC15\uB825\uD55C 1\uBC29\uC744 \uC790\uB791\uD569\uB2C8\uB2E4."
+  disPlayName: "\uCCA0\uC81C \uAC80"
+  description: "\uC5B4\uB5A4 \uAE30\uC0AC\uAC00 \uC0AC\uC6A9\uD55C \uAC80"
   type: 1
-  icon: {fileID: 21300000, guid: 0cd459266c5a4cd468bc45c7e5f52220, type: 3}
-  dropPrefab: {fileID: 2422270463421913105, guid: 47d860f68c76c954ca773b985f6c99ef, type: 3}
+  icon: {fileID: 21300000, guid: 8907048b24f10cd4db253fa488cd01b3, type: 3}
+  dropPrefab: {fileID: 2810708176730669622, guid: 7877ef24c211782478ac77b95fc2321c, type: 3}
   canStack: 0
   maxStackAmount: 0
   consumables: []
-  equipPrefab: {fileID: 0}
+  equipPrefab: {fileID: 8460121209151513276, guid: 2670faaee1ade6346b5c08dab6171da7, type: 3}

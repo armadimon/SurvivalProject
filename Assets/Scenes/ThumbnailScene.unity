@@ -651,16 +651,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7511301844813984026, guid: a3d2171be400601428d4a53326c6a7e8, type: 3}
       propertyPath: grade
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7511301844813984026, guid: a3d2171be400601428d4a53326c6a7e8, type: 3}
       propertyPath: obj.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7511301844813984026, guid: a3d2171be400601428d4a53326c6a7e8, type: 3}
       propertyPath: obj.Array.data[0]
       value: 
-      objectReference: {fileID: 7232242059936712985, guid: c183f7932b1e1254eb480aa6321f4a91, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7511301844813984026, guid: a3d2171be400601428d4a53326c6a7e8, type: 3}
       propertyPath: obj.Array.data[1]
       value: 
