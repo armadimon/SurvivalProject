@@ -22,7 +22,8 @@ public class Condition : MonoBehaviour
     void Update()
     {
         uiBar.fillAmount = GetPercentage();
-        percentageText.text = $"{(int)(GetPercentage() * 100)}%";
+        int curPercentage = Mathf.RoundToInt((GetPercentage() * 100f)); 
+        percentageText.text = $"{curPercentage}%";
     }
 
     float GetPercentage()

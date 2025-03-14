@@ -153,7 +153,7 @@ public class UIInventory : MonoBehaviour
             itemDescription.SetActive(false);
             itemUseImage.SetActive(false);
             isUseItemWindow = itemDescription.activeSelf;
-            UsuallytemUseImage();
+            UsuallyItemUseImage();
         }
         else
         {
@@ -308,9 +308,16 @@ public class UIInventory : MonoBehaviour
     {
 
         if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
+        {
             itemDescription.SetActive(false);
+            selectItemStatName.text = string.Empty;
+            selectItemStatValue.text = string.Empty;
+
+        }
     }
 
+
+    // RectangleContainsScreenPoint ?????rect?롪퍔??????고뱺 嶺뚮씭?????熬곣뫚????筌먦끉逾??
 
     public bool IsMouseOverUI(GameObject gObject)
     {
@@ -336,9 +343,8 @@ public class UIInventory : MonoBehaviour
 
     public void OnExitButton()
     {
-        inventoryWindow.SetActive(false);
-        itemDescription.SetActive(false);
-        itemUseImage.SetActive(false);
+        Toggle();
+        CharacterManager.Instance.Player.controller.ToggleCursur();
     }
 
     public void OnUseButton()
@@ -355,11 +361,15 @@ public class UIInventory : MonoBehaviour
                     case ConsumableType.Hunger:
                         condition.Eat(selectItem.item.consumables[i].value);
                         break;
+                    case ConsumableType.Thirst:
+                        condition.Hydrate(selectItem.item.consumables[i].value);
+                        break;
                     case ConsumableType.Stamina:
                         condition.HealStamina(selectItem.item.consumables[i].value);
                         break;
                 }
             }
+            RemoveSelectItem();
         }
         itemUseImage.SetActive(false);
     }
@@ -483,25 +493,30 @@ public class UIInventory : MonoBehaviour
 
         if (!useButton.activeSelf && !equipButton.activeSelf && !unEquipButton.activeSelf)
         {
-            HalfItemUseImage();
+            HalfItemImage(itemUseRect);
         }
         else
         {
-            UsuallytemUseImage();
+            UsuallyItemUseImage();
         }
 
     }
 
-    public void HalfItemUseImage()
+    public void HalfItemImage(RectTransform rect)
     {
         dropButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 23, 0);
-        itemUseRect.sizeDelta = new Vector2(usuallyitemUseRect.x, usuallyitemUseRect.y / 2);
+        rect.sizeDelta = new Vector2(usuallyitemUseRect.x, usuallyitemUseRect.y / 2);
     }
 
-    public void UsuallytemUseImage()
+    public void UsuallyItemUseImage()
     {
         dropButton.GetComponent<RectTransform>().anchoredPosition = dropButtonPosition;
         itemUseRect.sizeDelta = usuallyitemUseRect;
+    }
+
+    public void UsaullyItemUnEquipImage()
+    {
+
     }
 
 

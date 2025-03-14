@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void ToggleCursur()
+    public void ToggleCursur()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
