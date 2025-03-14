@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -105,6 +106,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnItemUseImage()
     {
+        if (item == null) return;
         Vector3 mousePos = Input.mousePosition;
         RectTransform rectDescrition = Inventory.itemUseImage.GetComponent<RectTransform>();
 
