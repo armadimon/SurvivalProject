@@ -49,7 +49,7 @@ public class AIEntity : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();            // 애니메이터 가져오기
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>(); // 캐릭터의 메쉬 렌더러 가져오기
 
-        Debug.Log(agent.agentTypeID);
+        //Debug.Log(agent.agentTypeID);
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
         {
@@ -130,7 +130,7 @@ public class AIEntity : MonoBehaviour, IDamageable
         // 현재 위치에서 경로를 미리 계산
         path = new NavMeshPath();
         agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
-        Debug.LogWarning(path.status);
+        //Debug.LogWarning(path.status);
 
         if (path.status != NavMeshPathStatus.PathComplete)
         {
@@ -214,7 +214,7 @@ public class AIEntity : MonoBehaviour, IDamageable
 
                 agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
 
-                Debug.Log(path.status);
+                //Debug.Log(path.status);
                 // HighCostArea로 인해 경로가 완전하지 않다면 배회 상태로 전환
                 if (path.status != NavMeshPathStatus.PathComplete)
                 {
