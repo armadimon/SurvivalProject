@@ -26,25 +26,25 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     Condition thirst { get { return uiCondition.thirst; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
-    public float lowThirstHealthDecay;  //  thirst 일정량 이하일 때 체력 감소
+    public float lowThirstHealthDecay;  //  thirst ?�눘�젟???�똾釉�????筌ｋ���젾 揶쏅Ŋ�꺖
     public event Action onTakeDamaged;
 
     void Update()
     {
-        // hunger 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
+        // hunger 70?�눘苑�???�똻湲� : passiveValue?�뜄而뀐쭕�슦寃� 揶쏅Ŋ�꺖, 70 ~ ?�눘�젟???�똻湲� : passiveValue筌띾슦寃� 揶쏅Ŋ�꺖, ?�눘�젟???�똾釉� : passiveValue??1.5獄쏄퀡彛�??揶쏅Ŋ�꺖
         HungerWeightSubtract();
 
-        // thirst 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
+        // thirst 70?�눘苑�???�똻湲� : passiveValue?�뜄而뀐쭕�슦寃� 揶쏅Ŋ�꺖, 70 ~ ?�눘�젟???�똻湲� : passiveValue筌띾슦寃� 揶쏅Ŋ�꺖, ?�눘�젟???�똾釉� : passiveValue??1.5獄쏄퀡彛�??揶쏅Ŋ�꺖
         ThirstWeightSubtract();
 
-        // hunger, thirst 일정량 이하 stamina 회복 정지, 둘 다 아니라면 정상 회복
+        // hunger, thirst ?�눘�젟???�똾釉� stamina ?�슢�궗 ?類�?, ?????袁⑤빍?�눖�늺 ?類ㅺ맒 ?�슢�궗
         HealthyStaminaAdd();
 
-        // hunger, thirst 일정량 이하 인디케이터 표시
+        // hunger, thirst ?�눘�젟???�똾釉� ?紐껊탵��냈�?�똾苑� ?�뮇�뻻
         ThirstFlash();
-        HurtFromThirstFlash(); // thirst 위험 수준 이하 체력 감소, health 인디케이터 표시
+        HurtFromThirstFlash(); // thirst ?袁る퓮 ?�꼷? ?�똾釉� 筌ｋ���젾 揶쏅Ŋ�꺖, health ?紐껊탵��냈�?�똾苑� ?�뮇�뻻
         HungerFlash();
-        ThirstHungerFlash(); // thirst, hunger 동시에 일정량 이하 인디케이터에 번갈아 표시
+        ThirstHungerFlash(); // thirst, hunger ?�늿�뻻???�눘�젟???�똾釉� ?紐껊탵��냈�?�똾苑�??甕곕뜃而�???�뮇�뻻
 
         if (health.curValue == 0f)
         {
@@ -60,7 +60,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     private void Die()
     {
-        // 플레이어 죽음, 현재는 Debug.Log
+        // ?�슢�쟿?�똻堉� 雅뚯럩�벉, ?袁⑹삺??Debug.Log
         Debug.Log($"Die");
     }
 
@@ -76,13 +76,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void TakeDamage(float damage)
     {
-        // 실제 플레이어 데미지 입는 부분
+        // ?�끉�젫 ?�슢�쟿?�똻堉� ?怨�?筌왖� ?�굝�뮉 �겫���겫?
         health.Subtract(damage);
-        // onTakeDamaged 이벤트
+        // onTakeDamaged ?���源�??
         onTakeDamaged?.Invoke();
     }
 
-    // 물 마시기
+    // �눧?筌띾뜆�뻻疫�?
     public void TakeWater(int amount)
     {
         thirst.Add(amount);
@@ -99,7 +99,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         return true;
     }
 
-    // hunger 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
+    // hunger 70?�눘苑�???�똻湲� : passiveValue?�뜄而뀐쭕�슦寃� 揶쏅Ŋ�꺖, 70 ~ ?�눘�젟???�똻湲� : passiveValue筌띾슦寃� 揶쏅Ŋ�꺖, ?�눘�젟???�똾釉� : passiveValue??1.5獄쏄퀡彛�??揶쏅Ŋ�꺖
     void HungerWeightSubtract()
     {
         if (hunger.curValue / hunger.maxValue >= 0.7f)
@@ -110,7 +110,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             hunger.Subtract(hunger.passiveValue * 1.5f * Time.deltaTime);
     }
 
-    // thirst 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
+    // thirst 70?�눘苑�???�똻湲� : passiveValue?�뜄而뀐쭕�슦寃� 揶쏅Ŋ�꺖, 70 ~ ?�눘�젟???�똻湲� : passiveValue筌띾슦寃� 揶쏅Ŋ�꺖, ?�눘�젟???�똾釉� : passiveValue??1.5獄쏄퀡彛�??揶쏅Ŋ�꺖
     void ThirstWeightSubtract()
     {
         if (thirst.curValue / thirst.maxValue >= 0.7f)
@@ -121,7 +121,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             thirst.Subtract(thirst.passiveValue * 1.5f * Time.deltaTime);
     }
 
-    // thirst 일정량 이하 인디케이터에 표시
+    // thirst ?�눘�젟???�똾釉� ?紐껊탵��냈�?�똾苑�???�뮇�뻻
     void ThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue)
@@ -134,7 +134,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // thirst 위험 수준 이하 체력 감소, health 인디케이터 표시
+    // thirst ?袁る퓮 ?�꼷? ?�똾釉� 筌ｋ���젾 揶쏅Ŋ�꺖, health ?紐껊탵��냈�?�똾苑� ?�뮇�뻻
     void HurtFromThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= hurtFromThirstWarningValue)
@@ -148,7 +148,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // hunger 일정량 이하 인디케이터에 표시
+    // hunger ?�눘�젟???�똾釉� ?紐껊탵��냈�?�똾苑�???�뮇�뻻
     void HungerFlash()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -161,7 +161,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // thirst, hunger 동시에 일정량 이하 인디케이터에 번갈아 표시
+    // thirst, hunger ?�늿�뻻???�눘�젟???�똾釉� ?紐껊탵��냈�?�똾苑�??甕곕뜃而�???�뮇�뻻
     void ThirstHungerFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue && hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -174,7 +174,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // hunger, thirst 일정량 이하 stamina 회복 정지, 둘 다 아니라면 정상 회복
+    // hunger, thirst ?�눘�젟???�똾釉� stamina ?�슢�궗 ?類�?, ?????袁⑤빍?�눖�늺 ?類ㅺ맒 ?�슢�궗
     void HealthyStaminaAdd()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)

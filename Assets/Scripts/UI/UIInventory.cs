@@ -70,7 +70,7 @@ public class UIInventory : MonoBehaviour
 
    
 
-    // UI 疫꿸퀡??紐낅샒
+    // UI ?リ옇???筌뤿굝??
     void InitUI()
     {
         selectItemIcon = transform.Find("InfoBG/InfoIcon").GetComponent<Image>();
@@ -312,7 +312,7 @@ public class UIInventory : MonoBehaviour
     }
 
 
-    // RectangleContainsScreenPoint ????rect野껋럡????됰퓠 筌띾뜆????袁⑺뒄???類ㅼ뵥??
+    // RectangleContainsScreenPoint ?????rect?롪퍔??????고뱺 嶺뚮씭?????熬곣뫚????筌먦끉逾??
 
     public bool IsMouseOverUI(GameObject gObject)
     {
