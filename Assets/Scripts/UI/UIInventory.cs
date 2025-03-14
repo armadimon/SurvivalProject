@@ -276,7 +276,6 @@ public class UIInventory : MonoBehaviour
     }
 
 
-    // RectangleContainsScreenPoint 해당 rect경계 안에 마우스 위치를 확인함
     public bool IsMouseOverUI(GameObject gObject)
     {
         return RectTransformUtility.RectangleContainsScreenPoint

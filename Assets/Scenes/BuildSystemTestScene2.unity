@@ -295,7 +295,6 @@ MonoBehaviour:
   - {fileID: -8170510776297188960, guid: 65724390b63384c49a9cbbf43e1d29a9, type: 3}
   - {fileID: -3042110914432558477, guid: 02afd15aa6e687e42b2b4ef44349548d, type: 3}
   - {fileID: 8099839697055785789, guid: 462d0e537482f644997b1055b465d011, type: 3}
-  BuildMenuItems: []
   buildMenuItemPrefabs: {fileID: 6677392214168079880, guid: 3d69ea4d8232b884299bd1bec0a08200, type: 3}
   buildController: {fileID: 1880873482}
 --- !u!4 &91201657
@@ -6679,10 +6678,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1717447813550586590, guid: 5154b6c9cbf2c9643938eb483f088055, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1717447813550586590, guid: 5154b6c9cbf2c9643938eb483f088055, type: 3}
       propertyPath: promptText
       value: 

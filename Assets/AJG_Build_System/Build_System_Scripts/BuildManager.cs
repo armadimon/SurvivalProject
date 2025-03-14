@@ -16,6 +16,7 @@ public class BuildManager : MonoBehaviour
     public GameObject buildMenu;
     public Transform buildMenuContent;
     public BuildObject[] buildObjects;
+    public List<BuildMenuItem> BuildMenuItems = new List<BuildMenuItem>();
     public BuildMenuItem buildMenuItemPrefabs;
     public BuildController buildController;
     public Action OnClick;
@@ -34,12 +35,65 @@ public class BuildManager : MonoBehaviour
     
     void Start()
     {
+        int index = 0;
         foreach (BuildObject buildObject in buildObjects)
         {
             BuildMenuItem buildItem = Instantiate(buildMenuItemPrefabs, buildMenuContent);
-
-            buildItem.SetData(buildObject);
+            BuildMenuItems.Add(buildItem);
+            buildItem.SetData(buildObject, index);
+            index++;
         }
     }
-    
+
+    public void CheckSufficientResources(BuildObject buildObject, int index)
+    {
+        RequireResourceAmount[] requireResources = buildObject.data.requireResources;
+        
+        foreach (var requireResource in requireResources)
+        {
+            if (!HasResourceAmount(requireResource, false))
+            {
+                Debug.Log("자원이 부족하여 빌드를 진행할 수 없습니다.");
+                return ;
+            }
+        }
+
+        foreach (var requireResource in requireResources)
+        {
+            HasResourceAmount(requireResource, true);
+        }
+        buildController.SetBuildObject(buildObject);
+    }
+
+    public bool HasResourceAmount(RequireResourceAmount requireResourceAmount, bool consume)
+    {
+        ItemSlot[] slots = InventotyManager.Instance.Inventory.slots;
+        bool resourceFound = false;
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == null)
+                continue;
+
+            if (slots[i].item.type == ItemType.Resouce && slots[i].item.resourceType == requireResourceAmount.type)
+            {
+                resourceFound = true;
+
+                if (slots[i].quantity >= requireResourceAmount.value)
+                {
+                    if (consume)
+                    {
+                        slots[i].quantity -= requireResourceAmount.value;
+                    }
+                    return true;
+                }
+            }
+        }
+
+        if (!resourceFound)
+        {
+            Debug.Log($"인벤토리에 {requireResourceAmount.type} 리소스가 없습니다!");
+        }
+        return false;
+    }
 }
