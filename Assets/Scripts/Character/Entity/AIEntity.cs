@@ -198,9 +198,7 @@ public class AIEntity : MonoBehaviour, IDamageable
                 if (Time.time - lastAttackTime > attackRate)
                 {
                     lastAttackTime = Time.time; // 마지막 공격 시간 갱신
-                                                // 플레이어에게 데미지 주기
-                    CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
-                    animator.speed = 1.64f; // 애니메이션 속도 설정
+                    animator.speed = 1f; // 애니메이션 속도 설정
                     animator.SetTrigger("Attack"); // 공격 애니메이션 실행
                 }
 
@@ -234,7 +232,14 @@ public class AIEntity : MonoBehaviour, IDamageable
             SetState(AIState.Idle);
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
-            
+
+    }
+
+    // 애니메이션 이벤트로 호출될 메서드
+    public void DealDamage()
+    {
+        // 플레이어에게 데미지 주기
+        CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
     }
 
     // 플레이어가 NPC의 시야 내에 있는지 확인
