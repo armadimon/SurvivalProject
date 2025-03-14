@@ -26,10 +26,10 @@ public class HydrateLocation : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other)
-    {
-        interactionText.text = "Press [H]\nto drink water.";
+    {        
         if (other.TryGetComponent(out IHydrate hydrate))
         {
+            interactionText.text = "Press [H]\nto drink water.";
             CharacterManager.Instance.Player.condition.isInHydrateLocation = true;
             if (CharacterManager.Instance.Player.condition.isDrinking)
             {
@@ -41,10 +41,10 @@ public class HydrateLocation : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    {
-        interactionText.text = string.Empty;
+    {        
         if (other.TryGetComponent(out IHydrate hydrate))
         {
+            interactionText.text = string.Empty;
             CharacterManager.Instance.Player.condition.isInHydrateLocation = false;
             things.Clear();
         }
