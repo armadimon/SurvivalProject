@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1084984812217062069}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.428, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -550,7 +550,7 @@ MonoBehaviour:
   jumpPower: 5
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   isGrounded: 0
   playerHeight: 0.8
   runSpeedMultiplier: 1.5
@@ -590,12 +590,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildMode: 0
   SetMode: 0
+  snapPointCamera: {fileID: 2357002957888458324}
   placementLayer:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 16777792
   maxSlopeAngle: 45
   _buildObject: {fileID: 0}
   rayCastDistance: 5
+  snapRange: 0.2
+  snapLayer:
+    serializedVersion: 2
+    m_Bits: 16777216
 --- !u!114 &1717447813550586590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +608,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8830912696432523152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9e84bd63379234da00094140a85f62, type: 3}
   m_Name: 
@@ -642,7 +647,7 @@ Transform:
   m_GameObject: {fileID: 9043036139484792212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -687,7 +692,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 6783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

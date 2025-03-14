@@ -55,7 +55,6 @@ public class BuildController : MonoBehaviour
         Ray ray = new Ray(cameraContainer.position, cameraContainer.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, rayCastDistance, placementLayer))
         {
-            Debug.DrawRay(ray.origin, ray.direction * rayCastDistance, Color.red);
             Vector3 hitNormal = hit.normal;
             float angle = Vector3.Angle(Vector3.up, hitNormal);
 
@@ -66,6 +65,7 @@ public class BuildController : MonoBehaviour
             {
                 _buildObject.transform.position = closestSnapPoint.position;
                 _buildObject.transform.rotation = closestSnapPoint.rotation;
+                _objectMeshRenderer.material.color = _objectOriginalColor;
                 isSetable =  true;
             }
             else if (angle <= maxSlopeAngle)
@@ -92,33 +92,6 @@ public class BuildController : MonoBehaviour
         return (isSetable);
     }
     
-    private bool TrySnapToClosestPoint(Transform cameraContainer)
-    {
-        Collider[] colliders = Physics.OverlapSphere(cameraContainer.position + cameraContainer.forward * rayCastDistance, snapRange, snapLayer);
-        
-        Transform bestSnapPoint = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (Collider col in colliders)
-        {
-            float distance = Vector3.Distance(_buildObject.transform.position, col.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                bestSnapPoint = col.transform;
-            }
-        }
-
-        if (bestSnapPoint != null)
-        {
-            _buildObject.transform.position = bestSnapPoint.position;
-            _buildObject.transform.rotation = bestSnapPoint.rotation;
-            closestSnapPoint = bestSnapPoint;
-            return true;
-        }
-        return false;
-    }
-    
     private bool TrySnapToClosestPoint(RaycastHit hit)
     {
         Collider[] colliders = Physics.OverlapSphere(hit.transform.position, snapRange, snapLayer);
@@ -128,6 +101,7 @@ public class BuildController : MonoBehaviour
 
         foreach (Collider col in colliders)
         {
+            Debug.Log(colliders.Length);
             float distance = Vector3.Distance(_buildObject.transform.position, col.transform.position);
             if (distance < closestDistance)
             {
@@ -211,7 +185,7 @@ public class BuildController : MonoBehaviour
             ;
         objectCollider = _buildObject.GetComponentInChildren<Collider>();
         objectCollider.enabled = false;
-        _buildObject.snapPointGroup.gameObject.SetActive(false);
+        _buildObject.snapPointGroup?.gameObject.SetActive(false);
         _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
         _objectOriginalColor = _objectMeshRenderer.material.color;
         _objectCantSetableColor = Color.red;
