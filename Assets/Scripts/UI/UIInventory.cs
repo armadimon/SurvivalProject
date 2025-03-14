@@ -110,8 +110,6 @@ public class UIInventory : MonoBehaviour
             slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
             slots[i].index = i;
             slots[i].Inventory = this;
-
-            InventotyManager.Instance.slots.Add(slots[i]);
         }
 
         ClearSelectItemWindow();
@@ -155,7 +153,7 @@ public class UIInventory : MonoBehaviour
             itemDescription.SetActive(false);
             itemUseImage.SetActive(false);
             isUseItemWindow = itemDescription.activeSelf;
-            UsuallytemUseImage();
+            UsuallyItemUseImage();
         }
         else
         {
@@ -486,25 +484,30 @@ public class UIInventory : MonoBehaviour
 
         if (!useButton.activeSelf && !equipButton.activeSelf && !unEquipButton.activeSelf)
         {
-            HalfItemUseImage();
+            HalfItemImage(itemUseRect);
         }
         else
         {
-            UsuallytemUseImage();
+            UsuallyItemUseImage();
         }
 
     }
 
-    public void HalfItemUseImage()
+    public void HalfItemImage(RectTransform rect)
     {
         dropButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 23, 0);
-        itemUseRect.sizeDelta = new Vector2(usuallyitemUseRect.x, usuallyitemUseRect.y / 2);
+        rect.sizeDelta = new Vector2(usuallyitemUseRect.x, usuallyitemUseRect.y / 2);
     }
 
-    public void UsuallytemUseImage()
+    public void UsuallyItemUseImage()
     {
         dropButton.GetComponent<RectTransform>().anchoredPosition = dropButtonPosition;
         itemUseRect.sizeDelta = usuallyitemUseRect;
+    }
+
+    public void UsaullyItemUnEquipImage()
+    {
+
     }
 
 

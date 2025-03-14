@@ -26,7 +26,6 @@ public class InventotyManager : MonoBehaviour
         set { _inventory = value; }
     }
 
-    public List<ItemSlot> slots = new List<ItemSlot>();
     public int maxSlots = 20;
 
 
