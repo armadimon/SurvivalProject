@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public interface IDamageable
 {
-    // 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨댐옙 占쌉쇽옙
+    // ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 ?좎뙣?먯삕 ?좎뙃?쎌삕
     void TakeDamage(float damage);
 }
 
@@ -15,38 +15,38 @@ public interface IHydrate
 
 public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 {
-    public UICondition uiCondition; // UI占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹댐옙 占쏙옙체
+    public UICondition uiCondition; // UI?좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕?좎떦?먯삕 ?좎룞?숈껜
     public Image indicatorImage;
     public Animator indicatorAnimator;
     public float thirstWarningValue;
     public float hurtFromThirstWarningValue;
     public float hungerWarningValue;
 
-    // UICondition占쏙옙占쏙옙 체占승곤옙 占쏙옙占승미놂옙 占쏙옙占승몌옙 占쏙옙占쏙옙占쏙옙
+    // UICondition?좎룞?쇿뜝?숈삕 泥닷뜝?밴낀???좎룞?쇿뜝?밸??귥삕 ?좎룞?쇿뜝?밸챿???좎룞?쇿뜝?숈삕?좎룞??
     Condition health { get { return uiCondition.health; } }
     Condition hunger { get { return uiCondition.hunger; } }
     Condition thirst { get { return uiCondition.thirst; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
-    public float lowThirstHealthDecay;  //  占쏙옙占쏙옙占쏙옙占?占쏙옙占쏙옙 占쏙옙 체占쏙옙 占쏙옙占쏙옙
-    public event Action onTakeDamaged;  // 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨억옙占쏙옙 占쏙옙 占쌩삼옙占싹댐옙 占싱븝옙트
+    public float lowThirstHealthDecay;  //  ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 ?좎룞??泥닷뜝?숈삕 ?좎룞?쇿뜝?숈삕
+    public event Action onTakeDamaged;  // ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 ?좎뙣?듭삕?좎룞???좎룞???좎뙥?쇱삕?좎떦?먯삕 ?좎떛釉앹삕??
 
     void Update()
     {
-        // hunger 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+        // hunger 70?좎룞???좎떛?쇱삕 : passiveValue?좎룞???좎룞?쇿뜝?λ챿?숉겮, 70 ~ ?좎룞?쇿뜝?: passiveValue?좎룞?숉겮, ?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 : passiveValue?좎룞??1.5?좎띁留뚰겮 ?좎룞?쇿뜝?숈삕
         HungerWeightSubtract();
 
-        // thirst 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+        // thirst 70?좎룞???좎떛?쇱삕 : passiveValue?좎룞???좎룞?쇿뜝?λ챿?숉겮, 70 ~ ?좎룞?쇿뜝?: passiveValue?좎룞?숉겮, ?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 : passiveValue?좎룞??1.5?좎띁留뚰겮 ?좎룞?쇿뜝?숈삕
         ThirstWeightSubtract();
 
-        // hunger, thirst 占쏙옙占?占싱삼옙占쏙옙 占쏙옙占쏙옙 stamina 회占쏙옙, 占쏙옙 占쏙옙 占싹놂옙占쏙옙 占쏙옙占?占쏙옙占쏙옙占쏙옙 占쏙옙占?회占쏙옙 占쏙옙占쏙옙
+        // hunger, thirst ?좎룞?쇿뜝??좎떛?쇱삕?좎룞???좎룞?쇿뜝?숈삕 stamina ?뚦뜝?숈삕, ?좎룞???좎룞???좎떦?귥삕?좎룞???좎룞?쇿뜝??좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝??뚦뜝?숈삕 ?좎룞?쇿뜝?숈삕
         HealthyStaminaAdd();
 
-        // hunger, thirst 占쏙옙占?占쏙옙占싹뤄옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+        // hunger, thirst ?좎룞?쇿뜝??좎룞?쇿뜝?밸쨪???좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 ?좎룞???좎떥?몄삕?좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕?좎룞??
         ThirstFlash();
-        HurtFromThirstFlash(); // thirst占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 체占승듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙, Indicator占쏙옙 체占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+        HurtFromThirstFlash(); // thirst?좎룞???좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 泥닷뜝?밸벝???좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕, Indicator?좎룞??泥닷뜝?숈삕 ?좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕?좎룞??
         HungerFlash();
-        ThirstHungerFlash(); // thirst占쏙옙 hunger 占쏙옙占시울옙 占쏙옙占?占쏙옙占쏙옙占쏙옙 占쏙옙 Indicator占쏙옙 占쌉뀐옙 표占쏙옙
+        ThirstHungerFlash(); // thirst?좎룞??hunger ?좎룞?쇿뜝?쒖슱???좎룞?쇿뜝??좎룞?쇿뜝?숈삕?좎룞???좎룞??Indicator?좎룞???좎뙃?먯삕 ?쒎뜝?숈삕
 
         if (health.curValue == 0f)
         {
@@ -57,13 +57,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void Heal(float amount)
     {
-        // 체占쏙옙占쏙옙 회占쏙옙
+        // 泥닷뜝?숈삕?좎룞???뚦뜝?숈삕
         health.Add(amount);
     }
 
     private void Die()
     {
-        // 占시뤄옙占싱억옙 占쏙옙占?처占쏙옙 (占쏙옙占쏙옙占?占싸깍옙 占쏙옙占?
+        // ?좎떆琉꾩삕?좎떛?듭삕 ?좎룞?쇿뜝?泥섇뜝?숈삕 (?좎룞?쇿뜝?숈삕???좎떥源띿삕 ?좎룞?쇿뜝?
         Debug.Log($"Die");
     }
 
@@ -79,13 +79,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void TakeDamage(float damage)
     {
-        // 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 체占쏙옙占쏙옙 占쏙옙占쏙옙
+        // ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕?좎룞??泥닷뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕
         health.Subtract(damage);
-        // 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨았다댐옙 占싱븝옙트 占쌩삼옙
+        // ?좎룞?쇿뜝?숈삕?좎룞?쇿뜝?숈삕 ?좎뙣?섎떎?먯삕 ?좎떛釉앹삕???좎뙥?쇱삕
         onTakeDamaged?.Invoke();
     }
 
-    // 占쏙옙 占쏙옙占시깍옙
+    // ?좎룞???좎룞?쇿뜝?쒓퉵??
     public void TakeWater(int amount)
     {
         thirst.Add(amount);
@@ -93,17 +93,17 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public bool UseStamina(float amount)
     {
-        // 占쏙옙占승미너곤옙 占쏙옙占쏙옙占싹몌옙 占쏙옙占?占쌀곤옙 처占쏙옙
+        // ?좎룞?쇿뜝?밸??덇낀???좎룞?쇿뜝?숈삕?좎떦紐뚯삕 ?좎룞?쇿뜝??좎?怨ㅼ삕 泥섇뜝?숈삕
         if (stamina.curValue - amount < 0f)
         {
             return false;
         }
-        // 占쏙옙占승미놂옙 占쏙옙占쏙옙
+        // ?좎룞?쇿뜝?밸??귥삕 ?좎룞?쇿뜝?숈삕
         stamina.Subtract(amount);
         return true;
     }
 
-    // hunger 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+    // hunger 70?좎룞???좎떛?쇱삕 : passiveValue?좎룞???좎룞?쇿뜝?λ챿?숉겮, 70 ~ ?좎룞?쇿뜝?: passiveValue?좎룞?숉겮, ?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 : passiveValue?좎룞??1.5?좎띁留뚰겮 ?좎룞?쇿뜝?숈삕
     void HungerWeightSubtract()
     {
         if (hunger.curValue / hunger.maxValue >= 0.7f)
@@ -114,7 +114,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             hunger.Subtract(hunger.passiveValue * 1.5f * Time.deltaTime);
     }
 
-    // thirst 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+    // thirst 70?좎룞???좎떛?쇱삕 : passiveValue?좎룞???좎룞?쇿뜝?λ챿?숉겮, 70 ~ ?좎룞?쇿뜝?: passiveValue?좎룞?숉겮, ?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 : passiveValue?좎룞??1.5?좎띁留뚰겮 ?좎룞?쇿뜝?숈삕
     void ThirstWeightSubtract()
     {
         if (thirst.curValue / thirst.maxValue >= 0.7f)
@@ -125,7 +125,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             thirst.Subtract(thirst.passiveValue * 1.5f * Time.deltaTime);
     }
 
-    // thirst 占쏙옙占?占쏙옙占쏙옙 thirst 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+    // thirst ?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 thirst ?좎떥?몄삕?좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕?좎룞??
     void ThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue)
@@ -138,7 +138,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // thirst 占쏙옙占쏙옙 占쏙옙占쏙옙 체占쏙옙 占쏙옙占쏙옙 占쏙옙 health 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+    // thirst ?좎룞?쇿뜝?숈삕 ?좎룞?쇿뜝?숈삕 泥닷뜝?숈삕 ?좎룞?쇿뜝?숈삕 ?좎룞??health ?좎떥?몄삕?좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕?좎룞??
     void HurtFromThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= hurtFromThirstWarningValue)
@@ -152,7 +152,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // hunger 占쏙옙占?占쏙옙占쏙옙 thirst 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+    // hunger ?좎룞?쇿뜝??좎룞?쇿뜝?숈삕 thirst ?좎떥?몄삕?좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕?좎룞??
     void HungerFlash()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -165,7 +165,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // thirst, hunger 占쏙옙占시울옙 占쏙옙占?占쏙옙占쏙옙 thirst占쏙옙 hunger 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싣곤옙占썽서 占쏙옙占쏙옙占쏙옙
+    // thirst, hunger ?좎룞?쇿뜝?쒖슱???좎룞?쇿뜝??좎룞?쇿뜝?숈삕 thirst?좎룞??hunger ?좎떥?몄삕?좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝?숈삕?좎떍怨ㅼ삕?좎띂???좎룞?쇿뜝?숈삕?좎룞??
     void ThirstHungerFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue && hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -178,7 +178,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // hunger, thirst 占쏙옙占?占싱삼옙占쏙옙 占쏙옙占쏙옙 stamina 회占쏙옙, 占쏙옙 占쏙옙 占싹놂옙占쏙옙 占쏙옙占?占쏙옙占쏙옙占쏙옙 占쏙옙占?회占쏙옙 占쏙옙占쏙옙
+    // hunger, thirst ?좎룞?쇿뜝??좎떛?쇱삕?좎룞???좎룞?쇿뜝?숈삕 stamina ?뚦뜝?숈삕, ?좎룞???좎룞???좎떦?귥삕?좎룞???좎룞?쇿뜝??좎룞?쇿뜝?숈삕?좎룞???좎룞?쇿뜝??뚦뜝?숈삕 ?좎룞?쇿뜝?숈삕
     void HealthyStaminaAdd()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)

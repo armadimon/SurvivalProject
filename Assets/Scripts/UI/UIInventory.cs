@@ -70,7 +70,7 @@ public class UIInventory : MonoBehaviour
 
    
 
-    // UI 기본세팅
+    // UI 湲곕낯?명똿
     void InitUI()
     {
         selectItemIcon = transform.Find("InfoBG/InfoIcon").GetComponent<Image>();
@@ -110,6 +110,8 @@ public class UIInventory : MonoBehaviour
             slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
             slots[i].index = i;
             slots[i].Inventory = this;
+
+            InventotyManager.Instance.slots.Add(slots[i]);
         }
 
         ClearSelectItemWindow();
@@ -312,7 +314,7 @@ public class UIInventory : MonoBehaviour
     }
 
 
-    // RectangleContainsScreenPoint 해당 rect경계 안에 마우스 위치를 확인함
+    // RectangleContainsScreenPoint ?대떦 rect寃쎄퀎 ?덉뿉 留덉슦???꾩튂瑜??뺤씤??
     public bool IsMouseOverUI(GameObject gObject)
     {
         return RectTransformUtility.RectangleContainsScreenPoint
