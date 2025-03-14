@@ -84,6 +84,11 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         hunger.Add(amount);
     }
 
+    public void Hydrate(float amount)
+    {
+        thirst.Add(amount);
+    }
+
     public void HealStamina(float amount)
     {
         stamina.Add(amount);
