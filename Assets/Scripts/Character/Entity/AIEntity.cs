@@ -11,7 +11,7 @@ public enum AIState
 }
 
 // NPC 클래스: 네비게이션, 배회, 전투 기능을 수행
-public class NPC : MonoBehaviour, IDamageable
+public class AIEntity : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     public float health;            // 체력
@@ -48,10 +48,31 @@ public class NPC : MonoBehaviour, IDamageable
         agent = GetComponent<NavMeshAgent>();           // 네비게이션 에이전트 가져오기
         animator = GetComponent<Animator>();            // 애니메이터 가져오기
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>(); // 캐릭터의 메쉬 렌더러 가져오기
+
+        Debug.Log(agent.agentTypeID);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
+        {
+            transform.position = (hit.position);
+            //agent = gameObject.AddComponent<NavMeshAgent>();
+            //agent.agentTypeID = 1;
+        }
+        //Debug.LogError($"{gameObject.name}이(가) NavMesh 위에 있지 않습니다! 위치를 확인하세요.");
     }
 
     void Start()
     {
+
+        //if (!agent.isOnNavMesh)
+        //{
+        //    NavMeshHit hit;
+        //    if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
+        //    {
+        //        agent.Warp(hit.position);
+        //    }
+        //    //Debug.LogError($"{gameObject.name}이(가) NavMesh 위에 있지 않습니다! 위치를 확인하세요.");
+        //}
+
         SetState(AIState.Wandering); // 시작할 때 배회 상태로 설정
     }
 
@@ -109,6 +130,7 @@ public class NPC : MonoBehaviour, IDamageable
         // 현재 위치에서 경로를 미리 계산
         path = new NavMeshPath();
         agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
+        Debug.LogWarning(path.status);
 
         if (path.status != NavMeshPathStatus.PathComplete)
         {
@@ -117,14 +139,14 @@ public class NPC : MonoBehaviour, IDamageable
         }
 
         // 배회 중이며 목표 지점에 도착했을 경우 일정 시간 후 새로운 위치로 이동
-        if (aiState == AIState.Wandering && agent.remainingDistance < 0.1f)
+        if (aiState == AIState.Wandering && agent.remainingDistance < 0.3f)
         {
             SetState(AIState.Idle);
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
 
         // 플레이어가 감지 거리 내에 있으면 공격 상태로 전환
-        if (playerDistance < detectDistance)
+        if (playerDistance < detectDistance && path.status != NavMeshPathStatus.PathPartial)
         {
             SetState(AIState.Attacking);
         }
@@ -165,38 +187,54 @@ public class NPC : MonoBehaviour, IDamageable
     // 공격 관련 업데이트
     void AttackingUpdate()
     {
-        if (playerDistance < attackDistance && IsPlayerInFieldOfView())
+        if (playerDistance < detectDistance)
         {
-            agent.isStopped = true;
-
-            // 공격 가능 시간인지 체크
-            if (Time.time - lastAttackTime > attackRate)
+            // 플레이어가 공격 거리 내에 있고 시야 내에 있는지 확인
+            if (playerDistance < attackDistance && IsPlayerInFieldOfView())
             {
-                lastAttackTime = Time.time;
-                CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
-                animator.speed = 1f;
-                animator.SetTrigger("Attack");
+                agent.isStopped = true; // 공격 시 이동 정지
+
+                // 공격 가능 시간인지 체크
+                if (Time.time - lastAttackTime > attackRate)
+                {
+                    lastAttackTime = Time.time; // 마지막 공격 시간 갱신
+                                                // 플레이어에게 데미지 주기
+                    CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
+                    animator.speed = 1f; // 애니메이션 속도 설정
+                    animator.SetTrigger("Attack"); // 공격 애니메이션 실행
+                }
+
+            }
+            else
+            {
+                path = new NavMeshPath();
+
+                // HighCostArea를 제외한 영역으로 경로 계산
+                agent.areaMask = NavMesh.GetAreaFromName("HighCostArea");
+
+                agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
+
+                Debug.Log(path.status);
+                // HighCostArea로 인해 경로가 완전하지 않다면 배회 상태로 전환
+                if (path.status != NavMeshPathStatus.PathComplete)
+                {
+                    SetState(AIState.Idle);
+                    Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
+                }
+                else
+                {
+                    // 플레이어가 감지 거리 내에 있다면 따라가기
+                    agent.isStopped = false;
+                    agent.SetDestination(CharacterManager.Instance.Player.transform.position);
+                }
             }
         }
         else
         {
-            path = new NavMeshPath();
-            // HighCostArea를 제외한 영역으로 경로 계산
-            agent.areaMask = NavMesh.GetAreaFromName("HighCostArea");
-            agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
-
-            // HighCostArea로 인해 경로가 완전하지 않다면 배회 상태로 전환
-            if (path.status == NavMeshPathStatus.PathPartial)
-            {
-                SetState(AIState.Wandering);
-            }
-            else
-            {
-                // 플레이어가 감지 거리 내에 있다면 따라가기
-                agent.isStopped = false;
-                agent.SetDestination(CharacterManager.Instance.Player.transform.position);
-            }
+            SetState(AIState.Idle);
+            Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
+            
     }
 
     // 플레이어가 NPC의 시야 내에 있는지 확인
@@ -246,4 +284,10 @@ public class NPC : MonoBehaviour, IDamageable
             renderer.material.color = Color.white;
         }
     }
+
+    //public void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(transform.position, detectDistance);
+    //}
 }
