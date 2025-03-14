@@ -8,15 +8,17 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float slowSpeed; // hunger가 낮아 느려진 속도
+    public float tooSlowSpeed; // hunger 5퍼 이하일 때 속도
     private Vector2 _curMoveInput;
     public float jumpPower;
     public LayerMask groundLayerMask;
     public bool isGrounded;
     public float playerHeight;
 
-    public float runSpeedMultiplier;    // ???怨ルЬ???????????쒖┣ ?꾩룄???
-    public float runStamina;            // ???嫄??濡ル츎 ???怨ルЬ????댟誘?쾵筌뤾퍒??
-    private float originMoveSpeed;      // ?貫?껆뵳?????????쒖┣ (?곌랜踰???
+    public float runSpeedMultiplier;    // 달릴 때 이동속도에 곱해주는 값
+    public float runStamina;            // 달리기 stamina
+    private float originMoveSpeed;      // 처음 이동속도    
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -30,20 +32,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private BuildController _buildController;
 
-    // ??嶺뚮씭???룸Ь?
+    // 물 마시기
     public bool isInHydrateLocation = false;
     public bool isDrinking = false;
 
-
-    public Action Inventory;            // ?筌뤾퍒萸??ル벣遊????⒱뵛 ???繹??
-    private PlayerCondition playerCondition; // PlayerCondition ???샑???怨뺣콦 (???꾨Ф亦껋꼶梨뜻뤃?????⑤객臾???㉱??
-
+    public Action Inventory; // 인벤토리
+    private PlayerCondition playerCondition;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         playerCondition = GetComponent<PlayerCondition>();
-        originMoveSpeed = moveSpeed;                // ?貫?껆뵳?????????쒖┣ ????
+        originMoveSpeed = moveSpeed; // 처음 이동속도 저장
     }
 
     private void Start()
@@ -54,18 +54,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        LimitSpeed();
+        LimitSpeed();        
     }
 
     private void FixedUpdate()
     {
         IsGrounded();
         Move();
+        // hunger 일정량 이하 이동속도 감소
+        SlowFromHunger();
     }
 
     private void LateUpdate()
-    {
-        // ?곸궠?筌???????嶺뚳퐣瑗?怨?ご???臾먮뺄 (嶺뚮씭???????놁졑 ?꾩룇瑗??
+    {        
         if (canLook)
         {
             CameraLook();
@@ -102,13 +103,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    // ???怨ルЬ????놁졑 嶺뚳퐣瑗??(???꾨Ф亦껋꼶梨뜻뤃????嫄???????????쒖┣ 嶺뚯빘鍮?)
+    // 달리기 InputAction
     public void OnRun(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            // ???怨ルЬ???戮곗굚: ???꾨Ф亦껋꼶梨뜻뤃諛?ご????嫄???겶?????????쒖┣???沃섅굦肉?
+            // 달리기 stamina 있을 때
             if (playerCondition.UseStamina(runStamina))
             {
                 moveSpeed *= runSpeedMultiplier;
@@ -117,19 +117,17 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            // ???怨ルЬ?繞벿살탳? ???貫?껆뵳?????????쒖┣???곌랜踰??
+            // 달리기 종료 시 처음 이동속도
             moveSpeed = originMoveSpeed;
         }
     }
-
-    // ???怨ルЬ???嶺뚯솘????곗쓤??怨쀬Ŧ ???꾨Ф亦껋꼶梨뜻뤃????嫄??濡ル츎 ?袁⑤?塋??
+    
     private IEnumerator RunStaminaDrain()
     {
         while (moveSpeed > originMoveSpeed)
         {
             if (!playerCondition.UseStamina(runStamina * Time.deltaTime))
-            {
-                // ???꾨Ф亦껋꼶梨뜻뤃??遊붋????????????쒖┣???貫?껆뵳??
+            {                
                 moveSpeed = originMoveSpeed;
                 break;
             }
@@ -151,13 +149,13 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-
     void ToggleCursur()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
+
     bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
@@ -189,13 +187,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ?筌뤾퍒萸??ル벣遊??筌뤾쑵?????놁졑 嶺뚳퐣瑗??(?筌뤾퍒萸??ル벣遊?UI ??戮?뻣)
+    // 인벤토리 InputAction
     public void OnInventory(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
             Inventory?.Invoke();
-            ToggleCursur(); // ?筌뤾퍒萸??ル벣遊????덊깯 ????ｋ걠?묐슚紐???戮?뻣
+            ToggleCursur(); // 인벤토리 열었을 때 마우스 잠금 해제
         }
     }
 
@@ -211,5 +209,18 @@ public class PlayerController : MonoBehaviour
     void StopDrinking()
     {
         isDrinking = false;
+    }
+
+    // hunger 일정량 이하 이동속도 감소
+    void SlowFromHunger()
+    {
+        if (playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue <= playerCondition.hungerWarningValue && playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue > 0.05f)
+        {
+            moveSpeed = slowSpeed;
+        }
+        else if(playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue <= 0.05f)
+        {
+            moveSpeed = tooSlowSpeed;
+        }
     }
 }
