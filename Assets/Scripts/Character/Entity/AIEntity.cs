@@ -200,7 +200,7 @@ public class AIEntity : MonoBehaviour, IDamageable
                     lastAttackTime = Time.time; // 마지막 공격 시간 갱신
                                                 // 플레이어에게 데미지 주기
                     CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
-                    animator.speed = 1f; // 애니메이션 속도 설정
+                    animator.speed = 1.64f; // 애니메이션 속도 설정
                     animator.SetTrigger("Attack"); // 공격 애니메이션 실행
                 }
 

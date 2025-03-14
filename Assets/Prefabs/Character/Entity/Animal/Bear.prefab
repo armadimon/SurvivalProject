@@ -2123,11 +2123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   walkSpeed: 1
-  runSpeed: 4
+  runSpeed: 3
   dropOnDeath: []
   detectDistance: 8
-  minWanderDistance: 10
-  maxWanderDistance: 12
+  minWanderDistance: 2
+  maxWanderDistance: 4
   minWanderWaitTime: 2
   maxWanderWaitTime: 4
   damage: 10
