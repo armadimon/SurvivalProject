@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public interface IDamageable
-{
-    // 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨댐옙 占쌉쇽옙
+{    
     void TakeDamage(float damage);
 }
 
@@ -15,38 +14,37 @@ public interface IHydrate
 
 public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 {
-    public UICondition uiCondition; // UI占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹댐옙 占쏙옙체
+    public UICondition uiCondition;
     public Image indicatorImage;
     public Animator indicatorAnimator;
     public float thirstWarningValue;
     public float hurtFromThirstWarningValue;
     public float hungerWarningValue;
-
-    // UICondition占쏙옙占쏙옙 체占승곤옙 占쏙옙占승미놂옙 占쏙옙占승몌옙 占쏙옙占쏙옙占쏙옙
+    
     Condition health { get { return uiCondition.health; } }
     Condition hunger { get { return uiCondition.hunger; } }
     Condition thirst { get { return uiCondition.thirst; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
-    public float lowThirstHealthDecay;  //  占쏙옙占쏙옙占쏙옙占?占쏙옙占쏙옙 占쏙옙 체占쏙옙 占쏙옙占쏙옙
-    public event Action onTakeDamaged;  // 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨억옙占쏙옙 占쏙옙 占쌩삼옙占싹댐옙 占싱븝옙트
+    public float lowThirstHealthDecay;  //  thirst 일정량 이하일 때 체력 감소
+    public event Action onTakeDamaged;
 
     void Update()
     {
-        // hunger 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+        // hunger 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
         HungerWeightSubtract();
 
-        // thirst 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+        // thirst 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
         ThirstWeightSubtract();
 
-        // hunger, thirst 占쏙옙占?占싱삼옙占쏙옙 占쏙옙占쏙옙 stamina 회占쏙옙, 占쏙옙 占쏙옙 占싹놂옙占쏙옙 占쏙옙占?占쏙옙占쏙옙占쏙옙 占쏙옙占?회占쏙옙 占쏙옙占쏙옙
+        // hunger, thirst 일정량 이하 stamina 회복 정지, 둘 다 아니라면 정상 회복
         HealthyStaminaAdd();
 
-        // hunger, thirst 占쏙옙占?占쏙옙占싹뤄옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+        // hunger, thirst 일정량 이하 인디케이터 표시
         ThirstFlash();
-        HurtFromThirstFlash(); // thirst占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 체占승듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙, Indicator占쏙옙 체占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+        HurtFromThirstFlash(); // thirst 위험 수준 이하 체력 감소, health 인디케이터 표시
         HungerFlash();
-        ThirstHungerFlash(); // thirst占쏙옙 hunger 占쏙옙占시울옙 占쏙옙占?占쏙옙占쏙옙占쏙옙 占쏙옙 Indicator占쏙옙 占쌉뀐옙 표占쏙옙
+        ThirstHungerFlash(); // thirst, hunger 동시에 일정량 이하 인디케이터에 번갈아 표시
 
         if (health.curValue == 0f)
         {
@@ -56,14 +54,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     }
 
     public void Heal(float amount)
-    {
-        // 체占쏙옙占쏙옙 회占쏙옙
+    {        
         health.Add(amount);
     }
 
     private void Die()
     {
-        // 占시뤄옙占싱억옙 占쏙옙占?처占쏙옙 (占쏙옙占쏙옙占?占싸깍옙 占쏙옙占?
+        // 플레이어 죽음, 현재는 Debug.Log
         Debug.Log($"Die");
     }
 
@@ -79,31 +76,30 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void TakeDamage(float damage)
     {
-        // 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 체占쏙옙占쏙옙 占쏙옙占쏙옙
+        // 실제 플레이어 데미지 입는 부분
         health.Subtract(damage);
-        // 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨았다댐옙 占싱븝옙트 占쌩삼옙
+        // onTakeDamaged 이벤트
         onTakeDamaged?.Invoke();
     }
 
-    // 占쏙옙 占쏙옙占시깍옙
+    // 물 마시기
     public void TakeWater(int amount)
     {
         thirst.Add(amount);
     }
 
     public bool UseStamina(float amount)
-    {
-        // 占쏙옙占승미너곤옙 占쏙옙占쏙옙占싹몌옙 占쏙옙占?占쌀곤옙 처占쏙옙
+    {        
         if (stamina.curValue - amount < 0f)
         {
             return false;
         }
-        // 占쏙옙占승미놂옙 占쏙옙占쏙옙
+        
         stamina.Subtract(amount);
         return true;
     }
 
-    // hunger 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+    // hunger 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
     void HungerWeightSubtract()
     {
         if (hunger.curValue / hunger.maxValue >= 0.7f)
@@ -114,7 +110,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             hunger.Subtract(hunger.passiveValue * 1.5f * Time.deltaTime);
     }
 
-    // thirst 70占쏙옙 占싱삼옙 : passiveValue占쏙옙 占쏙옙占쌥몌옙큼, 70 ~ 占쏙옙占?: passiveValue占쏙옙큼, 占쏙옙占?占쏙옙占쏙옙 : passiveValue占쏙옙 1.5占썼만큼 占쏙옙占쏙옙
+    // thirst 70퍼센트 이상 : passiveValue절반만큼 감소, 70 ~ 일정량 이상 : passiveValue만큼 감소, 일정량 이하 : passiveValue의 1.5배만큼 감소
     void ThirstWeightSubtract()
     {
         if (thirst.curValue / thirst.maxValue >= 0.7f)
@@ -125,7 +121,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             thirst.Subtract(thirst.passiveValue * 1.5f * Time.deltaTime);
     }
 
-    // thirst 占쏙옙占?占쏙옙占쏙옙 thirst 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+    // thirst 일정량 이하 인디케이터에 표시
     void ThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue)
@@ -138,7 +134,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // thirst 占쏙옙占쏙옙 占쏙옙占쏙옙 체占쏙옙 占쏙옙占쏙옙 占쏙옙 health 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+    // thirst 위험 수준 이하 체력 감소, health 인디케이터 표시
     void HurtFromThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= hurtFromThirstWarningValue)
@@ -152,7 +148,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // hunger 占쏙옙占?占쏙옙占쏙옙 thirst 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+    // hunger 일정량 이하 인디케이터에 표시
     void HungerFlash()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -165,7 +161,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // thirst, hunger 占쏙옙占시울옙 占쏙옙占?占쏙옙占쏙옙 thirst占쏙옙 hunger 占싸듸옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싣곤옙占썽서 占쏙옙占쏙옙占쏙옙
+    // thirst, hunger 동시에 일정량 이하 인디케이터에 번갈아 표시
     void ThirstHungerFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue && hunger.curValue / hunger.maxValue <= hungerWarningValue)
@@ -178,11 +174,11 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         }
     }
 
-    // hunger, thirst 占쏙옙占?占싱삼옙占쏙옙 占쏙옙占쏙옙 stamina 회占쏙옙, 占쏙옙 占쏙옙 占싹놂옙占쏙옙 占쏙옙占?占쏙옙占쏙옙占쏙옙 占쏙옙占?회占쏙옙 占쏙옙占쏙옙
+    // hunger, thirst 일정량 이하 stamina 회복 정지, 둘 다 아니라면 정상 회복
     void HealthyStaminaAdd()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)
         stamina.Add(0);
         else stamina.Add(stamina.passiveValue * Time.deltaTime);
-    }
+    }    
 }

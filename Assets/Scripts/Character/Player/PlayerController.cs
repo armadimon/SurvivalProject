@@ -8,15 +8,17 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float slowSpeed; // hunger가 낮아 느려진 속도
+    public float tooSlowSpeed; // hunger 5퍼 이하일 때 속도
     private Vector2 _curMoveInput;
     public float jumpPower;
     public LayerMask groundLayerMask;
     public bool isGrounded;
     public float playerHeight;
 
-    public float runSpeedMultiplier;    // ???곫묾?????猷???얜즲 獄쏄퀣??
-    public float runStamina;            // ???걟??롫뮉 ???곫묾???쎈믦첋紐껉돌
-    private float originMoveSpeed;      // ?λ뜃由???猷???얜즲 (癰귣벀???
+    public float runSpeedMultiplier;    // 달릴 때 이동속도에 곱해주는 값
+    public float runStamina;            // 달리기 stamina
+    private float originMoveSpeed;      // 처음 이동속도    
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -30,20 +32,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private BuildController _buildController;
 
-    // ??筌띾뜆?녷묾?
+    // 물 마시기
     public bool isInHydrateLocation = false;
     public bool isDrinking = false;
 
-
-    public Action Inventory;            // ?紐껉뭣?醫듼봺 ??용┛ ??源??
-    private PlayerCondition playerCondition; // PlayerCondition ?뚮똾猷??곕뱜 (??쎄묶沃섎챶援????怨밴묶 ?온??
-
+    public Action Inventory; // 인벤토리
+    private PlayerCondition playerCondition;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         playerCondition = GetComponent<PlayerCondition>();
-        originMoveSpeed = moveSpeed;                // ?λ뜃由???猷???얜즲 ????
+        originMoveSpeed = moveSpeed; // 처음 이동속도 저장
     }
 
     private void Start()
@@ -54,18 +54,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        LimitSpeed();
+        LimitSpeed();        
     }
 
     private void FixedUpdate()
     {
         IsGrounded();
         Move();
+        // hunger 일정량 이하 이동속도 감소
+        SlowFromHunger();
     }
 
     private void LateUpdate()
-    {
-        // 燁삳?李?????읈 筌ｌ꼶?곭몴???묐뻬 (筌띾뜆?????낆젾 獄쏆꼷??
+    {        
         if (canLook)
         {
             CameraLook();
@@ -102,13 +103,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    // ???곫묾???낆젾 筌ｌ꼶??(??쎄묶沃섎챶援????걟 獄???猷???얜즲 筌앹빓?)
+    // 달리기 InputAction
     public void OnRun(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            // ???곫묾???뽰삂: ??쎄묶沃섎챶援밭몴????걟??랁???猷???얜즲???誘れ뿫
+            // 달리기 stamina 있을 때
             if (playerCondition.UseStamina(runStamina))
             {
                 moveSpeed *= runSpeedMultiplier;
@@ -117,19 +117,17 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            // ???곫묾?餓λ쵐? ???λ뜃由???猷???얜즲嚥?癰귣벀??
+            // 달리기 종료 시 처음 이동속도
             moveSpeed = originMoveSpeed;
         }
     }
-
-    // ???곫묾???筌왖??우읅??곗쨮 ??쎄묶沃섎챶援????걟??롫뮉 ?꾨뗀竊??
+    
     private IEnumerator RunStaminaDrain()
     {
         while (moveSpeed > originMoveSpeed)
         {
             if (!playerCondition.UseStamina(runStamina * Time.deltaTime))
-            {
-                // ??쎄묶沃섎챶援??봔鈺?????猷???얜즲???λ뜃由??
+            {                
                 moveSpeed = originMoveSpeed;
                 break;
             }
@@ -151,13 +149,13 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-
     void ToggleCursur()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
+
     bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
@@ -189,13 +187,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ?紐껉뭣?醫듼봺 ?紐꾪뀱 ??낆젾 筌ｌ꼶??(?紐껉뭣?醫듼봺 UI ??뽯뻻)
+    // 인벤토리 InputAction
     public void OnInventory(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
             Inventory?.Invoke();
-            ToggleCursur(); // ?紐껉뭣?醫듼봺 ??쎈탞 ???뚣끉苑뚨몴???뽯뻻
+            ToggleCursur(); // 인벤토리 열었을 때 마우스 잠금 해제
         }
     }
 
@@ -211,5 +209,18 @@ public class PlayerController : MonoBehaviour
     void StopDrinking()
     {
         isDrinking = false;
+    }
+
+    // hunger 일정량 이하 이동속도 감소
+    void SlowFromHunger()
+    {
+        if (playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue <= playerCondition.hungerWarningValue && playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue > 0.05f)
+        {
+            moveSpeed = slowSpeed;
+        }
+        else if(playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue <= 0.05f)
+        {
+            moveSpeed = tooSlowSpeed;
+        }
     }
 }
