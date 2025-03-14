@@ -538,8 +538,8 @@ MonoBehaviour:
   indicatorImage: {fileID: 0}
   indicatorAnimator: {fileID: 0}
   thirstWarningValue: 0.3
-  hurtFromThirstWarningValue: 0.2
-  hungerWarningValue: 0.15
+  hurtFromThirstWarningValue: 0.15
+  hungerWarningValue: 0.2
   lowThirstHealthDecay: 2
 --- !u!114 &7120608849839989870
 MonoBehaviour:
@@ -554,6 +554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  slowSpeed: 3
+  tooSlowSpeed: 1.5
   jumpPower: 5
   groundLayerMask:
     serializedVersion: 2
