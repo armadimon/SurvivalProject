@@ -308,7 +308,12 @@ public class UIInventory : MonoBehaviour
     {
 
         if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
+        {
             itemDescription.SetActive(false);
+            selectItemStatName.text = string.Empty;
+            selectItemStatValue.text = string.Empty;
+
+        }
     }
 
 
