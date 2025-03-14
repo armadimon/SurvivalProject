@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.cs diff=csharp
+*.txt text
+*.json text
+*.xml text
+*.yml text
+*.shader text
+*.cginc text
