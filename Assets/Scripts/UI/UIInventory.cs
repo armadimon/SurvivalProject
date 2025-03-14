@@ -70,7 +70,7 @@ public class UIInventory : MonoBehaviour
 
    
 
-    // UI ?リ옇???筌뤿굝??
+    // UI 기본세팅
     void InitUI()
     {
         selectItemIcon = transform.Find("InfoBG/InfoIcon").GetComponent<Image>();
@@ -343,9 +343,8 @@ public class UIInventory : MonoBehaviour
 
     public void OnExitButton()
     {
-        inventoryWindow.SetActive(false);
-        itemDescription.SetActive(false);
-        itemUseImage.SetActive(false);
+        Toggle();
+        CharacterManager.Instance.Player.controller.ToggleCursur();
     }
 
     public void OnUseButton()
@@ -370,6 +369,7 @@ public class UIInventory : MonoBehaviour
                         break;
                 }
             }
+            RemoveSelectItem();
         }
         itemUseImage.SetActive(false);
     }
