@@ -30,8 +30,8 @@ public class HydrateLocation : MonoBehaviour
         interactionText.text = "Press [H]\nto drink water.";
         if (other.TryGetComponent(out IHydrate hydrate))
         {
-            CharacterManager.Instance.Player.controller.isInHydrateLocation = true;
-            if (CharacterManager.Instance.Player.controller.isDrinking)
+            CharacterManager.Instance.Player.condition.isInHydrateLocation = true;
+            if (CharacterManager.Instance.Player.condition.isDrinking)
             {
                 things.Add(hydrate);
                 things = things.Distinct().ToList();
@@ -45,7 +45,7 @@ public class HydrateLocation : MonoBehaviour
         interactionText.text = string.Empty;
         if (other.TryGetComponent(out IHydrate hydrate))
         {
-            CharacterManager.Instance.Player.controller.isInHydrateLocation = false;
+            CharacterManager.Instance.Player.condition.isInHydrateLocation = false;
             things.Clear();
         }
     }
