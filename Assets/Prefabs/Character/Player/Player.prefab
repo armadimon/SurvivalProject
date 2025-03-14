@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 4555739867242564312}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -483,8 +483,8 @@ MonoBehaviour:
     m_ActionName: Player/Run[/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7120608849839989870}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 1613976011072082705}
+        m_TargetAssemblyTypeName: PlayerCondition, Assembly-CSharp
         m_MethodName: OnDrinking
         m_Mode: 0
         m_Arguments:
@@ -522,6 +522,7 @@ MonoBehaviour:
   item: {fileID: 0}
   dropPosition: {fileID: 4305234730608855208}
   condition: {fileID: 0}
+  equipment: {fileID: 0}
 --- !u!114 &1613976011072082705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,9 +539,13 @@ MonoBehaviour:
   indicatorImage: {fileID: 0}
   indicatorAnimator: {fileID: 0}
   thirstWarningValue: 0.3
-  hurtFromThirstWarningValue: 0.2
-  hungerWarningValue: 0.15
+  hurtFromThirstWarningValue: 0.15
+  hungerWarningValue: 0.2
+  slowSpeed: 3
+  tooSlowSpeed: 1.5
   lowThirstHealthDecay: 2
+  isInHydrateLocation: 0
+  isDrinking: 0
 --- !u!114 &7120608849839989870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,8 +572,6 @@ MonoBehaviour:
   maxXLook: 90
   lookSensitivity: 0.2
   canLook: 1
-  isInHydrateLocation: 0
-  isDrinking: 0
 --- !u!114 &1053372680967664262
 MonoBehaviour:
   m_ObjectHideFlags: 0

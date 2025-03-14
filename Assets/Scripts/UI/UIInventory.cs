@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour
 {
     public ItemSlot[] slots;
+    public ItemSlot slotItemEquip;
 
     public Transform dropPosition;
 
@@ -32,6 +34,7 @@ public class UIInventory : MonoBehaviour
     public GameObject unEquipButton;
     public GameObject dropButton;
 
+    private int curEquipIndex;
     private PlayerController controller;
     private PlayerCondition condition;
     public ItemSlot selectItem;
@@ -41,6 +44,7 @@ public class UIInventory : MonoBehaviour
     private void Awake()
     {
         InventotyManager.Instance.Inventory = this;
+        
     }
 
     // Start is called before the first frame update
@@ -69,7 +73,6 @@ public class UIInventory : MonoBehaviour
     // UI 기본세팅
     void InitUI()
     {
-        selectItem = null;
         selectItemIcon = transform.Find("InfoBG/InfoIcon").GetComponent<Image>();
         selectItemName = transform.Find("InfoBG/ItemName").GetComponent<TextMeshProUGUI>();
         selectItemDescription = transform.Find("InfoBG/Description").GetComponent<TextMeshProUGUI>();
@@ -90,10 +93,16 @@ public class UIInventory : MonoBehaviour
         equipButton = transform.Find("ItemUse/EquipButton").gameObject;
         unEquipButton = transform.Find("ItemUse/UnEquipButton").gameObject;
         dropButton = transform.Find("ItemUse/DropButton").gameObject;
-        dropButtonPosition = dropButton.transform.position;
+        dropButtonPosition = dropButton.GetComponent<RectTransform>().anchoredPosition;
 
         useButton.GetComponent<Button>().onClick.AddListener(OnUseButton);
         dropButton.GetComponent<Button>().onClick.AddListener(OnDropButton);
+        equipButton.GetComponent<Button>().onClick.AddListener(OnEquipButton);
+        unEquipButton.GetComponent<Button>().onClick.AddListener (OnUnEquipButton);
+
+        slotItemEquip = transform.Find("InventoryBG/ItemEquipSlot").GetComponent<ItemSlot>();
+        slotItemEquip.index = 50;
+        slotItemEquip.Inventory = this;
 
         slots = new ItemSlot[slotPanel.childCount];
         for (int i = 0; i < slots.Length; i++)
@@ -114,7 +123,7 @@ public class UIInventory : MonoBehaviour
 
         
     }
-
+     
     void ClearSelectItemWindow()
     {
         selectItem = null;
@@ -134,6 +143,12 @@ public class UIInventory : MonoBehaviour
     {
         if (IsOpen())
         {
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+
+
             inventoryWindow.SetActive(false);
             itemDescription.SetActive(false);
             itemUseImage.SetActive(false);
@@ -142,12 +157,17 @@ public class UIInventory : MonoBehaviour
         }
         else
         {
+
             inventoryWindow.SetActive(true);
         }
     }
 
     public bool IsOpen()
     {
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         return inventoryWindow.activeInHierarchy;
     }
 
@@ -198,6 +218,15 @@ public class UIInventory : MonoBehaviour
                 slots[i].Clear();
             }
         }
+        if (slotItemEquip.item != null)
+        {
+            slotItemEquip.Set();
+        }
+        else
+        {
+            slotItemEquip.Clear();
+        }
+        
         isUseItemWindow = itemDescription.activeSelf;
     }
 
@@ -260,9 +289,16 @@ public class UIInventory : MonoBehaviour
         float offsetY = rectDescrition.rect.height / 2;
 
         mousePos.x += offsetX + 20;
-        if (mousePos.y - offsetY < 0)
+        for (int i = 0; i < 3; i++)
         {
-            mousePos.y += offsetY / 2;
+            if (mousePos.y - offsetY < 0)
+            {
+                mousePos.y += offsetY / 2;
+            }
+            else if (mousePos.y + offsetY > Screen.height)
+            {
+                mousePos.y -= offsetY / 2;
+            }
         }
 
         itemDescription.transform.position = mousePos;
@@ -276,7 +312,6 @@ public class UIInventory : MonoBehaviour
     }
 
 
-    // RectangleContainsScreenPoint 해당 rect경계 안에 마우스 위치를 확인함
     public bool IsMouseOverUI(GameObject gObject)
     {
         return RectTransformUtility.RectangleContainsScreenPoint
@@ -296,6 +331,8 @@ public class UIInventory : MonoBehaviour
         return false;
     }
 
+
+    #region OnClick
 
     public void OnExitButton()
     {
@@ -324,13 +361,67 @@ public class UIInventory : MonoBehaviour
                 }
             }
         }
+        itemUseImage.SetActive(false);
     }
+
+    public void OnEquipButton()
+    {
+        if (slotItemEquip.equipped)
+        {
+            UnEquip();
+        }
+
+        if (slotItemEquip.item != null)
+        {
+        }
+
+        int saveSelectItemIndex = selectItem.index;
+
+        ItemSlotChange(slots[selectItem.index], slotItemEquip);
+        slotItemEquip.equipped = true;
+        curEquipIndex = slotItemEquip.index;
+
+        selectItem.index = saveSelectItemIndex;
+
+        RemoveSelectItem();
+        CharacterManager.Instance.Player.equipment.EquipNew(slotItemEquip.item);
+
+        itemUseImage.SetActive(false);
+        UpdateUI();
+        
+    }
+
+    public void OnUnEquipButton()
+    {
+        UnEquip();
+        itemUseImage.SetActive(false);
+    }
+    
 
     public void OnDropButton()
     {
         ThrowItem(selectItem.item);
         itemUseImage.SetActive(false);
         RemoveSelectItem();
+    }
+
+    #endregion
+
+    void UnEquip()
+    {
+        slotItemEquip.equipped = false;
+        ItemSlot emptySlot = GetEmptySlot();
+
+        if (emptySlot != null)
+        {
+            ItemSlotChange(slotItemEquip, emptySlot);
+            UpdateUI();
+            CharacterManager.Instance.Player.item = null;
+        }
+
+
+        CharacterManager.Instance.Player.equipment.UnEquip();
+
     }
 
     void RemoveSelectItem()
@@ -346,15 +437,49 @@ public class UIInventory : MonoBehaviour
         UpdateUI();
     }
 
+    void ItemSlotChange(ItemSlot depart, ItemSlot arrive)
+    {
+        ItemData tempItem = arrive.item;
+        bool tempEquipped = arrive.equipped;
+        int tempQuantity = arrive.quantity;
+
+        arrive.item = depart.item;
+        //arrive.icon = depart.icon;
+        arrive.equipped = depart.equipped;
+        arrive.quantity = depart.quantity;
+
+        depart.item = tempItem;
+        //depart.item.icon = tempItem.icon;
+        depart.equipped = tempEquipped;
+        depart.quantity = tempQuantity;
+
+    }
+
     public void SelectItem(int index)
     {
-        if (slots[index].item == null) return;
+        ItemSlot sSlot;
+        if (0 <= index && index < slots.Length)
+        {
+            if (slots[index].item == null) return;
+            else
+                sSlot = slots[index];
+
+        }
+        else
+        {
+            if (slotItemEquip.index != index) return;
+            else
+                sSlot = slotItemEquip;
+        }
 
         useButton.SetActive(selectItem.item.type == ItemType.Consumable);
-        equipButton.SetActive(selectItem.item.type == ItemType.Equipable && !slots[index].equipped);
-        unEquipButton.SetActive(selectItem.item.type == ItemType.Equipable && slots[index].equipped);
-        if (!slots[index].equipped)
+        equipButton.SetActive(selectItem.item.type == ItemType.Equipable && !sSlot.equipped);
+        unEquipButton.SetActive(selectItem.item.type == ItemType.Equipable && sSlot.equipped);
+
+        if (!sSlot.equipped)
             dropButton.SetActive(true);
+        else
+            dropButton.SetActive(false);
 
         if (!useButton.activeSelf && !equipButton.activeSelf && !unEquipButton.activeSelf)
         {

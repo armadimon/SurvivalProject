@@ -11,15 +11,19 @@ public class BuildMenuItem : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DescriptionText;
     public Button selectButton;
+    public RequireResourceAmount[] requireResourceTypes;
+    // public BuildObject buildObject;
+    public int index;
 
-    public void SetData(BuildObject buildObject)
-    {   Debug.Log(buildObject);
-        Debug.Log(icon);
-        icon.sprite = buildObject.data.icon;
-        nameText.text = buildObject.data.displayName;
-        DescriptionText.text = buildObject.data.description;
+    public void SetData(BuildObject newBuildObject, int index)
+    {  
+        icon.sprite = newBuildObject.data.icon;
+        nameText.text = newBuildObject.data.displayName;
+        DescriptionText.text = newBuildObject.data.description;
+        requireResourceTypes = newBuildObject.data.requireResources;
+        // buildObject = newBuildObject;
         // buildObject.data.OnClick = () => BuildManager.Instance.buildController.SetBuildObject(buildObject);
         //
-        selectButton.onClick.AddListener(() => BuildManager.Instance.buildController.SetBuildObject(buildObject));
+        selectButton.onClick.AddListener(() => BuildManager.Instance.CheckSufficientResources(newBuildObject, index));
     }
 }
