@@ -4,11 +4,25 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public string GetInteractPrompt();  // UI에 표시할 정보
-    public void OnInteract();   // 인터랙션 호출
+    public string GetInteractPrompt();  // UI????筌?六???嶺뚮㉡?€쾮?
+    public void OnInteract();   // ?嶺뚮ㅏ援?????읐??嶺뚮ㅎ???
 }
 
-public class ItemObject : MonoBehaviour
+public class ItemObject : MonoBehaviour, IInteractable
 {
-    public ItemData ItemData;
+    public ItemData itemData;
+
+    public string GetInteractPrompt()
+    {
+        string str = $"{itemData.disPlayName}\n{itemData.description}";
+        return str;
+    }
+
+    public void OnInteract()
+    {
+        CharacterManager.Instance.Player.item = itemData;
+        CharacterManager.Instance.Player.addItem?.Invoke();
+        Destroy(gameObject);
+    }
+
 }

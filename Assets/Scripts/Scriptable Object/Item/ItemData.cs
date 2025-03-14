@@ -1,10 +1,10 @@
 using UnityEngine;
 public enum ItemType
 {
-    Resouce,        // ÀÚ¿ø
-    Equipable,      // Àåºñ
-    Consumable,     // ¼Òºñ
-    interactable,   // »óÈ£ÀÛ¿ë
+    Resouce,        // ?ë¨¯ì
+    Equipable,      // ?Î»í‰¬
+    Consumable,     // ?ëš®í‰¬
+    interactable,   // ?ê³¹ìƒ‡?ë¬’ìŠœ
 }
 
 public enum ConsumableType
@@ -25,8 +25,8 @@ public class ItemDataConsumable
 public class ItemData : ScriptableObject
 {
     [Header("Item Info")]
-    public string disPlayName;  // º¸¿©Áö´Â ÀÌ¸§
-    public string description;  // ¼³¸í
+    public string disPlayName;  // í‘œì‹œë  ì•„ì´í…œ ì´ë¦„
+    public string description;  // ì•„ì´í…œ ì„¤ëª…
     public ItemType type;
     public Sprite icon;
     public GameObject dropPrefab;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2444762956533570167}
   - component: {fileID: 330358190172030930}
   - component: {fileID: 4661180223976835319}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PT_Pine_Tree_03_stump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5123885520713849109}
   - component: {fileID: 6595380875887268790}
   - component: {fileID: 7187384719737337601}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Item_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8893872715774818440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52cf7bdef7777544a93f63fb35832446, type: 3}
+  m_Script: {fileID: 11500000, guid: fdc474f697f0502468084be81b0943ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}

@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1895600785112041776
 Transform:
   m_ObjectHideFlags: 0
@@ -131,9 +131,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRate: 0.5
   attackDistance: 1
-  useStamina: 10
+  useStamina: 0
   doesGatherResource: 0
-  doseDealDamage: 0
+  doesDealDamage: 0
   damage: 10
 --- !u!95 &9205072875166477388
 Animator:

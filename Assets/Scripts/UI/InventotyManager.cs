@@ -1,35 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventotyManager : MonoBehaviour
 {
-    public static InventotyManager Instance { get; private set; }
+    private static InventotyManager _instance;
+    public static InventotyManager Instance 
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new GameObject("InventotyManager").AddComponent<InventotyManager>();
+            }
+            return _instance;
+        }
+    }
+
+    public UIInventory _inventory;
+
+    public UIInventory Inventory
+    {
+        get { return _inventory; }
+        set { _inventory = value; }
+    }
 
     public List<ItemSlot> slots = new List<ItemSlot>();
     public int maxSlots = 20;
 
+
     private void Awake()
     {
-        if (Instance != null)
+        if (_instance != null)
         {
-            Instance = this;
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            if (_instance == this)
+            {
+                Destroy(gameObject);
+
+            }
         }
     }
 
-    public bool AddItem(ItemData item, int amount)
-    {
-        foreach (ItemSlot slot in slots)
-        {
-            
-        }
 
 
-        return false;
-    }
 
 }

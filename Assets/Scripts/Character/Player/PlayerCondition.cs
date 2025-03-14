@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
- 
+using UnityEngine.UI;
+
 public interface IDamageable
 {
-    // µ¥¹ÌÁö¸¦ ¹Þ´Â ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½Ô¼ï¿½
     void TakeDamage(float damage);
 }
 
@@ -14,43 +15,55 @@ public interface IHydrate
 
 public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 {
-    public UICondition uiCondition; // UI¿¡¼­ »óÅÂ Á¤º¸¸¦ °ü¸®ÇÏ´Â °´Ã¼
+    public UICondition uiCondition; // UIï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ã¼
+    public Image indicatorImage;
+    public Animator indicatorAnimator;
+    public float thirstWarningValue;
+    public float hurtFromThirstWarningValue;
+    public float hungerWarningValue;
 
-    // UICondition¿¡¼­ Ã¼·Â°ú ½ºÅÂ¹Ì³Ê »óÅÂ¸¦ °¡Á®¿È
+    // UIConditionï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½Â°ï¿½ ï¿½ï¿½ï¿½Â¹Ì³ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     Condition health { get { return uiCondition.health; } }
     Condition hunger { get { return uiCondition.hunger; } }
     Condition thirst { get { return uiCondition.thirst; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
-    public float lowThirstHealthDecay;  //  ¹è°íÇÄÀÌ ¾øÀ» ¶§ Ã¼·Â °¨¼Ò
-    public event Action onTakeDamaged;  // µ¥¹ÌÁö¸¦ ¹Þ¾ÒÀ» ¶§ ¹ß»ýÇÏ´Â ÀÌº¥Æ®
+    public float lowThirstHealthDecay;  //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public event Action onTakeDamaged;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï´ï¿½ ï¿½Ìºï¿½Æ®
 
     void Update()
     {
-        hunger.Subtract(hunger.passiveValue * Time.deltaTime);
-        thirst.Subtract(thirst.passiveValue * Time.deltaTime);
-        stamina.Add(stamina.passiveValue * Time.deltaTime);
+        // hunger 70ï¿½ï¿½ ï¿½Ì»ï¿½ : passiveValueï¿½ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½Å­, 70 ~ ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½Å­, ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½ 1.5ï¿½è¸¸Å­ ï¿½ï¿½ï¿½ï¿½
+        HungerWeightSubtract();
 
-        if (thirst.curValue / thirst.maxValue <= 0.3f)
-        {
-            health.Subtract(lowThirstHealthDecay * Time.deltaTime);
-        }
+        // thirst 70ï¿½ï¿½ ï¿½Ì»ï¿½ : passiveValueï¿½ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½Å­, 70 ~ ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½Å­, ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½ 1.5ï¿½è¸¸Å­ ï¿½ï¿½ï¿½ï¿½
+        ThirstWeightSubtract();
+
+        // hunger, thirst ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ stamina È¸ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        HealthyStaminaAdd();
+
+        // hunger, thirst ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        ThirstFlash();
+        HurtFromThirstFlash(); // thirstï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, Indicatorï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        HungerFlash();
+        ThirstHungerFlash(); // thirstï¿½ï¿½ hunger ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Indicatorï¿½ï¿½ ï¿½Ô²ï¿½ Ç¥ï¿½ï¿½
 
         if (health.curValue == 0f)
         {
             Die();
+            indicatorImage.gameObject.SetActive(false);
         }
     }
 
     public void Heal(float amount)
     {
-        // Ã¼·ÂÀ» È¸º¹
+        // Ã¼ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
         health.Add(amount);
     }
 
     private void Die()
     {
-        // ÇÃ·¹ÀÌ¾î »ç¸Á Ã³¸® (ÇöÀç´Â ·Î±× Ãâ·Â)
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ ï¿½ï¿½ï¿½)
         Debug.Log($"Die");
     }
 
@@ -58,6 +71,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     {
         hunger.Add(amount);
     }
+
     public void HealStamina(float amount)
     {
         stamina.Add(amount);
@@ -65,27 +79,110 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void TakeDamage(float damage)
     {
-        // µ¥¹ÌÁö¸¦ ¹ÞÀ¸¸é Ã¼·ÂÀ» °¨¼Ò
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         health.Subtract(damage);
-        // µ¥¹ÌÁö¸¦ ¹Þ¾Ò´Ù´Â ÀÌº¥Æ® ¹ß»ý
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Ò´Ù´ï¿½ ï¿½Ìºï¿½Æ® ï¿½ß»ï¿½
         onTakeDamaged?.Invoke();
     }
-    // ¹° ¸¶½Ã±â
+
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½Ã±ï¿½
     public void TakeWater(int amount)
     {
         thirst.Add(amount);
     }
 
-
     public bool UseStamina(float amount)
     {
-        // ½ºÅÂ¹Ì³Ê°¡ ºÎÁ·ÇÏ¸é »ç¿ë ºÒ°¡ Ã³¸®
+        // ï¿½ï¿½ï¿½Â¹Ì³Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ Ã³ï¿½ï¿½
         if (stamina.curValue - amount < 0f)
         {
             return false;
         }
-        // ½ºÅÂ¹Ì³Ê °¨¼Ò
+        // ï¿½ï¿½ï¿½Â¹Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½
         stamina.Subtract(amount);
         return true;
+    }
+
+    // hunger 70ï¿½ï¿½ ï¿½Ì»ï¿½ : passiveValueï¿½ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½Å­, 70 ~ ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½Å­, ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½ 1.5ï¿½è¸¸Å­ ï¿½ï¿½ï¿½ï¿½
+    void HungerWeightSubtract()
+    {
+        if (hunger.curValue / hunger.maxValue >= 0.7f)
+            hunger.Subtract(hunger.passiveValue * 0.5f * Time.deltaTime);
+        else if (hunger.curValue / hunger.maxValue < 0.7f && hunger.curValue / hunger.maxValue > hungerWarningValue)
+            hunger.Subtract(hunger.passiveValue * Time.deltaTime);
+        else
+            hunger.Subtract(hunger.passiveValue * 1.5f * Time.deltaTime);
+    }
+
+    // thirst 70ï¿½ï¿½ ï¿½Ì»ï¿½ : passiveValueï¿½ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½Å­, 70 ~ ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½Å­, ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : passiveValueï¿½ï¿½ 1.5ï¿½è¸¸Å­ ï¿½ï¿½ï¿½ï¿½
+    void ThirstWeightSubtract()
+    {
+        if (thirst.curValue / thirst.maxValue >= 0.7f)
+            thirst.Subtract(thirst.passiveValue * 0.5f * Time.deltaTime);
+        else if (thirst.curValue / thirst.maxValue < 0.7f && thirst.curValue / thirst.maxValue > thirstWarningValue)
+            thirst.Subtract(thirst.passiveValue * Time.deltaTime);
+        else
+            thirst.Subtract(thirst.passiveValue * 1.5f * Time.deltaTime);
+    }
+
+    // thirst ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ thirst ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    void ThirstFlash()
+    {
+        if (thirst.curValue / thirst.maxValue <= thirstWarningValue)
+        {            
+            indicatorAnimator.SetBool("OnThirst", true);
+        }
+        else
+        {            
+            indicatorAnimator.SetBool("OnThirst", false);
+        }
+    }
+
+    // thirst ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ health ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    void HurtFromThirstFlash()
+    {
+        if (thirst.curValue / thirst.maxValue <= hurtFromThirstWarningValue)
+        {
+            health.Subtract(lowThirstHealthDecay * Time.deltaTime);
+            indicatorAnimator.SetBool("OnHurt", true);
+        }
+        else
+        {            
+            indicatorAnimator.SetBool("OnHurt", false);
+        }
+    }
+
+    // hunger ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ thirst ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    void HungerFlash()
+    {
+        if (hunger.curValue / hunger.maxValue <= hungerWarningValue)
+        {            
+            indicatorAnimator.SetBool("OnHunger", true);
+        }
+        else
+        {            
+            indicatorAnimator.SetBool("OnHunger", false);
+        }
+    }
+
+    // thirst, hunger ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ thirstï¿½ï¿½ hunger ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Æ°ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    void ThirstHungerFlash()
+    {
+        if (thirst.curValue / thirst.maxValue <= thirstWarningValue && hunger.curValue / hunger.maxValue <= hungerWarningValue)
+        {
+            indicatorAnimator.SetBool("OnThirstHunger", true);
+        }
+        else
+        {
+            indicatorAnimator.SetBool("OnThirstHunger", false);
+        }
+    }
+
+    // hunger, thirst ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ stamina È¸ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    void HealthyStaminaAdd()
+    {
+        if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)
+        stamina.Add(0);
+        else stamina.Add(stamina.passiveValue * Time.deltaTime);
     }
 }

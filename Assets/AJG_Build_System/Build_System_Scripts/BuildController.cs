@@ -139,7 +139,7 @@ public class BuildController : MonoBehaviour
             _buildObject = null;
             closestSnapPoint = null;
             SetMode = false;
-            // 일단 임시로 꺼놓는다.
+            // ???⑤베????ш끽維뽳쭛?ｌ뒙???⑥ル땻???釉먮폇??
             buildMode = false;
     }
     

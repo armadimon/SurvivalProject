@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public PlayerController controller;
 
+    public ItemData item;
+
     public Action addItem;
 
     public Transform dropPosition;

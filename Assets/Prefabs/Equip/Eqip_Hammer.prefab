@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237185827254382914}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.4, y: -0.4, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 399160663781922198}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &2265752748514185107
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   attackDistance: 1
   useStamina: 15
   doesGatherResource: 0
-  doseDealDamage: 0
+  doesDealDamage: 0
   damage: 20
 --- !u!95 &2788298127824005345
 Animator:
@@ -145,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 4160667148143385480}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 473d4c94b64fe064b9991e450a42c615, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

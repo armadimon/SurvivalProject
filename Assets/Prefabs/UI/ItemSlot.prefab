@@ -149,9 +149,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 679387760038177663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8a6eea6ffb2efc43b3ed7e4426b8c89, type: 3}
+  m_Script: {fileID: 11500000, guid: 03c068e0f8e749c4ebf1600ba5dcb3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  Inventory: {fileID: 0}
+  button: {fileID: 0}
+  icon: {fileID: 0}
+  ItemQuantityImage: {fileID: 0}
+  quantityText: {fileID: 0}
+  index: 0
+  equipped: 0
+  quantity: 0
 --- !u!114 &8400932513235276475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +263,7 @@ GameObject:
   - component: {fileID: 7128322638123201823}
   - component: {fileID: 8058172637612008800}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuantityText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
