@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public interface IDamageable
 {    
@@ -26,8 +27,22 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     Condition thirst { get { return uiCondition.thirst; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
-    public float lowThirstHealthDecay;  //  thirst 일정량 이하일 때 체력 감소
+    private PlayerController controller;
+
+    public float slowSpeed; // hunger가 낮아 느려진 이동속도
+    public float tooSlowSpeed; // hunger 5퍼 이하일 때 이동속도
+
+    public float lowThirstHealthDecay;  // thirst 일정량 이하일 때 체력 감소
     public event Action onTakeDamaged;
+
+    // 물 마시기
+    public bool isInHydrateLocation = false;
+    public bool isDrinking = false;
+
+    void Start()
+    {
+        controller = CharacterManager.Instance.Player.controller;
+    }
 
     void Update()
     {
@@ -180,5 +195,33 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)
         stamina.Add(0);
         else stamina.Add(stamina.passiveValue * Time.deltaTime);
-    }    
+    }
+
+    // 물 마시기 InputAction
+    public void OnDrinking(InputAction.CallbackContext context)
+    {
+        if (isInHydrateLocation && context.phase == InputActionPhase.Started)
+        {
+            isDrinking = true;
+            Invoke("StopDrinking", 3f);
+        }
+    }
+
+    void StopDrinking()
+    {
+        isDrinking = false;
+    }
+
+    // hunger 일정량 이하 이동속도 감소
+    public void SlowFromHunger()
+    {
+        if (hunger.curValue / hunger.maxValue <= hungerWarningValue && hunger.curValue / hunger.maxValue > 0.05f)
+        {
+            controller.moveSpeed = slowSpeed;
+        }
+        else if (hunger.curValue / hunger.maxValue <= 0.05f)
+        {
+            controller.moveSpeed = tooSlowSpeed;
+        }
+    }
 }
