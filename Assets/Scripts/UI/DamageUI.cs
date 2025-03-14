@@ -35,7 +35,7 @@ public class DamageUI : MonoBehaviour
         float startAlpha = 0.3f;
         float a = startAlpha;
 
-        // ¾ËÆÄ°ªÀÌ 0ÀÌ µÉ ¶§±îÁö °¨¼Ò
+        // ì•ŒíŒŒê°’ì´ 0ì´ ë  ë•Œê¹Œì§€ ê°ì†Œ
         while (a > 0.0f)
         {
             a -= (startAlpha / flashSpeed) * Time.deltaTime;
@@ -43,7 +43,7 @@ public class DamageUI : MonoBehaviour
             yield return null;
         }
 
-        // ÆäÀÌµå¾Æ¿ôÀÌ ¿Ï·áµÇ¸é ÀÌ¹ÌÁö ºñÈ°¼ºÈ­
+        // í˜ì´ë“œì•„ì›ƒì´ ì™„ë£Œë˜ë©´ ì´ë¯¸ì§€ ë¹„í™œì„±í™”
         image.enabled = false;
 
     }
