@@ -20,7 +20,7 @@ MonoBehaviour:
   canStack: 1
   maxStackAmount: 10
   consumables:
-  - type: 2
-    value: 20
+  - type: 3
+    value: 5
   equipPrefab: {fileID: 0}
   resourceType: 0
