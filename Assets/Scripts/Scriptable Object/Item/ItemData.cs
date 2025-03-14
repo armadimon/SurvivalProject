@@ -14,6 +14,19 @@ public enum ConsumableType
     Stamina,
 }
 
+public enum RequireResourceType
+{
+    Wood,
+    Stone,
+}
+
+[System.Serializable]
+public class RequireResourceAmount
+{
+    public RequireResourceType type;
+    public int value;
+}
+
 [System.Serializable]
 public class ItemDataConsumable
 {
@@ -40,4 +53,7 @@ public class ItemData : ScriptableObject
 
     [Header("Eqip")]
     public GameObject equipPrefab;
+    
+    [Header("ResourceType")]
+    public RequireResourceType resourceType;
 }
