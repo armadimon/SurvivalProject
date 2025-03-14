@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public float playerHeight;
 
-    public float runSpeedMultiplier;    // ?щ━湲????대룞 ?띾룄 諛곗닔
-    public float runStamina;            // ?뚮え?섎뒗 ?щ━湲??ㅽ뀒誘몃굹
-    private float originMoveSpeed;      // 珥덇린 ?대룞 ?띾룄 (蹂듦뎄??
+    public float runSpeedMultiplier;    // ???곫묾?????猷???얜즲 獄쏄퀣??
+    public float runStamina;            // ???걟??롫뮉 ???곫묾???쎈믦첋紐껉돌
+    private float originMoveSpeed;      // ?λ뜃由???猷???얜즲 (癰귣벀???
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -30,20 +30,20 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private BuildController _buildController;
 
-    // 臾?留덉떆湲?
+    // ??筌띾뜆?녷묾?
     public bool isInHydrateLocation = false;
     public bool isDrinking = false;
 
 
-    public Action Inventory;            // ?몃깽?좊━ ?닿린 ?대깽??
-    private PlayerCondition playerCondition; // PlayerCondition 而댄룷?뚰듃 (?ㅽ깭誘몃굹 ???곹깭 愿由?
+    public Action Inventory;            // ?紐껉뭣?醫듼봺 ??용┛ ??源??
+    private PlayerCondition playerCondition; // PlayerCondition ?뚮똾猷??곕뱜 (??쎄묶沃섎챶援????怨밴묶 ?온??
 
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         playerCondition = GetComponent<PlayerCondition>();
-        originMoveSpeed = moveSpeed;                // 珥덇린 ?대룞 ?띾룄 ???
+        originMoveSpeed = moveSpeed;                // ?λ뜃由???猷???얜즲 ????
     }
 
     private void Start()
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // 移대찓???뚯쟾 泥섎━瑜??섑뻾 (留덉슦???낅젰 諛섏쁺)
+        // 燁삳?李?????읈 筌ｌ꼶?곭몴???묐뻬 (筌띾뜆?????낆젾 獄쏆꼷??
         if (canLook)
         {
             CameraLook();
@@ -103,12 +103,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // ?щ━湲??낅젰 泥섎━ (?ㅽ깭誘몃굹 ?뚮え 諛??대룞 ?띾룄 利앷?)
+    // ???곫묾???낆젾 筌ｌ꼶??(??쎄묶沃섎챶援????걟 獄???猷???얜즲 筌앹빓?)
     public void OnRun(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            // ?щ━湲??쒖옉: ?ㅽ깭誘몃굹瑜??뚮え?섍퀬 ?대룞 ?띾룄瑜??믪엫
+            // ???곫묾???뽰삂: ??쎄묶沃섎챶援밭몴????걟??랁???猷???얜즲???誘れ뿫
             if (playerCondition.UseStamina(runStamina))
             {
                 moveSpeed *= runSpeedMultiplier;
@@ -117,19 +117,19 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            // ?щ━湲?以묒? ??珥덇린 ?대룞 ?띾룄濡?蹂듦뎄
+            // ???곫묾?餓λ쵐? ???λ뜃由???猷???얜즲嚥?癰귣벀??
             moveSpeed = originMoveSpeed;
         }
     }
 
-    // ?щ━湲???吏?띿쟻?쇰줈 ?ㅽ깭誘몃굹 ?뚮え?섎뒗 肄붾（??
+    // ???곫묾???筌왖??우읅??곗쨮 ??쎄묶沃섎챶援????걟??롫뮉 ?꾨뗀竊??
     private IEnumerator RunStaminaDrain()
     {
         while (moveSpeed > originMoveSpeed)
         {
             if (!playerCondition.UseStamina(runStamina * Time.deltaTime))
             {
-                // ?ㅽ깭誘몃굹 遺議????대룞 ?띾룄瑜?珥덇린??
+                // ??쎄묶沃섎챶援??봔鈺?????猷???얜즲???λ뜃由??
                 moveSpeed = originMoveSpeed;
                 break;
             }
@@ -189,13 +189,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ?몃깽?좊━ ?몄텧 ?낅젰 泥섎━ (?몃깽?좊━ UI ?쒖떆)
+    // ?紐껉뭣?醫듼봺 ?紐꾪뀱 ??낆젾 筌ｌ꼶??(?紐껉뭣?醫듼봺 UI ??뽯뻻)
     public void OnInventory(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
             Inventory?.Invoke();
-            ToggleCursur(); // ?몃깽?좊━ ?ㅽ뵂 ??而ㅼ꽌瑜??쒖떆
+            ToggleCursur(); // ?紐껉뭣?醫듼봺 ??쎈탞 ???뚣끉苑뚨몴???뽯뻻
         }
     }
 
