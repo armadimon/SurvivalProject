@@ -308,7 +308,12 @@ public class UIInventory : MonoBehaviour
     {
 
         if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
+        {
             itemDescription.SetActive(false);
+            selectItemStatName.text = string.Empty;
+            selectItemStatValue.text = string.Empty;
+
+        }
     }
 
 
@@ -356,6 +361,9 @@ public class UIInventory : MonoBehaviour
                         break;
                     case ConsumableType.Hunger:
                         condition.Eat(selectItem.item.consumables[i].value);
+                        break;
+                    case ConsumableType.Thirst:
+                        condition.Hydrate(selectItem.item.consumables[i].value);
                         break;
                     case ConsumableType.Stamina:
                         condition.HealStamina(selectItem.item.consumables[i].value);
