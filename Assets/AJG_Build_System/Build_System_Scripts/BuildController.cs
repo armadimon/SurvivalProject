@@ -12,7 +12,6 @@ public class BuildController : MonoBehaviour
     
     public Camera snapPointCamera;
     public LayerMask placementLayer;
-    public float maxSlopeAngle = 45f;
     public BuildObject _buildObject;
     private MeshRenderer _objectMeshRenderer;
     private Color _objectOriginalColor;
@@ -70,16 +69,6 @@ public class BuildController : MonoBehaviour
         }
     }
     
-    // private void RotateSnapPoint(int direction)
-    // {
-    //     if (availableRotations.Count == 0) return;
-    //     
-    //     currentRotationIndex = (currentRotationIndex + direction) % availableRotations.Count;
-    //     if (currentRotationIndex < 0) currentRotationIndex += availableRotations.Count;
-    //
-    //     _buildObject.transform.rotation = availableRotations[currentRotationIndex];
-    // }
-    
     private bool TrySet()
     {
         bool isSetable = false;
@@ -92,8 +81,6 @@ public class BuildController : MonoBehaviour
             float angle = Vector3.Angle(Vector3.up, hitNormal);
 
             _buildObject.transform.position = hit.point;
-            Vector3 forwardDirection = Vector3.Cross(hitNormal, Vector3.right);
-            _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
             if (TrySnapToClosestPoint(hit))
             {
                 _buildObject.transform.position = closestSnapPoint.transform.position;
@@ -101,8 +88,16 @@ public class BuildController : MonoBehaviour
                 _objectMeshRenderer.material.color = _objectOriginalColor;
                 isSetable =  true;
             }
-            else if (angle <= maxSlopeAngle)
+            else if (angle <= _buildObject.data.minSlopeAngle)
             {
+                _buildObject.transform.rotation = _buildObject.originalRotation;
+                _objectMeshRenderer.material.color = _objectOriginalColor;
+                isSetable =  true;
+            }
+            else if (angle <= _buildObject.data.maxSlopeAngle && angle > _buildObject.data.minSlopeAngle)
+            {
+                Vector3 forwardDirection = Vector3.Cross(hitNormal, Vector3.right);
+                _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
                 _objectMeshRenderer.material.color = _objectOriginalColor;
                 isSetable =  true;
             }

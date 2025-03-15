@@ -43,7 +43,6 @@ public class SnapPoint : MonoBehaviour
             BaseDirection = Vector3.right; 
         }
 
-        Vector3 ExcludeDirection = -BaseDirection;
 
         List<Vector3> directions = new List<Vector3>();
 
@@ -68,19 +67,13 @@ public class SnapPoint : MonoBehaviour
             directions.Add(Vector3.up);
             directions.Add(Vector3.down);
         }
-
         validRotations.Clear();
-        validRotations.Add(Quaternion.identity); // 자기 자신
-
+        validRotations.Add(Quaternion.LookRotation(Vector3.up, BaseDirection)); 
         foreach (Vector3 dir in directions)
         {
-            if (Vector3.Distance(dir, ExcludeDirection) > 0.1f)
-            {
                 Quaternion rotation = Quaternion.LookRotation(BaseDirection, dir);
                 validRotations.Add(rotation);
-            }
         }
-
     }
 
     public void ApplyRotation(int index)
@@ -88,7 +81,6 @@ public class SnapPoint : MonoBehaviour
         if (validRotations.Count > 0)
         {
             Quaternion rotationToApply = validRotations[index];
-
             transform.rotation = baseRotation * rotationToApply;
         }
     }

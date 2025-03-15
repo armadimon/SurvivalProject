@@ -15,6 +15,8 @@ public class BuildObjectData : ScriptableObject
     [Header("Info")]
     public string displayName;
     public string description;
+    public float maxSlopeAngle = 45f;
+    public float minSlopeAngle = 10f;
     public BuildObjectType type;
     public Sprite icon;
     public GameObject prefabs;
