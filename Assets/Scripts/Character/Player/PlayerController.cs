@@ -7,9 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
-    public float slowSpeed; // hunger가 낮아 느려진 속도
-    public float tooSlowSpeed; // hunger 5퍼 이하일 때 속도
+    public float moveSpeed;    
     private Vector2 _curMoveInput;
     public float jumpPower;
     public LayerMask groundLayerMask;
@@ -30,11 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     private Rigidbody _rigidbody;
-    private BuildController _buildController;
-
-    // 물 마시기
-    public bool isInHydrateLocation = false;
-    public bool isDrinking = false;
+    private BuildController _buildController;    
 
     public Action Inventory; // 인벤토리
     private PlayerCondition playerCondition;
@@ -62,7 +56,7 @@ public class PlayerController : MonoBehaviour
         IsGrounded();
         Move();
         // hunger 일정량 이하 이동속도 감소
-        SlowFromHunger();
+        playerCondition.SlowFromHunger();
     }
 
     private void LateUpdate()
@@ -149,7 +143,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void ToggleCursur()
+    public void ToggleCursur()
     {
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
@@ -195,32 +189,5 @@ public class PlayerController : MonoBehaviour
             Inventory?.Invoke();
             ToggleCursur(); // 인벤토리 열었을 때 마우스 잠금 해제
         }
-    }
-
-    public void OnDrinking(InputAction.CallbackContext context)
-    {
-        if (isInHydrateLocation && context.phase == InputActionPhase.Started)
-        {
-            isDrinking = true;
-            Invoke("StopDrinking", 5f);
-        }
-    }
-
-    void StopDrinking()
-    {
-        isDrinking = false;
-    }
-
-    // hunger 일정량 이하 이동속도 감소
-    void SlowFromHunger()
-    {
-        if (playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue <= playerCondition.hungerWarningValue && playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue > 0.05f)
-        {
-            moveSpeed = slowSpeed;
-        }
-        else if(playerCondition.uiCondition.hunger.curValue / playerCondition.uiCondition.hunger.maxValue <= 0.05f)
-        {
-            moveSpeed = tooSlowSpeed;
-        }
-    }
+    } 
 }

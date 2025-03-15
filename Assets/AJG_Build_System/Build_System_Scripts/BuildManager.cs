@@ -93,7 +93,7 @@ public class BuildManager : MonoBehaviour
 
         if (!resourceFound)
         {
-            Debug.Log($"인벤토리에 {requireResourceAmount.type} 리소스가 없습니다!");
+            Debug.Log($"?몃깽?좊━??{requireResourceAmount.type} 由ъ냼?ㅺ? ?놁뒿?덈떎!");
         }
         return false;
     }

@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRate: 1.5
-  attackDistance: 1
-  useStamina: 15
+  attackDistance: 2
+  useStamina: 0
   doesGatherResource: 0
   doesDealDamage: 0
   damage: 20
