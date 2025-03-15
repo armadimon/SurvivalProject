@@ -54,7 +54,7 @@ public class BuildManager : MonoBehaviour
         {
             if (!HasResourceAmount(requireResource, false))
             {
-                Debug.Log("자원이 부족하여 빌드를 진행할 수 없습니다.");
+                NotificationManager.Instance.ShowNotification("자원이 부족합니다!!");
                 return ;
             }
         }
