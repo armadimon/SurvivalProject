@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,7 +54,7 @@ public class BuildManager : MonoBehaviour
         {
             if (!HasResourceAmount(requireResource, false))
             {
-                Debug.Log("?먯썝??遺議깊븯??鍮뚮뱶瑜?吏꾪뻾?????놁뒿?덈떎.");
+                NotificationManager.Instance.ShowNotification("자원이 부족합니다!!");
                 return ;
             }
         }

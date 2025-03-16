@@ -50,6 +50,8 @@ MonoBehaviour:
   snapPointGroup: {fileID: 2731417939852562783}
   snapPoints: []
   data: {fileID: 11400000, guid: 77086c7bf151c1d4dbe173e77acabd2d, type: 2}
+  maxSlopeAngle: 359
+  minSlopeAngle: 30
 --- !u!1 &8588568390813235407
 GameObject:
   m_ObjectHideFlags: 0
