@@ -168,12 +168,11 @@ public class BuildController : MonoBehaviour
         {
             if (context.control.name == "leftButton")
             {
-                // _buildObject.transform.SetParent(null);
-                // _buildObject.snapPointGroup.gameObject.SetActive(true);
+                _buildObject.transform.SetParent(null);
+                _buildObject.snapPointGroup.gameObject.SetActive(true);
                 SetMode = false;
                 _buildObject.isSet = true;
                 objectCollider.enabled = true;
-                // objectCollider.isTrigger = false;
                 _buildObject = null;
                 BuildManager.Instance.buildMenu.SetActive(true);
                 CharacterManager.Instance.Player.controller.canLook = false;
@@ -225,6 +224,17 @@ public class BuildController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+
+    public void OnObjectRotation(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && SetMode == true)
+        {
+            Vector2 scrollValue = context.ReadValue<Vector2>(); // Vector2로 가져옴
+            float scrollY = scrollValue.y; // Y값만 사용
+            _buildObject.transform.Rotate(Vector3.up, scrollY * 10 * Time.deltaTime);
+            _buildObject.originalRotation = _buildObject.transform.rotation;
+        }
+    }
     
     public void SetBuildObject(BuildObject newBuildObject)
     {
@@ -235,7 +245,7 @@ public class BuildController : MonoBehaviour
             ;
         objectCollider = _buildObject.GetComponentInChildren<Collider>();
         objectCollider.enabled = false;
-        // _buildObject.snapPointGroup?.gameObject.SetActive(false);
+        _buildObject.snapPointGroup?.gameObject.SetActive(false);
         _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
         _objectOriginalColor = _objectMeshRenderer.material.color;
         _objectCantSetableColor = Color.red;
