@@ -67,6 +67,56 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
+        value: {x: -0.7437004, y: 0.000000049128175, z: -0.0000029110606, w: 0.66851306}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.015228026, y: -0.0000006350327, z: 0.0000006315121, w: 0.016958483}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.7437004, y: 0.000000049128175, z: -0.0000029110606, w: 0.66851306}
+        inSlope: {x: -0.0072102393, y: 0.000051868483, z: 0.00002959217, w: -0.008046627}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: -0.89562464, y: 0.00000008777673, z: -0.00000008777673, w: 0.4448106}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.006835307, y: 0.17584476, z: 0.015672076, w: -0.013785978}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.89562464, y: 0.00000008777673, z: -0.00000008777673, w: 0.4448106}
+        inSlope: {x: 0.001990026, y: -0.017131606, z: -0.0014248679, w: 0.003994473}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.006
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
         value: {x: 0.26330763, y: -0.00000001585782, z: 0.000000066721796, w: 0.9647119}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: -0.000000027793682, z: 0.00000008935648, w: 0}
@@ -112,6 +162,56 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: -0.07305929, y: 0.000000051428692, z: -0.000000041044732, w: 0.9973276}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.00828096, y: -0.20111245, z: -0.17797802, w: -0.000692183}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.07305929, y: 0.000000051428692, z: -0.000000041044732, w: 0.9973276}
+        inSlope: {x: -0.007981735, y: -0.22126435, z: -0.19711941, w: -0.0004902963}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: -0.1792804, y: 0.0000000604917, z: -0.000000039339156, w: 0.983798}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.02982155, y: -0.2524862, z: -0.073184796, w: -0.005508623}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.1792804, y: 0.0000000604917, z: -0.000000039339156, w: 0.983798}
+        inSlope: {x: -0.03458031, y: -0.27866212, z: -0.08299571, w: -0.006200806}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -167,17 +267,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: {x: -0.028873397, y: -0.000000022415572, z: -0.000000009384893, w: 0.99958307}
+        value: {x: 0.058719665, y: -0.000000054815967, z: 0.000000015434228, w: 0.9982745}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0.000000032441147, z: 0.000000013582254, w: 0}
+        outSlope: {x: -0.032157667, y: 0.00000011191392, z: -0.000000033141664, w: 0.0019035032}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.0833333
-        value: {x: -0.028873397, y: -0.000000022415572, z: -0.000000009384893, w: 0.99958307}
-        inSlope: {x: 0, y: 0.000000032443726, z: 0.000000013582683, w: 0}
+        value: {x: 0.058719665, y: -0.000000054815967, z: 0.000000015434228, w: 0.9982745}
+        inSlope: {x: 0.0039133574, y: 0.00000027332632, z: -0.00000007676268, w: -0.00023072766}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -186,23 +286,23 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    path: Tiger_001_rig/Root/spine.007/spine.008
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: {x: 0.083301395, y: -0.00000005043877, z: 0.000000017908256, w: 0.9965244}
+        value: {x: 0.079926215, y: 0.00000004477691, z: 0.000000019967738, w: 0.9968008}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0.000000072997956, z: -0.000000025918194, w: 0}
+        outSlope: {x: 0.024720306, y: 0.0000015435619, z: 0.000001014704, w: -0.001990026}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.0833333
-        value: {x: 0.083301395, y: -0.00000005043877, z: 0.000000017908256, w: 0.9965244}
-        inSlope: {x: 0, y: 0.000000073001395, z: -0.000000025918194, w: 0}
+        value: {x: 0.079926215, y: 0.00000004477691, z: 0.000000019967738, w: 0.9968008}
+        inSlope: {x: -0.006831702, y: -0.0003499567, z: 0.00032622335, w: 0.0005479782}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -211,23 +311,32 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: {x: 0.5713208, y: -0.000000057960335, z: -0.00000016829807, w: 0.8207269}
+        value: {x: -0.50000006, y: 0, z: 0, w: 0.8660254}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0.000000049783836, z: -0.000000058784806, w: 0}
+        outSlope: {x: -0.075101845, y: -1.6121075, z: 1.6117957, w: -0.04291534}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: -0.68778926, y: -0.00000014360603, z: -0.0000000025770532, w: 0.7259104}
+        inSlope: {x: -0.010728835, y: -0.00080846343, z: -0.00044022044, w: -0.010728835}
+        outSlope: {x: 0.01497385, y: -0.0015705782, z: -0.00086554507, w: 0.014188813}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.0833333
-        value: {x: 0.5713208, y: -0.000000057960335, z: -0.00000016829807, w: 0.8207269}
-        inSlope: {x: 0, y: 0.00000004979759, z: -0.000000058791684, w: 0}
+        value: {x: -0.68778926, y: -0.00000014360603, z: -0.0000000025770532, w: 0.7259104}
+        inSlope: {x: 0.015002926, y: -0.0015711776, z: -0.0008684266, w: 0.014217889}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -236,23 +345,32 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: {x: 0.57132083, y: -0.0000000507916, z: 0.0000001232009, w: 0.8207268}
+        value: {x: -0.45242703, y: -0.019253671, z: -0.034501746, w: 0.89092577}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0.0000000114695355, z: 0.000000027931206, w: 0}
+        outSlope: {x: -0.11622905, y: -0.01966953, z: -0.046938654, w: -0.060796734}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: -0.4524309, y: -0.019356575, z: -0.03444948, w: 0.8909236}
+        inSlope: {x: -0.06437302, y: -0.0004470348, z: -0.012964009, w: -0.03218651}
+        outSlope: {x: -0.064503856, y: -0.00068508997, z: -0.013087581, w: -0.033291377}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.0833333
-        value: {x: 0.57132083, y: -0.0000000507916, z: 0.0000001232009, w: 0.8207268}
-        inSlope: {x: 0, y: 0.00000001147985, z: 0.000000027917455, w: 0}
+        value: {x: -0.4524309, y: -0.019356575, z: -0.03444948, w: 0.8909236}
+        inSlope: {x: -0.06451839, y: -0.0006760039, z: -0.01309485, w: -0.033233225}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -261,7 +379,207 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0.24603032, y: 0.008978918, z: 0.03898614, w: 0.9684362}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.7017438, y: 0.016116237, z: 0.11646159, w: -0.18377459}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.24603878, y: 0.008991618, z: 0.038932547, w: 0.968436}
+        inSlope: {x: 0.12242987, y: -0.0005898877, z: 0.020889867, w: -0.0318981}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0.2964376, y: 0.0013324122, z: -0.002108608, w: 0.9550489}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.46618524, y: 0.0020885472, z: -0.06893361, w: 0.14429131}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.2964375, y: 0.0014301422, z: -0.0021389446, w: 0.95504874}
+        inSlope: {x: -0.056081243, y: -0.0035087955, z: -0.0056549683, w: 0.017419938}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0.5420178, y: 0.0000000050478377, z: -0.00000039557509, w: 0.840367}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.008854174, y: -0.00023442239, z: -0.000106866355, w: 0.0057105096}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.54145145, y: 0.00043733086, z: 0.00018019881, w: 0.8407319}
+        inSlope: {x: 0.006345011, y: 0.0025153032, z: 0.0011795219, w: -0.004095416}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: -0.5704344, y: 0.059955075, z: 0.08562471, w: 0.8146646}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.06803582, y: 1.0799046, z: -1.0787095, w: 0.07859161}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.68778926, y: -0.000000038615553, z: -0.00000017108687, w: 0.7259104}
+        inSlope: {x: 0.015170344, y: -0.0028080891, z: -0.0011534481, w: 0.014362797}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: -0.16228774, y: -0.35531434, z: 0.05548059, w: 0.9188778}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.06621884, y: -0.010671155, z: 0.027968518, w: 0.0058258735}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.43232745, y: -0.00063221157, z: 0.081754, w: 0.8980026}
+        inSlope: {x: -0.045006316, y: 0.006262093, z: 0.00406297, w: -0.022063334}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0.5715141, y: 0.14351782, z: -0.23454475, w: 0.77315134}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.23834167, y: 0.08045185, z: 0.023707267, w: -0.18409184}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.46995497, y: -0.008154415, z: -0.07446964, w: 0.87950563}
+        inSlope: {x: 0.07151116, y: -0.00015862526, z: -0.0114282295, w: -0.039166022}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0, y: -0.4226183, z: 0, w: 0.90630776}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.27331993, y: -0.015242446, z: -0.088379495, w: -0.0072102393}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.037244335, y: 0.00094315293, z: -0.008955309, w: 0.9992656}
+        inSlope: {x: -0.036379263, y: -0.0018999262, z: 0.0136697125, w: 0.0014997298}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.0097372895, y: 0.0006117048, z: 0.00052394764, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.54123896, y: 0.0005877761, z: 0.00020603096, w: 0.8408686}
+        inSlope: {x: 0.009402152, y: 0.002509079, z: 0.001019066, w: -0.0060277604}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -292,6 +610,31 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
+        value: {x: -0.028873397, y: -0.000000022415572, z: -0.000000009384893, w: 0.99958307}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0.000000032441147, z: 0.000000013582254, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.028873397, y: -0.000000022415572, z: -0.000000009384893, w: 0.99958307}
+        inSlope: {x: 0, y: 0.000000032443726, z: 0.000000013582683, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
         value: {x: -0.22225444, y: 0.0000013644403, z: 0.0000025979125, w: 0.9749887}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: -0.041675184, y: 0.00000017289568, z: -0.00000033368923, w: -0.009488675}
@@ -312,6 +655,31 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 0.083301395, y: -0.00000005043877, z: 0.000000017908256, w: 0.9965244}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0.000000072997956, z: -0.000000025918194, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.083301395, y: -0.00000005043877, z: 0.000000017908256, w: 0.9965244}
+        inSlope: {x: 0, y: 0.000000073001395, z: -0.000000025918194, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -392,6 +760,31 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
+        value: {x: 0.5713208, y: -0.000000057960335, z: -0.00000016829807, w: 0.8207269}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0.000000049783836, z: -0.000000058784806, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: 0.5713208, y: -0.000000057960335, z: -0.00000016829807, w: 0.8207269}
+        inSlope: {x: 0, y: 0.00000004979759, z: -0.000000058791684, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
         value: {x: -0.6761762, y: 0.0013485402, z: -0.0016089939, w: 0.7367369}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0.022842038, y: 0.0010671155, z: 0.00043441693, w: 0.021025058}
@@ -467,17 +860,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: {x: 0.058719665, y: -0.000000054815967, z: 0.000000015434228, w: 0.9982745}
+        value: {x: 0.57132083, y: -0.0000000507916, z: 0.0000001232009, w: 0.8207268}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.032157667, y: 0.00000011191392, z: -0.000000033141664, w: 0.0019035032}
+        outSlope: {x: 0, y: 0.0000000114695355, z: 0.000000027931206, w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.0833333
-        value: {x: 0.058719665, y: -0.000000054815967, z: 0.000000015434228, w: 0.9982745}
-        inSlope: {x: 0.0039133574, y: 0.00000027332632, z: -0.00000007676268, w: -0.00023072766}
+        value: {x: 0.57132083, y: -0.0000000507916, z: 0.0000001232009, w: 0.8207268}
+        inSlope: {x: 0, y: 0.00000001147985, z: 0.000000027917455, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -486,400 +879,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0.079926215, y: 0.00000004477691, z: 0.000000019967738, w: 0.9968008}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.024720306, y: 0.0000015435619, z: 0.000001014704, w: -0.001990026}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.079926215, y: 0.00000004477691, z: 0.000000019967738, w: 0.9968008}
-        inSlope: {x: -0.006831702, y: -0.0003499567, z: 0.00032622335, w: 0.0005479782}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0.2964376, y: 0.0013324122, z: -0.002108608, w: 0.9550489}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.46618524, y: 0.0020885472, z: -0.06893361, w: 0.14429131}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.2964375, y: 0.0014301422, z: -0.0021389446, w: 0.95504874}
-        inSlope: {x: -0.056081243, y: -0.0035087955, z: -0.0056549683, w: 0.017419938}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0.5420178, y: 0.0000000050478377, z: -0.00000039557509, w: 0.840367}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.008854174, y: -0.00023442239, z: -0.000106866355, w: 0.0057105096}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.54145145, y: 0.00043733086, z: 0.00018019881, w: 0.8407319}
-        inSlope: {x: 0.006345011, y: 0.0025153032, z: 0.0011795219, w: -0.004095416}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0.24603032, y: 0.008978918, z: 0.03898614, w: 0.9684362}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.7017438, y: 0.016116237, z: 0.11646159, w: -0.18377459}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.24603878, y: 0.008991618, z: 0.038932547, w: 0.968436}
-        inSlope: {x: 0.12242987, y: -0.0005898877, z: 0.020889867, w: -0.0318981}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.7437004, y: 0.000000049128175, z: -0.0000029110606, w: 0.66851306}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.015228026, y: -0.0000006350327, z: 0.0000006315121, w: 0.016958483}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.7437004, y: 0.000000049128175, z: -0.0000029110606, w: 0.66851306}
-        inSlope: {x: -0.0072102393, y: 0.000051868483, z: 0.00002959217, w: -0.008046627}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.89562464, y: 0.00000008777673, z: -0.00000008777673, w: 0.4448106}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.006835307, y: 0.17584476, z: 0.015672076, w: -0.013785978}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.89562464, y: 0.00000008777673, z: -0.00000008777673, w: 0.4448106}
-        inSlope: {x: 0.001990026, y: -0.017131606, z: -0.0014248679, w: 0.003994473}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.006
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.07305929, y: 0.000000051428692, z: -0.000000041044732, w: 0.9973276}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.00828096, y: -0.20111245, z: -0.17797802, w: -0.000692183}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.07305929, y: 0.000000051428692, z: -0.000000041044732, w: 0.9973276}
-        inSlope: {x: -0.007981735, y: -0.22126435, z: -0.19711941, w: -0.0004902963}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.1792804, y: 0.0000000604917, z: -0.000000039339156, w: 0.983798}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.02982155, y: -0.2524862, z: -0.073184796, w: -0.005508623}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.1792804, y: 0.0000000604917, z: -0.000000039339156, w: 0.983798}
-        inSlope: {x: -0.03458031, y: -0.27866212, z: -0.08299571, w: -0.006200806}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.16228774, y: -0.35531434, z: 0.05548059, w: 0.9188778}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.06621884, y: -0.010671155, z: 0.027968518, w: 0.0058258735}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.43232745, y: -0.00063221157, z: 0.081754, w: 0.8980026}
-        inSlope: {x: -0.045006316, y: 0.006262093, z: 0.00406297, w: -0.022063334}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0, y: 0, z: 0, w: 1}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.0097372895, y: 0.0006117048, z: 0.00052394764, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.54123896, y: 0.0005877761, z: 0.00020603096, w: 0.8408686}
-        inSlope: {x: 0.009402152, y: 0.002509079, z: 0.001019066, w: -0.0060277604}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0, y: -0.4226183, z: 0, w: 0.90630776}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.27331993, y: -0.015242446, z: -0.088379495, w: -0.0072102393}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.037244335, y: 0.00094315293, z: -0.008955309, w: 0.9992656}
-        inSlope: {x: -0.036379263, y: -0.0018999262, z: 0.0136697125, w: 0.0014997298}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: 0.5715141, y: 0.14351782, z: -0.23454475, w: 0.77315134}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.23834167, y: 0.08045185, z: 0.023707267, w: -0.18409184}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: 0.46995497, y: -0.008154415, z: -0.07446964, w: 0.87950563}
-        inSlope: {x: 0.07151116, y: -0.00015862526, z: -0.0114282295, w: -0.039166022}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.5704344, y: 0.059955075, z: 0.08562471, w: 0.8146646}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.06803582, y: 1.0799046, z: -1.0787095, w: 0.07859161}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.68778926, y: -0.000000038615553, z: -0.00000017108687, w: 0.7259104}
-        inSlope: {x: 0.015170344, y: -0.0028080891, z: -0.0011534481, w: 0.014362797}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.50000006, y: 0, z: 0, w: 0.8660254}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.075101845, y: -1.6121075, z: 1.6117957, w: -0.04291534}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.033333335
-        value: {x: -0.68778926, y: -0.00000014360603, z: -0.0000000025770532, w: 0.7259104}
-        inSlope: {x: -0.010728835, y: -0.00080846343, z: -0.00044022044, w: -0.010728835}
-        outSlope: {x: 0.01497385, y: -0.0015705782, z: -0.00086554507, w: 0.014188813}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.68778926, y: -0.00000014360603, z: -0.0000000025770532, w: 0.7259104}
-        inSlope: {x: 0.015002926, y: -0.0015711776, z: -0.0008684266, w: 0.014217889}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: {x: -0.45242703, y: -0.019253671, z: -0.034501746, w: 0.89092577}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.11622905, y: -0.01966953, z: -0.046938654, w: -0.060796734}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.033333335
-        value: {x: -0.4524309, y: -0.019356575, z: -0.03444948, w: 0.8909236}
-        inSlope: {x: -0.06437302, y: -0.0004470348, z: -0.012964009, w: -0.03218651}
-        outSlope: {x: -0.064503856, y: -0.00068508997, z: -0.013087581, w: -0.033291377}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.0833333
-        value: {x: -0.4524309, y: -0.019356575, z: -0.03444948, w: 0.8909236}
-        inSlope: {x: -0.06451839, y: -0.0006760039, z: -0.01309485, w: -0.033233225}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
+    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -2514,6 +2514,150 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
+      path: 1870817793
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2075492818
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3386620895
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 1349427698
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2618141909
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2845867648
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3240019338
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 689916045
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3087039680
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2466801142
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3346258521
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 991033577
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2046948052
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 4234813241
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2397756528
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 4174910806
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
       path: 1740155774
       attribute: 2
       script: {fileID: 0}
@@ -2578,150 +2722,6 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 911471831
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2618141909
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2845867648
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2466801142
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 3346258521
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 3087039680
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 1870817793
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2075492818
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 3386620895
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 1349427698
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2046948052
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 4174910806
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2397756528
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 4234813241
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 991033577
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 3240019338
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 689916045
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -9387,6 +9387,246 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
+        value: -0.7437004
+        inSlope: 0
+        outSlope: 0.015228026
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.7437004
+        inSlope: -0.0072102393
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.000000049128175
+        inSlope: 0
+        outSlope: -0.0000006350327
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.000000049128175
+        inSlope: 0.000051868483
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.0000029110606
+        inSlope: 0
+        outSlope: 0.0000006315121
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.0000029110606
+        inSlope: 0.00002959217
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.66851306
+        inSlope: 0
+        outSlope: 0.016958483
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.66851306
+        inSlope: -0.008046627
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.89562464
+        inSlope: 0
+        outSlope: -0.006835307
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.89562464
+        inSlope: 0.001990026
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.006
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.00000008777673
+        inSlope: 0
+        outSlope: 0.17584476
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.00000008777673
+        inSlope: -0.017131606
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.006
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.00000008777673
+        inSlope: 0
+        outSlope: 0.015672076
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.00000008777673
+        inSlope: -0.0014248679
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.006
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.4448106
+        inSlope: 0
+        outSlope: -0.013785978
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.4448106
+        inSlope: 0.003994473
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.006
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
         value: 0.26330763
         inSlope: 0
         outSlope: 0
@@ -9618,6 +9858,246 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
     path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.07305929
+        inSlope: 0
+        outSlope: -0.00828096
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.07305929
+        inSlope: -0.007981735
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.000000051428692
+        inSlope: 0
+        outSlope: -0.20111245
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.000000051428692
+        inSlope: -0.22126435
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.000000041044732
+        inSlope: 0
+        outSlope: -0.17797802
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.000000041044732
+        inSlope: -0.19711941
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.9973276
+        inSlope: 0
+        outSlope: -0.000692183
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.9973276
+        inSlope: -0.0004902963
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.1792804
+        inSlope: 0
+        outSlope: -0.02982155
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.1792804
+        inSlope: -0.03458031
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.0000000604917
+        inSlope: 0
+        outSlope: -0.2524862
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.0000000604917
+        inSlope: -0.27866212
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.000000039339156
+        inSlope: 0
+        outSlope: -0.073184796
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.000000039339156
+        inSlope: -0.08299571
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.983798
+        inSlope: 0
+        outSlope: -0.005508623
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.983798
+        inSlope: -0.006200806
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9867,17 +10347,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.028873397
+        value: 0.058719665
         inSlope: 0
-        outSlope: 0
+        outSlope: -0.032157667
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.028873397
-        inSlope: 0
+        value: 0.058719665
+        inSlope: 0.0039133574
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9887,7 +10367,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    path: Tiger_001_rig/Root/spine.007/spine.008
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9897,17 +10377,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.000000022415572
+        value: -0.000000054815967
         inSlope: 0
-        outSlope: 0.000000032441147
+        outSlope: 0.00000011191392
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.000000022415572
-        inSlope: 0.000000032443726
+        value: -0.000000054815967
+        inSlope: 0.00000027332632
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9917,7 +10397,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    path: Tiger_001_rig/Root/spine.007/spine.008
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9927,17 +10407,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.000000009384893
+        value: 0.000000015434228
         inSlope: 0
-        outSlope: 0.000000013582254
+        outSlope: -0.000000033141664
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.000000009384893
-        inSlope: 0.000000013582683
+        value: 0.000000015434228
+        inSlope: -0.00000007676268
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9947,7 +10427,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    path: Tiger_001_rig/Root/spine.007/spine.008
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9957,17 +10437,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.99958307
+        value: 0.9982745
         inSlope: 0
-        outSlope: 0
+        outSlope: 0.0019035032
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.99958307
-        inSlope: 0
+        value: 0.9982745
+        inSlope: -0.00023072766
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -9977,7 +10457,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    path: Tiger_001_rig/Root/spine.007/spine.008
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9987,17 +10467,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.083301395
+        value: 0.079926215
         inSlope: 0
-        outSlope: 0
+        outSlope: 0.024720306
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.083301395
-        inSlope: 0
+        value: 0.079926215
+        inSlope: -0.006831702
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10007,7 +10487,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10017,17 +10497,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.00000005043877
+        value: 0.00000004477691
         inSlope: 0
-        outSlope: 0.000000072997956
+        outSlope: 0.0000015435619
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.00000005043877
-        inSlope: 0.000000073001395
+        value: 0.00000004477691
+        inSlope: -0.0003499567
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10037,7 +10517,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10047,17 +10527,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.000000017908256
+        value: 0.000000019967738
         inSlope: 0
-        outSlope: -0.000000025918194
+        outSlope: 0.000001014704
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.000000017908256
-        inSlope: -0.000000025918194
+        value: 0.000000019967738
+        inSlope: 0.00032622335
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10067,7 +10547,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10077,17 +10557,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.9965244
+        value: 0.9968008
         inSlope: 0
-        outSlope: 0
+        outSlope: -0.001990026
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.9965244
-        inSlope: 0
+        value: 0.9968008
+        inSlope: 0.0005479782
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10097,7 +10577,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10107,17 +10587,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.5713208
+        value: -0.50000006
         inSlope: 0
-        outSlope: 0
+        outSlope: -0.075101845
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: -0.68778926
+        inSlope: -0.010728835
+        outSlope: 0.01497385
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.5713208
-        inSlope: 0
+        value: -0.68778926
+        inSlope: 0.015002926
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10127,7 +10616,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10137,17 +10626,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.000000057960335
+        value: 0
         inSlope: 0
-        outSlope: 0.000000049783836
+        outSlope: -1.6121075
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: -0.00000014360603
+        inSlope: -0.00080846343
+        outSlope: -0.0015705782
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.000000057960335
-        inSlope: 0.00000004979759
+        value: -0.00000014360603
+        inSlope: -0.0015711776
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10157,7 +10655,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10167,17 +10665,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.00000016829807
+        value: 0
         inSlope: 0
-        outSlope: -0.000000058784806
+        outSlope: 1.6117957
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: -0.0000000025770532
+        inSlope: -0.00044022044
+        outSlope: -0.00086554507
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.00000016829807
-        inSlope: -0.000000058791684
+        value: -0.0000000025770532
+        inSlope: -0.0008684266
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10187,7 +10694,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10197,17 +10704,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.8207269
+        value: 0.8660254
         inSlope: 0
-        outSlope: 0
+        outSlope: -0.04291534
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: 0.7259104
+        inSlope: -0.010728835
+        outSlope: 0.014188813
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.8207269
-        inSlope: 0
+        value: 0.7259104
+        inSlope: 0.014217889
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10217,7 +10733,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10227,17 +10743,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.57132083
+        value: -0.45242703
         inSlope: 0
-        outSlope: 0
+        outSlope: -0.11622905
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: -0.4524309
+        inSlope: -0.06437302
+        outSlope: -0.064503856
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.57132083
-        inSlope: 0
+        value: -0.4524309
+        inSlope: -0.06451839
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10247,7 +10772,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10257,17 +10782,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.0000000507916
+        value: -0.019253671
         inSlope: 0
-        outSlope: 0.0000000114695355
+        outSlope: -0.01966953
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: -0.019356575
+        inSlope: -0.0004470348
+        outSlope: -0.00068508997
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.0000000507916
-        inSlope: 0.00000001147985
+        value: -0.019356575
+        inSlope: -0.0006760039
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10277,7 +10811,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10287,17 +10821,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.0000001232009
+        value: -0.034501746
         inSlope: 0
-        outSlope: 0.000000027931206
+        outSlope: -0.046938654
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: -0.03444948
+        inSlope: -0.012964009
+        outSlope: -0.013087581
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.0000001232009
-        inSlope: 0.000000027917455
+        value: -0.03444948
+        inSlope: -0.01309485
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10307,7 +10850,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10317,17 +10860,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.8207268
+        value: 0.89092577
         inSlope: 0
-        outSlope: 0
+        outSlope: -0.060796734
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033333335
+        value: 0.8909236
+        inSlope: -0.03218651
+        outSlope: -0.033291377
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.8207268
-        inSlope: 0
+        value: 0.8909236
+        inSlope: -0.033233225
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -10337,7 +10889,967 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.24603032
+        inSlope: 0
+        outSlope: 0.7017438
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.24603878
+        inSlope: 0.12242987
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.008978918
+        inSlope: 0
+        outSlope: 0.016116237
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.008991618
+        inSlope: -0.0005898877
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.03898614
+        inSlope: 0
+        outSlope: 0.11646159
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.038932547
+        inSlope: 0.020889867
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.9684362
+        inSlope: 0
+        outSlope: -0.18377459
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.968436
+        inSlope: -0.0318981
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.2964376
+        inSlope: 0
+        outSlope: -0.46618524
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.2964375
+        inSlope: -0.056081243
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.0013324122
+        inSlope: 0
+        outSlope: 0.0020885472
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.0014301422
+        inSlope: -0.0035087955
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.002108608
+        inSlope: 0
+        outSlope: -0.06893361
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.0021389446
+        inSlope: -0.0056549683
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.9550489
+        inSlope: 0
+        outSlope: 0.14429131
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.95504874
+        inSlope: 0.017419938
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.5420178
+        inSlope: 0
+        outSlope: -0.008854174
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.54145145
+        inSlope: 0.006345011
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.0000000050478377
+        inSlope: 0
+        outSlope: -0.00023442239
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.00043733086
+        inSlope: 0.0025153032
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.00000039557509
+        inSlope: 0
+        outSlope: -0.000106866355
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.00018019881
+        inSlope: 0.0011795219
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.840367
+        inSlope: 0
+        outSlope: 0.0057105096
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.8407319
+        inSlope: -0.004095416
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.5704344
+        inSlope: 0
+        outSlope: 0.06803582
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.68778926
+        inSlope: 0.015170344
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.059955075
+        inSlope: 0
+        outSlope: 1.0799046
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.000000038615553
+        inSlope: -0.0028080891
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.08562471
+        inSlope: 0
+        outSlope: -1.0787095
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.00000017108687
+        inSlope: -0.0011534481
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.8146646
+        inSlope: 0
+        outSlope: 0.07859161
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.7259104
+        inSlope: 0.014362797
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.16228774
+        inSlope: 0
+        outSlope: 0.06621884
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.43232745
+        inSlope: -0.045006316
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.35531434
+        inSlope: 0
+        outSlope: -0.010671155
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.00063221157
+        inSlope: 0.006262093
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.05548059
+        inSlope: 0
+        outSlope: 0.027968518
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.081754
+        inSlope: 0.00406297
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.9188778
+        inSlope: 0
+        outSlope: 0.0058258735
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.8980026
+        inSlope: -0.022063334
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.5715141
+        inSlope: 0
+        outSlope: 0.23834167
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.46995497
+        inSlope: 0.07151116
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.14351782
+        inSlope: 0
+        outSlope: 0.08045185
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.008154415
+        inSlope: -0.00015862526
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.23454475
+        inSlope: 0
+        outSlope: 0.023707267
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.07446964
+        inSlope: -0.0114282295
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.77315134
+        inSlope: 0
+        outSlope: -0.18409184
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.87950563
+        inSlope: -0.039166022
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0
+        inSlope: 0
+        outSlope: -0.27331993
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.037244335
+        inSlope: -0.036379263
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.4226183
+        inSlope: 0
+        outSlope: -0.015242446
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.00094315293
+        inSlope: -0.0018999262
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0
+        inSlope: 0
+        outSlope: -0.088379495
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.008955309
+        inSlope: 0.0136697125
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.90630776
+        inSlope: 0
+        outSlope: -0.0072102393
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.9992656
+        inSlope: 0.0014997298
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0
+        inSlope: 0
+        outSlope: -0.0097372895
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.54123896
+        inSlope: 0.009402152
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0
+        inSlope: 0
+        outSlope: 0.0006117048
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.0005877761
+        inSlope: 0.002509079
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0
+        inSlope: 0
+        outSlope: 0.00052394764
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.00020603096
+        inSlope: 0.001019066
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.8408686
+        inSlope: -0.0060277604
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10467,6 +11979,126 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
+        value: -0.028873397
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.028873397
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.000000022415572
+        inSlope: 0
+        outSlope: 0.000000032441147
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.000000022415572
+        inSlope: 0.000000032443726
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.000000009384893
+        inSlope: 0
+        outSlope: 0.000000013582254
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.000000009384893
+        inSlope: 0.000000013582683
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.99958307
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.99958307
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
         value: -0.22225444
         inSlope: 0
         outSlope: -0.041675184
@@ -10578,6 +12210,126 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
     path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.083301395
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.083301395
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.00000005043877
+        inSlope: 0
+        outSlope: 0.000000072997956
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.00000005043877
+        inSlope: 0.000000073001395
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.000000017908256
+        inSlope: 0
+        outSlope: -0.000000025918194
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.000000017908256
+        inSlope: -0.000000025918194
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.9965244
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.9965244
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/spine.010/spine.011/spine.012/jaw
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -10947,6 +12699,126 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
+        value: 0.5713208
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.5713208
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.000000057960335
+        inSlope: 0
+        outSlope: 0.000000049783836
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.000000057960335
+        inSlope: 0.00000004979759
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: -0.00000016829807
+        inSlope: 0
+        outSlope: -0.000000058784806
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.00000016829807
+        inSlope: -0.000000058791684
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0.8207269
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0833333
+        value: 0.8207269
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Tiger_001_rig/Root/spine.007/thigh.L/shin.L/foot.L/toe.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.016666668
         value: -0.6761762
         inSlope: 0
         outSlope: 0.022842038
@@ -11307,17 +13179,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.058719665
+        value: 0.57132083
         inSlope: 0
-        outSlope: -0.032157667
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.058719665
-        inSlope: 0.0039133574
+        value: 0.57132083
+        inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -11327,7 +13199,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008
+    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -11337,17 +13209,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -0.000000054815967
+        value: -0.0000000507916
         inSlope: 0
-        outSlope: 0.00000011191392
+        outSlope: 0.0000000114695355
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: -0.000000054815967
-        inSlope: 0.00000027332632
+        value: -0.0000000507916
+        inSlope: 0.00000001147985
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -11357,7 +13229,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008
+    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -11367,17 +13239,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.000000015434228
+        value: 0.0000001232009
         inSlope: 0
-        outSlope: -0.000000033141664
+        outSlope: 0.000000027931206
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.000000015434228
-        inSlope: -0.00000007676268
+        value: 0.0000001232009
+        inSlope: 0.000000027917455
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -11387,7 +13259,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008
+    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -11397,17 +13269,17 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.9982745
+        value: 0.8207268
         inSlope: 0
-        outSlope: 0.0019035032
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.0833333
-        value: 0.9982745
-        inSlope: -0.00023072766
+        value: 0.8207268
+        inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -11417,1879 +13289,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.079926215
-        inSlope: 0
-        outSlope: 0.024720306
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.079926215
-        inSlope: -0.006831702
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.00000004477691
-        inSlope: 0
-        outSlope: 0.0000015435619
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.00000004477691
-        inSlope: -0.0003499567
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.000000019967738
-        inSlope: 0
-        outSlope: 0.000001014704
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.000000019967738
-        inSlope: 0.00032622335
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.9968008
-        inSlope: 0
-        outSlope: -0.001990026
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.9968008
-        inSlope: 0.0005479782
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.2964376
-        inSlope: 0
-        outSlope: -0.46618524
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.2964375
-        inSlope: -0.056081243
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.0013324122
-        inSlope: 0
-        outSlope: 0.0020885472
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.0014301422
-        inSlope: -0.0035087955
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.002108608
-        inSlope: 0
-        outSlope: -0.06893361
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.0021389446
-        inSlope: -0.0056549683
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.9550489
-        inSlope: 0
-        outSlope: 0.14429131
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.95504874
-        inSlope: 0.017419938
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.5420178
-        inSlope: 0
-        outSlope: -0.008854174
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.54145145
-        inSlope: 0.006345011
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.0000000050478377
-        inSlope: 0
-        outSlope: -0.00023442239
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.00043733086
-        inSlope: 0.0025153032
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.00000039557509
-        inSlope: 0
-        outSlope: -0.000106866355
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.00018019881
-        inSlope: 0.0011795219
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.840367
-        inSlope: 0
-        outSlope: 0.0057105096
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.8407319
-        inSlope: -0.004095416
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L/front_foot.L/front_toe.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.24603032
-        inSlope: 0
-        outSlope: 0.7017438
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.24603878
-        inSlope: 0.12242987
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.008978918
-        inSlope: 0
-        outSlope: 0.016116237
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.008991618
-        inSlope: -0.0005898877
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.03898614
-        inSlope: 0
-        outSlope: 0.11646159
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.038932547
-        inSlope: 0.020889867
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.9684362
-        inSlope: 0
-        outSlope: -0.18377459
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.968436
-        inSlope: -0.0318981
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L/front_shin.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.7437004
-        inSlope: 0
-        outSlope: 0.015228026
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.7437004
-        inSlope: -0.0072102393
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.000000049128175
-        inSlope: 0
-        outSlope: -0.0000006350327
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.000000049128175
-        inSlope: 0.000051868483
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.0000029110606
-        inSlope: 0
-        outSlope: 0.0000006315121
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.0000029110606
-        inSlope: 0.00002959217
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.66851306
-        inSlope: 0
-        outSlope: 0.016958483
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.66851306
-        inSlope: -0.008046627
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.89562464
-        inSlope: 0
-        outSlope: -0.006835307
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.89562464
-        inSlope: 0.001990026
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.006
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.00000008777673
-        inSlope: 0
-        outSlope: 0.17584476
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.00000008777673
-        inSlope: -0.017131606
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.006
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.00000008777673
-        inSlope: 0
-        outSlope: 0.015672076
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.00000008777673
-        inSlope: -0.0014248679
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.006
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.4448106
-        inSlope: 0
-        outSlope: -0.013785978
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.4448106
-        inSlope: 0.003994473
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.006
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.07305929
-        inSlope: 0
-        outSlope: -0.00828096
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.07305929
-        inSlope: -0.007981735
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.000000051428692
-        inSlope: 0
-        outSlope: -0.20111245
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.000000051428692
-        inSlope: -0.22126435
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.000000041044732
-        inSlope: 0
-        outSlope: -0.17797802
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.000000041044732
-        inSlope: -0.19711941
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.9973276
-        inSlope: 0
-        outSlope: -0.000692183
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.9973276
-        inSlope: -0.0004902963
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.1792804
-        inSlope: 0
-        outSlope: -0.02982155
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.1792804
-        inSlope: -0.03458031
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.0000000604917
-        inSlope: 0
-        outSlope: -0.2524862
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.0000000604917
-        inSlope: -0.27866212
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.000000039339156
-        inSlope: 0
-        outSlope: -0.073184796
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.000000039339156
-        inSlope: -0.08299571
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.983798
-        inSlope: 0
-        outSlope: -0.005508623
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.983798
-        inSlope: -0.006200806
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.006/spine.005/spine.004/spine.003/spine.002
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.16228774
-        inSlope: 0
-        outSlope: 0.06621884
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.43232745
-        inSlope: -0.045006316
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.35531434
-        inSlope: 0
-        outSlope: -0.010671155
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.00063221157
-        inSlope: 0.006262093
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.05548059
-        inSlope: 0
-        outSlope: 0.027968518
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.081754
-        inSlope: 0.00406297
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.9188778
-        inSlope: 0
-        outSlope: 0.0058258735
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.8980026
-        inSlope: -0.022063334
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: -0.0097372895
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.54123896
-        inSlope: 0.009402152
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: 0.0006117048
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.0005877761
-        inSlope: 0.002509079
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: 0.00052394764
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.00020603096
-        inSlope: 0.001019066
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.8408686
-        inSlope: -0.0060277604
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R/front_toe.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: -0.27331993
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.037244335
-        inSlope: -0.036379263
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.4226183
-        inSlope: 0
-        outSlope: -0.015242446
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.00094315293
-        inSlope: -0.0018999262
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: -0.088379495
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.008955309
-        inSlope: 0.0136697125
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.90630776
-        inSlope: 0
-        outSlope: -0.0072102393
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.9992656
-        inSlope: 0.0014997298
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R/front_foot.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.5715141
-        inSlope: 0
-        outSlope: 0.23834167
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.46995497
-        inSlope: 0.07151116
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.14351782
-        inSlope: 0
-        outSlope: 0.08045185
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.008154415
-        inSlope: -0.00015862526
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.23454475
-        inSlope: 0
-        outSlope: 0.023707267
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.07446964
-        inSlope: -0.0114282295
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.77315134
-        inSlope: 0
-        outSlope: -0.18409184
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.87950563
-        inSlope: -0.039166022
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R/front_thigh.R/front_shin.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.5704344
-        inSlope: 0
-        outSlope: 0.06803582
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.68778926
-        inSlope: 0.015170344
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.059955075
-        inSlope: 0
-        outSlope: 1.0799046
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.000000038615553
-        inSlope: -0.0028080891
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.08562471
-        inSlope: 0
-        outSlope: -1.0787095
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.00000017108687
-        inSlope: -0.0011534481
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.8146646
-        inSlope: 0
-        outSlope: 0.07859161
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.7259104
-        inSlope: 0.014362797
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.50000006
-        inSlope: 0
-        outSlope: -0.075101845
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: -0.68778926
-        inSlope: -0.010728835
-        outSlope: 0.01497385
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.68778926
-        inSlope: 0.015002926
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: -1.6121075
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: -0.00000014360603
-        inSlope: -0.00080846343
-        outSlope: -0.0015705782
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.00000014360603
-        inSlope: -0.0015711776
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: 1.6117957
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: -0.0000000025770532
-        inSlope: -0.00044022044
-        outSlope: -0.00086554507
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.0000000025770532
-        inSlope: -0.0008684266
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.8660254
-        inSlope: 0
-        outSlope: -0.04291534
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: 0.7259104
-        inSlope: -0.010728835
-        outSlope: 0.014188813
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.7259104
-        inSlope: 0.014217889
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.45242703
-        inSlope: 0
-        outSlope: -0.11622905
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: -0.4524309
-        inSlope: -0.06437302
-        outSlope: -0.064503856
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.4524309
-        inSlope: -0.06451839
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.019253671
-        inSlope: 0
-        outSlope: -0.01966953
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: -0.019356575
-        inSlope: -0.0004470348
-        outSlope: -0.00068508997
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.019356575
-        inSlope: -0.0006760039
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: -0.034501746
-        inSlope: 0
-        outSlope: -0.046938654
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: -0.03444948
-        inSlope: -0.012964009
-        outSlope: -0.013087581
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: -0.03444948
-        inSlope: -0.01309485
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0.89092577
-        inSlope: 0
-        outSlope: -0.060796734
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033333335
-        value: 0.8909236
-        inSlope: -0.03218651
-        outSlope: -0.033291377
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0833333
-        value: 0.8909236
-        inSlope: -0.033233225
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Tiger_001_rig/Root/spine.007/spine.008/spine.009/shoulder.L/front_thigh.L
+    path: Tiger_001_rig/Root/spine.007/thigh.R/shin.R/foot.R/toe.R
     classID: 4
     script: {fileID: 0}
     flags: 0
