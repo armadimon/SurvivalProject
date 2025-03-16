@@ -16350,4 +16350,11 @@ AnimationClip:
     flags: 0
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: DealDamage
+    data: 
+    objectReferenceParameter: {fileID: 8910812461554969080, guid: e46faae1bca071d40a39a4e9b9f00853, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
