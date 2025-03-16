@@ -25,7 +25,8 @@ public class BuildController : MonoBehaviour
     public float snapRange = 2.0f;
     public LayerMask snapLayer;
     private SnapPoint closestSnapPoint;
-    
+
+    private bool _setable = false;
     // 테스트용
     
     private void Start()
@@ -38,11 +39,7 @@ public class BuildController : MonoBehaviour
         if (buildMode && SetMode)
         {
             closestSnapPoint = null;
-            bool setable = TrySet();
-            if (Input.GetMouseButtonDown(0) && setable)
-            {
-                ObjectSet();
-            }
+            _setable = TrySet();
 
             // Q 또는 E 입력 시 회전 변경
             if (closestSnapPoint != null && availableRotations.Count > 0)
@@ -165,21 +162,39 @@ public class BuildController : MonoBehaviour
     }
     
     
-    private void ObjectSet()
-    {   
-            // _buildObject.transform.SetParent(null);
-            _buildObject.snapPointGroup.gameObject.SetActive(true);
-            objectCollider.enabled = true;
-            _buildObject = null;
-            closestSnapPoint = null;
-            SetMode = false;
-            // ???⑤베????ш끽維뽳쭛?ｌ뒙???⑥ル땻???釉먮폇??
-            buildMode = false;
+    public void OnObjectSet(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && _setable == true && SetMode == true)
+        {
+            if (context.control.name == "leftButton")
+            {
+                // _buildObject.transform.SetParent(null);
+                // _buildObject.snapPointGroup.gameObject.SetActive(true);
+                SetMode = false;
+                _buildObject.isSet = true;
+                objectCollider.enabled = true;
+                // objectCollider.isTrigger = false;
+                _buildObject = null;
+                BuildManager.Instance.buildMenu.SetActive(true);
+                CharacterManager.Instance.Player.controller.canLook = false;
+                Cursor.lockState = CursorLockMode.None;
+                return;
+            }
+            else if (context.control.name == "rightButton")
+            {
+                _buildObject.isSet = true;
+                objectCollider.enabled = true;
+                closestSnapPoint = null;
+                SetBuildObject(_buildObject);
+            }
+        }
     }
     
     public void OnBuildMode(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && buildMode == false)
+        // if (context.phase == InputActionPhase.Started && buildMode == false)
+        // {
+        if (buildMode == false)
         {
             int snapPointLayer = LayerMask.NameToLayer("SnapPoint");
             snapPointCamera.cullingMask |= (1 << snapPointLayer); 
@@ -193,6 +208,7 @@ public class BuildController : MonoBehaviour
         else if (context.phase == InputActionPhase.Started && buildMode == true)
         {
             Debug.Log("Build Mode Off");
+            CharacterManager.Instance.Player.controller.playerInput.SwitchCurrentActionMap("Player");
             int snapPointLayer = LayerMask.NameToLayer("SnapPoint");
             snapPointCamera.cullingMask &= ~(1 << snapPointLayer); 
             buildMode = false;
@@ -209,7 +225,7 @@ public class BuildController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
-
+    
     public void SetBuildObject(BuildObject newBuildObject)
     {
         SetMode = true;
@@ -219,7 +235,7 @@ public class BuildController : MonoBehaviour
             ;
         objectCollider = _buildObject.GetComponentInChildren<Collider>();
         objectCollider.enabled = false;
-        _buildObject.snapPointGroup?.gameObject.SetActive(false);
+        // _buildObject.snapPointGroup?.gameObject.SetActive(false);
         _objectMeshRenderer = _buildObject.GetComponentInChildren<MeshRenderer>();
         _objectOriginalColor = _objectMeshRenderer.material.color;
         _objectCantSetableColor = Color.red;
@@ -229,4 +245,5 @@ public class BuildController : MonoBehaviour
         CharacterManager.Instance.Player.controller.canLook = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
+    
 }

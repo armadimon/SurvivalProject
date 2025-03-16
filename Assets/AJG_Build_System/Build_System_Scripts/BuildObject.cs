@@ -9,6 +9,7 @@ public class BuildObject : MonoBehaviour
     public List<Transform> snapPoints = new List<Transform>(); 
     public BuildObjectData data;
     public Quaternion originalRotation;
+    public bool isSet = false;
     
     private void Awake()
     {

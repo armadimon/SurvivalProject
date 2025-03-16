@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
@@ -66,6 +67,15 @@ public class BuildManager : MonoBehaviour
         buildController.SetBuildObject(buildObject);
     }
 
+    public void OnBuildMode(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            CharacterManager.Instance.Player.controller.playerInput.SwitchCurrentActionMap("BuildMode");
+            buildController.OnBuildMode(context);
+        }
+    }
+    
     public bool HasResourceAmount(RequireResourceAmount requireResourceAmount, bool consume)
     {
         ItemSlot[] slots = InventotyManager.Instance.Inventory.slots;
