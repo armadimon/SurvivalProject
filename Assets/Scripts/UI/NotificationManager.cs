@@ -7,7 +7,7 @@ public class NotificationManager : MonoBehaviour
     public static NotificationManager Instance;
     public Transform notificationParent;
 
-    void Awake()
+    void Awake()    
     {
         Instance = this;
     }

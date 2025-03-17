@@ -25,7 +25,8 @@ public class BuildController : MonoBehaviour
     public float snapRange = 2.0f;
     public LayerMask snapLayer;
     private SnapPoint closestSnapPoint;
-    
+
+    private bool _setable = false;
     // 테스트용
     
     private void Start()
@@ -38,11 +39,7 @@ public class BuildController : MonoBehaviour
         if (buildMode && SetMode)
         {
             closestSnapPoint = null;
-            bool setable = TrySet();
-            if (Input.GetMouseButtonDown(0) && setable)
-            {
-                ObjectSet();
-            }
+            _setable = TrySet();
 
             // Q 또는 E 입력 시 회전 변경
             if (closestSnapPoint != null && availableRotations.Count > 0)
@@ -165,21 +162,44 @@ public class BuildController : MonoBehaviour
     }
     
     
-    private void ObjectSet()
-    {   
-            // _buildObject.transform.SetParent(null);
-            _buildObject.snapPointGroup.gameObject.SetActive(true);
-            objectCollider.enabled = true;
-            _buildObject = null;
-            closestSnapPoint = null;
-            SetMode = false;
-            // ???⑤베????ш끽維뽳쭛?ｌ뒙???⑥ル땻???釉먮폇??
-            buildMode = false;
+    public void OnObjectSet(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started &&
+            SetMode == true && CheckOverlap(_buildObject.transform.position, _buildObject.transform.rotation))
+        {
+            _setable = false;
+            objectCollider.enabled = false; 
+            NotificationManager.Instance.ShowNotification("겹치는 물체가 있습니다!");
+            return;
+        }
+        if (context.phase == InputActionPhase.Started && _setable == true && SetMode == true)
+        {
+            if (context.control.name == "leftButton")
+            {
+                _buildObject.snapPointGroup.gameObject.SetActive(true);
+                SetMode = false;
+                objectCollider.enabled = true;
+                SettlementManager.Instance.RegisterBuildObject(_buildObject, _buildObject.isSafe);
+                _buildObject = null;
+                BuildManager.Instance.buildMenu.SetActive(true);
+                CharacterManager.Instance.Player.controller.canLook = false;
+                Cursor.lockState = CursorLockMode.None;
+                return;
+            }
+            if (context.control.name == "rightButton")
+            {
+                _buildObject.snapPointGroup.gameObject.SetActive(true);
+                objectCollider.enabled = true;
+                closestSnapPoint = null;
+                SettlementManager.Instance.RegisterBuildObject(_buildObject, _buildObject.isSafe);
+                SetBuildObject(_buildObject);
+            }
+        }
     }
     
     public void OnBuildMode(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && buildMode == false)
+        if (buildMode == false)
         {
             int snapPointLayer = LayerMask.NameToLayer("SnapPoint");
             snapPointCamera.cullingMask |= (1 << snapPointLayer); 
@@ -193,6 +213,7 @@ public class BuildController : MonoBehaviour
         else if (context.phase == InputActionPhase.Started && buildMode == true)
         {
             Debug.Log("Build Mode Off");
+            CharacterManager.Instance.Player.controller.playerInput.SwitchCurrentActionMap("Player");
             int snapPointLayer = LayerMask.NameToLayer("SnapPoint");
             snapPointCamera.cullingMask &= ~(1 << snapPointLayer); 
             buildMode = false;
@@ -210,6 +231,17 @@ public class BuildController : MonoBehaviour
         }
     }
 
+    public void OnObjectRotation(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && SetMode == true)
+        {
+            Vector2 scrollValue = context.ReadValue<Vector2>(); // Vector2로 가져옴
+            float scrollY = scrollValue.y; // Y값만 사용
+            _buildObject.transform.Rotate(Vector3.up, scrollY * 10 * Time.deltaTime);
+            _buildObject.originalRotation = _buildObject.transform.rotation;
+        }
+    }
+    
     public void SetBuildObject(BuildObject newBuildObject)
     {
         SetMode = true;
@@ -228,5 +260,57 @@ public class BuildController : MonoBehaviour
         BuildManager.Instance.buildMenu.SetActive(false);
         CharacterManager.Instance.Player.controller.canLook = true;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    
+    private bool CheckOverlap(Vector3 position, Quaternion rotation)
+    {
+        bool ret = false;
+        if (objectCollider == null)
+            return false;
+        Collider[] hitColliders;
+        
+        int checkLayer = LayerMask.NameToLayer("BuildObject");
+        if (objectCollider is BoxCollider boxCollider)
+        {
+            hitColliders = Physics.OverlapBox(position + boxCollider.center, boxCollider.size / 4f, rotation, checkLayer, QueryTriggerInteraction.Collide);
+        }
+        else if (objectCollider is SphereCollider sphereCollider)
+        {
+            hitColliders = Physics.OverlapSphere(position + sphereCollider.center, sphereCollider.radius / 2f, checkLayer, QueryTriggerInteraction.Collide);
+        }
+        else if (objectCollider is CapsuleCollider capsuleCollider)
+        {
+            Vector3 center = position + capsuleCollider.center;
+            Vector3 point1, point2;
+            float radius = capsuleCollider.radius;
+        
+            if (capsuleCollider.direction == 0) // X-axis
+            {
+                point1 = center + Vector3.right * (capsuleCollider.height / 2f - radius);
+                point2 = center - Vector3.right * (capsuleCollider.height / 2f - radius);
+            }
+            else if (capsuleCollider.direction == 1) // Y-axis
+            {
+                point1 = center + Vector3.up * (capsuleCollider.height / 2f - radius);
+                point2 = center - Vector3.up * (capsuleCollider.height / 2f - radius);
+            }
+            else // Z-axis
+            {
+                point1 = center + Vector3.forward * (capsuleCollider.height / 2f - radius);
+                point2 = center - Vector3.forward * (capsuleCollider.height / 2f - radius);
+            }
+            hitColliders = Physics.OverlapCapsule(point1 / 2, point2 / 2 , radius / 2, checkLayer, QueryTriggerInteraction.Collide);
+        }
+        else
+        {
+            Debug.LogWarning("지원하지 않는 콜라이더 타입: " + objectCollider.GetType());
+            return true;
+        }
+
+        foreach (Collider hitCollider in hitColliders)
+        {
+            Debug.Log(hitCollider);
+        }
+        return ret;
     }
 }

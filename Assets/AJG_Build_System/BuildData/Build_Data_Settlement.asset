@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bef462ef2cd0e84f893712c823e7243, type: 3}
-  m_Name: Build_Data_PlatForm
+  m_Name: Build_Data_Settlement
   m_EditorClassIdentifier: 
-  displayName: PlatForm
-  description: PlatForm
+  displayName: Settlement
+  description: "\uC124\uCE58\uD558\uBA74 \uD604\uC7AC \uC9C0\uD615\uC744 \uAE30\uC900\uC73C\uB85C
+    \uC815\uCC29\uC9C0\uAC00 \uC124\uC815\uB429\uB2C8\uB2E4."
   maxHealth: 20
   maxSlopeAngle: 359
-  minSlopeAngle: 30
-  type: 0
-  icon: {fileID: -1992289636, guid: fde3d4451a308a74fb559b4414c29169, type: 3}
-  prefabs: {fileID: 6907106213808990864, guid: 462d0e537482f644997b1055b465d011, type: 3}
+  minSlopeAngle: 359
+  type: 1
+  icon: {fileID: -372374369, guid: 9f3d964c29ca29644a11dc0c855ae080, type: 3}
+  prefabs: {fileID: 0}
   requireResources:
   - type: 0
-    value: 0
+    value: 3
