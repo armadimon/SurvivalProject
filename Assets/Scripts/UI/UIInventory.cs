@@ -306,36 +306,33 @@ public class UIInventory : MonoBehaviour
     public void HideItemDescription()
     {
 
-        if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
-        {
+        //if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
             itemDescription.SetActive(false);
             selectItemStatName.text = string.Empty;
             selectItemStatValue.text = string.Empty;
-
-        }
     }
 
 
     // RectangleContainsScreenPoint ?????rect?롪퍔??????고뱺 嶺뚮씭?????熬곣뫚????筌먦끉逾??
 
-    public bool IsMouseOverUI(GameObject gObject)
-    {
-        return RectTransformUtility.RectangleContainsScreenPoint
-           (gObject.GetComponent<RectTransform>(), Input.mousePosition, Camera.main);
-    }
+    //public bool IsMouseOverUI(GameObject gObject)
+    //{
+    //    return RectTransformUtility.RectangleContainsScreenPoint
+    //       (gObject.GetComponent<RectTransform>(), Input.mousePosition, Camera.main);
+    //}
 
-    bool IsMouseOverItemSlot()
-    {
-        foreach (ItemSlot slot in slots)
-        {
-            if (IsMouseOverUI(slot.gameObject))
-            {
-                return true;
-            }
-        }
+    //bool IsMouseOverItemSlot()
+    //{
+    //    foreach (ItemSlot slot in slots)
+    //    {
+    //        if (IsMouseOverUI(slot.gameObject))
+    //        {
+    //            return true;
+    //        }
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
 
     #region OnClick
