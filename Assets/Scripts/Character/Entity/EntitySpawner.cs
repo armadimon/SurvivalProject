@@ -10,7 +10,7 @@ public class EntitySpawner : MonoBehaviour
     private int curEntityCount = 0;     // 현재 존재하는 엔티티 개수
     public int maxEntityCount;          // 최대 엔티티 개수
     public float terrainPadding = 5f;   // Terrain 가장자리 여유 공간
-
+    public LayerMask layerMask;
     [Header("Spawn")]
     public float timeRate;
     private int waveConut = 0;
@@ -85,7 +85,7 @@ public class EntitySpawner : MonoBehaviour
         Ray ray = new Ray(new Vector3(randomX, 1000f, randomZ), Vector3.down);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             return new Vector3(hit.point.x, hit.point.y, hit.point.z);
         }
