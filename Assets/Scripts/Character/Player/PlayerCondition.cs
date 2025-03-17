@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public interface IDamageable
-{    
+{
     void TakeDamage(float damage);
 }
 
@@ -21,7 +21,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public float thirstWarningValue;
     public float hurtFromThirstWarningValue;
     public float hungerWarningValue;
-    
+
     Condition health { get { return uiCondition.health; } }
     Condition hunger { get { return uiCondition.hunger; } }
     Condition thirst { get { return uiCondition.thirst; } }
@@ -69,7 +69,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     }
 
     public void Heal(float amount)
-    {        
+    {
         health.Add(amount);
     }
 
@@ -109,12 +109,12 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     }
 
     public bool UseStamina(float amount)
-    {        
+    {
         if (stamina.curValue - amount < 0f)
         {
             return false;
         }
-        
+
         stamina.Subtract(amount);
         return true;
     }
@@ -145,11 +145,11 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     void ThirstFlash()
     {
         if (thirst.curValue / thirst.maxValue <= thirstWarningValue)
-        {            
+        {
             indicatorAnimator.SetBool("OnThirst", true);
         }
         else
-        {            
+        {
             indicatorAnimator.SetBool("OnThirst", false);
         }
     }
@@ -163,7 +163,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             indicatorAnimator.SetBool("OnHurt", true);
         }
         else
-        {            
+        {
             indicatorAnimator.SetBool("OnHurt", false);
         }
     }
@@ -172,11 +172,11 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     void HungerFlash()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue)
-        {            
+        {
             indicatorAnimator.SetBool("OnHunger", true);
         }
         else
-        {            
+        {
             indicatorAnimator.SetBool("OnHunger", false);
         }
     }
@@ -198,7 +198,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     void HealthyStaminaAdd()
     {
         if (hunger.curValue / hunger.maxValue <= hungerWarningValue || thirst.curValue / thirst.maxValue <= thirstWarningValue)
-        stamina.Add(0);
+            stamina.Add(0);
         else stamina.Add(stamina.passiveValue * Time.deltaTime);
     }
 

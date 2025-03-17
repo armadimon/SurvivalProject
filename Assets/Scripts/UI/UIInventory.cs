@@ -14,13 +14,12 @@ public class UIInventory : MonoBehaviour
     public Transform dropPosition;
 
     public Transform slotPanel;
-    public GameObject inventoryWindow;
+    public Canvas inventoryWindow;
     public GameObject itemDescription;
     public GameObject itemUseImage;
     private RectTransform itemUseRect;
     private Vector2 usuallyitemUseRect;
     private Vector3 dropButtonPosition;
-    private GameObject halfDropButton;
 
     [Header("Select Item")]
     public Image selectItemIcon;
@@ -79,7 +78,7 @@ public class UIInventory : MonoBehaviour
         selectItemStatName = transform.Find("InfoBG/StatName").GetComponent<TextMeshProUGUI>();
         selectItemStatValue = transform.Find("InfoBG/StatValue").GetComponent<TextMeshProUGUI>();
 
-        inventoryWindow = this.gameObject;
+        inventoryWindow = this.gameObject.GetComponent<Canvas>();
         slotPanel = transform.Find("InventoryBG/Slots");
         itemDescription = transform.Find("InfoBG").gameObject;
         itemUseImage = transform.Find("ItemUse").gameObject;
@@ -117,7 +116,7 @@ public class UIInventory : MonoBehaviour
 
         itemDescription.SetActive(false);
         itemUseImage.SetActive(false);
-        inventoryWindow.SetActive(false);
+        inventoryWindow.enabled = false;
 
         exitButton.onClick.AddListener(OnExitButton);
 
@@ -149,7 +148,7 @@ public class UIInventory : MonoBehaviour
             }
 
 
-            inventoryWindow.SetActive(false);
+            inventoryWindow.enabled = false;
             itemDescription.SetActive(false);
             itemUseImage.SetActive(false);
             isUseItemWindow = itemDescription.activeSelf;
@@ -158,7 +157,7 @@ public class UIInventory : MonoBehaviour
         else
         {
 
-            inventoryWindow.SetActive(true);
+            inventoryWindow.enabled = true;
         }
     }
 
@@ -168,7 +167,7 @@ public class UIInventory : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-        return inventoryWindow.activeInHierarchy;
+        return inventoryWindow.enabled;
     }
 
     void AddItem()
@@ -204,7 +203,7 @@ public class UIInventory : MonoBehaviour
 
     }
 
-    void UpdateUI()
+    public void UpdateUI()
 
     {
         for (int i = 0; i < slots.Length; i++)
@@ -230,7 +229,7 @@ public class UIInventory : MonoBehaviour
         isUseItemWindow = itemDescription.activeSelf;
     }
 
-    ItemSlot GetItemStack(ItemData data)
+    public ItemSlot GetItemStack(ItemData data)
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -242,7 +241,7 @@ public class UIInventory : MonoBehaviour
         return null;
     }
 
-    ItemSlot GetEmptySlot()
+    public ItemSlot GetEmptySlot()
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -255,7 +254,7 @@ public class UIInventory : MonoBehaviour
         return null;
     }
 
-    void ThrowItem(ItemData data)
+    public void ThrowItem(ItemData data)
     {
         Instantiate(data.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
     }
