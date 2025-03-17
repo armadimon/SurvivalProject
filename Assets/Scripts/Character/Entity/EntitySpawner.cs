@@ -5,17 +5,18 @@ using UnityEngine;
 public class EntitySpawner : MonoBehaviour
 {
     [Header("Statting")]
-    public Terrain terrain;
-    public int spawnCount;      // 한 번에 소환할 개수
-    private int curEntityCount = 0;    // 현재 존재하는 엔티티 개수
-    public int maxEntityCount;  // 최대 엔티티 개수
-    public float terrainPadding = 5f; // Terrain 가장자리 여유 공간
+    public Terrain terrain;             // Terrain
+    public int spawnCount;              // 한 번에 소환할 개수
+    private int curEntityCount = 0;     // 현재 존재하는 엔티티 개수
+    public int maxEntityCount;          // 최대 엔티티 개수
+    public float terrainPadding = 5f;   // Terrain 가장자리 여유 공간
 
     [Header("Spawn")]
     public float timeRate;
     private int waveConut = 0;
     public int mediumWave = 2;  // 2번째 웨이브에서 중형 추가
     public int largeWave = 4;   // 4번째 웨이브에서 대형 추가
+    private bool isNight = false;   // 밤인지 낮인지 여부
 
     [Header("Entity PrePrefab")]
     public GameObject[] smallEntityPrefab;
@@ -24,15 +25,26 @@ public class EntitySpawner : MonoBehaviour
 
     void Start()
     {
+        DayNightCycle.OnNightStateChanged += SetNightState;
         StartCoroutine(SpawnWaves());
     }
+    private void OnDestroy()
+    {
+        DayNightCycle.OnNightStateChanged -= SetNightState;
+
+    }
+    private void SetNightState(bool night)
+    {
+        isNight = night;
+    }
+
     IEnumerator SpawnWaves()
     {
         while (true)
         {
             yield return new WaitForSeconds(timeRate);
 
-            if (curEntityCount < maxEntityCount)
+            if (!isNight && curEntityCount < maxEntityCount)
             {
                 EntitySpawn();
                 waveConut++;
@@ -43,6 +55,7 @@ public class EntitySpawner : MonoBehaviour
 
     void EntitySpawn()
     {
+        if (isNight) return;
         int spawnLimit = Mathf.Min(spawnCount, maxEntityCount - curEntityCount);
 
         for (int i = 0; i < spawnLimit; i++)
