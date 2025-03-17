@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
@@ -48,6 +49,23 @@ public class DayNightCycle : MonoBehaviour
         {
             isNight = newIsNight;
             OnNightStateChanged?.Invoke(isNight); // 밤 상태 변경 이벤트 발생
+
+            if(isNight)
+            {
+                // 밤이 되었을 때 처리
+                NotificationManager.Instance.ShowNotification("밤이 되었습니다.");
+                // 3초 후에 두 번째 알림 표시
+                DOVirtual.DelayedCall(3f, () =>
+                {
+                    NotificationManager.Instance.ShowNotification("동물들을 조심하세요.");
+                });
+
+            }
+            else
+            {
+                // 낮이 되었을 때 처리
+                NotificationManager.Instance.ShowNotification("낮이 되었습니다.");
+            }
         }
 
 
