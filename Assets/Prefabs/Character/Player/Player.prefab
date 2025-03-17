@@ -503,106 +503,14 @@ MonoBehaviour:
     m_ActionId: 27ad45e6-d044-4c0e-8ca0-e550c3d7a518
     m_ActionName: BuildMode/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7120608849839989870}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnLook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 15809de8-4ecd-473d-8ec5-ac3c798f6e78
-    m_ActionName: BuildMode/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7120608849839989870}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b8f5258f-f22b-44e5-b5bb-3d0a58944e87
-    m_ActionName: BuildMode/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4104430669939051222}
-        m_TargetAssemblyTypeName: BuildController, Assembly-CSharp
-        m_MethodName: OnBuildMode
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b0276a6f-b0e9-4520-891c-fffb8fd51720
-    m_ActionName: BuildMode/BuildMode[/Keyboard/b]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4104430669939051222}
-        m_TargetAssemblyTypeName: BuildController, Assembly-CSharp
-        m_MethodName: OnObjectSet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9398d3f1-e65c-4d4a-ac82-a752672eecf8
-    m_ActionName: BuildMode/Set[/Mouse/leftButton,/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7120608849839989870}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnRun
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ac52784e-2706-4548-893f-f7b2c679fb96
-    m_ActionName: BuildMode/Run[/Keyboard/leftShift]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildController, Assembly-CSharp
-        m_MethodName: OnBuildMode
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: e8e68ec3-b7a2-4e20-a2a7-ffb1b50593a9
     m_ActionName: Player/BuildMode[/Keyboard/b]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4104430669939051222}
-        m_TargetAssemblyTypeName: BuildController, Assembly-CSharp
-        m_MethodName: OnObjectRotation
+      - m_Target: {fileID: 7120608849839989870}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnProcessCrafting
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -612,6 +520,62 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: 31004f0b-fa1d-4352-9448-54f14db15fa2
+    m_ActionName: Player/ProcessCrafting[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7120608849839989870}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnFoodCrafting
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9a82e9cf-2e71-434b-aad1-7638c10c1739
+    m_ActionName: Player/FoodCrafting[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7120608849839989870}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnEquipCrafting
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 69b5ce5c-d043-492c-99b2-dd73f7e13db1
+    m_ActionName: Player/EquipCrafting[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15809de8-4ecd-473d-8ec5-ac3c798f6e78
+    m_ActionName: BuildMode/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b8f5258f-f22b-44e5-b5bb-3d0a58944e87
+    m_ActionName: BuildMode/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0276a6f-b0e9-4520-891c-fffb8fd51720
+    m_ActionName: BuildMode/BuildMode[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9398d3f1-e65c-4d4a-ac82-a752672eecf8
+    m_ActionName: BuildMode/Set[/Mouse/leftButton,/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac52784e-2706-4548-893f-f7b2c679fb96
+    m_ActionName: BuildMode/Run[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
     m_ActionId: 17a1f911-aa69-4585-a3a4-c300e6031835
     m_ActionName: BuildMode/ObjectRotation[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
