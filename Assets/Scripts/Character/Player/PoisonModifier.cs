@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoisonModifier : ModifierBase
 {   
     public float poisonDuration;
-    public float damagePerSecond;
+    public float damagePerSecond;    
 
     public PoisonModifier(float duration, float damagePerSecond)
         : base("Poison", duration)
@@ -15,7 +15,7 @@ public class PoisonModifier : ModifierBase
 
     public void Awake()
     {
-        Duration = poisonDuration;
+        Duration = poisonDuration;        
     }
 
     public override void ApplyMod() // 효과 적용
