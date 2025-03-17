@@ -5,6 +5,16 @@ public class Resource : MonoBehaviour
     public ItemData itemToGive;
     public int quantityPerHit = 1;
     public int capacity;
+    public int maxCapacity;
+
+    private Respawn respawn;
+
+    private void Awake()
+    {
+        respawn = transform.parent.GetComponent<Respawn>();
+        respawn.resource = this;
+        maxCapacity = capacity;
+    }
 
     public void Gather(Vector3 hitPoint, Vector3 hitNormal)
     {
@@ -18,7 +28,9 @@ public class Resource : MonoBehaviour
 
         if (capacity <= 0)
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
+           respawn.StartRespawn();
+           gameObject.SetActive(false);
         }
     }
 }
