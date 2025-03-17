@@ -50,22 +50,22 @@ public class DayNightCycle : MonoBehaviour
             isNight = newIsNight;
             OnNightStateChanged?.Invoke(isNight); // 밤 상태 변경 이벤트 발생
 
-            if(isNight)
+            if (isNight)
             {
-                // 밤이 되었을 때 처리
-                NotificationManager.Instance.ShowNotification("밤이 되었습니다.");
-                // 3초 후에 두 번째 알림 표시
+                DOTween.Kill("NightNotification");
+
+                NotificationManager.Instance.ShowNotification("어둠이 깔리기 시작합니다...");
+
                 DOVirtual.DelayedCall(3f, () =>
                 {
-                    NotificationManager.Instance.ShowNotification("동물들을 조심하세요.");
-                });
-
+                    NotificationManager.Instance.ShowNotification("위험한 동물들이 나타납니다!");
+                }).SetId("NightNotification");
             }
             else
             {
-                // 낮이 되었을 때 처리
-                NotificationManager.Instance.ShowNotification("낮이 되었습니다.");
+                NotificationManager.Instance.ShowNotification("해가 떠오르며 밝아졌습니다!");
             }
+
         }
 
 

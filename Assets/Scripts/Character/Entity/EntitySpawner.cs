@@ -23,10 +23,12 @@ public class EntitySpawner : MonoBehaviour
     public GameObject[] mediumEntityPrefab;
     public GameObject[] largeEntityPrefab;
 
+
     void Start()
     {
         DayNightCycle.OnNightStateChanged += SetNightState;
         StartCoroutine(SpawnWaves());
+        
     }
     private void OnDestroy()
     {
