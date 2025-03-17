@@ -12,6 +12,11 @@ public class UICrafting : MonoBehaviour
     public Transform craftingSlotsTransform;     //제작슬롯의 부모(Slots)
     public CraftingSlot craftingSlotPrefab;       // 제작슬롯 프리팹
 
+    [Header("CraftingType Tap")]
+    public GameObject equipTap;
+    public GameObject foodTap;
+    public GameObject processTap;
+
     public List<CraftingSlot> craftingSlots = new List<CraftingSlot>();
 
     private CraftingRecipe selectedRecipe;
@@ -27,6 +32,10 @@ public class UICrafting : MonoBehaviour
         {
             CraftingManager.Instance.UICrafting = this;
         }
+
+        equipTap.SetActive(false);
+        foodTap.SetActive(false);
+        processTap.SetActive(false);
 
     }
 
@@ -52,6 +61,8 @@ public class UICrafting : MonoBehaviour
             craftingSlots.Add(newSlot);
         }
 
+       
+
     }
 
     public bool IsOpen
@@ -62,13 +73,53 @@ public class UICrafting : MonoBehaviour
     // UI를 활성화하고 업데이트를 시켜준다
     public void ShowCraftingUI(RecipeType recipeType)
     {
+        UIInventory inventory = InventotyManager.Instance.Inventory;
+        if (inventory.IsOpen())
+        {
+            inventory.inventoryWindow.enabled = false;
+            inventory.itemDescription.SetActive(false);
+            inventory.itemUseImage.SetActive(false);
+            inventory.isUseItemWindow = inventory.itemDescription.activeSelf;
+            inventory.UsaullyItemUnEquipImage();
+        }
         craftingCanvas.enabled = true;
         CraftingManager.Instance.DisplayCraftingRecipes(recipeType);
+
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        switch (recipeType)
+        {
+            case RecipeType.Equip:
+                equipTap.SetActive(true);
+                foodTap.SetActive(false);
+                processTap.SetActive(false);
+                break;
+
+            case RecipeType.Food:
+                equipTap.SetActive(false);
+                foodTap.SetActive(true);
+                processTap.SetActive(false);
+                break;
+
+            case RecipeType.Process:
+                equipTap.SetActive(false);
+                foodTap.SetActive(false);
+                processTap.SetActive(true);
+                break;
+
+
+        }
+
     }
 
     public void HideCraftingUI()
     {
+       
         craftingCanvas.enabled = false;
+        
     }
 
 

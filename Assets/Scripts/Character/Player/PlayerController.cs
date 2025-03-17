@@ -193,8 +193,8 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            Inventory?.Invoke();
             ToggleCursur(); // 인벤토리 열었을 때 마우스 잠금 해제
+            Inventory?.Invoke();
         }
     } 
 
@@ -205,14 +205,24 @@ public class PlayerController : MonoBehaviour
             if (!CraftingManager.Instance.UICrafting.IsOpen)
             {
                 CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Process);
+                ToggleCursur();
+                if (Cursor.lockState == CursorLockMode.Locked)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                }
 
             }
             else
             {
                 CraftingManager.Instance.UICrafting.HideCraftingUI();
+                ToggleCursur();
+                if (Cursor.lockState == CursorLockMode.None)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+
             }
 
-                ToggleCursur();
             
         }
     }
@@ -224,14 +234,23 @@ public class PlayerController : MonoBehaviour
             if (!CraftingManager.Instance.UICrafting.IsOpen)
             {
                 CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Food);
-
+                ToggleCursur();
+                if (Cursor.lockState == CursorLockMode.Locked)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                }
             }
             else
             {
                 CraftingManager.Instance.UICrafting.HideCraftingUI();
+                ToggleCursur();
+                if (Cursor.lockState == CursorLockMode.None)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
             }
 
-            ToggleCursur();
+            
 
         }
     }
@@ -243,15 +262,22 @@ public class PlayerController : MonoBehaviour
             if (!CraftingManager.Instance.UICrafting.IsOpen)
             {
                 CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Equip);
-
+                ToggleCursur();
+                if (Cursor.lockState == CursorLockMode.Locked)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                }
             }
             else
             {
                 CraftingManager.Instance.UICrafting.HideCraftingUI();
+                ToggleCursur();
+                if (Cursor.lockState == CursorLockMode.None)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+
             }
-
-            ToggleCursur();
-
         }
     }
 

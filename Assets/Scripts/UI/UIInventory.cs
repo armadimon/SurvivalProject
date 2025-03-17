@@ -20,6 +20,7 @@ public class UIInventory : MonoBehaviour
     private RectTransform itemUseRect;
     private Vector2 usuallyitemUseRect;
     private Vector3 dropButtonPosition;
+    private Vector3 unEquipButtonPosition;
 
     [Header("Select Item")]
     public Image selectItemIcon;
@@ -93,6 +94,7 @@ public class UIInventory : MonoBehaviour
         unEquipButton = transform.Find("ItemUse/UnEquipButton").gameObject;
         dropButton = transform.Find("ItemUse/DropButton").gameObject;
         dropButtonPosition = dropButton.GetComponent<RectTransform>().anchoredPosition;
+        unEquipButtonPosition = unEquipButton.GetComponent<RectTransform>().anchoredPosition;
 
         useButton.GetComponent<Button>().onClick.AddListener(OnUseButton);
         dropButton.GetComponent<Button>().onClick.AddListener(OnDropButton);
@@ -142,9 +144,9 @@ public class UIInventory : MonoBehaviour
     {
         if (IsOpen())
         {
-            if (Cursor.lockState == CursorLockMode.Locked)
+            if (Cursor.lockState == CursorLockMode.None)
             {
-                Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.Locked;
             }
 
 
@@ -152,11 +154,16 @@ public class UIInventory : MonoBehaviour
             itemDescription.SetActive(false);
             itemUseImage.SetActive(false);
             isUseItemWindow = itemDescription.activeSelf;
+            CraftingManager.Instance.UICrafting.HideCraftingUI();
             UsuallyItemUseImage();
         }
         else
         {
-
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            CraftingManager.Instance.UICrafting.HideCraftingUI();
             inventoryWindow.enabled = true;
         }
     }
@@ -306,36 +313,33 @@ public class UIInventory : MonoBehaviour
     public void HideItemDescription()
     {
 
-        if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
-        {
+        //if (!IsMouseOverUI(itemDescription) && !IsMouseOverItemSlot())
             itemDescription.SetActive(false);
             selectItemStatName.text = string.Empty;
             selectItemStatValue.text = string.Empty;
-
-        }
     }
 
 
     // RectangleContainsScreenPoint ?????rect?롪퍔??????고뱺 嶺뚮씭?????熬곣뫚????筌먦끉逾??
 
-    public bool IsMouseOverUI(GameObject gObject)
-    {
-        return RectTransformUtility.RectangleContainsScreenPoint
-           (gObject.GetComponent<RectTransform>(), Input.mousePosition, Camera.main);
-    }
+    //public bool IsMouseOverUI(GameObject gObject)
+    //{
+    //    return RectTransformUtility.RectangleContainsScreenPoint
+    //       (gObject.GetComponent<RectTransform>(), Input.mousePosition, Camera.main);
+    //}
 
-    bool IsMouseOverItemSlot()
-    {
-        foreach (ItemSlot slot in slots)
-        {
-            if (IsMouseOverUI(slot.gameObject))
-            {
-                return true;
-            }
-        }
+    //bool IsMouseOverItemSlot()
+    //{
+    //    foreach (ItemSlot slot in slots)
+    //    {
+    //        if (IsMouseOverUI(slot.gameObject))
+    //        {
+    //            return true;
+    //        }
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
 
     #region OnClick
@@ -344,6 +348,10 @@ public class UIInventory : MonoBehaviour
     {
         Toggle();
         CharacterManager.Instance.Player.controller.ToggleCursur();
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void OnUseButton()
@@ -488,7 +496,10 @@ public class UIInventory : MonoBehaviour
         if (!sSlot.equipped)
             dropButton.SetActive(true);
         else
+        {
             dropButton.SetActive(false);
+            HalfItemImage(unEquipButton.GetComponent<RectTransform>());
+        }
 
         if (!useButton.activeSelf && !equipButton.activeSelf && !unEquipButton.activeSelf)
         {
@@ -515,6 +526,7 @@ public class UIInventory : MonoBehaviour
 
     public void UsaullyItemUnEquipImage()
     {
+        dropButton.GetComponent<RectTransform>().anchoredPosition = dropButtonPosition;
 
     }
 
