@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
     private static BuildManager _instance;
-
     public static BuildManager Instance
     {
         get { return _instance; }
     }
 
+    public GameObject Enviornment;
+
     public GameObject buildMenu;
+    public BuildObjectInfo buildInfoBG;
     public Transform buildMenuContent;
     public BuildObject[] buildObjects;
     public List<BuildMenuItem> BuildMenuItems = new List<BuildMenuItem>();
@@ -66,6 +69,15 @@ public class BuildManager : MonoBehaviour
         buildController.SetBuildObject(buildObject);
     }
 
+    public void OnBuildMode(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            CharacterManager.Instance.Player.controller.playerInput.SwitchCurrentActionMap("BuildMode");
+            buildController.OnBuildMode(context);
+        }
+    }
+    
     public bool HasResourceAmount(RequireResourceAmount requireResourceAmount, bool consume)
     {
         ItemSlot[] slots = InventotyManager.Instance.Inventory.slots;
@@ -89,11 +101,6 @@ public class BuildManager : MonoBehaviour
                     return true;
                 }
             }
-        }
-
-        if (!resourceFound)
-        {
-            Debug.Log($"?몃깽?좊━??{requireResourceAmount.type} 由ъ냼?ㅺ? ?놁뒿?덈떎!");
         }
         return false;
     }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: PlatForm
   description: PlatForm
+  maxHealth: 20
   maxSlopeAngle: 359
   minSlopeAngle: 30
   type: 0

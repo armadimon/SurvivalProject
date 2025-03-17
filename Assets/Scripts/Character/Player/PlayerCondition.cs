@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using DG.Tweening.CustomPlugins;
 
 public interface IDamageable
 {
@@ -35,9 +36,17 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public float lowThirstHealthDecay;  // thirst 일정량 이하일 때 체력 감소
     public event Action onTakeDamaged;
 
-    // 물 마시기
+    // 물 Location에서 마시기
     public bool isInHydrateLocation = false;
     public bool isDrinking = false;
+
+    // 각 컨디션 회복 시 상태
+    public bool isHealing = false;
+    public bool isEating = false;
+    public bool isHydrating = false;
+    public bool isStaminaHealing = false;
+
+    public int poisonProbabilityInt;
 
     void Start()
     {
@@ -71,6 +80,9 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public void Heal(float amount)
     {
         health.Add(amount);
+        isHealing = true;
+        poisonProbabilityInt = UnityEngine.Random.Range(0, 100);
+        Invoke("ExitHeal", 5f);
     }
 
     private void Die()
@@ -82,16 +94,22 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public void Eat(float amount)
     {
         hunger.Add(amount);
+        isEating = true;
+        Invoke("ExitEat", 5f);
     }
 
     public void Hydrate(float amount)
     {
         thirst.Add(amount);
+        isHydrating = true;
+        Invoke("ExitHydrate", 5f);
     }
 
     public void HealStamina(float amount)
     {
         stamina.Add(amount);
+        isStaminaHealing = true;
+        Invoke("ExitStaminaHeal", 5f);
     }
 
     public void TakeDamage(float damage)
@@ -229,4 +247,24 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
             controller.moveSpeed = tooSlowSpeed;
         }
     }
+
+    public void ExitHeal()
+    {
+        isHealing = false;
+    }
+
+    public void ExitEat()
+    {
+        isEating = false;
+    }
+
+    public void ExitHydrate()
+    {
+        isHydrating = false;
+    }
+
+    public void ExitStaminaHeal()
+    {
+        isStaminaHealing = false;
+    }    
 }
