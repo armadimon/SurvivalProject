@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8116900048060237684}
   - component: {fileID: 6829979609999307648}
   - component: {fileID: 7348282527322825514}
-  - component: {fileID: 6864681860305795999}
   m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5694547119989593747}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.011458757, y: 0.025, z: 0.18}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,28 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6864681860305795999
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694547119989593747}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2475800084d1a6c4a9a92017599bf06b, type: 3}
 --- !u!1 &6907106213808990864
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1530740094506272820}
   - component: {fileID: 8099839697055785789}
+  - component: {fileID: 6590667476847948478}
   m_Layer: 9
   m_Name: Build_Platform
   m_TagString: Untagged
@@ -132,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 6907106213808990864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.011458757, y: 0.1106847, z: -0.17797287}
+  m_LocalPosition: {x: 0, y: 0.027, z: -0.17797287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -155,6 +133,29 @@ MonoBehaviour:
   snapPointGroup: {fileID: 5938054582665574922}
   snapPoints: []
   data: {fileID: 11400000, guid: 1b329ce11f1c15d45aac0999c5d4d0a5, type: 2}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  isSafe: 0
+--- !u!65 &6590667476847948478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907106213808990864}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.825419, y: 0.26093656, z: 2.0440612}
+  m_Center: {x: 0, y: 0.12546241, z: 0}
 --- !u!1001 &6816304580786485422
 PrefabInstance:
   m_ObjectHideFlags: 0
