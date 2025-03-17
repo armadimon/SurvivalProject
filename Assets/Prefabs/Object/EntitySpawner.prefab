@@ -55,6 +55,6 @@ MonoBehaviour:
   - {fileID: 8910812461554969080, guid: e46faae1bca071d40a39a4e9b9f00853, type: 3}
   mediumEntityPrefab:
   - {fileID: 4598163926361408027, guid: 91fc8449edfba2c449e343a5f6628580, type: 3}
-  - {fileID: 7592110871357304967, guid: 91f96ffd91294014788bc8bad6991002, type: 3}
+  - {fileID: 4356688041658270040, guid: 91f96ffd91294014788bc8bad6991002, type: 3}
   largeEntityPrefab:
   - {fileID: 8183399663256560007, guid: 187e79d3e0997b942bad68214d68b720, type: 3}
