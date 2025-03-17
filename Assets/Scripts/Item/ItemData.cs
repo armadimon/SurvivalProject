@@ -57,4 +57,5 @@ public class ItemData : ScriptableObject
     
     [Header("ResourceType")]
     public RequireResourceType resourceType;
+    public RequireResourceAmount requireResourceAmout;
 }
