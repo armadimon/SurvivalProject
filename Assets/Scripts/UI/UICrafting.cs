@@ -52,6 +52,8 @@ public class UICrafting : MonoBehaviour
             craftingSlots.Add(newSlot);
         }
 
+       
+
     }
 
     public bool IsOpen
@@ -69,6 +71,7 @@ public class UICrafting : MonoBehaviour
     public void HideCraftingUI()
     {
         craftingCanvas.enabled = false;
+        
     }
 
 

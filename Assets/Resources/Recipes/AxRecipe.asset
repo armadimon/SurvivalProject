@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a14f54c5fdb4a843b357f810b3a8929, type: 3}
   m_Name: AxRecipe
   m_EditorClassIdentifier: 
-  requireResourcesItem:
-  - {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}
-  - {fileID: 11400000, guid: 31b865fd59f0607468b2cae88204866e, type: 2}
+  requrireResourcesItem:
+  - requireItem: {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}
+    amount: 2
+  - requireItem: {fileID: 11400000, guid: 31b865fd59f0607468b2cae88204866e, type: 2}
+    amount: 3
   resultItem: {fileID: 11400000, guid: 012de9be43eff76439a1727d97b0af7f, type: 2}
   resultAmount: 1
   recipeType: 2
