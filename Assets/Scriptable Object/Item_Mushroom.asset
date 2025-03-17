@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Item_Mushroom
   m_EditorClassIdentifier: 
   disPlayName: "\uBC84\uC12F"
-  description: "\uCCB4\uB825\uC744 \uCC44\uC6CC\uC90D\uB2C8\uB2E4."
+  description: "\uCCB4\uB825\uC744 \uCC44\uC6CC\uC90D\uB2C8\uB2E4. \uB3C5\uBC84\uC12F\uC77C
+    \uC218\uB3C4 \uC788\uC2B5\uB2C8\uB2E4."
   type: 2
   icon: {fileID: 21300000, guid: 0edd22b03b6ffc54fadf5a72cde6adbf, type: 3}
   dropPrefab: {fileID: 4051802830756695974, guid: 15175cc1fe22da24dac3925cf14103cf, type: 3}
@@ -24,3 +25,6 @@ MonoBehaviour:
     value: 10
   equipPrefab: {fileID: 0}
   resourceType: 0
+  requireResourceAmout:
+    type: 0
+    value: 0
