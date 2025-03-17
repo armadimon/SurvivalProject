@@ -43,6 +43,9 @@ public class AIEntity : MonoBehaviour, IDamageable
     private Animator animator;                // 애니메이터
     private SkinnedMeshRenderer[] meshRenderers; // 캐릭터의 스킨 메쉬 렌더러 (피격 효과용)
 
+    private float defaultDetectDistance; // 기본 감지 거리
+    public float nightDetectDistanceMultiplier;    // 밤에 감지 거리
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();           // 네비게이션 에이전트 가져오기
@@ -50,6 +53,7 @@ public class AIEntity : MonoBehaviour, IDamageable
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>(); // 캐릭터의 메쉬 렌더러 가져오기
 
         //Debug.Log(agent.agentTypeID);
+        // NavMesh 위의 가장 가까운 지점으로 이동 (Terrain에서 오류 방지)
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
         {
@@ -62,16 +66,8 @@ public class AIEntity : MonoBehaviour, IDamageable
 
     void Start()
     {
-
-        //if (!agent.isOnNavMesh)
-        //{
-        //    NavMeshHit hit;
-        //    if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
-        //    {
-        //        agent.Warp(hit.position);
-        //    }
-        //    //Debug.LogError($"{gameObject.name}이(가) NavMesh 위에 있지 않습니다! 위치를 확인하세요.");
-        //}
+        defaultDetectDistance = detectDistance; // 기본 감지 거리 저장
+        DayNightCycle.OnNightStateChanged += SetDetectDistanceForNight;
 
         SetState(AIState.Wandering); // 시작할 때 배회 상태로 설정
     }
@@ -289,6 +285,19 @@ public class AIEntity : MonoBehaviour, IDamageable
             renderer.material.color = Color.white;
         }
     }
+
+    private void OnDestroy()
+    {
+        // 이벤트 해제
+        DayNightCycle.OnNightStateChanged -= SetDetectDistanceForNight;
+    }
+
+    private void SetDetectDistanceForNight(bool isNight)
+    {
+        // 밤에는 감지 거리를 늘림
+        detectDistance = isNight ? defaultDetectDistance * nightDetectDistanceMultiplier : defaultDetectDistance;
+    }
+
 
     //public void OnDrawGizmos()
     //{
