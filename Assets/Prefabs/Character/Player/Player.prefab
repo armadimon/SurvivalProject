@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 2324991411326561558}
   - component: {fileID: 8142424415016275819}
   - component: {fileID: 8322028355889780566}
+  - component: {fileID: 4277282988235816817}
   - component: {fileID: 1613976011072082705}
   - component: {fileID: 7120608849839989870}
   - component: {fileID: 1053372680967664262}
@@ -446,22 +447,6 @@ MonoBehaviour:
     m_ActionId: 6d54401d-bda1-4588-a43a-2a6cc2452565
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4104430669939051222}
-        m_TargetAssemblyTypeName: BuildController, Assembly-CSharp
-        m_MethodName: OnBuildMode
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d1c12dc9-def5-4d43-bf1f-00301d2a1798
-    m_ActionName: Player/BuildMode[/Keyboard/b]
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: d6834e2c-f780-406e-a316-3d26c1ef125c
     m_ActionName: Player/LeftClick[/Mouse/leftButton]
@@ -501,6 +486,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ff8dda04-00b1-46d0-ae3a-639895848219
     m_ActionName: Player/Make[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e8e68ec3-b7a2-4e20-a2a7-ffb1b50593a9
+    m_ActionName: Player/BuildMode[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27ad45e6-d044-4c0e-8ca0-e550c3d7a518
+    m_ActionName: BuildMode/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15809de8-4ecd-473d-8ec5-ac3c798f6e78
+    m_ActionName: BuildMode/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b8f5258f-f22b-44e5-b5bb-3d0a58944e87
+    m_ActionName: BuildMode/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0276a6f-b0e9-4520-891c-fffb8fd51720
+    m_ActionName: BuildMode/BuildMode[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9398d3f1-e65c-4d4a-ac82-a752672eecf8
+    m_ActionName: BuildMode/Set[/Mouse/leftButton,/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac52784e-2706-4548-893f-f7b2c679fb96
+    m_ActionName: BuildMode/Run[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17a1f911-aa69-4585-a3a4-c300e6031835
+    m_ActionName: BuildMode/ObjectRotation[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -523,6 +540,24 @@ MonoBehaviour:
   dropPosition: {fileID: 4305234730608855208}
   condition: {fileID: 0}
   equipment: {fileID: 0}
+  playerModifiers: []
+  activeModifiers: []
+--- !u!114 &4277282988235816817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830912696432523152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd5bec8069ce8d458291e7112a5db3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elapsedTime: 0
+  isActive: 0
+  poisonDuration: 5
+  damagePerSecond: 2
 --- !u!114 &1613976011072082705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,6 +581,11 @@ MonoBehaviour:
   lowThirstHealthDecay: 2
   isInHydrateLocation: 0
   isDrinking: 0
+  isHealing: 0
+  isEating: 0
+  isHydrating: 0
+  isStaminaHealing: 0
+  poisonProbabilityInt: 0
 --- !u!114 &7120608849839989870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40107fa4fdfddc043882f09fe2a7f2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
   moveSpeed: 5
   jumpPower: 5
   groundLayerMask:
