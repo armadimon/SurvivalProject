@@ -9,12 +9,13 @@ public enum BuildObjectType
     Final,
 }
 
-[CreateAssetMenu(fileName = "Item", menuName = "New Item")]
+[CreateAssetMenu(fileName = "Build_Object", menuName = "New Build_Object")]
 public class BuildObjectData : ScriptableObject
 {
     [Header("Info")]
     public string displayName;
     public string description;
+    public int maxHealth;
     public float maxSlopeAngle = 45f;
     public float minSlopeAngle = 10f;
     public BuildObjectType type;

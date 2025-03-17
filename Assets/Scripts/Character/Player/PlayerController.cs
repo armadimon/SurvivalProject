@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // public InputActionMap playerActionMap;
+    // public InputActionMap buildModeActionMap;
+    public PlayerInput playerInput;
+    
     [Header("Movement")]
     public float moveSpeed;    
     private Vector2 _curMoveInput;
@@ -35,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        playerInput = GetComponent<PlayerInput>();
+        // playerActionMap = inputActions.SwitchCurrentActionMap()
+        // buildModeActionMap = inputActions.FindActionMap("BuildMode");
         _rigidbody = GetComponent<Rigidbody>();
         playerCondition = GetComponent<PlayerCondition>();
         originMoveSpeed = moveSpeed; // 처음 이동속도 저장

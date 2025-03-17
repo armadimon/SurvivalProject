@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: log
   description: log
+  maxHealth: 20
   maxSlopeAngle: 45
   minSlopeAngle: 30
   type: 0
