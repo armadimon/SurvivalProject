@@ -9,14 +9,33 @@ public class BuildObject : MonoBehaviour
     public List<Transform> snapPoints = new List<Transform>(); 
     public BuildObjectData data;
     public Quaternion originalRotation;
-    public bool isSet = false;
-    
+    public bool isSafe = false;
+    public string Category { get; private set; }
+    public int Health { get; private set; } = 100;
+    public bool IsInsideSettlement { get; set; }
+
+
     private void Awake()
     {
         originalRotation = transform.rotation;
-        if (snapPointGroup != null)
+    }
+    public void TakeDamage(int amount)
+    {
+        Health -= amount;
+        if (Health <= 0)
         {
-            snapPoints.AddRange(snapPointGroup.GetComponentsInChildren<Transform>());
+            SettlementManager.Instance.RemoveBuildObject(this);
+            Invoke("InvokeDestroy", 1f);
         }
+    }
+
+    private void InvokeDestroy()
+    {
+        Destroy(gameObject);
+    }
+
+    public void Repair(int amount)
+    {
+        Health += amount;
     }
 }
