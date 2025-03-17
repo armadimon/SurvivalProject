@@ -40,10 +40,10 @@ public class AIEntity : MonoBehaviour, IDamageable
     private float playerDistance;    // 플레이어와의 거리
     public float fieldOfView = 120f; // NPC의 시야각
 
-    private Animator animator;                // 애니메이터
+    private Animator animator;                  // 애니메이터
     private SkinnedMeshRenderer[] meshRenderers; // 캐릭터의 스킨 메쉬 렌더러 (피격 효과용)
 
-    private float defaultDetectDistance; // 기본 감지 거리
+    private float defaultDetectDistance;            // 기본 감지 거리
     public float nightDetectDistanceMultiplier;    // 밤에 감지 거리
 
     private void Awake()
