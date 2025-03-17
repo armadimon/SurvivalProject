@@ -135,11 +135,23 @@ public class InventotyManager : MonoBehaviour
         {
             if (slot.item == item)
             {
-                slot.quantity -= amount;
-                if (slot.quantity <= 0)
+                if (slot.quantity > amount)
+                {
+                    slot.quantity -= amount;
+                }
+                else
+                {
+                    amount -= slot.quantity;
                     slot.Clear();
+                    if (amount <= 0)
+                    {
+                        Inventory.UpdateUI();
+                        return;
+                    }
+                }
             }
         }
+        Inventory.UpdateUI();
     }
 
     public bool HasItem(ItemData item, int amount)
