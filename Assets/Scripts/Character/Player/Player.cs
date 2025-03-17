@@ -19,8 +19,7 @@ public class Player : MonoBehaviour
     public Equipment equipment;
 
     public List<ModifierBase> playerModifiers;
-
-    [SerializeField] private List<ModifierBase> activeModifiers = new List<ModifierBase>();
+    [SerializeField] private List<ModifierBase> activeModifiers = new List<ModifierBase>();   
 
     private void Awake()
     {
@@ -32,7 +31,7 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {       
+    {        
         if (OnPoisoned())
         {
             for (int i = 0; i < playerModifiers.Count; i++)
@@ -82,10 +81,10 @@ public class Player : MonoBehaviour
         }
     }
     
-    // 중독상태 bool 메서드 (현재 100%)
+    // 중독상태 bool 메서드 (확률 25%)
     public bool OnPoisoned()
-    {                
-        if (condition.isHealing) return true;            
+    {
+        if (condition.isHealing && condition.poisonProbabilityInt < 24) return true;            
         else return false;
     }
 }

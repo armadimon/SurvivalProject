@@ -46,6 +46,8 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public bool isHydrating = false;
     public bool isStaminaHealing = false;
 
+    public int poisonProbabilityInt;
+
     void Start()
     {
         controller = CharacterManager.Instance.Player.controller;
@@ -79,6 +81,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     {
         health.Add(amount);
         isHealing = true;
+        poisonProbabilityInt = UnityEngine.Random.Range(0, 100);
         Invoke("ExitHeal", 5f);
     }
 
