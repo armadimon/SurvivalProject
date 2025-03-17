@@ -8,9 +8,11 @@ public class BuildObject : MonoBehaviour
     public Transform snapPointGroup;
     public List<Transform> snapPoints = new List<Transform>(); 
     public BuildObjectData data;
+    public Quaternion originalRotation;
     
     private void Awake()
     {
+        originalRotation = transform.rotation;
         if (snapPointGroup != null)
         {
             snapPoints.AddRange(snapPointGroup.GetComponentsInChildren<Transform>());

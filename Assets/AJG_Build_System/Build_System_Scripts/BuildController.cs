@@ -11,8 +11,7 @@ public class BuildController : MonoBehaviour
     public bool SetMode = false;
     
     public Camera snapPointCamera;
-    public LayerMask placementLayer;  // 배치가 가능한 레이어
-    public float maxSlopeAngle = 45f; // 최대 허용 기울기 (단위: 도)
+    public LayerMask placementLayer;
     public BuildObject _buildObject;
     private MeshRenderer _objectMeshRenderer;
     private Color _objectOriginalColor;
@@ -20,9 +19,12 @@ public class BuildController : MonoBehaviour
     private Color _objectCantSetableColor;
     public float rayCastDistance = 5f;
 
+    private int currentRotationIndex = 0;
+    private List<Quaternion> availableRotations = new List<Quaternion>();
+    
     public float snapRange = 2.0f;
     public LayerMask snapLayer;
-    private Transform closestSnapPoint;
+    private SnapPoint closestSnapPoint;
     
     // 테스트용
     
@@ -33,20 +35,40 @@ public class BuildController : MonoBehaviour
 
     void Update()
     {
-        if (buildMode)
+        if (buildMode && SetMode)
         {
-            if (SetMode)
+            closestSnapPoint = null;
+            bool setable = TrySet();
+            if (Input.GetMouseButtonDown(0) && setable)
             {
-                bool setable = TrySet();
-                if (Input.GetMouseButtonDown(0))
+                ObjectSet();
+            }
+
+            // Q 또는 E 입력 시 회전 변경
+            if (closestSnapPoint != null && availableRotations.Count > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    if (setable)
-                        ObjectSet();
+                    currentRotationIndex--;
+                    if (currentRotationIndex < 0)
+                    {
+                        currentRotationIndex = availableRotations.Count - 1;
+                    }
+                    closestSnapPoint.ApplyRotation(currentRotationIndex);
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentRotationIndex++;
+                    if (currentRotationIndex >= availableRotations.Count)
+                    {
+                        currentRotationIndex = 0;
+                    }
+                    closestSnapPoint.ApplyRotation(currentRotationIndex);
                 }
             }
         }
     }
-
+    
     private bool TrySet()
     {
         bool isSetable = false;
@@ -59,17 +81,23 @@ public class BuildController : MonoBehaviour
             float angle = Vector3.Angle(Vector3.up, hitNormal);
 
             _buildObject.transform.position = hit.point;
-            Vector3 forwardDirection = Vector3.Cross(hitNormal, Vector3.right);
-            _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
             if (TrySnapToClosestPoint(hit))
             {
-                _buildObject.transform.position = closestSnapPoint.position;
-                _buildObject.transform.rotation = closestSnapPoint.rotation;
+                _buildObject.transform.position = closestSnapPoint.transform.position;
+                _buildObject.transform.rotation = closestSnapPoint.transform.rotation;
                 _objectMeshRenderer.material.color = _objectOriginalColor;
                 isSetable =  true;
             }
-            else if (angle <= maxSlopeAngle)
+            else if (angle <= _buildObject.data.minSlopeAngle)
             {
+                _buildObject.transform.rotation = _buildObject.originalRotation;
+                _objectMeshRenderer.material.color = _objectOriginalColor;
+                isSetable =  true;
+            }
+            else if (angle <= _buildObject.data.maxSlopeAngle && angle > _buildObject.data.minSlopeAngle)
+            {
+                Vector3 forwardDirection = Vector3.Cross(hitNormal, Vector3.right);
+                _buildObject.transform.rotation = Quaternion.LookRotation(forwardDirection, hitNormal);
                 _objectMeshRenderer.material.color = _objectOriginalColor;
                 isSetable =  true;
             }
@@ -96,29 +124,35 @@ public class BuildController : MonoBehaviour
     {
         Collider[] colliders = Physics.OverlapSphere(hit.transform.position, snapRange, snapLayer);
         
-        Transform bestSnapPoint = null;
+        SnapPoint bestSnapPoint = null;
         float closestDistance = Mathf.Infinity;
+        List<Quaternion> rotations = new List<Quaternion>();
 
         foreach (Collider col in colliders)
         {
-            Debug.Log(colliders.Length);
+            SnapPoint snapPoint = col.GetComponent<SnapPoint>();
+            if (snapPoint == null) continue;
+
             float distance = Vector3.Distance(_buildObject.transform.position, col.transform.position);
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                bestSnapPoint = col.transform;
+                bestSnapPoint = snapPoint;
+                rotations = snapPoint.validRotations;
             }
         }
 
         if (bestSnapPoint != null)
         {
-            _buildObject.transform.position = bestSnapPoint.position;
-            _buildObject.transform.rotation = bestSnapPoint.rotation;
+            _buildObject.transform.position = bestSnapPoint.transform.position;
+            availableRotations = rotations;
+            _buildObject.transform.rotation = bestSnapPoint.transform.rotation;
             closestSnapPoint = bestSnapPoint;
             return true;
         }
         return false;
     }
+    
     private void OnDrawGizmos()
     {
         Collider[] colliders = new Collider[0];
