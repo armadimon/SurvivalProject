@@ -139,10 +139,10 @@ TextureImporter:
       name: GUI 2_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 539
-        width: 1316
-        height: 994
+        x: 32
+        y: 573
+        width: 1287
+        height: 962
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: GUI 2_1
       rect:
         serializedVersion: 2
-        x: 1365
-        y: 539
-        width: 634
-        height: 994
+        x: 1378
+        y: 573
+        width: 608
+        height: 960
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: GUI 2_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 50
-        width: 634
-        height: 413
+        x: 32
+        y: 85
+        width: 606
+        height: 378
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -20,7 +20,6 @@ public class UIInventory : MonoBehaviour
     private RectTransform itemUseRect;
     private Vector2 usuallyitemUseRect;
     private Vector3 dropButtonPosition;
-    private GameObject halfDropButton;
 
     [Header("Select Item")]
     public Image selectItemIcon;
@@ -204,7 +203,7 @@ public class UIInventory : MonoBehaviour
 
     }
 
-    void UpdateUI()
+    public void UpdateUI()
 
     {
         for (int i = 0; i < slots.Length; i++)
@@ -230,7 +229,7 @@ public class UIInventory : MonoBehaviour
         isUseItemWindow = itemDescription.activeSelf;
     }
 
-    ItemSlot GetItemStack(ItemData data)
+    public ItemSlot GetItemStack(ItemData data)
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -242,7 +241,7 @@ public class UIInventory : MonoBehaviour
         return null;
     }
 
-    ItemSlot GetEmptySlot()
+    public ItemSlot GetEmptySlot()
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -255,7 +254,7 @@ public class UIInventory : MonoBehaviour
         return null;
     }
 
-    void ThrowItem(ItemData data)
+    public void ThrowItem(ItemData data)
     {
         Instantiate(data.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
     }

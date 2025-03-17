@@ -1,40 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UICrafting : MonoBehaviour
 {
-    public bool HasResourceAmount(RequireResourceAmount requireResourceAmount, bool consume)
-    {
-        ItemSlot[] slots = InventotyManager.Instance.Inventory.slots;
-        bool resourceFound = false;
+    public Transform craftingSlotsTransform;     //제작슬롯의 부모(Slots)
+    public GameObject craftingSlotPrefab;   // 제작슬롯 프리팹
+    public List<CraftingRecipe> allRecipes; 
 
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].item == null)
-                continue;
+    private CraftingRecipe selectedRecipe;
 
-            if (slots[i].item.type == ItemType.Resouce && slots[i].item.resourceType == requireResourceAmount.type)
-            {
-                resourceFound = true;
-
-                if (slots[i].quantity >= requireResourceAmount.value)
-                {
-                    if (consume)
-                    {
-                        slots[i].quantity -= requireResourceAmount.value;
-                    }
-                    return true;
-                }
-            }
-        }
-
-        if (!resourceFound)
-        {
-            Debug.Log($"?몃깽?좊━??{requireResourceAmount.type} 由ъ냼?ㅺ? ?놁뒿?덈떎!");
-        }
-        return false;
-    }
+    public CraftingSlot[] craftingSlot;
 
     // Start is called before the first frame update
     void Start()
@@ -47,4 +24,23 @@ public class UICrafting : MonoBehaviour
     {
         
     }
+
+    public void RefreshCraftingUI()
+    {
+        foreach (Transform child in craftingSlotsTransform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (CraftingRecipe recipe in allRecipes)
+        {
+            if (CraftingManager.Instance.CanCraft(recipe))
+            {
+                GameObject slot = Instantiate(craftingSlotPrefab, craftingSlotsTransform);
+                slot.GetComponent<CraftingSlot>().Set(recipe);
+            }
+        }
+
+    }
+
 }
