@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 921d0f05018ea8a49a87f809918c89e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1231c654478d0914daa2ac93ec7ab868, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x2
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
   m_sharedMaterial: {fileID: -798222325134822351, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x2
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
   m_sharedMaterial: {fileID: -798222325134822351, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
@@ -961,7 +961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8707350883084470521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1037,14 +1037,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76b75889e6b88c43a21eab4c17de870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialFirst: {fileID: 0}
-  materialFirstQuantityText: {fileID: 0}
-  materialSecond: {fileID: 0}
-  materialSecondQuantityText: {fileID: 0}
-  completeItem: {fileID: 0}
-  completeItemQuantityText: {fileID: 0}
-  addText: {fileID: 0}
-  CraftingButton: {fileID: 0}
+  materialFirstImage: {fileID: 2410273152885362870}
+  materialFirstQuantityText: {fileID: 7283065577667517228}
+  materialSecondImage: {fileID: 5883629604050790908}
+  materialSecondQuantityText: {fileID: 1722933060615264725}
+  resultImage: {fileID: 490815001612942288}
+  resultItemQuantityText: {fileID: 8796760909720534537}
+  addText: {fileID: 7715446076842325963}
+  craftingButton: {fileID: 5321679450708494206}
+  materialFirstItem: {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}
+  meterialSecondItem: {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}
+  resultItem: {fileID: 11400000, guid: 31b865fd59f0607468b2cae88204866e, type: 2}
 --- !u!1 &8068623328397239742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: =
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
   m_sharedMaterial: {fileID: -798222325134822351, guid: 5f18bcc56730db4428cfce48f834e810, type: 2}
@@ -1245,7 +1248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1231c654478d0914daa2ac93ec7ab868, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

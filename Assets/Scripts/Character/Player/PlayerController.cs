@@ -190,4 +190,24 @@ public class PlayerController : MonoBehaviour
             ToggleCursur(); // 인벤토리 열었을 때 마우스 잠금 해제
         }
     } 
+
+    public void OnCrafting(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            if (!CraftingManager.Instance.UICrafting.IsOpen)
+            {
+                CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Process);
+
+            }
+            else
+            {
+                CraftingManager.Instance.UICrafting.HideCraftingUI();
+            }
+
+                ToggleCursur();
+            
+        }
+    }
+
 }

@@ -76,29 +76,14 @@ public class CraftingSlot : MonoBehaviour
         resultItemQuantityText .text = recipe.resultAmount.ToString();
         resultImage.sprite = recipe.resultItem.icon;
 
-        
+        craftingButton.onClick.AddListener(() => CraftItem());
     }
 
 
-    //public void Clear()
-    //{
-    //    materialSecondImage.enabled = false;
-    //    materialSecondQuantityText.enabled = false;
-    //    addText.enabled = false;
-
-    //    materialFirstImage = null;
-    //    materialSecondImage = null;
-    //    resultItem = null;
-
-    //    materialFirstQuantityText.text = string.Empty;
-    //    materialSecondQuantityText.text = string.Empty;
-    //    resultItemQuantityText.text = string.Empty;
-
-    //    materialFirstImage.sprite = null;
-    //    materialSecondImage.sprite= null;
-    //    resultImage = null;
-
-    //}
+    private void CraftItem()
+    {
+        CraftingManager.Instance.CraftItem(recipe, 1);
+    }
 
    
 

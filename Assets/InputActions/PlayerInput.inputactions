@@ -103,6 +103,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Crafting",
+                    "type": "Button",
+                    "id": "1e5b5dc5-2434-4426-ad4f-f52f5a0602f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -268,6 +277,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Make",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ca32d1f-1a72-4b79-b2b5-14ba0f7a3e8c",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crafting",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
