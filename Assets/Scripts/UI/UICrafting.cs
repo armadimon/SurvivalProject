@@ -73,8 +73,22 @@ public class UICrafting : MonoBehaviour
     // UI를 활성화하고 업데이트를 시켜준다
     public void ShowCraftingUI(RecipeType recipeType)
     {
+        UIInventory inventory = InventotyManager.Instance.Inventory;
+        if (inventory.IsOpen())
+        {
+            inventory.inventoryWindow.enabled = false;
+            inventory.itemDescription.SetActive(false);
+            inventory.itemUseImage.SetActive(false);
+            inventory.isUseItemWindow = inventory.itemDescription.activeSelf;
+            inventory.UsaullyItemUnEquipImage();
+        }
         craftingCanvas.enabled = true;
         CraftingManager.Instance.DisplayCraftingRecipes(recipeType);
+
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
 
         switch (recipeType)
         {
@@ -103,6 +117,7 @@ public class UICrafting : MonoBehaviour
 
     public void HideCraftingUI()
     {
+       
         craftingCanvas.enabled = false;
         
     }
