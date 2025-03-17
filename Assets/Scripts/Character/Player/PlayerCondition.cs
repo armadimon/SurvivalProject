@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using DG.Tweening.CustomPlugins;
 
 public interface IDamageable
 {
@@ -228,5 +229,5 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         {
             controller.moveSpeed = tooSlowSpeed;
         }
-    }
+    }    
 }
