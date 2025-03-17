@@ -3,54 +3,54 @@ using UnityEngine.InputSystem;
  
 public class Equipment : MonoBehaviour
 {
-    // 현재 장착된 장비 객체
+    // ?袁⑹삺 ?關媛???貫??揶쏆빘猿?
     public Equip curEquip;
 
-    // 장비가 장착될 부모 오브젝트 (예: 손 위치)
+    // ?貫?у첎? ?關媛???봔筌???삵닏??븍뱜 (?? ???袁⑺뒄)
     public Transform equipParent;
 
-    // 플레이어 컨트롤러 및 상태 관리 객체
+    // ???쟿??곷선 ?뚢뫂?껅에?살쑎 獄??怨밴묶 ?온??揶쏆빘猿?
     private PlayerController controller;
 
     void Start()
     {
-        // 플레이어 관련 컴포넌트 가져오기
+        // ???쟿??곷선 ?온???뚮똾猷??곕뱜 揶쎛?紐꾩궎疫?
         controller = GetComponent<PlayerController>();
     }
 
     /// <summary>
-    /// 새로운 장비를 장착하는 메서드
-    /// 기존 장비를 해제한 후, 새로운 장비를 생성하여 장착
+    /// ??덉쨮???貫?х몴??關媛??롫뮉 筌롫뗄苑??
+    /// 疫꿸퀣???貫?х몴???곸젫???? ??덉쨮???貫?х몴???밴쉐??뤿연 ?關媛?
     /// </summary>
-    /// <param name="data">장착할 아이템 데이터</param>
+    /// <param name="data">?關媛???袁⑹뵠???怨쀬뵠??/param>
     public void EquipNew(ItemData data)
     {
-        UnEquip(); // 기존 장비 해제
-        curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>(); // 새로운 장비 생성 및 장착
+        UnEquip(); // 疫꿸퀣???貫????곸젫
+        curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>(); // ??덉쨮???貫????밴쉐 獄??關媛?
     }
 
     /// <summary>
-    /// 현재 장비를 해제하는 메서드
+    /// ?袁⑹삺 ?貫?х몴???곸젫??롫뮉 筌롫뗄苑??
     /// </summary>
     public void UnEquip()
     {
         if (curEquip != null)
         {
-            Destroy(curEquip.gameObject); // 현재 장착된 장비 오브젝트 삭제
+            Destroy(curEquip.gameObject); // ?袁⑹삺 ?關媛???貫????삵닏??븍뱜 ????
             curEquip = null;
         }
     }
 
     /// <summary>
-    /// 공격 입력을 처리하는 메서드
+    /// ?⑤벀爰???낆젾??筌ｌ꼶???롫뮉 筌롫뗄苑??
     /// </summary>
-    /// <param name="context">입력 컨텍스트</param>
+    /// <param name="context">??낆젾 ?뚢뫂???쎈뱜</param>
     public void OnAttackInput(InputAction.CallbackContext context)
     {
-        // 공격 입력이 수행되었으며, 현재 장착된 장비가 있고, 플레이어가 시점을 조작할 수 있는 상태라면
+        // ?⑤벀爰???낆젾????묐뻬??뤿???거? ?袁⑹삺 ?關媛???貫?у첎? ??뉙? ???쟿??곷선揶쎛 ??뽰젎??鈺곌퀣???????덈뮉 ?怨밴묶??겹늺
         if (context.phase == InputActionPhase.Performed && curEquip != null && controller.canLook)
         {
-            curEquip.OnAttackInput(); // 장비의 공격 메서드 호출
+            curEquip.OnAttackInput(); // ?貫????⑤벀爰?筌롫뗄苑???紐꾪뀱
         }
     }
 }

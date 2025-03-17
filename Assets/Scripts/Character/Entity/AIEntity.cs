@@ -49,7 +49,7 @@ public class AIEntity : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();            // 애니메이터 가져오기
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>(); // 캐릭터의 메쉬 렌더러 가져오기
 
-        Debug.Log(agent.agentTypeID);
+        //Debug.Log(agent.agentTypeID);
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
         {
@@ -130,7 +130,7 @@ public class AIEntity : MonoBehaviour, IDamageable
         // 현재 위치에서 경로를 미리 계산
         path = new NavMeshPath();
         agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
-        Debug.LogWarning(path.status);
+        //Debug.LogWarning(path.status);
 
         if (path.status != NavMeshPathStatus.PathComplete)
         {
@@ -198,8 +198,6 @@ public class AIEntity : MonoBehaviour, IDamageable
                 if (Time.time - lastAttackTime > attackRate)
                 {
                     lastAttackTime = Time.time; // 마지막 공격 시간 갱신
-                                                // 플레이어에게 데미지 주기
-                    CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
                     animator.speed = 1f; // 애니메이션 속도 설정
                     animator.SetTrigger("Attack"); // 공격 애니메이션 실행
                 }
@@ -214,7 +212,7 @@ public class AIEntity : MonoBehaviour, IDamageable
 
                 agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
 
-                Debug.Log(path.status);
+                //Debug.Log(path.status);
                 // HighCostArea로 인해 경로가 완전하지 않다면 배회 상태로 전환
                 if (path.status != NavMeshPathStatus.PathComplete)
                 {
@@ -234,7 +232,14 @@ public class AIEntity : MonoBehaviour, IDamageable
             SetState(AIState.Idle);
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
-            
+
+    }
+
+    // 애니메이션 이벤트로 호출될 메서드
+    public void DealDamage()
+    {
+        // 플레이어에게 데미지 주기
+        CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
     }
 
     // 플레이어가 NPC의 시야 내에 있는지 확인

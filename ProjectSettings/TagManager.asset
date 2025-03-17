@@ -19,7 +19,9 @@ TagManager:
   - Interactable
   - Equip
   - 
+  - 
   - Resource
+  - Animal
   - 
   - 
   - 
@@ -27,9 +29,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - SnapPoint
   - 
   - 
   - 

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1084984812217062069}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.428, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59,10 +59,11 @@ Transform:
   m_GameObject: {fileID: 4555739867242564312}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6973539472142291539}
   m_Father: {fileID: 2470799212687942485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8132793122001517128
@@ -482,8 +483,8 @@ MonoBehaviour:
     m_ActionName: Player/Run[/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7120608849839989870}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 1613976011072082705}
+        m_TargetAssemblyTypeName: PlayerCondition, Assembly-CSharp
         m_MethodName: OnDrinking
         m_Mode: 0
         m_Arguments:
@@ -521,6 +522,7 @@ MonoBehaviour:
   item: {fileID: 0}
   dropPosition: {fileID: 4305234730608855208}
   condition: {fileID: 0}
+  equipment: {fileID: 0}
 --- !u!114 &1613976011072082705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,13 +530,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8830912696432523152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a01d4256a5e1ade419bc462e7c272653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiCondition: {fileID: 0}
-  lowThirstHealthDecay: 0
+  indicatorImage: {fileID: 0}
+  indicatorAnimator: {fileID: 0}
+  thirstWarningValue: 0.3
+  hurtFromThirstWarningValue: 0.15
+  hungerWarningValue: 0.2
+  slowSpeed: 3
+  tooSlowSpeed: 1.5
+  lowThirstHealthDecay: 2
+  isInHydrateLocation: 0
+  isDrinking: 0
 --- !u!114 &7120608849839989870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,7 +562,7 @@ MonoBehaviour:
   jumpPower: 5
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   isGrounded: 0
   playerHeight: 0.8
   runSpeedMultiplier: 1.5
@@ -561,8 +572,6 @@ MonoBehaviour:
   maxXLook: 90
   lookSensitivity: 0.2
   canLook: 1
-  isInHydrateLocation: 0
-  isDrinking: 0
 --- !u!114 &1053372680967664262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70724263347e8014cbae0fe0e9fef62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curEquip: {fileID: 0}
+  curEquip: {fileID: 6457915978647550183}
   equipParent: {fileID: 5326846619335310046}
 --- !u!114 &4104430669939051222
 MonoBehaviour:
@@ -591,12 +600,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildMode: 0
   SetMode: 0
+  snapPointCamera: {fileID: 2357002957888458324}
   placementLayer:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 16777792
   maxSlopeAngle: 45
   _buildObject: {fileID: 0}
   rayCastDistance: 5
+  snapRange: 0.2
+  snapLayer:
+    serializedVersion: 2
+    m_Bits: 16777216
 --- !u!114 &1717447813550586590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +618,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8830912696432523152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9e84bd63379234da00094140a85f62, type: 3}
   m_Name: 
@@ -643,7 +657,7 @@ Transform:
   m_GameObject: {fileID: 9043036139484792212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -688,7 +702,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 6783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -708,3 +722,76 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9043036139484792212}
   m_Enabled: 1
+--- !u!1001 &3314610827130024849
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5326846619335310046}
+    m_Modifications:
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966926405315727037, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+      propertyPath: m_Name
+      value: Eqip_Ax
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+--- !u!114 &6457915978647550183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8385980277522205558, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+  m_PrefabInstance: {fileID: 3314610827130024849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17bb6e45c5924049a4cd738df7cfed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6973539472142291539 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5564515989943181762, guid: c6adf6df7dd3ae9419bc5d87409459f8, type: 3}
+  m_PrefabInstance: {fileID: 3314610827130024849}
+  m_PrefabAsset: {fileID: 0}
