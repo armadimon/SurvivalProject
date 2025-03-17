@@ -103,6 +103,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ProcessCrafting",
+                    "type": "Button",
+                    "id": "31004f0b-fa1d-4352-9448-54f14db15fa2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FoodCrafting",
+                    "type": "Button",
+                    "id": "9a82e9cf-2e71-434b-aad1-7638c10c1739",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "EquipCrafting",
+                    "type": "Button",
+                    "id": "69b5ce5c-d043-492c-99b2-dd73f7e13db1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -268,6 +295,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "BuildMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad7feca1-0547-4b77-a615-063ee3c3cacf",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ProcessCrafting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed498a14-f7fa-4da8-9ed9-17d84e6c6378",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FoodCrafting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e27f8f7a-1b15-4fe9-b142-0ba98087124c",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EquipCrafting",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

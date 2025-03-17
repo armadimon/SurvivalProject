@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
         }
     } 
 
-    public void OnCrafting(InputAction.CallbackContext context)
+    public void OnProcessCrafting(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
@@ -214,6 +214,44 @@ public class PlayerController : MonoBehaviour
 
                 ToggleCursur();
             
+        }
+    }
+
+    public void OnFoodCrafting(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            if (!CraftingManager.Instance.UICrafting.IsOpen)
+            {
+                CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Food);
+
+            }
+            else
+            {
+                CraftingManager.Instance.UICrafting.HideCraftingUI();
+            }
+
+            ToggleCursur();
+
+        }
+    }
+
+    public void OnEquipCrafting(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            if (!CraftingManager.Instance.UICrafting.IsOpen)
+            {
+                CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Equip);
+
+            }
+            else
+            {
+                CraftingManager.Instance.UICrafting.HideCraftingUI();
+            }
+
+            ToggleCursur();
+
         }
     }
 
