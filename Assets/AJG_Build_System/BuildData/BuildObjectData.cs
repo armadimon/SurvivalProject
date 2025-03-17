@@ -15,6 +15,7 @@ public class BuildObjectData : ScriptableObject
     [Header("Info")]
     public string displayName;
     public string description;
+    public int maxCapacity ;
     public int maxHealth;
     public float maxSlopeAngle = 45f;
     public float minSlopeAngle = 10f;

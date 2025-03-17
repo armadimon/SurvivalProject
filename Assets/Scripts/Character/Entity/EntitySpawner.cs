@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class EntitySpawner : MonoBehaviour
@@ -23,6 +24,8 @@ public class EntitySpawner : MonoBehaviour
     public GameObject[] mediumEntityPrefab;
     public GameObject[] largeEntityPrefab;
 
+    // 테스트용
+    public NavMeshSurface surface;
 
     void Start()
     {
@@ -37,6 +40,7 @@ public class EntitySpawner : MonoBehaviour
     }
     private void SetNightState(bool night)
     {
+        surface.BuildNavMesh();
         isNight = night;
     }
 

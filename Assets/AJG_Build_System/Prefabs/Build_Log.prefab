@@ -52,7 +52,7 @@ MonoBehaviour:
   snapPoints: []
   data: {fileID: 11400000, guid: 77086c7bf151c1d4dbe173e77acabd2d, type: 2}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
-  isSet: 0
+  isSafe: 0
 --- !u!65 &6691195467401910524
 BoxCollider:
   m_ObjectHideFlags: 0
