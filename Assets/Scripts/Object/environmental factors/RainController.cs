@@ -7,7 +7,6 @@ public class RainController : MonoBehaviour
 {
 
     private ParticleSystem rain;
-    private ParticleSystem.EmissionModule emissionModule;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +20,12 @@ public class RainController : MonoBehaviour
     {
         if(isNight)
         {
-            emissionModule.rateOverTime = 1000;
+            rain.gameObject.SetActive(true);
+            
         }
         else
         {
-            emissionModule.rateOverTime = 0;
-
+            rain.gameObject.SetActive(false);
         }
     }
 }
