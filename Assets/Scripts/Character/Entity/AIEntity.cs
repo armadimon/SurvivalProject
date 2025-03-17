@@ -159,7 +159,7 @@ public class AIEntity : MonoBehaviour, IDamageable
 
         if (!NavMesh.SamplePosition(targetLocation, out NavMeshHit hit, maxWanderDistance, NavMesh.AllAreas)) return;
 
-        agent.areaMask &= ~(1 << NavMesh.GetAreaFromName("HighCostArea"));
+        agent.areaMask &= ~(1 << NavMesh.GetAreaFromName("SettlementArea"));
         agent.SetDestination(hit.position);
     }
 
@@ -204,7 +204,7 @@ public class AIEntity : MonoBehaviour, IDamageable
                 path = new NavMeshPath();
 
                 // HighCostArea를 제외한 영역으로 경로 계산
-                agent.areaMask = NavMesh.GetAreaFromName("HighCostArea");
+                agent.areaMask = NavMesh.GetAreaFromName("SettlementArea");
 
                 agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
 

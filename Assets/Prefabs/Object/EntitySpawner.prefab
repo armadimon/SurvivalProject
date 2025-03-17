@@ -48,6 +48,9 @@ MonoBehaviour:
   spawnCount: 2
   maxEntityCount: 10
   terrainPadding: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   timeRate: 10
   mediumWave: 2
   largeWave: 4
