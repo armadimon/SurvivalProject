@@ -103,9 +103,9 @@ public class CraftingManager : MonoBehaviour
         InventotyManager inventory = InventotyManager.Instance;
 
         // 필요한 재료가 충분히 있는지
-        foreach (ItemData requiredItem in recipe.requireResourcesItem)
+        foreach (var requiredItem in recipe.requrireResourcesItem)
         {
-            if (!inventory.HasItem(requiredItem, requiredItem.requireResourceAmout.value * quantity))
+            if (!inventory.HasItem(requiredItem.requireItem, requiredItem.amount * quantity))
             {
                 Debug.Log("재료가 모자릅니다.");
                 return;
@@ -113,9 +113,9 @@ public class CraftingManager : MonoBehaviour
         }
 
         // 재료 소모
-        foreach (ItemData resourceItem in recipe.requireResourcesItem)
+        foreach (var resourceItem in recipe.requrireResourcesItem)
         {
-            inventory.RemoveItem(resourceItem, resourceItem.requireResourceAmout.value * quantity);  //재료를 소모한다
+            inventory.RemoveItem(resourceItem.requireItem, resourceItem.amount * quantity);  //재료를 소모한다
         }
         // 아이템을 추가
         InventotyManager.Instance.AddItem(recipe.resultItem, recipe.resultAmount * quantity);

@@ -34,33 +34,31 @@ public class CraftingSlot : MonoBehaviour
         addText = transform.Find("AddText").gameObject.GetComponent <TextMeshProUGUI>();
 
         craftingButton = transform.Find("CraftingButton").GetComponent<Button>();
-    }
 
-    private void Start()
-    {
         materialSecondQuantityText.enabled = false;
-        addText.gameObject.SetActive(false);
+        addText.enabled = false;
         materialSecondImage.enabled = false;
     }
+
 
     public void Set(CraftingRecipe newRecipe)
     {
         recipe = newRecipe;
         
 
-        materialFirstItem = recipe.requireResourcesItem[0];
-        materialFirstQuantityText.text = recipe.requireResourcesItem[0].requireResourceAmout.value.ToString();
-        materialFirstImage.sprite = recipe.requireResourcesItem[0].icon;
+        materialFirstItem = recipe.requrireResourcesItem[0].requireItem;
+        materialFirstQuantityText.text = recipe.requrireResourcesItem[0].amount.ToString();
+        materialFirstImage.sprite = recipe.requrireResourcesItem[0].requireItem.icon;
 
-        if (recipe.requireResourcesItem.Length > 1)
+        if (recipe.requrireResourcesItem.Length > 1)
         {
             materialSecondImage.enabled = true;
             materialSecondQuantityText.enabled = true;
             addText.enabled = true;
 
-            meterialSecondItem = recipe.requireResourcesItem[1];
-            materialSecondQuantityText.text = recipe.requireResourcesItem[1].requireResourceAmout.value.ToString();
-            materialSecondImage.sprite = recipe.requireResourcesItem[1].icon;
+            meterialSecondItem = recipe.requrireResourcesItem[1].requireItem;
+            materialSecondQuantityText.text = recipe.requrireResourcesItem[1].amount.ToString();
+            materialSecondImage.sprite = recipe.requrireResourcesItem[1].requireItem.icon;
 
         }
         else

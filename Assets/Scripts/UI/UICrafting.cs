@@ -12,6 +12,11 @@ public class UICrafting : MonoBehaviour
     public Transform craftingSlotsTransform;     //제작슬롯의 부모(Slots)
     public CraftingSlot craftingSlotPrefab;       // 제작슬롯 프리팹
 
+    [Header("CraftingType Tap")]
+    public GameObject equipTap;
+    public GameObject foodTap;
+    public GameObject processTap;
+
     public List<CraftingSlot> craftingSlots = new List<CraftingSlot>();
 
     private CraftingRecipe selectedRecipe;
@@ -27,6 +32,10 @@ public class UICrafting : MonoBehaviour
         {
             CraftingManager.Instance.UICrafting = this;
         }
+
+        equipTap.SetActive(false);
+        foodTap.SetActive(false);
+        processTap.SetActive(false);
 
     }
 
@@ -52,6 +61,8 @@ public class UICrafting : MonoBehaviour
             craftingSlots.Add(newSlot);
         }
 
+       
+
     }
 
     public bool IsOpen
@@ -64,11 +75,36 @@ public class UICrafting : MonoBehaviour
     {
         craftingCanvas.enabled = true;
         CraftingManager.Instance.DisplayCraftingRecipes(recipeType);
+
+        switch (recipeType)
+        {
+            case RecipeType.Equip:
+                equipTap.SetActive(true);
+                foodTap.SetActive(false);
+                processTap.SetActive(false);
+                break;
+
+            case RecipeType.Food:
+                equipTap.SetActive(false);
+                foodTap.SetActive(true);
+                processTap.SetActive(false);
+                break;
+
+            case RecipeType.Process:
+                equipTap.SetActive(false);
+                foodTap.SetActive(false);
+                processTap.SetActive(true);
+                break;
+
+
+        }
+
     }
 
     public void HideCraftingUI()
     {
         craftingCanvas.enabled = false;
+        
     }
 
 

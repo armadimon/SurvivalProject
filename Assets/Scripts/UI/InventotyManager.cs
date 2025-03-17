@@ -109,7 +109,7 @@ public class InventotyManager : MonoBehaviour
                 ItemSlot slot = Inventory.GetItemStack(item);
                 if (slot != null)
                 {
-                    quantity++;
+                    slot.quantity++;
                     continue;
                 }
             }
