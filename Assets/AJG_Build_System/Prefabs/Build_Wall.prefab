@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPointGroup: {fileID: 6319531782650217534}
   snapPoints: []
-  data: {fileID: 11400000, guid: 77086c7bf151c1d4dbe173e77acabd2d, type: 2}
+  data: {fileID: 11400000, guid: 3481b6542b2fb1944874e42456903869, type: 2}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
   isSafe: 0
 --- !u!65 &6283866586825193702
