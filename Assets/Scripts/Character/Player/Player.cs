@@ -39,10 +39,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        PoisonModifier();
-        DehydrateModifier();
-
         UpdateModifiers();
+        PoisonModifier();
+        DehydrateModifier();        
     }
 
     // modifier 활성화
@@ -62,47 +61,42 @@ public class Player : MonoBehaviour
     // modifier 상태업데이트(duration 지나면 자동 비활성화도 포함)
     private void UpdateModifiers()
     {
-        if (activeModifiers.Count > 0)
+        for (int i = 0; i < activeModifiers.Count; i++)
         {
-            for (int i = 0; i < activeModifiers.Count; i++)
-            {
-                activeModifiers[i].UpdateMod();                
+            activeModifiers[i].UpdateMod();
 
-                if (activeModifiers[i] is PoisonModifier)
-                {                    
-                    if (activeModifiers[i].isActive)
-                    {
-                        condition.indicatorAnimator.SetBool("OnPoison", true);
-                        poisonedIcon.transform.SetAsFirstSibling();
-                        poisonedIcon.SetActive(true);
-                    }
-                    else
-                    {
-                        condition.indicatorAnimator.SetBool("OnPoison", false);
-                        poisonedIcon.SetActive(false);
-                        RemoveModifier(activeModifiers[i]);
-                    }
-                }
-                
-                if (activeModifiers[i] is DehydrateModifier)
+            if (activeModifiers[i] is PoisonModifier)
+            {
+                if (activeModifiers[i].isActive)
                 {
-                    if (activeModifiers[i].isActive)
-                    {
-                        condition.indicatorAnimator.SetBool("OnThirst", true);
-                        dehydrateIcon.transform.SetAsFirstSibling();
-                        dehydrateIcon.SetActive(true);
-                    }
-                    else
-                    {
-                        condition.indicatorAnimator.SetBool("OnThirst", false);
-                        dehydrateIcon.SetActive(false);
-                        RemoveModifier(activeModifiers[i]);
-                    }
+                    condition.indicatorAnimator.SetBool("OnPoison", true);
+                    poisonedIcon.transform.SetAsFirstSibling();
+                    poisonedIcon.SetActive(true);
+                }
+                else
+                {
+                    condition.indicatorAnimator.SetBool("OnPoison", false);
+                    poisonedIcon.SetActive(false);
+                    RemoveModifier(activeModifiers[i]);
                 }
             }
+            else if (activeModifiers[i] is DehydrateModifier)
+            {
+                if (activeModifiers[i].isActive)
+                {
+                    condition.indicatorAnimator.SetBool("OnThirst", true);
+                    dehydrateIcon.transform.SetAsFirstSibling();
+                    dehydrateIcon.SetActive(true);
+                }
+                else
+                {
+                    condition.indicatorAnimator.SetBool("OnThirst", false);
+                    dehydrateIcon.SetActive(false);
+                    RemoveModifier(activeModifiers[i]);
+                }
+            }            
         }
-        else return;
-    }
+    }    
     
     // 중독상태 bool 메서드 (확률 25%)
     public bool OnPoisoned()
