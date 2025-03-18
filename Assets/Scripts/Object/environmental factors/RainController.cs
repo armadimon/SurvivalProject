@@ -5,11 +5,13 @@ using static UnityEngine.ParticleSystem;
 
 public class RainController : MonoBehaviour
 {
-
+    [Header("Rain Settings")]
     public Material rainMaterial;       // 비가 내리는 하늘
     public Material skyBox;             // 기본 하늘
     public ParticleSystem rainPS;       // 비 파티클 시스템
     public ParticleSystem ripplePS;     // 물결 파티클 시스템
+
+    private PlayerCondition playerCondition;
 
     private int bossCount = 0;
 
@@ -19,6 +21,16 @@ public class RainController : MonoBehaviour
         // 게임 시작 시 비를 멈추도록 설정
         rainPS.Stop();
         ripplePS.Stop();
+        playerCondition = CharacterManager.Instance.Player.GetComponent<PlayerCondition>();
+    }
+    void Update()
+    {
+        // 비가 내리는 중일 때
+        if (rainPS.isPlaying)
+        {
+            playerCondition.Hydrate(Time.deltaTime * 100f); // 수분 증가량 조절 가능
+        }
+
     }
 
     private void OnEnable()

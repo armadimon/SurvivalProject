@@ -260,6 +260,7 @@ public class AIEntity : MonoBehaviour, IDamageable
     // 애니메이션 이벤트로 호출될 메서드
     public void DealDamage()
     {
+
         if (!player)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackDistance, buildObject);
@@ -279,6 +280,8 @@ public class AIEntity : MonoBehaviour, IDamageable
                         closestBuildObject = buildObjectComponent;
                     }
                 }
+                Debug.Log("Build Attacked");
+
             }
 
             // 가장 가까운 건물에 데미지 적용
@@ -290,6 +293,7 @@ public class AIEntity : MonoBehaviour, IDamageable
         else // 플레이어를 공격하는 경우
         {
             CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
+            Debug.Log("Player Attacked");
         }
     }
 
