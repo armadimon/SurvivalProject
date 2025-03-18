@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
                     {
                         condition.indicatorAnimator.SetBool("OnPoison", false);
                         poisonedIcon.SetActive(false);
+                        RemoveModifier(activeModifiers[i]);
                     }
                 }
                 else if (activeModifiers[i] is DehydrateModifier)
@@ -94,12 +95,12 @@ public class Player : MonoBehaviour
                     {
                         condition.indicatorAnimator.SetBool("OnThirst", false);
                         dehydrateIcon.SetActive(false);
+                        RemoveModifier(activeModifiers[i]);
                     }
                 }
-
-                if (!activeModifiers[i].isActive) RemoveModifier(activeModifiers[i]);
             }
         }
+        else return;
     }
     
     // 중독상태 bool 메서드 (확률 25%)
@@ -116,10 +117,9 @@ public class Player : MonoBehaviour
         {
             for (int i = 0; i < playerModifiers.Count; i++)
             {
-                if (playerModifiers[i] is PoisonModifier)
+                if (playerModifiers[i] is PoisonModifier && !activeModifiers.Contains(playerModifiers[i]))
                 {
                     AddModifier(playerModifiers[i]);
-                    activeModifiers = activeModifiers.Distinct().ToList();
                 }
             }
         }
@@ -139,10 +139,9 @@ public class Player : MonoBehaviour
         {
             for (int i = 0; i < playerModifiers.Count; i++)
             {
-                if (playerModifiers[i] is DehydrateModifier)
+                if (playerModifiers[i] is DehydrateModifier && !activeModifiers.Contains(playerModifiers[i]))
                 {
-                    AddModifier(playerModifiers[i]);
-                    activeModifiers = activeModifiers.Distinct().ToList();
+                    AddModifier(playerModifiers[i]);                    
                 }
             }
         }
