@@ -47,6 +47,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public bool isStaminaHealing = false;
 
     public int poisonProbabilityInt;
+    public int dehydrateProbabilityInt;
 
     void Start()
     {
@@ -102,6 +103,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     {
         thirst.Add(amount);
         isHydrating = true;
+        dehydrateProbabilityInt = UnityEngine.Random.Range(0, 100);
         Invoke("ExitHydrate", 5f);
     }
 
