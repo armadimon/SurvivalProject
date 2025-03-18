@@ -193,7 +193,6 @@ public class AIEntity : MonoBehaviour, IDamageable
         agent.areaMask = NavMesh.GetAreaFromName("SettlementArea");
 
         agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
-        Debug.Log(path.status);
         return (path.status == NavMeshPathStatus.PathComplete);
     }
 
@@ -368,11 +367,4 @@ public class AIEntity : MonoBehaviour, IDamageable
         detectDistance = isNight ? defaultDetectDistance * nightDetectDistanceMultiplier : defaultDetectDistance;
     }
 
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     if (other.gameObject.layer == LayerMask.NameToLayer("BuildObject"))
-    //     {
-    //         
-    //     }
-    // }
 }
