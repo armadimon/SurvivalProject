@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Build_Data_CampFire
   m_EditorClassIdentifier: 
   displayName: CampFire
-  description: CampFire
+  description: "\uC8FC\uC704\uC5D0 \uC788\uC73C\uBA74 \uCCB4\uB825\uC744 \uD68C\uBCF5\uD558\uACE0,
+    \uC0C1\uD638\uC791\uC6A9\uC2DC \uC74C\uC2DD\uC744 \uC81C\uC791\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   maxCapacity: 5
   maxHealth: 20
   maxSlopeAngle: 45

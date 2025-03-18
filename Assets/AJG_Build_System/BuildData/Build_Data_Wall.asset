@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Build_Data_Wall
   m_EditorClassIdentifier: 
   displayName: Wall
-  description: Wall
+  description: "\uB098\uBB34 \uBCBD\uC785\uB2C8\uB2E4."
   maxCapacity: 0
   maxHealth: 20
   maxSlopeAngle: 45
