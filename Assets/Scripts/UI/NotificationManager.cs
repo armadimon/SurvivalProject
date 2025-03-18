@@ -9,31 +9,49 @@ public class NotificationManager : MonoBehaviour
 
     void Awake()    
     {
-        Instance = this;
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+            Instance = this;
     }
 
     public void ShowNotification(string message)
     {
         GameObject notification = NotificationPool.Instance.GetNotification();
-        notification.transform.SetParent(notificationParent, false);
-        notification.SetActive(true);
-
+        if(notification != null)
+        {
+            notification.transform.SetParent(notificationParent, false);
+            notification.SetActive(true);
+        }
+        
         TextMeshProUGUI text = notification.GetComponentInChildren<TextMeshProUGUI>();
         text.text = message;
 
         RectTransform rectTransform = notification.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(0, -100);
-        rectTransform.DOAnchorPosY(0, 0.5f).SetEase(Ease.OutBack); 
+        if (rectTransform != null)
+        {
+            rectTransform.anchoredPosition = new Vector2(0, -100);
+            rectTransform.DOAnchorPosY(0, 0.5f).SetEase(Ease.OutBack);
+        }
 
         CanvasGroup canvasGroup = notification.GetComponent<CanvasGroup>();
         canvasGroup.alpha = 1f;
-        DOVirtual.DelayedCall(2f, () =>
+        if (canvasGroup != null)
         {
-            canvasGroup.DOFade(0, 0.5f).OnComplete(() =>
+            DOVirtual.DelayedCall(2f, () =>
             {
-                notification.SetActive(false);
-                NotificationPool.Instance.ReturnNotification(notification);
+                if (canvasGroup != null)
+                {
+                    canvasGroup.DOFade(0, 0.5f).OnComplete(() =>
+                    {
+                        notification.SetActive(false);
+                        NotificationPool.Instance.ReturnNotification(notification);
+                    });
+                }
             });
-        });
+        }
     }
 }

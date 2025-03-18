@@ -282,9 +282,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void RestartGame()
     {
-        DOTween.Clear(); // DOTween 애니메이션 초기화
-        DOTween.KillAll(); // 모든 DOTween 애니메이션 취소
-        DOTween.Init();    // DOTween 다시 초기화
+        //DOTween.KillAll(); // 모든 DOTween 애니메이션 취소
 
         Cursor.visible = false; // 다시 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked;
