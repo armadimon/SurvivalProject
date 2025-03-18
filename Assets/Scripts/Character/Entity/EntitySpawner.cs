@@ -88,6 +88,7 @@ public class EntitySpawner : MonoBehaviour
             {
                 GameObject boss = Instantiate(GetRandomPrefab(bossEntityPrefab), bossPosition, Quaternion.identity); // 엔티티 생성
                 curEntityCount++;
+                NotificationManager.Instance.ShowNotification("보스가 나타났습니다. 조심하세요");
 
 
                 // 엔티티가 파괴될 때 개수를 줄이기 위해 이벤트 등록
@@ -159,7 +160,11 @@ public class EntityTracker : MonoBehaviour
         if (spawner != null)
         {
             spawner.OnEntityDestroyed(); // 엔티티가 파괴될 때 스포너에게 알림
-            OnBossDestroyed?.Invoke();
+            if (gameObject.CompareTag("Boss"))
+            {
+                OnBossDestroyed?.Invoke();
+                NotificationManager.Instance.ShowNotification("보스를 처치하였습니다!");
+            }
         }
     }
 }
