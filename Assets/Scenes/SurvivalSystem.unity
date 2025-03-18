@@ -665,25 +665,13 @@ PrefabInstance:
       propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1162411390992864032, guid: 1a8e67b465fe5db4e9a47a1baa72ece6, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1162411390992864032, guid: 1a8e67b465fe5db4e9a47a1baa72ece6, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1162411390992864032, guid: 1a8e67b465fe5db4e9a47a1baa72ece6, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2571782698573129931, guid: 1a8e67b465fe5db4e9a47a1baa72ece6, type: 3}
       propertyPath: m_Name
       value: _UI Test
       objectReference: {fileID: 0}
     - target: {fileID: 4217843986006211081, guid: 1a8e67b465fe5db4e9a47a1baa72ece6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1094015.9
+      value: 1265039.6
       objectReference: {fileID: 0}
     - target: {fileID: 6175467620277826604, guid: 1a8e67b465fe5db4e9a47a1baa72ece6, type: 3}
       propertyPath: m_LocalPosition.x
