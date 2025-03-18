@@ -283,10 +283,13 @@ public class UIInventory : MonoBehaviour
                 selectItemStatValue.text += slot.item.consumables[i].value.ToString() + "\n";
             }
 
-            for (int j = 0; j < slot.item.debuffConsumables.Length; j++)
+            if (slot.item.type == ItemType.DebuffConsumable)
             {
-                selectItemStatName.text += slot.item.debuffConsumables[j].type.ToString() + "\n";
-                selectItemStatValue.text += slot.item.debuffConsumables[j].value.ToString() + "\n";
+                for (int j = 0; j < slot.item.debuffConsumables.Length; j++)
+                {
+                    selectItemStatName.text += slot.item.debuffConsumables[j].type.ToString() + "\n";
+                    selectItemStatValue.text += slot.item.debuffConsumables[j].value.ToString() + "\n";
+                }
             }
         }
 
