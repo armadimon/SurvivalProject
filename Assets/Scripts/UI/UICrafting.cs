@@ -17,6 +17,8 @@ public class UICrafting : MonoBehaviour
     public GameObject foodTap;
     public GameObject processTap;
 
+    public Button exitButton;
+
     public List<CraftingSlot> craftingSlots = new List<CraftingSlot>();
 
     private CraftingRecipe selectedRecipe;
@@ -42,6 +44,7 @@ public class UICrafting : MonoBehaviour
     private void Start()
     {
         craftingCanvas.enabled = false;
+        exitButton.onClick.AddListener(OnExitButton);
     }
 
     public void UpdateCraftingUI(List<CraftingRecipe> recipes)
@@ -120,6 +123,16 @@ public class UICrafting : MonoBehaviour
        
         craftingCanvas.enabled = false;
         
+    }
+
+    public void OnExitButton()
+    {
+        HideCraftingUI();
+        CharacterManager.Instance.Player.controller.ToggleCursur();
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
 

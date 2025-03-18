@@ -29,12 +29,13 @@ public class HydrateLocation : MonoBehaviour
     {        
         if (other.TryGetComponent(out IHydrate hydrate))
         {
-            interactionText.text = "Press [H]\nto drink water.";
+            interactionText.text = "H를 눌러 물 마시기";
             CharacterManager.Instance.Player.condition.isInHydrateLocation = true;
             if (CharacterManager.Instance.Player.condition.isDrinking)
             {
                 things.Add(hydrate);
                 things = things.Distinct().ToList();
+                interactionText.text = "물 마시는 중...";
             }
             else things.Clear();            
         }

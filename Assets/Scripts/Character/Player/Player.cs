@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -19,7 +20,9 @@ public class Player : MonoBehaviour
     public Equipment equipment;
 
     public List<ModifierBase> playerModifiers;
-    [SerializeField] private List<ModifierBase> activeModifiers = new List<ModifierBase>();   
+    [SerializeField] private List<ModifierBase> activeModifiers = new List<ModifierBase>();
+
+    public GameObject poisonedIcon;   
 
     private void Awake()
     {
@@ -33,7 +36,7 @@ public class Player : MonoBehaviour
     private void Update()
     {        
         if (OnPoisoned())
-        {
+        {            
             for (int i = 0; i < playerModifiers.Count; i++)
             {
                 if (playerModifiers[i].TryGetComponent(out PoisonModifier posion))
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
+        
         UpdateModifiers();
     }
 
@@ -72,8 +75,16 @@ public class Player : MonoBehaviour
 
                 if (activeModifiers[i].TryGetComponent(out PoisonModifier poison))
                 {                    
-                    if (activeModifiers[i].isActive) condition.indicatorAnimator.SetBool("OnPoison", true);
-                    else condition.indicatorAnimator.SetBool("OnPoison", false);
+                    if (activeModifiers[i].isActive)
+                    {
+                        condition.indicatorAnimator.SetBool("OnPoison", true);
+                        poisonedIcon.SetActive(true);
+                    }
+                    else
+                    {
+                        condition.indicatorAnimator.SetBool("OnPoison", false);
+                        poisonedIcon.SetActive(false);
+                    }
                 }
 
                 if (!activeModifiers[i].isActive) RemoveModifier(activeModifiers[i]);
