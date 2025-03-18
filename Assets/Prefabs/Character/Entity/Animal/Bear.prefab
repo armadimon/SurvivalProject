@@ -2121,11 +2121,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b9f8c3c3f749a44a0b174ed04b108e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
   walkSpeed: 1
   runSpeed: 3
-  dropOnDeath: []
+  dropOnDeath:
+  - {fileID: 11400000, guid: 705f6641786af2f4da8c9604fca84e70, type: 2}
+  - {fileID: 11400000, guid: 705f6641786af2f4da8c9604fca84e70, type: 2}
+  - {fileID: 11400000, guid: e6d0bef56406d0c4a95ed45bfcc00a3c, type: 2}
+  - {fileID: 11400000, guid: e6d0bef56406d0c4a95ed45bfcc00a3c, type: 2}
+  - {fileID: 11400000, guid: e6d0bef56406d0c4a95ed45bfcc00a3c, type: 2}
   detectDistance: 8
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
   minWanderDistance: 2
   maxWanderDistance: 4
   minWanderWaitTime: 2
