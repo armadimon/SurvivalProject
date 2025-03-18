@@ -32,7 +32,7 @@ public class BuildMenuItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         // buildObject = newBuildObject;
         // buildObject.data.OnClick = () => BuildManager.Instance.buildController.SetBuildObject(buildObject);
         //
-        selectButton.onClick.AddListener(() => BuildManager.Instance.CheckSufficientResources(newBuildObject, index));
+        selectButton.onClick.AddListener(() => BuildManager.Instance.CheckSufficientResources(newBuildObject, false));
     }
     
     public void SetInfoBG()

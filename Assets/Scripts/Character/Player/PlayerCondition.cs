@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using DG.Tweening.CustomPlugins;
+using UnityEngine.SceneManagement;
 
 public interface IDamageable
 {
@@ -47,6 +48,8 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public int poisonProbabilityInt;
     public int dehydrateProbabilityInt;
 
+    public GameObject youDiePanel; // "You Die" UI 패널
+
     void Start()
     {
         controller = CharacterManager.Instance.Player.controller;
@@ -85,7 +88,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     {
         // 플레이어 죽음, 현재는 Debug.Log
         Debug.Log($"Die");
+        youDiePanel.SetActive(true); // "You Die" 창 띄우기
+
+        // Time.timeScale을 0으로 안 하고, 커서만 활성화
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
+
 
     public void Eat(float amount)
     {
@@ -260,5 +269,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         isHydrating = true;
         dehydrateProbabilityInt = UnityEngine.Random.Range(0, 100);
         Invoke("ExitHydrate", 5f);
-    }      
+    }
+
+    public void RestartGame()
+    {
+        Cursor.visible = false; // 다시 커서 숨기기
+        Cursor.lockState = CursorLockMode.Locked;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // 현재 씬 다시 로드
+    }
 }
