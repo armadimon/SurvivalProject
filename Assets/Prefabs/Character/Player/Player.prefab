@@ -343,10 +343,11 @@ MonoBehaviour:
   condition: {fileID: 0}
   equipment: {fileID: 0}
   playerModifiers: []
+  activeModifiers: []
   poisonedIcon: {fileID: 0}
   dehydrateIcon: {fileID: 0}
-  poisonProbability: 25
-  dehydrateProbability: 25
+  poisonProbability: 100
+  dehydrateProbability: 100
 --- !u!114 &4277282988235816817
 MonoBehaviour:
   m_ObjectHideFlags: 0
