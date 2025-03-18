@@ -84,9 +84,11 @@ public class UIInventory : MonoBehaviour
         itemDescription = transform.Find("InfoBG").gameObject;
         itemUseImage = transform.Find("ItemUse").gameObject;
 
+
         itemUseRect = itemUseImage.GetComponent<RectTransform>();
-        usuallyitemUseRect = itemUseRect.sizeDelta;
         
+        usuallyitemUseRect = itemUseRect.sizeDelta;
+
 
         exitButton = transform.Find("InventoryBG/ExitButton").GetComponent<Button>();
         useButton = transform.Find("ItemUse/UseButton").gameObject;
@@ -125,7 +127,7 @@ public class UIInventory : MonoBehaviour
         
     }
      
-    void ClearSelectItemWindow()
+    public void ClearSelectItemWindow()
     {
         selectItem = null;
 
@@ -281,6 +283,12 @@ public class UIInventory : MonoBehaviour
             {
                 selectItemStatName.text += slot.item.consumables[i].type.ToString() + "\n";
                 selectItemStatValue.text += slot.item.consumables[i].value.ToString() + "\n";
+            }
+
+            if (slot.item.type == ItemType.Equipable)
+            {
+                selectItemStatName.text = "공격력";
+                selectItemStatValue.text = slot.item.equipPrefab.GetComponent<EquipTool>().damage.ToString();
             }
 
             if (slot.item.type == ItemType.DebuffConsumable)
@@ -527,16 +535,20 @@ public class UIInventory : MonoBehaviour
         unEquipButton.SetActive(selectItem.item.type == ItemType.Equipable && sSlot.equipped);
 
         if (!sSlot.equipped)
+        {
             dropButton.SetActive(true);
+            UsaullyItemUnEquipImage();
+        }
         else
         {
             dropButton.SetActive(false);
-            HalfItemImage(unEquipButton.GetComponent<RectTransform>());
+            HalfItemImage(itemUseRect, unEquipButton);
+            return;
         }
 
         if (!useButton.activeSelf && !equipButton.activeSelf && !unEquipButton.activeSelf)
         {
-            HalfItemImage(itemUseRect);
+            HalfItemImage(itemUseRect, dropButton);
         }
         else
         {
@@ -545,9 +557,9 @@ public class UIInventory : MonoBehaviour
 
     }
 
-    public void HalfItemImage(RectTransform rect)
+    public void HalfItemImage(RectTransform rect, GameObject button)
     {
-        dropButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 23, 0);
+        button.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 23, 0);
         rect.sizeDelta = new Vector2(usuallyitemUseRect.x, usuallyitemUseRect.y / 2);
     }
 
@@ -559,7 +571,8 @@ public class UIInventory : MonoBehaviour
 
     public void UsaullyItemUnEquipImage()
     {
-        dropButton.GetComponent<RectTransform>().anchoredPosition = dropButtonPosition;
+        unEquipButton.GetComponent<RectTransform>().anchoredPosition = dropButtonPosition;
+        itemUseRect.sizeDelta = usuallyitemUseRect;
 
     }
 
