@@ -2123,7 +2123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   walkSpeed: 1
-  runSpeed: 3.5
+  runSpeed: 3
   dropOnDeath: []
   detectDistance: 8
   minWanderDistance: 2

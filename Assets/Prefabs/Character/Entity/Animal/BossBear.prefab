@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   walkSpeed: 1
-  runSpeed: 3.5
+  runSpeed: 3
   dropOnDeath: []
   detectDistance: 8
   minWanderDistance: 2
@@ -1287,7 +1287,7 @@ MonoBehaviour:
   maxWanderWaitTime: 4
   damage: 25
   attackRate: 4
-  attackDistance: 3
+  attackDistance: 5
   fieldOfView: 120
   nightDetectDistanceMultiplier: 999
 --- !u!195 &4532507642694085502

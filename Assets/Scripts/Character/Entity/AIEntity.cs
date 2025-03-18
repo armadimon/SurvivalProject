@@ -299,9 +299,9 @@ public class AIEntity : MonoBehaviour, IDamageable
     }
 
 
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, detectDistance);
-    }
+    //    public void OnDrawGizmos()
+    //    {
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawSphere(transform.position, detectDistance);
+    //    }
 }
