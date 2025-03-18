@@ -18,6 +18,7 @@ public class RainController : MonoBehaviour
     private void Start()
     {
         RenderSettings.skybox = skyBox; // 게임 시작 시 하늘을 기본으로 설정
+        DynamicGI.UpdateEnvironment();      // 환경 업데이트
         // 게임 시작 시 비를 멈추도록 설정
         rainPS.Stop();
         ripplePS.Stop();
