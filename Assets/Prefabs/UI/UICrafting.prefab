@@ -906,7 +906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: 196732.17}
+  m_AnchoredPosition: {x: -20, y: 198808.78}
   m_SizeDelta: {x: -40, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &6822525338035080090
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   equipTap: {fileID: 3825548965977198527}
   foodTap: {fileID: 6796829705229061977}
   processTap: {fileID: 4265994872414055225}
+  exitButton: {fileID: 1978551750916173563}
   craftingSlots: []
 --- !u!1 &5942550294021803952
 GameObject:
