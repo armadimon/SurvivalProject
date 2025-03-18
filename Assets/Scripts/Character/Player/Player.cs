@@ -19,8 +19,7 @@ public class Player : MonoBehaviour
 
     public Equipment equipment;
 
-    public List<ModifierBase> playerModifiers;
-    public List<ModifierBase> activeModifiers = new List<ModifierBase>();
+    public List<ModifierBase> playerModifiers;    
 
     public GameObject poisonedIcon;
     public GameObject dehydrateIcon;
@@ -39,16 +38,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        PoisonModifier();
-        DehydrateModifier();
-
         UpdateModifiers();
+        PoisonModifier();
+        DehydrateModifier();        
     }
 
     // modifier 활성화
     public void AddModifier(ModifierBase modifier)
-    {
-        activeModifiers.Add(modifier);
+    {       
         modifier.ApplyMod();        
     }
 
@@ -56,58 +53,52 @@ public class Player : MonoBehaviour
     public void RemoveModifier(ModifierBase modifier)
     {        
         modifier.elapsedTime = 0f;
-        activeModifiers.Remove(modifier);                
     }
 
     // modifier 상태업데이트(duration 지나면 자동 비활성화도 포함)
     private void UpdateModifiers()
     {
-        if (activeModifiers.Count > 0)
+        for (int i = 0; i < playerModifiers.Count; i++)
         {
-            for (int i = 0; i < activeModifiers.Count; i++)
+            if (playerModifiers[i] is PoisonModifier)
             {
-                activeModifiers[i].UpdateMod();                
-
-                if (activeModifiers[i] is PoisonModifier)
-                {                    
-                    if (activeModifiers[i].isActive)
-                    {
-                        condition.indicatorAnimator.SetBool("OnPoison", true);
-                        poisonedIcon.transform.SetAsFirstSibling();
-                        poisonedIcon.SetActive(true);
-                    }
-                    else
-                    {
-                        condition.indicatorAnimator.SetBool("OnPoison", false);
-                        poisonedIcon.SetActive(false);
-                    }
-                }
-                else if (activeModifiers[i] is DehydrateModifier)
+                if (playerModifiers[i].isActive)
                 {
-                    if (activeModifiers[i].isActive)
-                    {
-                        condition.indicatorAnimator.SetBool("OnThirst", true);
-                        dehydrateIcon.transform.SetAsFirstSibling();
-                        dehydrateIcon.SetActive(true);
-                    }
-                    else
-                    {
-                        condition.indicatorAnimator.SetBool("OnThirst", false);
-                        dehydrateIcon.SetActive(false);
-                    }
+                    condition.indicatorAnimator.SetBool("OnPoison", true);                    
+                    poisonedIcon.SetActive(true);                    
+                    playerModifiers[i].UpdateMod();
                 }
-
-                if (!activeModifiers[i].isActive) RemoveModifier(activeModifiers[i]);
+                else
+                {
+                    condition.indicatorAnimator.SetBool("OnPoison", false);
+                    poisonedIcon.SetActive(false);
+                    RemoveModifier(playerModifiers[i]);
+                }
             }
+            else if (playerModifiers[i] is DehydrateModifier)
+            {
+                if (playerModifiers[i].isActive)
+                {
+                    condition.indicatorAnimator.SetBool("OnThirst", true);                    
+                    dehydrateIcon.SetActive(true);                    
+                    playerModifiers[i].UpdateMod();
+                }
+                else
+                {
+                    condition.indicatorAnimator.SetBool("OnThirst", false);
+                    dehydrateIcon.SetActive(false);
+                    RemoveModifier(playerModifiers[i]);
+                }
+            }            
         }
-    }
+    }    
     
     // 중독상태 bool 메서드 (확률 25%)
     public bool OnPoisoned()
     {
         if (condition.isHealing && condition.poisonProbabilityInt < poisonProbability) return true;            
         else return false;
-    }
+    }    
 
     // 중독 modifier 적용
     public void PoisonModifier()
@@ -119,7 +110,6 @@ public class Player : MonoBehaviour
                 if (playerModifiers[i] is PoisonModifier)
                 {
                     AddModifier(playerModifiers[i]);
-                    activeModifiers = activeModifiers.Distinct().ToList();
                 }
             }
         }
@@ -141,8 +131,7 @@ public class Player : MonoBehaviour
             {
                 if (playerModifiers[i] is DehydrateModifier)
                 {
-                    AddModifier(playerModifiers[i]);
-                    activeModifiers = activeModifiers.Distinct().ToList();
+                    AddModifier(playerModifiers[i]);                    
                 }
             }
         }

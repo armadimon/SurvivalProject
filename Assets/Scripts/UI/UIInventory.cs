@@ -282,6 +282,15 @@ public class UIInventory : MonoBehaviour
                 selectItemStatName.text += slot.item.consumables[i].type.ToString() + "\n";
                 selectItemStatValue.text += slot.item.consumables[i].value.ToString() + "\n";
             }
+
+            if (slot.item.type == ItemType.DebuffConsumable)
+            {
+                for (int j = 0; j < slot.item.debuffConsumables.Length; j++)
+                {
+                    selectItemStatName.text += slot.item.debuffConsumables[j].type.ToString() + "\n";
+                    selectItemStatValue.text += slot.item.debuffConsumables[j].value.ToString() + "\n";
+                }
+            }
         }
 
     }
@@ -373,6 +382,30 @@ public class UIInventory : MonoBehaviour
                         break;
                     case ConsumableType.Stamina:
                         condition.HealStamina(selectItem.item.consumables[i].value);
+                        break;
+                }
+            }
+            RemoveSelectItem();
+        }
+        else if (selectItem.item.type == ItemType.DebuffConsumable)
+        {
+            for (int i = 0; i < selectItem.item.debuffConsumables.Length; i++)
+            {
+                switch (selectItem.item.debuffConsumables[i].type)
+                {
+                    case DebuffConsumableType.Health:
+                        condition.Heal(selectItem.item.debuffConsumables[i].value);
+                        condition.PoisonCal();
+                        break;
+                    case DebuffConsumableType.Hunger:
+                        condition.Eat(selectItem.item.debuffConsumables[i].value);
+                        break;
+                    case DebuffConsumableType.Thirst:
+                        condition.Hydrate(selectItem.item.debuffConsumables[i].value);
+                        condition.DehydrateCal();
+                        break;
+                    case DebuffConsumableType.Stamina:
+                        condition.HealStamina(selectItem.item.debuffConsumables[i].value);
                         break;
                 }
             }
@@ -489,7 +522,7 @@ public class UIInventory : MonoBehaviour
                 sSlot = slotItemEquip;
         }
 
-        useButton.SetActive(selectItem.item.type == ItemType.Consumable);
+        useButton.SetActive(selectItem.item.type == ItemType.Consumable || selectItem.item.type == ItemType.DebuffConsumable);        
         equipButton.SetActive(selectItem.item.type == ItemType.Equipable && !sSlot.equipped);
         unEquipButton.SetActive(selectItem.item.type == ItemType.Equipable && sSlot.equipped);
 

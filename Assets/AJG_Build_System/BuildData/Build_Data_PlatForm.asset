@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Build_Data_PlatForm
   m_EditorClassIdentifier: 
   displayName: PlatForm
-  description: PlatForm
-  maxHealth: 20
+  description: "\uBC14\uB2E5 \uAD6C\uC870\uBB3C\uC785\uB2C8\uB2E4."
+  maxCapacity: 0
+  maxHealth: 500
   maxSlopeAngle: 359
   minSlopeAngle: 30
   type: 0

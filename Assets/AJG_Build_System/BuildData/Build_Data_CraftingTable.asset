@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bef462ef2cd0e84f893712c823e7243, type: 3}
-  m_Name: Build_Data_Settlement
+  m_Name: Build_Data_CraftingTable
   m_EditorClassIdentifier: 
-  displayName: Settlement
-  description: "\uC124\uCE58\uD558\uBA74 \uD604\uC7AC \uC9C0\uD615\uC744 \uAE30\uC900\uC73C\uB85C
-    \uC815\uCC29\uC9C0\uAC00 \uC124\uC815\uB429\uB2C8\uB2E4."
+  displayName: "\uC81C\uC791\uD14C\uC774\uBE14"
+  description: "\uC7A5\uBE44\uB97C \uC81C\uC791\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   maxCapacity: 1
   maxHealth: 500
-  maxSlopeAngle: 359
-  minSlopeAngle: 359
-  type: 1
-  icon: {fileID: -372374369, guid: 9f3d964c29ca29644a11dc0c855ae080, type: 3}
-  prefabs: {fileID: 5162118548723873165, guid: 493e7c378a918b748bba2dbcd06f80e8, type: 3}
+  maxSlopeAngle: 45
+  minSlopeAngle: 10
+  type: 0
+  icon: {fileID: 21300000, guid: 0cd459266c5a4cd468bc45c7e5f52220, type: 3}
+  prefabs: {fileID: 7341732476123796129, guid: 3ac81b5ccbe09b04191ffff17bcd656e, type: 3}
   requireResources:
   - type: 0
     value: 0

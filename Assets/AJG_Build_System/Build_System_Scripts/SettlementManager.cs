@@ -40,28 +40,31 @@ public class SettlementManager : MonoBehaviour
 
     private void ReSettingBuildObject()
     {
-     
-        for (int i = InBoundBuildObjectsList.Count - 1; i >= 0; i--)
+        if (settlement != null)
         {
-            BuildObject obj = InBoundBuildObjectsList[i];
-            if (!obj.isSafe)
+            for (int i = InBoundBuildObjectsList.Count - 1; i >= 0; i--)
             {
-                InBoundBuildObjectsList.RemoveAt(i);
-                if (!OutBoundBuildObjectsList.Contains(obj))
+                BuildObject obj = InBoundBuildObjectsList[i];
+                if (!obj.isSafe)
                 {
-                    OutBoundBuildObjectsList.Add(obj);
+                    InBoundBuildObjectsList.RemoveAt(i);
+                    if (!OutBoundBuildObjectsList.Contains(obj))
+                    {
+                        OutBoundBuildObjectsList.Add(obj);
+                    }
                 }
             }
-        }
-        for (int i = OutBoundBuildObjectsList.Count - 1; i >= 0; i--)
-        {
-            BuildObject obj = OutBoundBuildObjectsList[i];
-            if (obj.isSafe)
+
+            for (int i = OutBoundBuildObjectsList.Count - 1; i >= 0; i--)
             {
-                OutBoundBuildObjectsList.RemoveAt(i);
-                if (!InBoundBuildObjectsList.Contains(obj))
+                BuildObject obj = OutBoundBuildObjectsList[i];
+                if (obj.isSafe)
                 {
-                    InBoundBuildObjectsList.Add(obj);
+                    OutBoundBuildObjectsList.RemoveAt(i);
+                    if (!InBoundBuildObjectsList.Contains(obj))
+                    {
+                        InBoundBuildObjectsList.Add(obj);
+                    }
                 }
             }
         }
@@ -80,9 +83,9 @@ public class SettlementManager : MonoBehaviour
             if (!InBoundBuildObjectsList.Contains(obj))
             {
                 InBoundBuildObjectsList.Add(obj);
-                SettlementItem sItem = Instantiate(settlementItemPrefabs, SettlementMenuContent);
-                SettlementItems.Add(sItem);
-                sItem.SetData(obj);
+                // SettlementItem sItem = Instantiate(settlementItemPrefabs, SettlementMenuContent);
+                // SettlementItems.Add(sItem);
+                // sItem.SetData(obj);
             }
         }
         else

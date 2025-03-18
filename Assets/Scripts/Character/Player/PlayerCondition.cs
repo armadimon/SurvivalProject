@@ -41,11 +41,9 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public bool isDrinking = false;
 
     // 각 컨디션 회복 시 상태
-    public bool isHealing = false;
-    public bool isEating = false;
+    public bool isHealing = false;    
     public bool isHydrating = false;
-    public bool isStaminaHealing = false;
-
+    
     public int poisonProbabilityInt;
     public int dehydrateProbabilityInt;
 
@@ -80,10 +78,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void Heal(float amount)
     {
-        health.Add(amount);
-        isHealing = true;
-        poisonProbabilityInt = UnityEngine.Random.Range(0, 100);
-        Invoke("ExitHeal", 5f);
+        health.Add(amount);        
     }
 
     private void Die()
@@ -94,24 +89,17 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void Eat(float amount)
     {
-        hunger.Add(amount);
-        isEating = true;
-        Invoke("ExitEat", 5f);
+        hunger.Add(amount);        
     }
 
     public void Hydrate(float amount)
     {
-        thirst.Add(amount);
-        isHydrating = true;
-        dehydrateProbabilityInt = UnityEngine.Random.Range(0, 100);
-        Invoke("ExitHydrate", 5f);
+        thirst.Add(amount);        
     }
 
     public void HealStamina(float amount)
     {
-        stamina.Add(amount);
-        isStaminaHealing = true;
-        Invoke("ExitStaminaHeal", 5f);
+        stamina.Add(amount);        
     }
 
     public void TakeDamage(float damage)
@@ -255,18 +243,22 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         isHealing = false;
     }
 
-    public void ExitEat()
+    public void PoisonCal()
     {
-        isEating = false;
-    }
+        isHealing = true;
+        poisonProbabilityInt = UnityEngine.Random.Range(0, 100);
+        Invoke("ExitHeal", 5f);
+    }    
 
     public void ExitHydrate()
     {
         isHydrating = false;
     }
 
-    public void ExitStaminaHeal()
+    public void DehydrateCal()
     {
-        isStaminaHealing = false;
-    }    
+        isHydrating = true;
+        dehydrateProbabilityInt = UnityEngine.Random.Range(0, 100);
+        Invoke("ExitHydrate", 5f);
+    }      
 }
