@@ -5,38 +5,80 @@ using static UnityEngine.ParticleSystem;
 
 public class RainController : MonoBehaviour
 {
-    private ParticleSystem rain;
+    [SerializeField]
+    private GameObject rainSystem; // Inspector에서 할당 (비활성화 상태여도 할당 가능)
+
+    private ParticleSystem rainPS;
+    private ParticleSystem ripplePS;
 
     // Start is called before the first frame update
     void Start()
     {
-        rain = GetComponentInChildren<ParticleSystem>();
-        DayNightCycle.OnNightStateChanged += ToggleRain;
+        if (rainSystem == null)
+        {
+            Debug.LogError("RainSystem 오브젝트가 할당되어 있지 않습니다.");
+            return;
+        }
+
+        // RainSystem을 활성화하여 하위 오브젝트에 접근 가능하게 함
+        rainSystem.SetActive(true);
+
+        Transform rainPSTrans = rainSystem.transform.Find("Rain_PS");
+        Transform ripplePSTrans = rainSystem.transform.Find("Ripple_PS");
+
+        if (rainPSTrans == null || ripplePSTrans == null)
+        {
+            Debug.LogError("Rain_PS 또는 Ripple_PS 오브젝트를 찾을 수 없습니다.");
+            return;
+        }
+
+        rainPS = rainPSTrans.GetComponent<ParticleSystem>();
+        ripplePS = ripplePSTrans.GetComponent<ParticleSystem>();
+
+        if (rainPS == null || ripplePS == null)
+        {
+            Debug.LogError("Rain_PS 또는 Ripple_PS 파티클 시스템을 찾을 수 없습니다.");
+            return;
+        }
+
+        ToggleRain();
     }
 
-    // Update is called once per frame
-    void ToggleRain(bool isNight)
+    // 보스가 리스폰될 때 OnEnable이 호출되므로, 이곳에서 ToggleRain을 호출하여 비 효과를 재실행합니다.
+    void OnEnable()
     {
-        // "boss" 태그가 맞는지 확인
-        if (tag == "boss")
+        ToggleRain();
+    }
+
+    void ToggleRain()
+    {
+        // "Boss" 태그의 경우 비 효과 재생
+        if (tag == "Boss")
         {
-            // 보스 태그가 있으면 비 오브젝트를 활성화
-            rain.gameObject.SetActive(true);
+            rainSystem.SetActive(true);
+            rainPS.gameObject.SetActive(true);
+            ripplePS.gameObject.SetActive(true);
+
+            rainPS.Play();
+            ripplePS.Play();
         }
         else
         {
-            // 그 외의 경우 비를 비활성화
-            rain.gameObject.SetActive(false);
+            // Boss 태그가 아닐 경우 비 효과 중지 및 RainSystem 비활성화
+            rainPS.Stop();
+            ripplePS.Stop();
+            rainSystem.SetActive(false);
         }
     }
 
-    // 보스가 죽으면 비를 비활성화하는 메서드 추가
+    // 보스가 죽으면 비 효과 중지하는 메서드
     public void OnBossDeath()
     {
-        if (tag == "boss")
+        if (tag == "Boss")
         {
-            // 보스가 죽으면 비를 비활성화
-            rain.gameObject.SetActive(false);
+            rainPS.Stop();
+            ripplePS.Stop();
+            rainSystem.SetActive(false);
         }
     }
 }
