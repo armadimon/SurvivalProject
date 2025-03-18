@@ -199,7 +199,7 @@ public class AIEntity : MonoBehaviour, IDamageable
 
         void AttackingUpdate()
         {
-            Debug.Log("check");
+            //Debug.Log("check");
             // bool isPlayerInFieldOfView = IsPlayerInFieldOfView();
 
             // 플레이어가 너무 멀리 도망갔으면 추적 포기

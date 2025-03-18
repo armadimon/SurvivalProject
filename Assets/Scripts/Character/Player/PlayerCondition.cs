@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using DG.Tweening.CustomPlugins;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 public interface IDamageable
@@ -54,7 +54,6 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     void Awake()
     {
         Time.timeScale = 1f;
-
     }
 
     void Start()
@@ -105,7 +104,6 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-
 
     public void Eat(float amount)
     {
@@ -284,6 +282,9 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void RestartGame()
     {
+        DOTween.Clear(); // DOTween 애니메이션 초기화
+        DOTween.KillAll(); // 모든 DOTween 애니메이션 취소
+        DOTween.Init();    // DOTween 다시 초기화
 
         Cursor.visible = false; // 다시 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked;
