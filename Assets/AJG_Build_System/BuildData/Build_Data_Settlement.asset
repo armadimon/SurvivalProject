@@ -24,4 +24,4 @@ MonoBehaviour:
   prefabs: {fileID: 5162118548723873165, guid: 493e7c378a918b748bba2dbcd06f80e8, type: 3}
   requireResources:
   - type: 0
-    value: 3
+    value: 0
