@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DamageUI : MonoBehaviour
+public class UIDamage : MonoBehaviour
 {
     public Image image;
     public float flashSpeed;

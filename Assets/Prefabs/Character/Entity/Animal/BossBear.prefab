@@ -1297,7 +1297,7 @@ MonoBehaviour:
   maxWanderWaitTime: 4
   damage: 25
   attackRate: 4
-  attackDistance: 5
+  attackDistance: 4
   fieldOfView: 120
   buildObjectColliders: []
   buildObjectDistance: []

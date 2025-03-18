@@ -2140,8 +2140,10 @@ MonoBehaviour:
   maxWanderWaitTime: 4
   damage: 15
   attackRate: 4
-  attackDistance: 3
+  attackDistance: 2
   fieldOfView: 120
+  buildObjectColliders: []
+  buildObjectDistance: []
   nightDetectDistanceMultiplier: 999
 --- !u!195 &4657551162168193733
 NavMeshAgent:
