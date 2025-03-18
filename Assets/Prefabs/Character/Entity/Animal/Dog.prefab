@@ -1088,8 +1088,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3337803, y: 0.78268385, z: 1.2484894}
-  m_Center: {x: -0.009789467, y: 0.35865808, z: 0.084796906}
+  m_Size: {x: 0.3337803, y: 0.78268385, z: 0.8194772}
+  m_Center: {x: -0.009789467, y: 0.35865808, z: 0.024774447}
 --- !u!114 &4851235212503025613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,6 +1121,8 @@ MonoBehaviour:
   attackRate: 1
   attackDistance: 2
   fieldOfView: 250
+  buildObjectColliders: []
+  buildObjectDistance: []
   nightDetectDistanceMultiplier: 999
 --- !u!195 &70615463949460654
 NavMeshAgent:
