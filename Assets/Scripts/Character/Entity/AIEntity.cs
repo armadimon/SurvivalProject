@@ -24,6 +24,7 @@ public class AIEntity : MonoBehaviour, IDamageable
     private NavMeshPath path;      // 경로 계산을 위한 NavMeshPath
     public float detectDistance;   // 플레이어 감지 거리
     private AIState aiState;       // 현재 AI 상태
+    public LayerMask buildingLayer; // 건물 레이어
 
     [Header("Wandering")]
     public float minWanderDistance;  // 배회 시 최소 이동 거리
