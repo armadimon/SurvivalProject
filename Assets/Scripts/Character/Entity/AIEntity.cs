@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -259,7 +260,7 @@ public class AIEntity : MonoBehaviour, IDamageable
     // 애니메이션 이벤트로 호출될 메서드
     public void DealDamage()
     {
-        if (!player) // 플레이어가 아닌 경우 (건물을 공격)
+        if (!player)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackDistance, buildObject);
             BuildObject closestBuildObject = null;
