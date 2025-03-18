@@ -20,11 +20,12 @@ public class AIEntity : MonoBehaviour, IDamageable
     public ItemData[] dropOnDeath;  // 사망 시 드롭할 아이템 목록
 
     [Header("AI")]
-    private NavMeshAgent agent;    // 네비게이션 에이전트 (이동 제어)
-    private NavMeshPath path;      // 경로 계산을 위한 NavMeshPath
-    public float detectDistance;   // 플레이어 감지 거리
-    private AIState aiState;       // 현재 AI 상태
-    public LayerMask buildingLayer; // 건물 레이어
+    private NavMeshAgent agent;     // 네비게이션 에이전트 (이동 제어)
+    private NavMeshPath path;       // 경로 계산을 위한 NavMeshPath
+    public float detectDistance;    // 플레이어 감지 거리
+    private AIState aiState;        // 현재 AI 상태
+    public LayerMask buildObject;   // 건물 레이어
+    bool player = false;
 
     [Header("Wandering")]
     public float minWanderDistance;  // 배회 시 최소 이동 거리
@@ -53,16 +54,12 @@ public class AIEntity : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();            // 애니메이터 가져오기
         meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>(); // 캐릭터의 메쉬 렌더러 가져오기
 
-        //Debug.Log(agent.agentTypeID);
         // NavMesh 위의 가장 가까운 지점으로 이동 (Terrain에서 오류 방지)
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
         {
             transform.position = (hit.position);
-            //agent = gameObject.AddComponent<NavMeshAgent>();
-            //agent.agentTypeID = 1;
         }
-        //Debug.LogError($"{gameObject.name}이(가) NavMesh 위에 있지 않습니다! 위치를 확인하세요.");
     }
 
     void Start()
@@ -127,7 +124,6 @@ public class AIEntity : MonoBehaviour, IDamageable
         // 현재 위치에서 경로를 미리 계산
         path = new NavMeshPath();
         agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
-        //Debug.LogWarning(path.status);
 
         if (path.status != NavMeshPathStatus.PathComplete)
         {
@@ -146,6 +142,15 @@ public class AIEntity : MonoBehaviour, IDamageable
         if (playerDistance < detectDistance && path.status != NavMeshPathStatus.PathPartial)
         {
             SetState(AIState.Attacking);
+        }
+        else
+        {
+            // 플레이어를 찾지 못할 경우, 감지 거리 내에 건물이 있는지 확인
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectDistance, buildObject);
+            if (hitColliders.Length > 0)
+            {
+                SetState(AIState.Attacking);
+            }
         }
     }
 
@@ -186,6 +191,7 @@ public class AIEntity : MonoBehaviour, IDamageable
     {
         if (playerDistance < detectDistance)
         {
+            player = true;
             // 플레이어가 공격 거리 내에 있고 시야 내에 있는지 확인
             if (playerDistance < attackDistance && IsPlayerInFieldOfView())
             {
@@ -209,7 +215,6 @@ public class AIEntity : MonoBehaviour, IDamageable
 
                 agent.CalculatePath(CharacterManager.Instance.Player.transform.position, path);
 
-                //Debug.Log(path.status);
                 // HighCostArea로 인해 경로가 완전하지 않다면 배회 상태로 전환
                 if (path.status != NavMeshPathStatus.PathComplete)
                 {
@@ -226,18 +231,67 @@ public class AIEntity : MonoBehaviour, IDamageable
         }
         else
         {
-            SetState(AIState.Idle);
-            Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
-        }
+            player = false;
+            // 플레이어를 찾지 못할 경우, 감지 거리 내에 건물이 있는지 확인
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectDistance, buildObject);
+            if (hitColliders.Length > 0)
+            {
+                // 가장 가까운 건물로 이동
+                agent.isStopped = false;
+                agent.SetDestination(hitColliders[0].transform.position);
 
+                // 공격 가능 시간인지 체크
+                if (Time.time - lastAttackTime > attackRate)
+                {
+                    lastAttackTime = Time.time; // 마지막 공격 시간 갱신
+                    animator.speed = 1f; // 애니메이션 속도 설정
+                    animator.SetTrigger("Attack"); // 공격 애니메이션 실행
+                }
+            }
+            else
+            {
+                SetState(AIState.Idle);
+                Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
+            }
+        }
     }
 
     // 애니메이션 이벤트로 호출될 메서드
     public void DealDamage()
     {
-        // 플레이어에게 데미지 주기
-        CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
+        if (!player) // 플레이어가 아닌 경우 (건물을 공격)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackDistance, buildObject);
+            BuildObject closestBuildObject = null;
+            float closestDistance = Mathf.Infinity;
+
+            // 감지된 모든 건물 중 가장 가까운 건물 찾기
+            foreach (var hitCollider in hitColliders)
+            {
+                BuildObject buildObjectComponent = hitCollider.GetComponent<BuildObject>();
+                if (buildObjectComponent != null)
+                {
+                    float distance = Vector3.Distance(transform.position, buildObjectComponent.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestBuildObject = buildObjectComponent;
+                    }
+                }
+            }
+
+            // 가장 가까운 건물에 데미지 적용
+            if (closestBuildObject != null)
+            {
+                closestBuildObject.TakeDamage((int)damage);
+            }
+        }
+        else // 플레이어를 공격하는 경우
+        {
+            CharacterManager.Instance.Player.condition.GetComponent<IDamageable>().TakeDamage(damage);
+        }
     }
+
 
     // 플레이어가 NPC의 시야 내에 있는지 확인
     bool IsPlayerInFieldOfView()
@@ -298,11 +352,4 @@ public class AIEntity : MonoBehaviour, IDamageable
         // 밤에는 감지 거리를 늘림
         detectDistance = isNight ? defaultDetectDistance * nightDetectDistanceMultiplier : defaultDetectDistance;
     }
-
-
-    //    public void OnDrawGizmos()
-    //    {
-    //        Gizmos.color = Color.red;
-    //        Gizmos.DrawSphere(transform.position, detectDistance);
-    //    }
 }

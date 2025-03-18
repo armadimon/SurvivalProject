@@ -1110,16 +1110,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e6d0bef56406d0c4a95ed45bfcc00a3c, type: 2}
   - {fileID: 11400000, guid: 0801f04afb9d5094c954f160c2062ba1, type: 2}
   detectDistance: 8
-  buildingLayer:
+  buildObject:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   minWanderDistance: 2
   maxWanderDistance: 4
   minWanderWaitTime: 2
   maxWanderWaitTime: 4
   damage: 5
   attackRate: 1
-  attackDistance: 3
+  attackDistance: 2
   fieldOfView: 250
   nightDetectDistanceMultiplier: 999
 --- !u!195 &70615463949460654

@@ -706,9 +706,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 705f6641786af2f4da8c9604fca84e70, type: 2}
   - {fileID: 11400000, guid: 705f6641786af2f4da8c9604fca84e70, type: 2}
   detectDistance: 8
-  buildingLayer:
+  buildObject:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   minWanderDistance: 2
   maxWanderDistance: 4
   minWanderWaitTime: 2
