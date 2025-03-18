@@ -4,10 +4,19 @@ public enum ItemType
     Resouce,      
     Equipable,    
     Consumable,  
-    interactable, 
+    interactable,
+    DebuffConsumable
 }
 
 public enum ConsumableType
+{
+    Health,
+    Hunger,
+    Thirst,
+    Stamina,
+}
+
+public enum DebuffConsumableType
 {
     Health,
     Hunger,
@@ -35,6 +44,13 @@ public class ItemDataConsumable
     public float value;
 }
 
+[System.Serializable]
+public class ItemDataDebuffConsumable
+{
+    public DebuffConsumableType type;
+    public float value;
+}
+
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
 public class ItemData : ScriptableObject
 {
@@ -51,6 +67,9 @@ public class ItemData : ScriptableObject
 
     [Header("Consumable")]
     public ItemDataConsumable[] consumables;
+
+    [Header("DebuffConsumable")]
+    public ItemDataDebuffConsumable[] debuffConsumables;
 
     [Header("Eqip")]
     public GameObject equipPrefab;

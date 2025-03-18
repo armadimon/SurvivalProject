@@ -55,8 +55,8 @@ public class Player : MonoBehaviour
     // modifier 비활성화
     public void RemoveModifier(ModifierBase modifier)
     {        
+        activeModifiers.Remove(modifier);
         modifier.elapsedTime = 0f;
-        activeModifiers.Remove(modifier);                
     }
 
     // modifier 상태업데이트(duration 지나면 자동 비활성화도 포함)
@@ -83,7 +83,8 @@ public class Player : MonoBehaviour
                         RemoveModifier(activeModifiers[i]);
                     }
                 }
-                else if (activeModifiers[i] is DehydrateModifier)
+                
+                if (activeModifiers[i] is DehydrateModifier)
                 {
                     if (activeModifiers[i].isActive)
                     {
@@ -110,14 +111,25 @@ public class Player : MonoBehaviour
         else return false;
     }
 
+    // activeModifiers에 중독 이미 있는지 확인
+    public bool PoisonAlready()
+    {
+        for (int i = 0; i < activeModifiers.Count; i++)
+        {
+            if (activeModifiers[i] is PoisonModifier) return true;
+        }
+
+        return false;
+    }
+
     // 중독 modifier 적용
     public void PoisonModifier()
     {
-        if (OnPoisoned())
+        if (OnPoisoned() && !PoisonAlready())
         {
             for (int i = 0; i < playerModifiers.Count; i++)
             {
-                if (playerModifiers[i] is PoisonModifier && !activeModifiers.Contains(playerModifiers[i]))
+                if (playerModifiers[i] is PoisonModifier)
                 {
                     AddModifier(playerModifiers[i]);
                 }
@@ -132,14 +144,25 @@ public class Player : MonoBehaviour
         else return false;
     }
 
+    // activeModifiers에 중독 이미 있는지 확인
+    public bool DehydrateAlready()
+    {
+        for (int i = 0; i < activeModifiers.Count; i++)
+        {
+            if (activeModifiers[i] is DehydrateModifier) return true;
+        }
+
+        return false;
+    }
+
     // 탈수 modifier 적용
     public void DehydrateModifier()
     {
-        if (OnDehydrated())
+        if (OnDehydrated() && !DehydrateAlready())
         {
             for (int i = 0; i < playerModifiers.Count; i++)
             {
-                if (playerModifiers[i] is DehydrateModifier && !activeModifiers.Contains(playerModifiers[i]))
+                if (playerModifiers[i] is DehydrateModifier)
                 {
                     AddModifier(playerModifiers[i]);                    
                 }

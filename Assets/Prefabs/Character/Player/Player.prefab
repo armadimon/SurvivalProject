@@ -346,8 +346,8 @@ MonoBehaviour:
   activeModifiers: []
   poisonedIcon: {fileID: 0}
   dehydrateIcon: {fileID: 0}
-  poisonProbability: 25
-  dehydrateProbability: 25
+  poisonProbability: 100
+  dehydrateProbability: 100
 --- !u!114 &4277282988235816817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,9 +404,7 @@ MonoBehaviour:
   isInHydrateLocation: 0
   isDrinking: 0
   isHealing: 0
-  isEating: 0
   isHydrating: 0
-  isStaminaHealing: 0
   poisonProbabilityInt: 0
   dehydrateProbabilityInt: 0
 --- !u!114 &7120608849839989870
