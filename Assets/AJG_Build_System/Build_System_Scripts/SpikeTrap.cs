@@ -14,6 +14,7 @@ public class SpikeTrap : MonoBehaviour
     public float resetDelay = 2f;
     private Vector3 initialPosition;
     private bool isUp = false;
+    public float transformOffset = 0.36f;
     public LayerMask layerMask;
     
     private void Start()
@@ -85,7 +86,7 @@ public class SpikeTrap : MonoBehaviour
 
         public void OnSpikeTrap()
         {
-            initialPosition = buildObject.transform.position;
+            initialPosition = buildObject.transform.position - Vector3.up * transformOffset;
             collider.enabled = true;
         }
     
