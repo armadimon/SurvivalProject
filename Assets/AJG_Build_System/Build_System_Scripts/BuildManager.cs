@@ -49,24 +49,21 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public void CheckSufficientResources(BuildObject buildObject, int index)
+    public bool CheckSufficientResources(BuildObject buildObject, bool consume)
     {
         RequireResourceAmount[] requireResources = buildObject.data.requireResources;
         
         foreach (var requireResource in requireResources)
         {
-            if (!HasResourceAmount(requireResource, false))
+            if (!HasResourceAmount(requireResource, consume))
             {
                 NotificationManager.Instance.ShowNotification("자원이 부족합니다!!");
-                return ;
+                return false;
             }
         }
-
-        foreach (var requireResource in requireResources)
-        {
-            HasResourceAmount(requireResource, true);
-        }
-        buildController.SetBuildObject(buildObject);
+        if (consume == false)
+            buildController.SetBuildObject(buildObject);
+        return true;
     }
 
     public void OnBuildMode(InputAction.CallbackContext context)
@@ -81,7 +78,6 @@ public class BuildManager : MonoBehaviour
     public bool HasResourceAmount(RequireResourceAmount requireResourceAmount, bool consume)
     {
         ItemSlot[] slots = InventotyManager.Instance.Inventory.slots;
-        bool resourceFound = false;
 
         for (int i = 0; i < slots.Length; i++)
         {
@@ -90,13 +86,12 @@ public class BuildManager : MonoBehaviour
 
             if (slots[i].item.type == ItemType.Resouce && slots[i].item.resourceType == requireResourceAmount.type)
             {
-                resourceFound = true;
-
                 if (slots[i].quantity >= requireResourceAmount.value)
                 {
                     if (consume)
                     {
                         slots[i].quantity -= requireResourceAmount.value;
+                        InventotyManager.Instance.Inventory.UpdateUI();
                     }
                     return true;
                 }
