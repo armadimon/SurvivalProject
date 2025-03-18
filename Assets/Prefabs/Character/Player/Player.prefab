@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2324991411326561558}
   - component: {fileID: 8322028355889780566}
   - component: {fileID: 4277282988235816817}
+  - component: {fileID: 3054035415432763525}
   - component: {fileID: 1613976011072082705}
   - component: {fileID: 7120608849839989870}
   - component: {fileID: 1053372680967664262}
@@ -343,6 +344,10 @@ MonoBehaviour:
   equipment: {fileID: 0}
   playerModifiers: []
   activeModifiers: []
+  poisonedIcon: {fileID: 0}
+  dehydrateIcon: {fileID: 0}
+  poisonProbability: 25
+  dehydrateProbability: 25
 --- !u!114 &4277282988235816817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +364,22 @@ MonoBehaviour:
   isActive: 0
   poisonDuration: 5
   damagePerSecond: 2
+--- !u!114 &3054035415432763525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830912696432523152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0649f3f88139f459dfaa5f0c2cf528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elapsedTime: 0
+  isActive: 0
+  dehydrateDuration: 5
+  damagePerSecond: 0.5
 --- !u!114 &1613976011072082705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +408,7 @@ MonoBehaviour:
   isHydrating: 0
   isStaminaHealing: 0
   poisonProbabilityInt: 0
+  dehydrateProbabilityInt: 0
 --- !u!114 &7120608849839989870
 MonoBehaviour:
   m_ObjectHideFlags: 0
