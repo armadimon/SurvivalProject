@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1186580323267274978}
+  - component: {fileID: 4346009791869601189}
   m_Layer: 0
   m_Name: RainSystem
   m_TagString: Rain
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 6177143064927435726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &4346009791869601189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475467883170810204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dfeb53c65bcaa4b9237d144d55aebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainMaterial: {fileID: 2100000, guid: 44a10cf87aff9b1449a5a13628d5656a, type: 2}
+  skyBox: {fileID: 2100000, guid: bc9f761d0713ca94aacbcd13518f4166, type: 2}
+  rainPS: {fileID: 1616870105408314320}
+  ripplePS: {fileID: 7559527303537647029}
 --- !u!1 &3612845445397018363
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,6 +4898,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dfeb53c65bcaa4b9237d144d55aebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rainMaterial: {fileID: 0}
+  skyBox: {fileID: 0}
+  rainPS: {fileID: 0}
+  ripplePS: {fileID: 0}
 --- !u!1 &5281598854984700366
 GameObject:
   m_ObjectHideFlags: 0
