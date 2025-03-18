@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3385573450344500941}
   - component: {fileID: 7489808031819531938}
   - component: {fileID: 1565766275452857661}
+  - component: {fileID: 8217630059410167260}
   m_Layer: 0
   m_Name: PT_Pine_Tree_03_green_LOD0
   m_TagString: Untagged
@@ -84,6 +85,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &8217630059410167260
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742186141859750976}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.01, y: 4.5, z: 0.01}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &4250733069483217209
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +112,7 @@ GameObject:
   - component: {fileID: 6908569730818522127}
   - component: {fileID: 8126710165199031470}
   - component: {fileID: 6006819196498761755}
+  - component: {fileID: 6955551796818146744}
   m_Layer: 0
   m_Name: PT_Pine_Tree_03_green_LOD2
   m_TagString: Untagged
@@ -168,6 +186,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &6955551796818146744
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250733069483217209}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.01, y: 4.5, z: 0.01}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5159367944599010153
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +259,7 @@ GameObject:
   - component: {fileID: 3984382736948724652}
   - component: {fileID: 609438110277312044}
   - component: {fileID: 1655947054728114178}
+  - component: {fileID: 6966765642677550276}
   m_Layer: 0
   m_Name: PT_Pine_Tree_03_green_LOD1
   m_TagString: Untagged
@@ -298,6 +333,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &6966765642677550276
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313283983588236178}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.01, y: 4.5, z: 0.01}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7717756144470152634
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,3 +449,4 @@ MonoBehaviour:
   itemToGive: {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}
   quantityPerHit: 1
   capacity: 3
+  maxCapacity: 0

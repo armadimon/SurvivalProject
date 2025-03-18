@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1186580323267274978}
   m_Layer: 0
   m_Name: RainSystem
-  m_TagString: Untagged
+  m_TagString: Rain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 6177143064927435726}
   - component: {fileID: 1616870105408314320}
   - component: {fileID: 4690596509234647370}
+  - component: {fileID: 726187923769677082}
   m_Layer: 0
   m_Name: Rain_PS
-  m_TagString: Untagged
+  m_TagString: Rain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3851,6 +3852,11 @@ ParticleSystem:
       type: 1
       properties: 0
       emitProbability: 1
+    - serializedVersion: 3
+      emitter: {fileID: 0}
+      type: 1
+      properties: 0
+      emitProbability: 1
   LightsModule:
     enabled: 0
     ratio: 0
@@ -4863,6 +4869,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &726187923769677082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3612845445397018363}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dfeb53c65bcaa4b9237d144d55aebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5281598854984700366
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,7 +4894,7 @@ GameObject:
   - component: {fileID: 2018718358344714493}
   m_Layer: 0
   m_Name: Ripple_Ps
-  m_TagString: Untagged
+  m_TagString: Rain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5150,8 +5168,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 2
+      scalar: 1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:

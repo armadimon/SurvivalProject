@@ -1151,8 +1151,8 @@ GameObject:
   m_Component:
   - component: {fileID: 364341315838345904}
   - component: {fileID: 2598713503187359034}
-  - component: {fileID: 7545188625384797232}
   - component: {fileID: 339517376947906408}
+  - component: {fileID: 7545188625384797232}
   - component: {fileID: 3411391198688055958}
   m_Layer: 16
   m_Name: Chicken
@@ -1199,6 +1199,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &339517376947906408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910812461554969080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b9f8c3c3f749a44a0b174ed04b108e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 15
+  walkSpeed: 1
+  runSpeed: 3
+  dropOnDeath:
+  - {fileID: 11400000, guid: e6d0bef56406d0c4a95ed45bfcc00a3c, type: 2}
+  - {fileID: 11400000, guid: 0801f04afb9d5094c954f160c2062ba1, type: 2}
+  - {fileID: 11400000, guid: 0b1403d017bf496468a549f673936095, type: 2}
+  - {fileID: 11400000, guid: f3e68286ccad44c469052e71e673dd7e, type: 2}
+  detectDistance: 8
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  minWanderDistance: 1
+  maxWanderDistance: 4
+  minWanderWaitTime: 2
+  maxWanderWaitTime: 4
+  damage: 2
+  attackRate: 2
+  attackDistance: 1.5
+  fieldOfView: 300
+  nightDetectDistanceMultiplier: 999
 --- !u!135 &7545188625384797232
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1220,32 +1253,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.17201567
   m_Center: {x: -0.0000009536743, y: 0.21742725, z: -0.03685236}
---- !u!114 &339517376947906408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910812461554969080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b9f8c3c3f749a44a0b174ed04b108e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 30
-  walkSpeed: 1
-  runSpeed: 3
-  dropOnDeath: []
-  detectDistance: 8
-  minWanderDistance: 1
-  maxWanderDistance: 4
-  minWanderWaitTime: 2
-  maxWanderWaitTime: 4
-  damage: 2
-  attackRate: 2
-  attackDistance: 1.5
-  fieldOfView: 300
-  nightDetectDistanceMultiplier: 999
 --- !u!195 &3411391198688055958
 NavMeshAgent:
   m_ObjectHideFlags: 0

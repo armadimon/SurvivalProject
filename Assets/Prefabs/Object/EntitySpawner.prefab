@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 0}
-  spawnCount: 2
+  spawnCount: 1
   maxEntityCount: 10
   terrainPadding: 5
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  timeRate: 10
+  timeRate: 1
   mediumWave: 2
   largeWave: 4
   smallEntityPrefab:
@@ -61,3 +61,5 @@ MonoBehaviour:
   - {fileID: 4356688041658270040, guid: 91f96ffd91294014788bc8bad6991002, type: 3}
   largeEntityPrefab:
   - {fileID: 8183399663256560007, guid: 187e79d3e0997b942bad68214d68b720, type: 3}
+  bossEntityPrefab:
+  - {fileID: 1517840799099765759, guid: 8e030247b0e9ca14bb765a852301f515, type: 3}

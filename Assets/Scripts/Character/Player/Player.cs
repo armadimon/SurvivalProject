@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -19,7 +20,13 @@ public class Player : MonoBehaviour
     public Equipment equipment;
 
     public List<ModifierBase> playerModifiers;
-    [SerializeField] private List<ModifierBase> activeModifiers = new List<ModifierBase>();   
+    public List<ModifierBase> activeModifiers = new List<ModifierBase>();
+
+    public GameObject poisonedIcon;
+    public GameObject dehydrateIcon;
+
+    [Range(0, 100)] public int poisonProbability;
+    [Range(0, 100)] public int dehydrateProbability;  
 
     private void Awake()
     {
@@ -31,18 +38,9 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {        
-        if (OnPoisoned())
-        {
-            for (int i = 0; i < playerModifiers.Count; i++)
-            {
-                if (playerModifiers[i].TryGetComponent(out PoisonModifier posion))
-                {
-                    AddModifier(playerModifiers[i]);
-                    activeModifiers = activeModifiers.Distinct().ToList();
-                }
-            }
-        }
+    {
+        PoisonModifier();
+        DehydrateModifier();
 
         UpdateModifiers();
     }
@@ -70,10 +68,33 @@ public class Player : MonoBehaviour
             {
                 activeModifiers[i].UpdateMod();                
 
-                if (activeModifiers[i].TryGetComponent(out PoisonModifier poison))
+                if (activeModifiers[i] is PoisonModifier)
                 {                    
-                    if (activeModifiers[i].isActive) condition.indicatorAnimator.SetBool("OnPoison", true);
-                    else condition.indicatorAnimator.SetBool("OnPoison", false);
+                    if (activeModifiers[i].isActive)
+                    {
+                        condition.indicatorAnimator.SetBool("OnPoison", true);
+                        poisonedIcon.transform.SetAsFirstSibling();
+                        poisonedIcon.SetActive(true);
+                    }
+                    else
+                    {
+                        condition.indicatorAnimator.SetBool("OnPoison", false);
+                        poisonedIcon.SetActive(false);
+                    }
+                }
+                else if (activeModifiers[i] is DehydrateModifier)
+                {
+                    if (activeModifiers[i].isActive)
+                    {
+                        condition.indicatorAnimator.SetBool("OnThirst", true);
+                        dehydrateIcon.transform.SetAsFirstSibling();
+                        dehydrateIcon.SetActive(true);
+                    }
+                    else
+                    {
+                        condition.indicatorAnimator.SetBool("OnThirst", false);
+                        dehydrateIcon.SetActive(false);
+                    }
                 }
 
                 if (!activeModifiers[i].isActive) RemoveModifier(activeModifiers[i]);
@@ -84,7 +105,46 @@ public class Player : MonoBehaviour
     // 중독상태 bool 메서드 (확률 25%)
     public bool OnPoisoned()
     {
-        if (condition.isHealing && condition.poisonProbabilityInt < 24) return true;            
+        if (condition.isHealing && condition.poisonProbabilityInt < poisonProbability) return true;            
         else return false;
+    }
+
+    // 중독 modifier 적용
+    public void PoisonModifier()
+    {
+        if (OnPoisoned())
+        {
+            for (int i = 0; i < playerModifiers.Count; i++)
+            {
+                if (playerModifiers[i] is PoisonModifier)
+                {
+                    AddModifier(playerModifiers[i]);
+                    activeModifiers = activeModifiers.Distinct().ToList();
+                }
+            }
+        }
+    }
+
+    // 탈수상태 bool 메서드 (확률 25%)
+    public bool OnDehydrated()
+    {
+        if (condition.isHydrating && condition.dehydrateProbabilityInt < dehydrateProbability) return true;
+        else return false;
+    }
+
+    // 탈수 modifier 적용
+    public void DehydrateModifier()
+    {
+        if (OnDehydrated())
+        {
+            for (int i = 0; i < playerModifiers.Count; i++)
+            {
+                if (playerModifiers[i] is DehydrateModifier)
+                {
+                    AddModifier(playerModifiers[i]);
+                    activeModifiers = activeModifiers.Distinct().ToList();
+                }
+            }
+        }
     }
 }
