@@ -202,10 +202,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
+            ToggleCursur();
             if (!CraftingManager.Instance.UICrafting.IsOpen)
             {
                 CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Process);
-                ToggleCursur();
+                
                 if (Cursor.lockState == CursorLockMode.Locked)
                 {
                     Cursor.lockState = CursorLockMode.None;
@@ -215,7 +216,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 CraftingManager.Instance.UICrafting.HideCraftingUI();
-                ToggleCursur();
                 if (Cursor.lockState == CursorLockMode.None)
                 {
                     Cursor.lockState = CursorLockMode.Locked;
@@ -231,10 +231,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
+            ToggleCursur();
             if (!CraftingManager.Instance.UICrafting.IsOpen)
             {
                 CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Food);
-                ToggleCursur();
                 if (Cursor.lockState == CursorLockMode.Locked)
                 {
                     Cursor.lockState = CursorLockMode.None;
@@ -243,7 +243,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 CraftingManager.Instance.UICrafting.HideCraftingUI();
-                ToggleCursur();
                 if (Cursor.lockState == CursorLockMode.None)
                 {
                     Cursor.lockState = CursorLockMode.Locked;
@@ -259,10 +258,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
+            ToggleCursur();
             if (!CraftingManager.Instance.UICrafting.IsOpen)
             {
                 CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Equip);
-                ToggleCursur();
                 if (Cursor.lockState == CursorLockMode.Locked)
                 {
                     Cursor.lockState = CursorLockMode.None;
@@ -271,7 +270,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 CraftingManager.Instance.UICrafting.HideCraftingUI();
-                ToggleCursur();
                 if (Cursor.lockState == CursorLockMode.None)
                 {
                     Cursor.lockState = CursorLockMode.Locked;
