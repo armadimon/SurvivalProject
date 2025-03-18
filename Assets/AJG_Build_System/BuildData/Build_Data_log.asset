@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: log
   description: log
+  maxCapacity: 0
   maxHealth: 20
   maxSlopeAngle: 359
   minSlopeAngle: 30
   type: 0
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 71d1ffabef9d87c4ca1831832017e141, type: 2}
   prefabs: {fileID: 5929146964330534270, guid: 65724390b63384c49a9cbbf43e1d29a9, type: 3}
   requireResources:
   - type: 0

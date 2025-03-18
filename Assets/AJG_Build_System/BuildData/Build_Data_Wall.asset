@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bef462ef2cd0e84f893712c823e7243, type: 3}
   m_Name: Build_Data_Wall
   m_EditorClassIdentifier: 
-  displayName: log
-  description: log
+  displayName: Wall
+  description: Wall
+  maxCapacity: 0
   maxHealth: 20
   maxSlopeAngle: 45
   minSlopeAngle: 30
