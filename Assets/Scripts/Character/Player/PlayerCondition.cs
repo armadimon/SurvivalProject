@@ -49,6 +49,13 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public int dehydrateProbabilityInt;
 
     public GameObject youDiePanel; // "You Die" UI 패널
+    public GameObject damageUI; // 데미지 UI
+
+    void Awake()
+    {
+        Time.timeScale = 1f;
+
+    }
 
     void Start()
     {
@@ -89,6 +96,10 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         // 플레이어 죽음, 현재는 Debug.Log
         Debug.Log($"Die");
         youDiePanel.SetActive(true); // "You Die" 창 띄우기
+
+        damageUI.SetActive(false);  // 데미지 UI 비활성화
+        // 게임 멈추기
+        Time.timeScale = 0f;
 
         // Time.timeScale을 0으로 안 하고, 커서만 활성화
         Cursor.visible = true;
@@ -273,6 +284,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void RestartGame()
     {
+
         Cursor.visible = false; // 다시 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked;
 

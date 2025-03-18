@@ -5,7 +5,7 @@ public class Respawn : MonoBehaviour
 {
     public Resource resource;
 
-    private float respawnTime = 5f;
+    private float respawnTime = 20f;
     public void StartRespawn()
     { 
         StartCoroutine(RespawnResource());
