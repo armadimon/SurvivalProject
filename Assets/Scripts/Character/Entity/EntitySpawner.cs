@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EntitySpawner : MonoBehaviour
 {
+    public static event System.Action OnBossSpawned;
+
     [Header("Statting")]
     public Terrain terrain;             // 스폰할 지형 (Terrain)
     public int spawnCount;              // 한 번에 소환할 개수
@@ -90,6 +92,7 @@ public class EntitySpawner : MonoBehaviour
 
                 // 엔티티가 파괴될 때 개수를 줄이기 위해 이벤트 등록
                 boss.AddComponent<EntityTracker>().SetSpawner(this);
+                OnBossSpawned?.Invoke();
             }
         }
         waveConut++; // 한 웨이브가 끝날 때 증가
@@ -143,6 +146,7 @@ public class EntitySpawner : MonoBehaviour
 
 public class EntityTracker : MonoBehaviour
 {
+    public static event System.Action OnBossDestroyed;
     private EntitySpawner spawner;
 
     public void SetSpawner(EntitySpawner spawner)
@@ -155,6 +159,7 @@ public class EntityTracker : MonoBehaviour
         if (spawner != null)
         {
             spawner.OnEntityDestroyed(); // 엔티티가 파괴될 때 스포너에게 알림
+            OnBossDestroyed?.Invoke();
         }
     }
 }
