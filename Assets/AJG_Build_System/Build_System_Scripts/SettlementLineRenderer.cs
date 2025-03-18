@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class SettlementLineRenderer : MonoBehaviour
 {
     public LineRenderer lineRenderer;
+    public BuildObject buildObject;
     public int segments = 30;
     public float raycastHeightOffset = 30f;
     public float raycastDistance = 30f;
@@ -26,8 +27,11 @@ public class SettlementLineRenderer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        FindCollisionPointsFromRaycast();
-        UpdateLineRenderer();
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            FindCollisionPointsFromRaycast();
+            UpdateLineRenderer();
+        }
     }
 
     void FindCollisionPointsFromRaycast()

@@ -180,6 +180,7 @@ public class BuildController : MonoBehaviour
                 SetMode = false;
                 objectCollider.enabled = true;
                 SettlementManager.Instance.RegisterBuildObject(_buildObject, _buildObject.isSafe);
+                BuildManager.Instance.CheckSufficientResources(_buildObject, true);
                 _buildObject = null;
                 BuildManager.Instance.buildMenu.SetActive(true);
                 CharacterManager.Instance.Player.controller.canLook = false;
@@ -192,7 +193,18 @@ public class BuildController : MonoBehaviour
                 objectCollider.enabled = true;
                 closestSnapPoint = null;
                 SettlementManager.Instance.RegisterBuildObject(_buildObject, _buildObject.isSafe);
-                SetBuildObject(_buildObject);
+                if (BuildManager.Instance.CheckSufficientResources(_buildObject, true))
+                {
+                    SetBuildObject(_buildObject);
+                }
+                else
+                {   
+                    _buildObject = null;
+                    BuildManager.Instance.buildMenu.SetActive(true);
+                    CharacterManager.Instance.Player.controller.canLook = false;
+                    CharacterManager.Instance.Player.controller.canLook = false;
+                    Cursor.lockState = CursorLockMode.None;
+                }
             }
         }
     }

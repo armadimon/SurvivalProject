@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
@@ -29,6 +30,7 @@ public class DayNightCycle : MonoBehaviour
     public AnimationCurve lightingIntensityMultiplier; // 전체적인 조명 강도 조절 AnimationCurve
     public AnimationCurve reflectionIntensityMultiplier; // 반사광 강도 조절 AnimationCurve
 
+    public NavMeshSurface navMeshSurface;
     void Start()
     {
         // 하루의 길이에 따른 시간 변화 속도 설정 (1.0f을 하루 길이로 나눠서 초당 변화량 계산)
@@ -52,6 +54,7 @@ public class DayNightCycle : MonoBehaviour
 
             if (isNight)
             {
+                navMeshSurface.BuildNavMesh();
                 DOTween.Kill("NightNotification");
 
                 NotificationManager.Instance.ShowNotification("어둠이 깔리기 시작합니다...");

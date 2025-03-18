@@ -71,6 +71,11 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             ItemQuantityImage.SetActive(false);
         }
 
+        if (quantity <= 0)
+        {
+            Clear();
+        }
+        
         if (outline != null)
         {
             outline.enabled = equipped;

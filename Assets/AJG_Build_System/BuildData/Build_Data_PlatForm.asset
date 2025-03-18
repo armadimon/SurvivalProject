@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: PlatForm
   description: "\uBC14\uB2E5 \uAD6C\uC870\uBB3C\uC785\uB2C8\uB2E4."
   maxCapacity: 0
-  maxHealth: 20
+  maxHealth: 500
   maxSlopeAngle: 359
   minSlopeAngle: 30
   type: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   prefabs: {fileID: 6907106213808990864, guid: 462d0e537482f644997b1055b465d011, type: 3}
   requireResources:
   - type: 0
-    value: 0
+    value: 1

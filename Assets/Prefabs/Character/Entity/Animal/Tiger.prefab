@@ -717,6 +717,8 @@ MonoBehaviour:
   attackRate: 2
   attackDistance: 3
   fieldOfView: 360
+  buildObjectColliders: []
+  buildObjectDistance: []
   nightDetectDistanceMultiplier: 999
 --- !u!65 &4283536617478999196
 BoxCollider:

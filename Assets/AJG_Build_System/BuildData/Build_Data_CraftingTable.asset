@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: "\uC81C\uC791\uD14C\uC774\uBE14"
   description: "\uC7A5\uBE44\uB97C \uC81C\uC791\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   maxCapacity: 1
-  maxHealth: 20
+  maxHealth: 500
   maxSlopeAngle: 45
   minSlopeAngle: 10
   type: 0
@@ -23,4 +23,6 @@ MonoBehaviour:
   prefabs: {fileID: 7341732476123796129, guid: 3ac81b5ccbe09b04191ffff17bcd656e, type: 3}
   requireResources:
   - type: 0
-    value: 0
+    value: 1
+  - type: 1
+    value: 1
