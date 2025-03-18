@@ -17,7 +17,6 @@ public class Settlement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.layer == checkLayer)
         {
             BuildObject obj = other.gameObject.GetComponent<BuildObject>();

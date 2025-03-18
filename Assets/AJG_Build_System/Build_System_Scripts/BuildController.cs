@@ -178,6 +178,7 @@ public class BuildController : MonoBehaviour
             {
                 _buildObject.snapPointGroup.gameObject.SetActive(true);
                 SetMode = false;
+                _buildObject.IsSet = true;
                 objectCollider.enabled = true;
                 SettlementManager.Instance.RegisterBuildObject(_buildObject, _buildObject.isSafe);
                 BuildManager.Instance.CheckSufficientResources(_buildObject, true);
@@ -195,15 +196,19 @@ public class BuildController : MonoBehaviour
                 SettlementManager.Instance.RegisterBuildObject(_buildObject, _buildObject.isSafe);
                 if (BuildManager.Instance.CheckSufficientResources(_buildObject, true))
                 {
-                    SetBuildObject(_buildObject);
-                }
-                else
-                {   
-                    _buildObject = null;
-                    BuildManager.Instance.buildMenu.SetActive(true);
-                    CharacterManager.Instance.Player.controller.canLook = false;
-                    CharacterManager.Instance.Player.controller.canLook = false;
-                    Cursor.lockState = CursorLockMode.None;
+                    _buildObject.IsSet = true;
+                    if (BuildManager.Instance.CheckSufficientResources(_buildObject, false))
+                    {
+                        SetBuildObject(_buildObject);
+                    }
+                    else
+                    {
+                        SetMode = false;
+                        _buildObject = null;
+                        BuildManager.Instance.buildMenu.SetActive(true);
+                        CharacterManager.Instance.Player.controller.canLook = false;
+                        Cursor.lockState = CursorLockMode.None;
+                    }
                 }
             }
         }
