@@ -21,7 +21,7 @@ MonoBehaviour:
   minSlopeAngle: 359
   type: 1
   icon: {fileID: -372374369, guid: 9f3d964c29ca29644a11dc0c855ae080, type: 3}
-  prefabs: {fileID: 0}
+  prefabs: {fileID: 5162118548723873165, guid: 493e7c378a918b748bba2dbcd06f80e8, type: 3}
   requireResources:
   - type: 0
-    value: 3
+    value: 0

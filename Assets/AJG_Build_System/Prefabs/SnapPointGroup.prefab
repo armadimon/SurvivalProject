@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetDistance: 1
+  validRotations: []
 --- !u!65 &1584131389867730463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetDistance: 1
+  validRotations: []
 --- !u!65 &5886250342907438961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetDistance: 1
+  validRotations: []
 --- !u!65 &5591957388174938920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -535,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetDistance: 1
+  validRotations: []
 --- !u!65 &8264237145307494829
 BoxCollider:
   m_ObjectHideFlags: 0

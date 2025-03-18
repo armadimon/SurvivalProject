@@ -11,7 +11,6 @@ public class BuildMenuItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Image icon;
     public BuildObjectInfo infoBG;
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI DescriptionText;
     public Button selectButton;
     public BuildObjectData buildObjectData;
     public RequireResourceAmount[] requireResourceTypes;
@@ -27,9 +26,8 @@ public class BuildMenuItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void SetData(BuildObject newBuildObject, int index)
     {  
         buildObjectData = newBuildObject.data;
-        icon.sprite = newBuildObject.data.icon;
+        selectButton.image.sprite = newBuildObject.data.icon;
         nameText.text = newBuildObject.data.displayName;
-        DescriptionText.text = newBuildObject.data.description;
         requireResourceTypes = newBuildObject.data.requireResources;
         // buildObject = newBuildObject;
         // buildObject.data.OnClick = () => BuildManager.Instance.buildController.SetBuildObject(buildObject);

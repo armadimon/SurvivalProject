@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bef462ef2cd0e84f893712c823e7243, type: 3}
-  m_Name: Build_Data_PlatForm
+  m_Name: Build_Data_CraftingTable
   m_EditorClassIdentifier: 
-  displayName: PlatForm
-  description: "\uBC14\uB2E5 \uAD6C\uC870\uBB3C\uC785\uB2C8\uB2E4."
-  maxCapacity: 0
+  displayName: "\uC81C\uC791\uD14C\uC774\uBE14"
+  description: "\uC7A5\uBE44\uB97C \uC81C\uC791\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  maxCapacity: 1
   maxHealth: 20
-  maxSlopeAngle: 359
-  minSlopeAngle: 30
+  maxSlopeAngle: 45
+  minSlopeAngle: 10
   type: 0
-  icon: {fileID: -1992289636, guid: fde3d4451a308a74fb559b4414c29169, type: 3}
-  prefabs: {fileID: 6907106213808990864, guid: 462d0e537482f644997b1055b465d011, type: 3}
+  icon: {fileID: 21300000, guid: 0cd459266c5a4cd468bc45c7e5f52220, type: 3}
+  prefabs: {fileID: 7341732476123796129, guid: 3ac81b5ccbe09b04191ffff17bcd656e, type: 3}
   requireResources:
   - type: 0
     value: 0
