@@ -1,31 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class RainController : MonoBehaviour
 {
+    public ParticleSystem rainPS;
+    public ParticleSystem ripplePS;
 
-    private ParticleSystem rain;
+    private int bossCount = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rain = GetComponent<ParticleSystem>();
-        DayNightCycle.OnNightStateChanged += ToggleRain;
+        // 게임 시작 시 비를 멈추도록 설정
+        rainPS.Stop();
+        ripplePS.Stop();
     }
 
-    // Update is called once per frame
-    void ToggleRain(bool isNight)
+    private void OnEnable()
     {
-        if(isNight)
+        // 이벤트 구독
+        EntitySpawner.OnBossSpawned += StartRain;
+        EntityTracker.OnBossDestroyed += StopRain;
+    }
+
+    private void OnDisable()
+    {
+        // 이벤트 구독 해제
+        EntitySpawner.OnBossSpawned += StartRain;
+        EntityTracker.OnBossDestroyed += StopRain;
+    }
+
+    private void StartRain()
+    {
+        bossCount++;
+        if (bossCount == 1) // 첫 보스가 등장하면 비 시작
         {
-            rain.gameObject.SetActive(true);
-            
+            rainPS.Play();
+            ripplePS.Play();
         }
-        else
+    }
+
+    private void StopRain()
+    {
+        bossCount--;
+        if (bossCount <= 0) // 모든 보스가 사라지면 비 멈춤
         {
-            rain.gameObject.SetActive(false);
+            bossCount = 0;
+            rainPS.Stop();
+            ripplePS.Stop();
         }
     }
 }
