@@ -406,6 +406,7 @@ MonoBehaviour:
   isHydrating: 0
   poisonProbabilityInt: 0
   dehydrateProbabilityInt: 0
+  youDiePanel: {fileID: 0}
 --- !u!114 &2213115378598393765
 MonoBehaviour:
   m_ObjectHideFlags: 0
