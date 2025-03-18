@@ -2820,6 +2820,9 @@ MonoBehaviour:
   craftingCanvas: {fileID: 0}
   craftingSlotsTransform: {fileID: 4217843986006211081}
   craftingSlotPrefab: {fileID: 3422053004703412104, guid: 7eef104dc097c694bbe8e7d29475734e, type: 3}
+  equipTap: {fileID: 0}
+  foodTap: {fileID: 0}
+  processTap: {fileID: 0}
   craftingSlots: []
 --- !u!1 &4216121481148212538
 GameObject:
@@ -4085,7 +4088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: 293443.3}
+  m_AnchoredPosition: {x: -20, y: 294275.03}
   m_SizeDelta: {x: -40, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1955217171005762367
