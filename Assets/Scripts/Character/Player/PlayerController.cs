@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             // 달리기 stamina 있을 때
-            if (playerCondition.UseStamina(runStamina))
+            if (playerCondition.UseStamina(0))
             {
                 moveSpeed *= runSpeedMultiplier;
                 StartCoroutine(RunStaminaDrain());

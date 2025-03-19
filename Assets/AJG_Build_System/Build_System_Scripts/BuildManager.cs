@@ -51,7 +51,6 @@ public class BuildManager : MonoBehaviour
 
     public bool CheckSufficientResources(BuildObject buildObject, bool consume)
     {
-        buildInfoBG.gameObject.SetActive(false);
         RequireResourceAmount[] requireResources = buildObject.data.requireResources;
         
         foreach (var requireResource in requireResources)
@@ -62,11 +61,8 @@ public class BuildManager : MonoBehaviour
                 return false;
             }
         }
-        if (consume == false)
-        {
+        if (consume == false && buildController.SetMode == false)
             buildController.SetBuildObject(buildObject);
-            
-        }
         return true;
     }
 
@@ -74,7 +70,6 @@ public class BuildManager : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            buildInfoBG.gameObject.SetActive(false);
             CharacterManager.Instance.Player.controller.playerInput.SwitchCurrentActionMap("BuildMode");
             buildController.OnBuildMode(context);
         }

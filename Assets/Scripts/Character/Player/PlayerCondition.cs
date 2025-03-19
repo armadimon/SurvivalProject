@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using DG.Tweening.CustomPlugins;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 public interface IDamageable
@@ -49,6 +49,12 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
     public int dehydrateProbabilityInt;
 
     public GameObject youDiePanel; // "You Die" UI 패널
+    public GameObject damageUI; // 데미지 UI
+
+    void Awake()
+    {
+        Time.timeScale = 1f;
+    }
 
     void Start()
     {
@@ -90,11 +96,14 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
         Debug.Log($"Die");
         youDiePanel.SetActive(true); // "You Die" 창 띄우기
 
+        damageUI.SetActive(false);  // 데미지 UI 비활성화
+        // 게임 멈추기
+        Time.timeScale = 0f;
+
         // Time.timeScale을 0으로 안 하고, 커서만 활성화
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-
 
     public void Eat(float amount)
     {
@@ -273,6 +282,8 @@ public class PlayerCondition : MonoBehaviour, IDamageable, IHydrate
 
     public void RestartGame()
     {
+        //DOTween.KillAll(); // 모든 DOTween 애니메이션 취소
+
         Cursor.visible = false; // 다시 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked;
 

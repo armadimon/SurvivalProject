@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bef462ef2cd0e84f893712c823e7243, type: 3}
+  m_Name: Build_Data_Trap
+  m_EditorClassIdentifier: 
+  displayName: "\uC2A4\uD30C\uC774\uD06C \uD2B8\uB7A9"
+  description: "\uC801\uC774 \uC9C0\uB098\uAC00\uBA74 \uC19F\uC544\uB098\uC624\uBA74\uC11C
+    \uB370\uBBF8\uC9C0\uB97C \uC785\uD799\uB2C8\uB2E4."
+  maxCapacity: 3
+  maxHealth: 100
+  maxSlopeAngle: 45
+  minSlopeAngle: 10
+  type: 1
+  icon: {fileID: 21300000, guid: f73a6f56cbf65b240a2c3559f4f839ad, type: 3}
+  prefabs: {fileID: 1886568816217963842, guid: b6ff7ebf1e33e0742b6fc7f4c678ee2e, type: 3}
+  requireResources:
+  - type: 1
+    value: 0
