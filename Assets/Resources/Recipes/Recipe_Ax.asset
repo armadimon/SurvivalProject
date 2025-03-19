@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requrireResourcesItem:
   - requireItem: {fileID: 11400000, guid: 9fc07b1d3d6444e438917a7c5adf6e7f, type: 2}
-    amount: 2
+    amount: 1
   - requireItem: {fileID: 11400000, guid: 31b865fd59f0607468b2cae88204866e, type: 2}
-    amount: 3
+    amount: 1
   resultItem: {fileID: 11400000, guid: 012de9be43eff76439a1727d97b0af7f, type: 2}
   resultAmount: 1
   recipeType: 0
