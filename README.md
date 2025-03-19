@@ -8,7 +8,7 @@
 팀원: 김태겸, 안준걸, 임석준, 최종훈<br/>
 
 
-## 🏗️ 플로우차트
+## 🏗️ 플로우 차트
 ![image](https://github.com/user-attachments/assets/3beb7d20-bdd4-43db-a473-34f7409f7eae)
 
 ## 🎮 주요 기능
