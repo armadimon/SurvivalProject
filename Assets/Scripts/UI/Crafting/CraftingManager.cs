@@ -107,7 +107,7 @@ public class CraftingManager : MonoBehaviour
         {
             if (!inventory.HasItem(requiredItem.requireItem, requiredItem.amount * quantity))
             {
-                Debug.Log("재료가 모자릅니다.");
+                NotificationManager.Instance.ShowNotification("재료가 모자랍니다.");
                 return;
             }
         }
@@ -120,7 +120,7 @@ public class CraftingManager : MonoBehaviour
         // 아이템을 추가
         InventotyManager.Instance.AddItem(recipe.resultItem, recipe.resultAmount * quantity);
         InventotyManager.Instance.Inventory.UpdateUI();
-        Debug.Log($"{recipe.resultItem.disPlayName} 제작 완료!");
+        NotificationManager.Instance.ShowNotification($"{recipe.resultItem.disPlayName} 제작 완료!");
         // 제작 완료 창 띄우기
     }
 
