@@ -8,8 +8,9 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource bgmSource;
     private AudioSource sfxSource;
-
+    
     public AudioClip backgroundMusic;
+    public AudioClip rainClip;
     public Dictionary<string, AudioClip> soundEffects = new();
 
     private void Awake()
@@ -29,6 +30,11 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        AudioManager.Instance.AddSoundEffect("RainSound", rainClip);
     }
 
     // 효과음 추가 메서드
