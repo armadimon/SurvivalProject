@@ -2,7 +2,10 @@
 낮에는 자원을 획득하여 자신의 거주지를 구축하고 밤에 몰려오는 동물들로부터 기지를 보호하는 프로젝트입니다.
 |:영상:|
 |:---:|
-|https://github.com/user-attachments/assets/bdd03084-2fbd-4607-a7f3-f5fe757edbdc|
+
+
+https://github.com/user-attachments/assets/8242f5e5-315e-4da3-8224-fc2aa1ff03d3
+
 
 
 ## 👥 팀 소개
