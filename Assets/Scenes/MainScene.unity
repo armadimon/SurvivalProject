@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35782978, g: 0.4525743, b: 0.3335644, a: 1}
+  m_IndirectSpecularColor: {r: 0.35782993, g: 0.45257425, b: 0.33356446, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36690,15 +36690,11 @@ PrefabInstance:
       objectReference: {fileID: 1749187748}
     - target: {fileID: 6812633584757175811, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
       propertyPath: timeRate
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812633584757175811, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812633584757175811, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
-      propertyPath: spawnCount
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8804320528680596719, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41490,6 +41486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RainSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4346009791869601189, guid: 94aa0a8bde37f2b4ba549f07c784b590, type: 3}
+      propertyPath: rainSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6986951e93b6a3248bcaa66fc8e59a88, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63041,6 +63041,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445022150}
   m_Mesh: {fileID: 8288761260979594307, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+--- !u!1 &1449331156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449331158}
+  - component: {fileID: 1449331157}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1449331157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449331156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f590ad2809c8df84f88f4379b5f912a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 0}
+--- !u!4 &1449331158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449331156}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60.95327, y: 5.4351006, z: 58.079433}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449705746
 GameObject:
   m_ObjectHideFlags: 0
@@ -94567,7 +94612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894908715792450036, guid: 3cdddcc18cf1e74468ff7e3d48149225, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6632294.5
+      value: 7947031
       objectReference: {fileID: 0}
     - target: {fileID: 6846474937637706479, guid: 3cdddcc18cf1e74468ff7e3d48149225, type: 3}
       propertyPath: m_AnchorMax.y
@@ -94879,10 +94924,6 @@ PrefabInstance:
       propertyPath: indicatorAnimator
       value: 
       objectReference: {fileID: 8225962601780133118}
-    - target: {fileID: 2213115378598393765, guid: 5154b6c9cbf2c9643938eb483f088055, type: 3}
-      propertyPath: runStamina
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2367266084385163704, guid: 5154b6c9cbf2c9643938eb483f088055, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.65
@@ -95024,3 +95065,4 @@ SceneRoots:
   - {fileID: 1428494743}
   - {fileID: 428304507}
   - {fileID: 1918041375}
+  - {fileID: 1449331158}

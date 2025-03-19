@@ -60,6 +60,7 @@ public class RainController : MonoBehaviour
             ripplePS.Play();
         }
 
+        StartCoroutine(AudioManager.Instance.FadeInBGM(rainSound, 1.5f)); // 1.5초 동안 페이드인 후 재생
         if (rainSound != null)
         {
             AudioManager.Instance.PlayBGM(rainSound, 0.5f); // 볼륨 50%로 설정
