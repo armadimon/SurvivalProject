@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35782978, g: 0.4525743, b: 0.3335644, a: 1}
+  m_IndirectSpecularColor: {r: 0.35782993, g: 0.45257425, b: 0.33356446, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -32556,19 +32556,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733514916}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1569826961}
-        m_TargetAssemblyTypeName: SettlementManager, Assembly-CSharp
-        m_MethodName: DisplaySettlementManageMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &733514916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36700,14 +36688,6 @@ PrefabInstance:
       propertyPath: terrain
       value: 
       objectReference: {fileID: 1749187748}
-    - target: {fileID: 6812633584757175811, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
-      propertyPath: timeRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812633584757175811, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8804320528680596719, guid: 71c43922e68479d42bbef985e36e99eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.784603
@@ -41501,7 +41481,7 @@ PrefabInstance:
     - target: {fileID: 4346009791869601189, guid: 94aa0a8bde37f2b4ba549f07c784b590, type: 3}
       propertyPath: rainSound
       value: 
-      objectReference: {fileID: 8300000, guid: 6986951e93b6a3248bcaa66fc8e59a88, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e8a551f8e03ae84284c903eb34c8987, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63084,8 +63064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 0}
   nightBgmSource: {fileID: 0}
-  backgroundMusic: {fileID: 0}
-  nightBGM: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: bec1cfb465efc7a41bd5ccbac5b6f2a2, type: 3}
+  nightBGM: {fileID: 8300000, guid: 21538f6160ff48040a8488deb4ed6d5e, type: 3}
   rainClip: {fileID: 8300000, guid: 6986951e93b6a3248bcaa66fc8e59a88, type: 3}
 --- !u!4 &1449331158
 Transform:
@@ -94628,7 +94608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894908715792450036, guid: 3cdddcc18cf1e74468ff7e3d48149225, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8309336.5
+      value: 8314342
       objectReference: {fileID: 0}
     - target: {fileID: 6846474937637706479, guid: 3cdddcc18cf1e74468ff7e3d48149225, type: 3}
       propertyPath: m_AnchorMax.y

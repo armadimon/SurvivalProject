@@ -14,7 +14,7 @@ public class StartMenuManager : MonoBehaviour
     }
     public void OnStartGame()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void OnExitGame()
