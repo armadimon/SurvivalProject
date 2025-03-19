@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3635294338376878051}
   - component: {fileID: 472400502153022190}
+  - component: {fileID: 7749322268190458216}
   m_Layer: 9
   m_Name: Build_SpikeTrap
   m_TagString: Untagged
@@ -52,6 +53,27 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 32383d8601fa9a44a9df755f86ae37e2, type: 2}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
   isSafe: 0
+--- !u!65 &7749322268190458216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886568816217963842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.14324677, z: 1}
+  m_Center: {x: 0, y: -0.42837662, z: 0}
 --- !u!1 &3731212627089138585
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +356,7 @@ MonoBehaviour:
   upHeight: 0.5
   speed: 5
   resetDelay: 1
+  transformOffset: 0.36
   layerMask:
     serializedVersion: 2
     m_Bits: 65536
