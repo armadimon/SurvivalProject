@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/8242f5e5-315e-4da3-8224-fc2aa1ff03d3
 팀명: 3D조
 팀장: 김학도<br/>
 팀원: 김태겸, 안준걸, 임석준, 최종훈<br/>
-
+개발 기간: 2025.03.12 ~ 2025.03.19 (7일)
 
 ## 🏗️ 플로우 차트
 ![image](https://github.com/user-attachments/assets/3beb7d20-bdd4-43db-a473-34f7409f7eae)
