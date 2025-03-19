@@ -534,17 +534,19 @@ public class UIInventory : MonoBehaviour
         equipButton.SetActive(selectItem.item.type == ItemType.Equipable && !sSlot.equipped);
         unEquipButton.SetActive(selectItem.item.type == ItemType.Equipable && sSlot.equipped);
 
-        if (!sSlot.equipped)
+        if (!sSlot.equipped && selectItem.item.type == ItemType.Equipable)
         {
             dropButton.SetActive(true);
             UsaullyItemUnEquipImage();
         }
-        else
+        else if (sSlot.equipped && selectItem.item.type == ItemType.Equipable)
         {
             dropButton.SetActive(false);
             HalfItemImage(itemUseRect, unEquipButton);
             return;
         }
+
+        dropButton.SetActive(true);
 
         if (!useButton.activeSelf && !equipButton.activeSelf && !unEquipButton.activeSelf)
         {
