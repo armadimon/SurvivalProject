@@ -19,7 +19,7 @@ public class CraftingTable : MonoBehaviour, IInteractable
     {
         if (!CraftingManager.Instance.UICrafting.IsOpen)
         {
-            CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Process);
+            CraftingManager.Instance.UICrafting.ShowCraftingUI(RecipeType.Equip);
             CharacterManager.Instance.Player.controller.ToggleCursur();
             if (Cursor.lockState == CursorLockMode.Locked)
             {
