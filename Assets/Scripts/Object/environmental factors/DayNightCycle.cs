@@ -38,6 +38,10 @@ public class DayNightCycle : MonoBehaviour
 
         // 게임 시작 시 초기 시간 설정
         time = startTime;
+        
+        AudioManager.Instance.PlayBGM(AudioManager.Instance.backgroundMusic, 0.2f);
+        AudioManager.Instance.PlayNightBGM(AudioManager.Instance.nightBGM, 1f);
+        AudioManager.Instance.nightBgmSource.Stop();
     }
 
     void Update()
@@ -45,7 +49,7 @@ public class DayNightCycle : MonoBehaviour
         // 현재 시간을 업데이트 (시간이 1을 초과하면 0으로 순환)
         time = (time + timeRate * Time.deltaTime) % 1.0f;
 
-        bool newIsNight = time >= 0.75f; // 현재 밤인지 낮인지 여부 판단
+        bool newIsNight = time >= 0.75f || time < 0.35f; // 현재 밤인지 낮인지 여부 판단
 
         if (newIsNight != isNight)
         {
@@ -63,10 +67,16 @@ public class DayNightCycle : MonoBehaviour
                 {
                     NotificationManager.Instance.ShowNotification("점점 발소리가 가까워집니다");
                 }).SetId("NightNotification");
+                
+                AudioManager.Instance.bgmSource.Stop();
+                AudioManager.Instance.nightBgmSource.Play();
             }
             else
             {
                 NotificationManager.Instance.ShowNotification("해가 떠오르며 밝아졌습니다!");
+
+                AudioManager.Instance.nightBgmSource.Stop();
+                AudioManager.Instance.bgmSource.Play();
             }
 
         }

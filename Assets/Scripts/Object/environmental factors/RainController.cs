@@ -11,6 +11,9 @@ public class RainController : MonoBehaviour
     public ParticleSystem rainPS;       // 비 파티클 시스템
     public ParticleSystem ripplePS;     // 물결 파티클 시스템
 
+    public string rainSFXKey = "RainSound"; // 비 효과음 키 (AudioManager에서 등록 필요)
+
+
     private PlayerCondition playerCondition;
     private int bossCount = 0;
 
@@ -57,6 +60,8 @@ public class RainController : MonoBehaviour
             rainPS.Play();
             ripplePS.Play();
         }
+        AudioManager.Instance.PlaySFX(rainSFXKey, 0.5f); // 비 효과음 재생
+
     }
 
     private void StopRain()
@@ -70,5 +75,7 @@ public class RainController : MonoBehaviour
             rainPS.Stop();
             ripplePS.Stop();
         }
+
+        
     }
 }
