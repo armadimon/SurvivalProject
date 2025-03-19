@@ -12,8 +12,6 @@ public class RainController : MonoBehaviour
     public ParticleSystem ripplePS;     // 물결 파티클 시스템
 
     private PlayerCondition playerCondition;
-    public AudioSource rainSound;        // 비 소리
-
     private int bossCount = 0;
 
     private void Start()

@@ -94667,7 +94667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894908715792450036, guid: 3cdddcc18cf1e74468ff7e3d48149225, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7542383.5
+      value: 7627464.5
       objectReference: {fileID: 0}
     - target: {fileID: 6846474937637706479, guid: 3cdddcc18cf1e74468ff7e3d48149225, type: 3}
       propertyPath: m_AnchorMax.y
@@ -94979,10 +94979,6 @@ PrefabInstance:
       propertyPath: indicatorAnimator
       value: 
       objectReference: {fileID: 8225962601780133118}
-    - target: {fileID: 2213115378598393765, guid: 5154b6c9cbf2c9643938eb483f088055, type: 3}
-      propertyPath: runStamina
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2367266084385163704, guid: 5154b6c9cbf2c9643938eb483f088055, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.65
