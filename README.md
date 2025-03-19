@@ -11,10 +11,12 @@ https://github.com/user-attachments/assets/8242f5e5-315e-4da3-8224-fc2aa1ff03d3
 개발 기간: 2025.03.12 ~ 2025.03.19 (7일)
 
 ## 🏗️ 플로우 차트
-![image](https://github.com/user-attachments/assets/3beb7d20-bdd4-43db-a473-34f7409f7eae)
-![3D 서바이벌 게임 - 프레임 3](https://github.com/user-attachments/assets/f1b93c76-5fd8-4721-83ea-5c7c1986f1bf)
-![3D 서바이벌 게임 - 프레임 2](https://github.com/user-attachments/assets/7ca99a9d-7651-4719-98c5-968098d92eea)
-![3D 서바이벌 게임 - 프레임 1](https://github.com/user-attachments/assets/42aa880e-7a7c-425d-ba21-4b5e5d5abbc1)
+| 게임 플레이 | 플레이어 / 배틀 | 생존 관리 시스템 | 빌드 시스템 |
+|---|---|---|---|
+|![image](https://github.com/user-attachments/assets/3beb7d20-bdd4-43db-a473-34f7409f7eae)|
+|![3D 서바이벌 게임 - 프레임 3](https://github.com/user-attachments/assets/f1b93c76-5fd8-4721-83ea-5c7c1986f1bf)|
+|![3D 서바이벌 게임 - 프레임 2](https://github.com/user-attachments/assets/7ca99a9d-7651-4719-98c5-968098d92eea)|
+|![3D 서바이벌 게임 - 프레임 1](https://github.com/user-attachments/assets/42aa880e-7a7c-425d-ba21-4b5e5d5abbc1)|
 
 ## 🎮 주요 기능
 ### 자원 수집 및 가공
