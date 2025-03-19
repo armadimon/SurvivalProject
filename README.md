@@ -62,17 +62,17 @@
 
 ## 🎨 사용한 에셋
 ### 🗺️ 맵 에셋 
-- Lowpoly Environment - Nature Free - MEDIEVAL FANTASY SERIES
+- [Lowpoly Environment - Nature Free - MEDIEVAL FANTASY SERIES](https://assetstore.unity.com/packages/3d/environments/lowpoly-environment-nature-free-medieval-fantasy-series-187052#content)
 ### 🐾 엔티티 에셋
-- FREE Stylized Bear - RPG Forest Animal
-- Animals FREE - Animated Low Poly 3D Models
+- [FREE Stylized Bear - RPG Forest Animal](https://assetstore.unity.com/packages/3d/characters/animals/free-stylized-bear-rpg-forest-animal-228910)
+- [Animals FREE - Animated Low Poly 3D Models](https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727)
 ### 🛠️ 오브젝트 에셋
-- Low Poly RPG Fantasy Weapons Lite
-- Low Poly Food Lite 
-- Rock package
+- [Low Poly RPG Fantasy Weapons Lite](https://assetstore.unity.com/packages/3d/props/weapons/low-poly-rpg-fantasy-weapons-lite-226554)
+- [Low Poly Food Lite](https://assetstore.unity.com/packages/3d/props/food/low-poly-food-lite-258693)
+- [Rock package](https://assetstore.unity.com/packages/3d/props/exterior/rock-package-118182#asset_quality)
 ### 🎨 UI 에셋
-- Game UI Pack
-- FANTASY GUI
+- [Game UI Pack](https://opengameart.org/content/game-ui-pack)
+- [FANTASY GUI](https://opengameart.org/content/fantasy-gui-0)
 ### 🎵 사운드 에셋
 - Footstep(Snow and Grass) 
 - [비 효과음](https://pixabay.com/ko/users/42364703/?tab=sound-effects&order=latest&pagi=1)
