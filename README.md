@@ -1,5 +1,8 @@
 # 🏕️ Survival Defense
 낮에는 자원을 획득하여 자신의 거주지를 구축하고 밤에 몰려오는 동물들로부터 기지를 보호하는 프로젝트입니다.
+|영상|
+|:---:|
+|![Main](https://github.com/user-attachments/assets/115389db-969b-4710-b30c-e08dec2d47c2)|
 
 ## 👥 팀 소개
 
