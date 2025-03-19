@@ -74,5 +74,5 @@
 - [Game UI Pack](https://opengameart.org/content/game-ui-pack)
 - [FANTASY GUI](https://opengameart.org/content/fantasy-gui-0)
 ### 🎵 사운드 에셋
-- Footstep(Snow and Grass) 
+- [Footstep(Snow and Grass)](https://assetstore.unity.com/packages/audio/sound-fx/footstep-snow-and-grass-90678)
 - [비 효과음](https://pixabay.com/ko/users/42364703/?tab=sound-effects&order=latest&pagi=1)
