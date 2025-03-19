@@ -6,10 +6,12 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    private AudioSource bgmSource;
+    public AudioSource bgmSource;
+    public AudioSource nightBgmSource;
     private AudioSource sfxSource;
     
     public AudioClip backgroundMusic;
+    public AudioClip nightBGM;
     public AudioClip rainClip;
     public Dictionary<string, AudioClip> soundEffects = new();
 
@@ -22,9 +24,11 @@ public class AudioManager : MonoBehaviour
 
             // AudioSource 2개 추가 (BGM & SFX)
             bgmSource = gameObject.AddComponent<AudioSource>();
+            nightBgmSource = gameObject.AddComponent<AudioSource>();
             sfxSource = gameObject.AddComponent<AudioSource>();
 
             bgmSource.loop = true; // 배경음 루프 설정
+            nightBgmSource.loop = true;
         }
         else
         {
@@ -63,6 +67,15 @@ public class AudioManager : MonoBehaviour
         bgmSource.clip = bgm;
         bgmSource.volume = volume;
         bgmSource.Play();
+    }
+
+    public void PlayNightBGM(AudioClip bgm, float volume = 1.0f)
+    {
+        if (nightBgmSource.clip == bgm) return; // 동일한 BGM이면 재생 X
+
+        nightBgmSource.clip = bgm;
+        nightBgmSource.volume = volume;
+        nightBgmSource.Play();
     }
 
     // 배경음 페이드인/페이드아웃 기능
