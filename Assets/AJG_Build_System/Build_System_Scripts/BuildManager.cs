@@ -61,7 +61,7 @@ public class BuildManager : MonoBehaviour
                 return false;
             }
         }
-        if (consume == false)
+        if (consume == false && buildController.SetMode == false)
             buildController.SetBuildObject(buildObject);
         return true;
     }

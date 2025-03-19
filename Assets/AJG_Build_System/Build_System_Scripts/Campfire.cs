@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Campfire : MonoBehaviour, IInteractable
 {
-    public BuildObject BuildObject;
+    public BuildObject buildObject;
     private Coroutine healCoroutine; // 힐을 위한 Coroutine 저장
 
     public string GetInteractPrompt()
     {
         // 아이템의 이름과 설명을 포함한 문자열 반환
-        string str = $"{BuildObject.data.displayName}\n{BuildObject.data.description}";
+        string str = $"{buildObject.data.displayName}\n{buildObject.data.description}";
         return str;
     }
 

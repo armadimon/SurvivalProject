@@ -715,7 +715,7 @@ MonoBehaviour:
   maxWanderWaitTime: 4
   damage: 8
   attackRate: 2
-  attackDistance: 3
+  attackDistance: 2
   fieldOfView: 360
   buildObjectColliders: []
   buildObjectDistance: []
@@ -739,8 +739,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8226328, y: 1, z: 2.9470978}
-  m_Center: {x: 0.002436161, y: 0.5, z: -0.022010803}
+  m_Size: {x: 0.8226328, y: 1, z: 1.6867211}
+  m_Center: {x: 0.002436161, y: 0.5, z: -0.041501254}
 --- !u!195 &4821582997100769922
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -5777,7 +5777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: 881949.1}
+  m_AnchoredPosition: {x: -20, y: 3325123.5}
   m_SizeDelta: {x: -40, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &6002921657490063866
@@ -8667,7 +8667,7 @@ MonoBehaviour:
   curValue: 0
   startValue: 45
   maxValue: 100
-  passiveValue: 5
+  passiveValue: 2
   uiBar: {fileID: 8364164642202467529}
   percentageText: {fileID: 2048834158248300181}
 --- !u!222 &3458030898931412792

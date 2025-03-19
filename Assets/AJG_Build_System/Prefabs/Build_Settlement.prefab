@@ -105,7 +105,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbf74128f0f57b46980cd691a4c92f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settelBuildObject: {fileID: -8442470782196030475}
   checkLayer: 0
 --- !u!120 &2532549541749226113
 LineRenderer:
@@ -285,7 +286,8 @@ GameObject:
   - component: {fileID: 8334415305282184979}
   - component: {fileID: 7675977721232685993}
   - component: {fileID: 4369156084453371959}
-  m_Layer: 9
+  - component: {fileID: 8110469313622834614}
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,6 +380,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0182931, y: 2.5170386, z: 1.8391767}
   m_Center: {x: 0, y: 0, z: 0.00000005960466}
+--- !u!114 &8110469313622834614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553964786851026162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b006f663e00be4a808d8438e6efbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settelBuildObject: {fileID: -8442470782196030475}
 --- !u!1001 &1628567808380154509
 PrefabInstance:
   m_ObjectHideFlags: 0

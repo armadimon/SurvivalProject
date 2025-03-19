@@ -13,7 +13,23 @@ public class BuildObject : MonoBehaviour
     public string Category { get; private set; }
     public int Health { get; private set; } = 100;
     public bool IsInsideSettlement { get; set; }
+    
+    public event Action OnSetChanged;
 
+    private bool _isSet = false;
+    public bool IsSet
+    {
+        get { return _isSet; }
+        set
+        {
+            if (_isSet != value)
+            {
+                _isSet = value;
+                OnSetChanged?.Invoke(); // 이벤트 발생
+            }
+        }
+    }
+    
 
     private void Awake()
     {
