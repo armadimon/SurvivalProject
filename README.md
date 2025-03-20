@@ -75,6 +75,7 @@ https://github.com/user-attachments/assets/8242f5e5-315e-4da3-8224-fc2aa1ff03d3
 - [Low Poly RPG Fantasy Weapons Lite](https://assetstore.unity.com/packages/3d/props/weapons/low-poly-rpg-fantasy-weapons-lite-226554)
 - [Low Poly Food Lite](https://assetstore.unity.com/packages/3d/props/food/low-poly-food-lite-258693)
 - [Rock package](https://assetstore.unity.com/packages/3d/props/exterior/rock-package-118182#asset_quality)
+- [Low Poly Wood Lifestyle](https://assetstore.unity.com/packages/3d/environments/low-poly-woods-lifestyle-65306)
 ### 🎨 UI 에셋
 - [Game UI Pack](https://opengameart.org/content/game-ui-pack)
 - [FANTASY GUI](https://opengameart.org/content/fantasy-gui-0)
